@@ -17,7 +17,6 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -35,32 +34,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private string deploymentSetId;
-
 		private long? resourceOwnerId;
+
+		private string description;
+
+		private string deploymentSetId;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string description;
-
 		private string deploymentSetName;
 
 		private long? ownerId;
-
-		public string DeploymentSetId
-		{
-			get
-			{
-				return deploymentSetId;
-			}
-			set	
-			{
-				deploymentSetId = value;
-				DictionaryUtil.Add(QueryParameters, "DeploymentSetId", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -72,6 +58,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string DeploymentSetId
+		{
+			get
+			{
+				return deploymentSetId;
+			}
+			set	
+			{
+				deploymentSetId = value;
+				DictionaryUtil.Add(QueryParameters, "DeploymentSetId", value);
 			}
 		}
 
@@ -98,19 +110,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 

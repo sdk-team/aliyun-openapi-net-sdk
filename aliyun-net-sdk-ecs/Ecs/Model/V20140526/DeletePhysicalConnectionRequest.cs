@@ -37,15 +37,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
 		private string clientToken;
 
-		private string physicalConnectionId;
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private string physicalConnectionId;
 
 		public long? ResourceOwnerId
 		{
@@ -57,19 +57,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -86,16 +73,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string PhysicalConnectionId
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return physicalConnectionId;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				physicalConnectionId = value;
-				DictionaryUtil.Add(QueryParameters, "PhysicalConnectionId", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -122,6 +109,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string PhysicalConnectionId
+		{
+			get
+			{
+				return physicalConnectionId;
+			}
+			set	
+			{
+				physicalConnectionId = value;
+				DictionaryUtil.Add(QueryParameters, "PhysicalConnectionId", value);
 			}
 		}
 

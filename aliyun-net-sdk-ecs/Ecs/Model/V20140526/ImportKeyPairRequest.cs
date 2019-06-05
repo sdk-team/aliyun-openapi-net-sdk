@@ -37,11 +37,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
+		private string keyPairName;
+
 		private string resourceOwnerAccount;
 
 		private string publicKeyBody;
-
-		private string keyPairName;
 
 		private long? ownerId;
 
@@ -55,6 +55,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string KeyPairName
+		{
+			get
+			{
+				return keyPairName;
+			}
+			set	
+			{
+				keyPairName = value;
+				DictionaryUtil.Add(QueryParameters, "KeyPairName", value);
 			}
 		}
 
@@ -81,19 +94,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				publicKeyBody = value;
 				DictionaryUtil.Add(QueryParameters, "PublicKeyBody", value);
-			}
-		}
-
-		public string KeyPairName
-		{
-			get
-			{
-				return keyPairName;
-			}
-			set	
-			{
-				keyPairName = value;
-				DictionaryUtil.Add(QueryParameters, "KeyPairName", value);
 			}
 		}
 

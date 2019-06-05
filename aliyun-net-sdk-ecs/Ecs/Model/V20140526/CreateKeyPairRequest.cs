@@ -35,30 +35,17 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private string resourceGroupId;
-
 		private long? resourceOwnerId;
-
-		private string resourceOwnerAccount;
 
 		private string keyPairName;
 
+		private string resourceGroupId;
+
 		private List<Tag> tags;
 
-		private long? ownerId;
+		private string resourceOwnerAccount;
 
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
+		private long? ownerId;
 
 		public long? ResourceOwnerId
 		{
@@ -73,19 +60,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
 		public string KeyPairName
 		{
 			get
@@ -96,6 +70,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				keyPairName = value;
 				DictionaryUtil.Add(QueryParameters, "KeyPairName", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -114,6 +101,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
 				}
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 

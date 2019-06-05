@@ -39,15 +39,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
+		private string securityGroupId;
+
+		private string direction;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string securityGroupId;
-
 		private long? ownerId;
-
-		private string direction;
 
 		public string NicType
 		{
@@ -72,6 +72,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string SecurityGroupId
+		{
+			get
+			{
+				return securityGroupId;
+			}
+			set	
+			{
+				securityGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
+			}
+		}
+
+		public string Direction
+		{
+			get
+			{
+				return direction;
+			}
+			set	
+			{
+				direction = value;
+				DictionaryUtil.Add(QueryParameters, "Direction", value);
 			}
 		}
 
@@ -101,19 +127,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string SecurityGroupId
-		{
-			get
-			{
-				return securityGroupId;
-			}
-			set	
-			{
-				securityGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -124,19 +137,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string Direction
-		{
-			get
-			{
-				return direction;
-			}
-			set	
-			{
-				direction = value;
-				DictionaryUtil.Add(QueryParameters, "Direction", value);
 			}
 		}
 

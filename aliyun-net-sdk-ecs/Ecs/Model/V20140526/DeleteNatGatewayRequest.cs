@@ -37,11 +37,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
+		private string natGatewayId;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
-
-		private string natGatewayId;
 
 		private long? ownerId;
 
@@ -55,6 +55,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string NatGatewayId
+		{
+			get
+			{
+				return natGatewayId;
+			}
+			set	
+			{
+				natGatewayId = value;
+				DictionaryUtil.Add(QueryParameters, "NatGatewayId", value);
 			}
 		}
 
@@ -81,19 +94,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string NatGatewayId
-		{
-			get
-			{
-				return natGatewayId;
-			}
-			set	
-			{
-				natGatewayId = value;
-				DictionaryUtil.Add(QueryParameters, "NatGatewayId", value);
 			}
 		}
 

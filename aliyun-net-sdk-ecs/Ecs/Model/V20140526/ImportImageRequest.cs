@@ -39,21 +39,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
-		private string roleName;
-
 		private string description;
-
-		private string oSType;
-
-		private long? ownerId;
 
 		private string platform;
 
 		private string imageName;
 
 		private string architecture;
+
+		private string resourceOwnerAccount;
+
+		private string roleName;
+
+		private string oSType;
+
+		private long? ownerId;
 
 		public List<DiskDeviceMapping> DiskDeviceMappings
 		{
@@ -90,32 +90,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string RoleName
-		{
-			get
-			{
-				return roleName;
-			}
-			set	
-			{
-				roleName = value;
-				DictionaryUtil.Add(QueryParameters, "RoleName", value);
-			}
-		}
-
 		public string Description
 		{
 			get
@@ -126,32 +100,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public string OSType
-		{
-			get
-			{
-				return oSType;
-			}
-			set	
-			{
-				oSType = value;
-				DictionaryUtil.Add(QueryParameters, "OSType", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -191,6 +139,58 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				architecture = value;
 				DictionaryUtil.Add(QueryParameters, "Architecture", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string RoleName
+		{
+			get
+			{
+				return roleName;
+			}
+			set	
+			{
+				roleName = value;
+				DictionaryUtil.Add(QueryParameters, "RoleName", value);
+			}
+		}
+
+		public string OSType
+		{
+			get
+			{
+				return oSType;
+			}
+			set	
+			{
+				oSType = value;
+				DictionaryUtil.Add(QueryParameters, "OSType", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

@@ -35,9 +35,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
-		private string resourceGroupId;
-
 		private long? resourceOwnerId;
+
+		private string resourceGroupId;
 
 		private string resourceId;
 
@@ -49,19 +49,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string resourceType;
 
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
 		public long? ResourceOwnerId
 		{
 			get
@@ -72,6 +59,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

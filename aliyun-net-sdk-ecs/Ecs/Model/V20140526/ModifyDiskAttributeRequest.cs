@@ -35,11 +35,17 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         {
         }
 
+		private long? resourceOwnerId;
+
+		private string description;
+
 		private string diskName;
 
 		private bool? deleteAutoSnapshot;
 
-		private long? resourceOwnerId;
+		private string diskId;
+
+		private bool? deleteWithInstance;
 
 		private bool? enableAutoSnapshot;
 
@@ -47,13 +53,33 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string ownerAccount;
 
-		private string description;
-
-		private string diskId;
-
 		private long? ownerId;
 
-		private bool? deleteWithInstance;
+		public long? ResourceOwnerId
+		{
+			get
+			{
+				return resourceOwnerId;
+			}
+			set	
+			{
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
 
 		public string DiskName
 		{
@@ -81,16 +107,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public long? ResourceOwnerId
+		public string DiskId
 		{
 			get
 			{
-				return resourceOwnerId;
+				return diskId;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				diskId = value;
+				DictionaryUtil.Add(QueryParameters, "DiskId", value);
+			}
+		}
+
+		public bool? DeleteWithInstance
+		{
+			get
+			{
+				return deleteWithInstance;
+			}
+			set	
+			{
+				deleteWithInstance = value;
+				DictionaryUtil.Add(QueryParameters, "DeleteWithInstance", value.ToString());
 			}
 		}
 
@@ -133,32 +172,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public string DiskId
-		{
-			get
-			{
-				return diskId;
-			}
-			set	
-			{
-				diskId = value;
-				DictionaryUtil.Add(QueryParameters, "DiskId", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -169,19 +182,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public bool? DeleteWithInstance
-		{
-			get
-			{
-				return deleteWithInstance;
-			}
-			set	
-			{
-				deleteWithInstance = value;
-				DictionaryUtil.Add(QueryParameters, "DeleteWithInstance", value.ToString());
 			}
 		}
 

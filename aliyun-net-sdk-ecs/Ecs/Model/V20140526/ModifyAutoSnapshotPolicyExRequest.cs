@@ -17,7 +17,6 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -37,19 +36,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
 		private string autoSnapshotPolicyId;
 
 		private string timePoints;
 
-		private int? retentionDays;
+		private string repeatWeekdays;
+
+		private string resourceOwnerAccount;
 
 		private long? ownerId;
 
-		private string repeatWeekdays;
-
 		private string autoSnapshotPolicyName;
+
+		private int? retentionDays;
 
 		public long? ResourceOwnerId
 		{
@@ -61,19 +60,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -103,16 +89,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? RetentionDays
+		public string RepeatWeekdays
 		{
 			get
 			{
-				return retentionDays;
+				return repeatWeekdays;
 			}
 			set	
 			{
-				retentionDays = value;
-				DictionaryUtil.Add(QueryParameters, "retentionDays", value.ToString());
+				repeatWeekdays = value;
+				DictionaryUtil.Add(QueryParameters, "repeatWeekdays", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -129,19 +128,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RepeatWeekdays
-		{
-			get
-			{
-				return repeatWeekdays;
-			}
-			set	
-			{
-				repeatWeekdays = value;
-				DictionaryUtil.Add(QueryParameters, "repeatWeekdays", value);
-			}
-		}
-
 		public string AutoSnapshotPolicyName
 		{
 			get
@@ -152,6 +138,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				autoSnapshotPolicyName = value;
 				DictionaryUtil.Add(QueryParameters, "autoSnapshotPolicyName", value);
+			}
+		}
+
+		public int? RetentionDays
+		{
+			get
+			{
+				return retentionDays;
+			}
+			set	
+			{
+				retentionDays = value;
+				DictionaryUtil.Add(QueryParameters, "retentionDays", value.ToString());
 			}
 		}
 

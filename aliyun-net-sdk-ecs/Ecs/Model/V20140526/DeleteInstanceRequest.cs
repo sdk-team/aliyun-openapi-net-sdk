@@ -37,17 +37,17 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string instanceId;
+		private bool? terminateSubscription;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private bool? terminateSubscription;
+		private long? ownerId;
+
+		private string instanceId;
 
 		private bool? force;
-
-		private long? ownerId;
 
 		public long? ResourceOwnerId
 		{
@@ -62,16 +62,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string InstanceId
+		public bool? TerminateSubscription
 		{
 			get
 			{
-				return instanceId;
+				return terminateSubscription;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				terminateSubscription = value;
+				DictionaryUtil.Add(QueryParameters, "TerminateSubscription", value.ToString());
 			}
 		}
 
@@ -101,16 +101,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public bool? TerminateSubscription
+		public long? OwnerId
 		{
 			get
 			{
-				return terminateSubscription;
+				return ownerId;
 			}
 			set	
 			{
-				terminateSubscription = value;
-				DictionaryUtil.Add(QueryParameters, "TerminateSubscription", value.ToString());
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
@@ -124,19 +137,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				force = value;
 				DictionaryUtil.Add(QueryParameters, "Force", value.ToString());
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

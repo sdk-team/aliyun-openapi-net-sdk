@@ -17,7 +17,6 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -37,17 +36,17 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
 		private string clientToken;
-
-		private string physicalConnectionId;
-
-		private string ownerAccount;
 
 		private string userCidr;
 
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
 		private long? ownerId;
+
+		private string physicalConnectionId;
 
 		public long? ResourceOwnerId
 		{
@@ -59,19 +58,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -88,16 +74,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string PhysicalConnectionId
+		public string UserCidr
 		{
 			get
 			{
-				return physicalConnectionId;
+				return userCidr;
 			}
 			set	
 			{
-				physicalConnectionId = value;
-				DictionaryUtil.Add(QueryParameters, "PhysicalConnectionId", value);
+				userCidr = value;
+				DictionaryUtil.Add(QueryParameters, "UserCidr", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -114,19 +113,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string UserCidr
-		{
-			get
-			{
-				return userCidr;
-			}
-			set	
-			{
-				userCidr = value;
-				DictionaryUtil.Add(QueryParameters, "UserCidr", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -137,6 +123,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string PhysicalConnectionId
+		{
+			get
+			{
+				return physicalConnectionId;
+			}
+			set	
+			{
+				physicalConnectionId = value;
+				DictionaryUtil.Add(QueryParameters, "PhysicalConnectionId", value);
 			}
 		}
 

@@ -37,31 +37,31 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
 		private string clientToken;
 
 		private bool? allowMigrateAcrossZone;
 
-		private string ownerAccount;
-
 		private int? internetMaxBandwidthOut;
+
+		private string systemDiskCategory;
+
+		private string instanceType;
+
+		private string temporaryEndTime;
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
 
 		private long? ownerId;
 
 		private int? temporaryInternetMaxBandwidthOut;
-
-		private string systemDiskCategory;
 
 		private string temporaryStartTime;
 
 		private bool? async;
 
 		private string instanceId;
-
-		private string instanceType;
-
-		private string temporaryEndTime;
 
 		private int? internetMaxBandwidthIn;
 
@@ -75,19 +75,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -117,19 +104,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
 		public int? InternetMaxBandwidthOut
 		{
 			get
@@ -140,6 +114,71 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				internetMaxBandwidthOut = value;
 				DictionaryUtil.Add(QueryParameters, "InternetMaxBandwidthOut", value.ToString());
+			}
+		}
+
+		public string SystemDiskCategory
+		{
+			get
+			{
+				return systemDiskCategory;
+			}
+			set	
+			{
+				systemDiskCategory = value;
+				DictionaryUtil.Add(QueryParameters, "SystemDisk.Category", value);
+			}
+		}
+
+		public string InstanceType
+		{
+			get
+			{
+				return instanceType;
+			}
+			set	
+			{
+				instanceType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
+			}
+		}
+
+		public string TemporaryEndTime
+		{
+			get
+			{
+				return temporaryEndTime;
+			}
+			set	
+			{
+				temporaryEndTime = value;
+				DictionaryUtil.Add(QueryParameters, "Temporary.EndTime", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -166,19 +205,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				temporaryInternetMaxBandwidthOut = value;
 				DictionaryUtil.Add(QueryParameters, "Temporary.InternetMaxBandwidthOut", value.ToString());
-			}
-		}
-
-		public string SystemDiskCategory
-		{
-			get
-			{
-				return systemDiskCategory;
-			}
-			set	
-			{
-				systemDiskCategory = value;
-				DictionaryUtil.Add(QueryParameters, "SystemDisk.Category", value);
 			}
 		}
 
@@ -218,32 +244,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string InstanceType
-		{
-			get
-			{
-				return instanceType;
-			}
-			set	
-			{
-				instanceType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
-			}
-		}
-
-		public string TemporaryEndTime
-		{
-			get
-			{
-				return temporaryEndTime;
-			}
-			set	
-			{
-				temporaryEndTime = value;
-				DictionaryUtil.Add(QueryParameters, "Temporary.EndTime", value);
 			}
 		}
 

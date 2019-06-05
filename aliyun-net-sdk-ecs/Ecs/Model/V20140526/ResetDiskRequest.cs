@@ -39,11 +39,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string snapshotId;
 
+		private string diskId;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
-
-		private string diskId;
 
 		private long? ownerId;
 
@@ -73,6 +73,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string DiskId
+		{
+			get
+			{
+				return diskId;
+			}
+			set	
+			{
+				diskId = value;
+				DictionaryUtil.Add(QueryParameters, "DiskId", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -96,19 +109,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string DiskId
-		{
-			get
-			{
-				return diskId;
-			}
-			set	
-			{
-				diskId = value;
-				DictionaryUtil.Add(QueryParameters, "DiskId", value);
 			}
 		}
 
