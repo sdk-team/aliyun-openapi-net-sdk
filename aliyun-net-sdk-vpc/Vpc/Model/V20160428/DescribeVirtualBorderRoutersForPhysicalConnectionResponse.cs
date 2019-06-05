@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -101,6 +102,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private long? vbrOwnerUid;
 
+			private string eccId;
+
+			private string type;
+
 			private string creationTime;
 
 			private string activationTime;
@@ -140,6 +145,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					vbrOwnerUid = value;
+				}
+			}
+
+			public string EccId
+			{
+				get
+				{
+					return eccId;
+				}
+				set	
+				{
+					eccId = value;
+				}
+			}
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
 				}
 			}
 

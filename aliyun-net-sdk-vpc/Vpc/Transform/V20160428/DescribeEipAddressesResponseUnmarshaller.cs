@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Vpc.Model.V20160428;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Vpc.Model.V20160428;
 
 namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
@@ -58,6 +59,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				eipAddress.Descritpion = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].Descritpion");
 				eipAddress.BandwidthPackageId = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].BandwidthPackageId");
 				eipAddress.BandwidthPackageType = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].BandwidthPackageType");
+				eipAddress.BandwidthPackageBandwidth = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].BandwidthPackageBandwidth");
 				eipAddress.ResourceGroupId = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].ResourceGroupId");
 				eipAddress.HasReservationData = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].HasReservationData");
 				eipAddress.ReservationBandwidth = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].ReservationBandwidth");
@@ -65,6 +67,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				eipAddress.ReservationActiveTime = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].ReservationActiveTime");
 				eipAddress.ReservationOrderType = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].ReservationOrderType");
 				eipAddress.Mode = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].Mode");
+				eipAddress.SecondLimited = context.BooleanValue("DescribeEipAddresses.EipAddresses["+ i +"].SecondLimited");
 
 				List<string> eipAddress_availableRegions = new List<string>();
 				for (int j = 0; j < context.Length("DescribeEipAddresses.EipAddresses["+ i +"].AvailableRegions.Length"); j++) {

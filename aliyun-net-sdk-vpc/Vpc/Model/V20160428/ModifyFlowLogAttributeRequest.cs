@@ -16,34 +16,31 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
     public class ModifyFlowLogAttributeRequest : RpcAcsRequest<ModifyFlowLogAttributeResponse>
     {
         public ModifyFlowLogAttributeRequest()
-            : base("Vpc", "2016-04-28", "ModifyFlowLogAttribute", "vpc", "openAPI")
+            : base("Vpc", "2016-04-28", "ModifyFlowLogAttribute")
         {
         }
 
 		private long? resourceOwnerId;
 
+		private string description;
+
 		private string resourceOwnerAccount;
 
-		private string regionId;
-
 		private string ownerAccount;
-
-		private string action;
-
-		private string description;
 
 		private long? ownerId;
 
@@ -64,6 +61,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -77,19 +87,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -100,32 +97,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
@@ -168,7 +139,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-        public override ModifyFlowLogAttributeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyFlowLogAttributeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ModifyFlowLogAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

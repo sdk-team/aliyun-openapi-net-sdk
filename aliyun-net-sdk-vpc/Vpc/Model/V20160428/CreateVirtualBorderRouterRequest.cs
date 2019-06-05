@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
     public class CreateVirtualBorderRouterRequest : RpcAcsRequest<CreateVirtualBorderRouterResponse>
     {
         public CreateVirtualBorderRouterRequest()
-            : base("Vpc", "2016-04-28", "CreateVirtualBorderRouter", "vpc", "openAPI")
+            : base("Vpc", "2016-04-28", "CreateVirtualBorderRouter")
         {
         }
 
@@ -41,27 +42,23 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string clientToken;
 
-		private string resourceOwnerAccount;
-
-		private string ownerAccount;
-
 		private string description;
-
-		private long? ownerId;
 
 		private string peerGatewayIp;
 
 		private string peeringSubnetMask;
 
-		private string regionId;
+		private string localGatewayIp;
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
+		private long? ownerId;
 
 		private string physicalConnectionId;
 
 		private string name;
-
-		private string localGatewayIp;
-
-		private string action;
 
 		private long? vbrOwnerId;
 
@@ -117,32 +114,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
 		public string Description
 		{
 			get
@@ -153,19 +124,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -195,16 +153,55 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string RegionId
+		public string LocalGatewayIp
 		{
 			get
 			{
-				return regionId;
+				return localGatewayIp;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+				localGatewayIp = value;
+				DictionaryUtil.Add(QueryParameters, "LocalGatewayIp", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -234,32 +231,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string LocalGatewayIp
-		{
-			get
-			{
-				return localGatewayIp;
-			}
-			set	
-			{
-				localGatewayIp = value;
-				DictionaryUtil.Add(QueryParameters, "LocalGatewayIp", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? VbrOwnerId
 		{
 			get
@@ -273,7 +244,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-        public override CreateVirtualBorderRouterResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CreateVirtualBorderRouterResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CreateVirtualBorderRouterResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

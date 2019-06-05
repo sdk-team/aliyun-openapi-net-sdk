@@ -16,53 +16,37 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
     public class ModifyVRouterAttributeRequest : RpcAcsRequest<ModifyVRouterAttributeResponse>
     {
         public ModifyVRouterAttributeRequest()
-            : base("Vpc", "2016-04-28", "ModifyVRouterAttribute", "vpc", "openAPI")
+            : base("Vpc", "2016-04-28", "ModifyVRouterAttribute")
         {
         }
-
-		private string vRouterName;
 
 		private long? resourceOwnerId;
 
 		private string vRouterId;
 
-		private string resourceOwnerAccount;
+		private string description;
 
-		private string regionId;
+		private string vRouterName;
+
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string action;
-
-		private string description;
-
 		private long? ownerId;
-
-		public string VRouterName
-		{
-			get
-			{
-				return vRouterName;
-			}
-			set	
-			{
-				vRouterName = value;
-				DictionaryUtil.Add(QueryParameters, "VRouterName", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -90,6 +74,32 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string VRouterName
+		{
+			get
+			{
+				return vRouterName;
+			}
+			set	
+			{
+				vRouterName = value;
+				DictionaryUtil.Add(QueryParameters, "VRouterName", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -100,19 +110,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -129,32 +126,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -168,7 +139,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-        public override ModifyVRouterAttributeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyVRouterAttributeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ModifyVRouterAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

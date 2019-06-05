@@ -16,53 +16,37 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
     public class ModifyHaVipAttributeRequest : RpcAcsRequest<ModifyHaVipAttributeResponse>
     {
         public ModifyHaVipAttributeRequest()
-            : base("Vpc", "2016-04-28", "ModifyHaVipAttribute", "vpc", "openAPI")
+            : base("Vpc", "2016-04-28", "ModifyHaVipAttribute")
         {
         }
 
-		private string haVipId;
-
 		private long? resourceOwnerId;
-
-		private string resourceOwnerAccount;
 
 		private string clientToken;
 
-		private string regionId;
+		private string description;
+
+		private string haVipId;
+
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string action;
-
-		private string description;
-
 		private long? ownerId;
-
-		public string HaVipId
-		{
-			get
-			{
-				return haVipId;
-			}
-			set	
-			{
-				haVipId = value;
-				DictionaryUtil.Add(QueryParameters, "HaVipId", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -74,19 +58,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -103,16 +74,42 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string RegionId
+		public string Description
 		{
 			get
 			{
-				return regionId;
+				return description;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string HaVipId
+		{
+			get
+			{
+				return haVipId;
+			}
+			set	
+			{
+				haVipId = value;
+				DictionaryUtil.Add(QueryParameters, "HaVipId", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -129,32 +126,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -168,7 +139,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-        public override ModifyHaVipAttributeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyHaVipAttributeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ModifyHaVipAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

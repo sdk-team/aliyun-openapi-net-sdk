@@ -16,44 +16,41 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
     public class CreateSnatEntryRequest : RpcAcsRequest<CreateSnatEntryResponse>
     {
         public CreateSnatEntryRequest()
-            : base("Vpc", "2016-04-28", "CreateSnatEntry", "vpc", "openAPI")
+            : base("Vpc", "2016-04-28", "CreateSnatEntry")
         {
         }
 
 		private long? resourceOwnerId;
 
+		private string sourceCIDR;
+
+		private string snatIp;
+
 		private string sourceVSwitchId;
 
 		private string resourceOwnerAccount;
 
-		private string regionId;
-
 		private string ownerAccount;
-
-		private string snatEntryName;
-
-		private string sourceCIDR;
-
-		private string action;
 
 		private string snatTableId;
 
 		private long? ownerId;
 
-		private string snatIp;
+		private string snatEntryName;
 
 		public long? ResourceOwnerId
 		{
@@ -65,6 +62,32 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string SourceCIDR
+		{
+			get
+			{
+				return sourceCIDR;
+			}
+			set	
+			{
+				sourceCIDR = value;
+				DictionaryUtil.Add(QueryParameters, "SourceCIDR", value);
+			}
+		}
+
+		public string SnatIp
+		{
+			get
+			{
+				return snatIp;
+			}
+			set	
+			{
+				snatIp = value;
+				DictionaryUtil.Add(QueryParameters, "SnatIp", value);
 			}
 		}
 
@@ -94,19 +117,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -117,45 +127,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string SnatEntryName
-		{
-			get
-			{
-				return snatEntryName;
-			}
-			set	
-			{
-				snatEntryName = value;
-				DictionaryUtil.Add(QueryParameters, "SnatEntryName", value);
-			}
-		}
-
-		public string SourceCIDR
-		{
-			get
-			{
-				return sourceCIDR;
-			}
-			set	
-			{
-				sourceCIDR = value;
-				DictionaryUtil.Add(QueryParameters, "SourceCIDR", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -185,20 +156,20 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string SnatIp
+		public string SnatEntryName
 		{
 			get
 			{
-				return snatIp;
+				return snatEntryName;
 			}
 			set	
 			{
-				snatIp = value;
-				DictionaryUtil.Add(QueryParameters, "SnatIp", value);
+				snatEntryName = value;
+				DictionaryUtil.Add(QueryParameters, "SnatEntryName", value);
 			}
 		}
 
-        public override CreateSnatEntryResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CreateSnatEntryResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CreateSnatEntryResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

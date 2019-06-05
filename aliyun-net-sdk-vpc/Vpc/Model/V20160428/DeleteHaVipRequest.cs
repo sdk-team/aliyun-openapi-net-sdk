@@ -16,51 +16,35 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
     public class DeleteHaVipRequest : RpcAcsRequest<DeleteHaVipResponse>
     {
         public DeleteHaVipRequest()
-            : base("Vpc", "2016-04-28", "DeleteHaVip", "vpc", "openAPI")
+            : base("Vpc", "2016-04-28", "DeleteHaVip")
         {
         }
 
-		private string haVipId;
-
 		private long? resourceOwnerId;
-
-		private string resourceOwnerAccount;
 
 		private string clientToken;
 
-		private string regionId;
+		private string haVipId;
+
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string action;
-
 		private long? ownerId;
-
-		public string HaVipId
-		{
-			get
-			{
-				return haVipId;
-			}
-			set	
-			{
-				haVipId = value;
-				DictionaryUtil.Add(QueryParameters, "HaVipId", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -72,19 +56,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -101,16 +72,29 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string RegionId
+		public string HaVipId
 		{
 			get
 			{
-				return regionId;
+				return haVipId;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+				haVipId = value;
+				DictionaryUtil.Add(QueryParameters, "HaVipId", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -127,19 +111,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -153,7 +124,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-        public override DeleteHaVipResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteHaVipResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DeleteHaVipResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

@@ -16,30 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
     public class AllocateIpv6InternetBandwidthRequest : RpcAcsRequest<AllocateIpv6InternetBandwidthResponse>
     {
         public AllocateIpv6InternetBandwidthRequest()
-            : base("Vpc", "2016-04-28", "AllocateIpv6InternetBandwidth", "vpc", "openAPI")
+            : base("Vpc", "2016-04-28", "AllocateIpv6InternetBandwidth")
         {
         }
 
 		private long? resourceOwnerId;
 
 		private string clientToken;
-
-		private string regionId;
-
-		private string action;
 
 		private int? bandwidth;
 
@@ -78,32 +75,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -198,7 +169,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-        public override AllocateIpv6InternetBandwidthResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override AllocateIpv6InternetBandwidthResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return AllocateIpv6InternetBandwidthResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

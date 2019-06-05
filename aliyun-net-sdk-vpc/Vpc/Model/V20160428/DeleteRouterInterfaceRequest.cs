@@ -16,34 +16,31 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
     public class DeleteRouterInterfaceRequest : RpcAcsRequest<DeleteRouterInterfaceResponse>
     {
         public DeleteRouterInterfaceRequest()
-            : base("Vpc", "2016-04-28", "DeleteRouterInterface", "vpc", "openAPI")
+            : base("Vpc", "2016-04-28", "DeleteRouterInterface")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string regionId;
+		private string clientToken;
 
 		private string resourceOwnerAccount;
 
-		private string clientToken;
-
 		private string ownerAccount;
-
-		private string action;
 
 		private string routerInterfaceId;
 
@@ -62,16 +59,16 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string RegionId
+		public string ClientToken
 		{
 			get
 			{
-				return regionId;
+				return clientToken;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -88,19 +85,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -111,19 +95,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -153,7 +124,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-        public override DeleteRouterInterfaceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteRouterInterfaceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DeleteRouterInterfaceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

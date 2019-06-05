@@ -16,65 +16,33 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
     public class DescribeAccessPointsRequest : RpcAcsRequest<DescribeAccessPointsResponse>
     {
         public DescribeAccessPointsRequest()
-            : base("Vpc", "2016-04-28", "DescribeAccessPoints", "vpc", "openAPI")
+            : base("Vpc", "2016-04-28", "DescribeAccessPoints")
         {
         }
 
-		private List<Filter> filters;
-
 		private long? resourceOwnerId;
-
-		private string hostOperator;
-
-		private string resourceOwnerAccount;
-
-		private string regionId;
-
-		private string name;
-
-		private int? pageSize;
-
-		private string action;
-
-		private long? ownerId;
-
-		private string type;
 
 		private int? pageNumber;
 
-		public List<Filter> Filters
-		{
-			get
-			{
-				return filters;
-			}
+		private int? pageSize;
 
-			set
-			{
-				filters = value;
-				for (int i = 0; i < filters.Count; i++)
-				{
-					for (int j = 0; j < filters[i].Values.Count; j++)
-					{
-						DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Value." +(j + 1), filters[i].Values[j]);
-					}
-					DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Key", filters[i].Key);
-				}
-			}
-		}
+		private string resourceOwnerAccount;
+
+		private long? ownerId;
 
 		public long? ResourceOwnerId
 		{
@@ -86,110 +54,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string HostOperator
-		{
-			get
-			{
-				return hostOperator;
-			}
-			set	
-			{
-				hostOperator = value;
-				DictionaryUtil.Add(QueryParameters, "HostOperator", value);
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
 			}
 		}
 
@@ -206,39 +70,46 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public class Filter
+		public int? PageSize
 		{
-
-			private List<string> values;
-
-			private string key;
-
-			public List<string> Values
+			get
 			{
-				get
-				{
-					return values;
-				}
-				set	
-				{
-					values = value;
-				}
+				return pageSize;
 			}
-
-			public string Key
+			set	
 			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
-        public override DescribeAccessPointsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+        public override DescribeAccessPointsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeAccessPointsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

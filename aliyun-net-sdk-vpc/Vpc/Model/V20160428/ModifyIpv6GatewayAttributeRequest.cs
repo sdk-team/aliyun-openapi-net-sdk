@@ -16,30 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
     public class ModifyIpv6GatewayAttributeRequest : RpcAcsRequest<ModifyIpv6GatewayAttributeResponse>
     {
         public ModifyIpv6GatewayAttributeRequest()
-            : base("Vpc", "2016-04-28", "ModifyIpv6GatewayAttribute", "vpc", "openAPI")
+            : base("Vpc", "2016-04-28", "ModifyIpv6GatewayAttribute")
         {
         }
 
 		private long? resourceOwnerId;
 
 		private string description;
-
-		private string regionId;
-
-		private string action;
 
 		private string resourceOwnerAccount;
 
@@ -74,32 +71,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -168,7 +139,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-        public override ModifyIpv6GatewayAttributeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyIpv6GatewayAttributeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ModifyIpv6GatewayAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

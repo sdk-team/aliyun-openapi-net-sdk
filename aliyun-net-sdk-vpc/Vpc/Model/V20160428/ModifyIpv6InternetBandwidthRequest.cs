@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
     public class ModifyIpv6InternetBandwidthRequest : RpcAcsRequest<ModifyIpv6InternetBandwidthResponse>
     {
         public ModifyIpv6InternetBandwidthRequest()
-            : base("Vpc", "2016-04-28", "ModifyIpv6InternetBandwidth", "vpc", "openAPI")
+            : base("Vpc", "2016-04-28", "ModifyIpv6InternetBandwidth")
         {
         }
 
@@ -38,10 +39,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private string clientToken;
 
 		private string ipv6InternetBandwidthId;
-
-		private string regionId;
-
-		private string action;
 
 		private long? bandwidth;
 
@@ -89,32 +86,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ipv6InternetBandwidthId = value;
 				DictionaryUtil.Add(QueryParameters, "Ipv6InternetBandwidthId", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -183,7 +154,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-        public override ModifyIpv6InternetBandwidthResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyIpv6InternetBandwidthResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ModifyIpv6InternetBandwidthResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

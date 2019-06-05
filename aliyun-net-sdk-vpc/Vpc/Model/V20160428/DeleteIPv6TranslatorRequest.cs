@@ -16,38 +16,35 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
     public class DeleteIPv6TranslatorRequest : RpcAcsRequest<DeleteIPv6TranslatorResponse>
     {
         public DeleteIPv6TranslatorRequest()
-            : base("Vpc", "2016-04-28", "DeleteIPv6Translator", "vpc", "openAPI")
+            : base("Vpc", "2016-04-28", "DeleteIPv6Translator")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
 		private string clientToken;
 
-		private string regionId;
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string action;
+		private long? ownerId;
 
 		private string ipv6TranslatorId;
-
-		private long? ownerId;
 
 		public long? ResourceOwnerId
 		{
@@ -59,19 +56,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -88,16 +72,16 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string RegionId
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return regionId;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -114,16 +98,16 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string Action
+		public long? OwnerId
 		{
 			get
 			{
-				return action;
+				return ownerId;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -140,20 +124,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-        public override DeleteIPv6TranslatorResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteIPv6TranslatorResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DeleteIPv6TranslatorResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

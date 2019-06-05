@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
     public class RemoveCommonBandwidthPackageIpRequest : RpcAcsRequest<RemoveCommonBandwidthPackageIpResponse>
     {
         public RemoveCommonBandwidthPackageIpRequest()
-            : base("Vpc", "2016-04-28", "RemoveCommonBandwidthPackageIp", "vpc", "openAPI")
+            : base("Vpc", "2016-04-28", "RemoveCommonBandwidthPackageIp")
         {
         }
 
@@ -39,15 +40,11 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string resourceOwnerAccount;
 
-		private string regionId;
-
 		private string ownerAccount;
 
-		private string action;
+		private long? ownerId;
 
 		private string ipInstanceId;
-
-		private long? ownerId;
 
 		public long? ResourceOwnerId
 		{
@@ -88,19 +85,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -111,32 +95,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string IpInstanceId
-		{
-			get
-			{
-				return ipInstanceId;
-			}
-			set	
-			{
-				ipInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IpInstanceId", value);
 			}
 		}
 
@@ -153,7 +111,20 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-        public override RemoveCommonBandwidthPackageIpResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string IpInstanceId
+		{
+			get
+			{
+				return ipInstanceId;
+			}
+			set	
+			{
+				ipInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IpInstanceId", value);
+			}
+		}
+
+        public override RemoveCommonBandwidthPackageIpResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return RemoveCommonBandwidthPackageIpResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

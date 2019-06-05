@@ -16,53 +16,37 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
     public class CreateNqaRequest : RpcAcsRequest<CreateNqaResponse>
     {
         public CreateNqaRequest()
-            : base("Vpc", "2016-04-28", "CreateNqa", "vpc", "openAPI")
+            : base("Vpc", "2016-04-28", "CreateNqa")
         {
         }
 
-		private string destinationIp;
-
 		private long? resourceOwnerId;
-
-		private string resourceOwnerAccount;
-
-		private string regionId;
 
 		private string clientToken;
 
-		private string routerId;
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string action;
-
 		private long? ownerId;
 
-		public string DestinationIp
-		{
-			get
-			{
-				return destinationIp;
-			}
-			set	
-			{
-				destinationIp = value;
-				DictionaryUtil.Add(QueryParameters, "DestinationIp", value);
-			}
-		}
+		private string destinationIp;
+
+		private string routerId;
 
 		public long? ResourceOwnerId
 		{
@@ -74,32 +58,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -116,16 +74,16 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string RouterId
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return routerId;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				routerId = value;
-				DictionaryUtil.Add(QueryParameters, "RouterId", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -142,19 +100,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -168,7 +113,33 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-        public override CreateNqaResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string DestinationIp
+		{
+			get
+			{
+				return destinationIp;
+			}
+			set	
+			{
+				destinationIp = value;
+				DictionaryUtil.Add(QueryParameters, "DestinationIp", value);
+			}
+		}
+
+		public string RouterId
+		{
+			get
+			{
+				return routerId;
+			}
+			set	
+			{
+				routerId = value;
+				DictionaryUtil.Add(QueryParameters, "RouterId", value);
+			}
+		}
+
+        public override CreateNqaResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CreateNqaResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

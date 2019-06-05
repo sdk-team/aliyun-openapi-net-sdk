@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -137,6 +138,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string bandwidthPackageType;
 
+			private string bandwidthPackageBandwidth;
+
 			private string resourceGroupId;
 
 			private string hasReservationData;
@@ -150,6 +153,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			private string reservationOrderType;
 
 			private string mode;
+
+			private bool? secondLimited;
 
 			private List<DescribeEipAddresses_LockReason> operationLocks;
 
@@ -397,6 +402,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string BandwidthPackageBandwidth
+			{
+				get
+				{
+					return bandwidthPackageBandwidth;
+				}
+				set	
+				{
+					bandwidthPackageBandwidth = value;
+				}
+			}
+
 			public string ResourceGroupId
 			{
 				get
@@ -478,6 +495,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					mode = value;
+				}
+			}
+
+			public bool? SecondLimited
+			{
+				get
+				{
+					return secondLimited;
+				}
+				set	
+				{
+					secondLimited = value;
 				}
 			}
 

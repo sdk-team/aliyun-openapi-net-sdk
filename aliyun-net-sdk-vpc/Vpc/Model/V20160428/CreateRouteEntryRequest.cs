@@ -16,30 +16,35 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
     public class CreateRouteEntryRequest : RpcAcsRequest<CreateRouteEntryResponse>
     {
         public CreateRouteEntryRequest()
-            : base("Vpc", "2016-04-28", "CreateRouteEntry", "vpc", "openAPI")
+            : base("Vpc", "2016-04-28", "CreateRouteEntry")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string routeEntryName;
+		private string clientToken;
+
+		private string nextHopId;
+
+		private string nextHopType;
+
+		private string routeTableId;
 
 		private string resourceOwnerAccount;
-
-		private string clientToken;
 
 		private string destinationCidrBlock;
 
@@ -47,19 +52,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? ownerId;
 
-		private string privateIpAddress;
-
-		private string regionId;
-
-		private string action;
-
-		private string nextHopId;
-
-		private string nextHopType;
-
 		private List<NextHopList> nextHopLists;
-
-		private string routeTableId;
 
 		public long? ResourceOwnerId
 		{
@@ -74,16 +67,55 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string RouteEntryName
+		public string ClientToken
 		{
 			get
 			{
-				return routeEntryName;
+				return clientToken;
 			}
 			set	
 			{
-				routeEntryName = value;
-				DictionaryUtil.Add(QueryParameters, "RouteEntryName", value);
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string NextHopId
+		{
+			get
+			{
+				return nextHopId;
+			}
+			set	
+			{
+				nextHopId = value;
+				DictionaryUtil.Add(QueryParameters, "NextHopId", value);
+			}
+		}
+
+		public string NextHopType
+		{
+			get
+			{
+				return nextHopType;
+			}
+			set	
+			{
+				nextHopType = value;
+				DictionaryUtil.Add(QueryParameters, "NextHopType", value);
+			}
+		}
+
+		public string RouteTableId
+		{
+			get
+			{
+				return routeTableId;
+			}
+			set	
+			{
+				routeTableId = value;
+				DictionaryUtil.Add(QueryParameters, "RouteTableId", value);
 			}
 		}
 
@@ -97,19 +129,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -152,71 +171,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string PrivateIpAddress
-		{
-			get
-			{
-				return privateIpAddress;
-			}
-			set	
-			{
-				privateIpAddress = value;
-				DictionaryUtil.Add(QueryParameters, "PrivateIpAddress", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string NextHopId
-		{
-			get
-			{
-				return nextHopId;
-			}
-			set	
-			{
-				nextHopId = value;
-				DictionaryUtil.Add(QueryParameters, "NextHopId", value);
-			}
-		}
-
-		public string NextHopType
-		{
-			get
-			{
-				return nextHopType;
-			}
-			set	
-			{
-				nextHopType = value;
-				DictionaryUtil.Add(QueryParameters, "NextHopType", value);
-			}
-		}
-
 		public List<NextHopList> NextHopLists
 		{
 			get
@@ -233,19 +187,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					DictionaryUtil.Add(QueryParameters,"NextHopList." + (i + 1) + ".NextHopId", nextHopLists[i].NextHopId);
 					DictionaryUtil.Add(QueryParameters,"NextHopList." + (i + 1) + ".NextHopType", nextHopLists[i].NextHopType);
 				}
-			}
-		}
-
-		public string RouteTableId
-		{
-			get
-			{
-				return routeTableId;
-			}
-			set	
-			{
-				routeTableId = value;
-				DictionaryUtil.Add(QueryParameters, "RouteTableId", value);
 			}
 		}
 
@@ -295,7 +236,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-        public override CreateRouteEntryResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CreateRouteEntryResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CreateRouteEntryResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

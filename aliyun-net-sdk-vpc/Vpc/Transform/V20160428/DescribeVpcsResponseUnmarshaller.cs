@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Vpc.Model.V20160428;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Vpc.Model.V20160428;
 
 namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
@@ -48,7 +49,9 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				vpc.VRouterId = context.StringValue("DescribeVpcs.Vpcs["+ i +"].VRouterId");
 				vpc.Description = context.StringValue("DescribeVpcs.Vpcs["+ i +"].Description");
 				vpc.IsDefault = context.BooleanValue("DescribeVpcs.Vpcs["+ i +"].IsDefault");
+				vpc.NetworkAclNum = context.StringValue("DescribeVpcs.Vpcs["+ i +"].NetworkAclNum");
 				vpc.ResourceGroupId = context.StringValue("DescribeVpcs.Vpcs["+ i +"].ResourceGroupId");
+				vpc.CenStatus = context.StringValue("DescribeVpcs.Vpcs["+ i +"].CenStatus");
 
 				List<string> vpc_vSwitchIds = new List<string>();
 				for (int j = 0; j < context.Length("DescribeVpcs.Vpcs["+ i +"].VSwitchIds.Length"); j++) {
