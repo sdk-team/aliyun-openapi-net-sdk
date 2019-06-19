@@ -1,3 +1,5 @@
+2019-06-19 Version 1.0.0
+- Test for the new feature.
 2019-03-15 Version: 3.0.1
 1,  Update Dependency
 
