@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9b42fdb8-e230-4062-9ebf-5f705fdf74b0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-aas</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Aas\Model\V20150701\GetAccountKinShipInfoByPKRequest.cs" />
+	<Compile Include="Aas\Model\V20150701\GetSessionInfoByTicketResponse.cs" />
+	<Compile Include="Aas\Model\V20150701\GenerateAccountLoginTokenResponse.cs" />
+	<Compile Include="Aas\Model\V20150701\GetBasicAccountInfoByHavanaIdRequest.cs" />
+	<Compile Include="Aas\Model\V20150701\VerifyAccountLoginTokenResponse.cs" />
+	<Compile Include="Aas\Model\V20150701\DeleteAccessKeyForAccountRequest.cs" />
+	<Compile Include="Aas\Model\V20150701\GetAliyunAccountWithBindTaobaoHidRequest.cs" />
+	<Compile Include="Aas\Model\V20150701\GetBasicAccountInfoByHavanaIdResponse.cs" />
+	<Compile Include="Aas\Model\V20150701\CreateAliyunAccountResponse.cs" />
+	<Compile Include="Aas\Model\V20150701\GetSessionInfoByMiniTicketResponse.cs" />
+	<Compile Include="Aas\Model\V20150701\ListAliyunAccountResponse.cs" />
+	<Compile Include="Aas\Model\V20150701\ListAccessKeysForAccountRequest.cs" />
+	<Compile Include="Aas\Model\V20150701\GetAliyunAccountWithBindTaobaoHidResponse.cs" />
+	<Compile Include="Aas\Model\V20150701\GenerateAccountLoginTokenRequest.cs" />
+	<Compile Include="Aas\Model\V20150701\UpdateAccessKeyStatusForAccountRequest.cs" />
+	<Compile Include="Aas\Model\V20150701\CreateIntlAliyunAccountResponse.cs" />
+	<Compile Include="Aas\Model\V20150701\CreateAccessKeyForAccountResponse.cs" />
+	<Compile Include="Aas\Model\V20150701\VerifyAccountLoginTokenRequest.cs" />
+	<Compile Include="Aas\Model\V20150701\GetShortTermAccessKeyForAccountRequest.cs" />
+	<Compile Include="Aas\Model\V20150701\GetSessionInfoByTicketRequest.cs" />
+	<Compile Include="Aas\Model\V20150701\CreateIntlAliyunAccountRequest.cs" />
+	<Compile Include="Aas\Model\V20150701\CreateAliyunAccountWithBindHidRequest.cs" />
+	<Compile Include="Aas\Model\V20150701\UpdateAccessKeyStatusForAccountResponse.cs" />
+	<Compile Include="Aas\Model\V20150701\ListAccessKeysForAccountResponse.cs" />
+	<Compile Include="Aas\Model\V20150701\GetAliyunAccountWithBindHidResponse.cs" />
+	<Compile Include="Aas\Model\V20150701\UpdateStatusForAccountResponse.cs" />
+	<Compile Include="Aas\Model\V20150701\CreateAliyunAccountWithBindHidResponse.cs" />
+	<Compile Include="Aas\Model\V20150701\GetSessionInfoByMiniTicketRequest.cs" />
+	<Compile Include="Aas\Model\V20150701\GetBasicAccountInfoByPkResponse.cs" />
+	<Compile Include="Aas\Model\V20150701\UpdateStatusForAccountRequest.cs" />
+	<Compile Include="Aas\Model\V20150701\GetBasicInfoForAccountResponse.cs" />
+	<Compile Include="Aas\Model\V20150701\CreateAliyunAccountRequest.cs" />
+	<Compile Include="Aas\Model\V20150701\ListAliyunAccountRequest.cs" />
+	<Compile Include="Aas\Model\V20150701\DeleteAccessKeyForAccountResponse.cs" />
+	<Compile Include="Aas\Model\V20150701\UpdatePasswordForAccountRequest.cs" />
+	<Compile Include="Aas\Model\V20150701\GetAccountKinShipInfoByPKResponse.cs" />
+	<Compile Include="Aas\Model\V20150701\GetBasicInfoForAccountRequest.cs" />
+	<Compile Include="Aas\Model\V20150701\CreateAccessKeyForAccountRequest.cs" />
+	<Compile Include="Aas\Model\V20150701\CreateShortTermAccessKeyForAccountResponse.cs" />
+	<Compile Include="Aas\Model\V20150701\GetAliyunAccountWithBindHidRequest.cs" />
+	<Compile Include="Aas\Model\V20150701\GetShortTermAccessKeyForAccountResponse.cs" />
+	<Compile Include="Aas\Model\V20150701\CreateShortTermAccessKeyForAccountRequest.cs" />
+	<Compile Include="Aas\Model\V20150701\GetBasicAccountInfoByPkRequest.cs" />
+	<Compile Include="Aas\Model\V20150701\UpdatePasswordForAccountResponse.cs" />
+	<Compile Include="Aas\Transform\V20150701\GetBasicInfoForAccountResponseUnmarshaller.cs" />
+	<Compile Include="Aas\Transform\V20150701\GetBasicAccountInfoByPkResponseUnmarshaller.cs" />
+	<Compile Include="Aas\Transform\V20150701\CreateAliyunAccountWithBindHidResponseUnmarshaller.cs" />
+	<Compile Include="Aas\Transform\V20150701\CreateAliyunAccountResponseUnmarshaller.cs" />
+	<Compile Include="Aas\Transform\V20150701\VerifyAccountLoginTokenResponseUnmarshaller.cs" />
+	<Compile Include="Aas\Transform\V20150701\UpdateAccessKeyStatusForAccountResponseUnmarshaller.cs" />
+	<Compile Include="Aas\Transform\V20150701\UpdatePasswordForAccountResponseUnmarshaller.cs" />
+	<Compile Include="Aas\Transform\V20150701\GetAliyunAccountWithBindTaobaoHidResponseUnmarshaller.cs" />
+	<Compile Include="Aas\Transform\V20150701\GetBasicAccountInfoByHavanaIdResponseUnmarshaller.cs" />
+	<Compile Include="Aas\Transform\V20150701\CreateAccessKeyForAccountResponseUnmarshaller.cs" />
+	<Compile Include="Aas\Transform\V20150701\CreateIntlAliyunAccountResponseUnmarshaller.cs" />
+	<Compile Include="Aas\Transform\V20150701\UpdateStatusForAccountResponseUnmarshaller.cs" />
+	<Compile Include="Aas\Transform\V20150701\ListAccessKeysForAccountResponseUnmarshaller.cs" />
+	<Compile Include="Aas\Transform\V20150701\ListAliyunAccountResponseUnmarshaller.cs" />
+	<Compile Include="Aas\Transform\V20150701\GetAccountKinShipInfoByPKResponseUnmarshaller.cs" />
+	<Compile Include="Aas\Transform\V20150701\GetAliyunAccountWithBindHidResponseUnmarshaller.cs" />
+	<Compile Include="Aas\Transform\V20150701\GetSessionInfoByTicketResponseUnmarshaller.cs" />
+	<Compile Include="Aas\Transform\V20150701\GenerateAccountLoginTokenResponseUnmarshaller.cs" />
+	<Compile Include="Aas\Transform\V20150701\DeleteAccessKeyForAccountResponseUnmarshaller.cs" />
+	<Compile Include="Aas\Transform\V20150701\GetSessionInfoByMiniTicketResponseUnmarshaller.cs" />
+	<Compile Include="Aas\Transform\V20150701\GetShortTermAccessKeyForAccountResponseUnmarshaller.cs" />
+	<Compile Include="Aas\Transform\V20150701\CreateShortTermAccessKeyForAccountResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
