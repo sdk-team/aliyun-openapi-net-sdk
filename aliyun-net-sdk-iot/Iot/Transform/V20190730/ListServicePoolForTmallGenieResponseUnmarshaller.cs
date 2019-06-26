@@ -80,6 +80,16 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 				}
 				service.OutputParams = service_outputParams;
 
+				List<ListServicePoolForTmallGenieResponse.ListServicePoolForTmallGenie_Service.ListServicePoolForTmallGenie_Tag> service_tags = new List<ListServicePoolForTmallGenieResponse.ListServicePoolForTmallGenie_Service.ListServicePoolForTmallGenie_Tag>();
+				for (int j = 0; j < context.Length("ListServicePoolForTmallGenie.Services["+ i +"].Tags.Length"); j++) {
+					ListServicePoolForTmallGenieResponse.ListServicePoolForTmallGenie_Service.ListServicePoolForTmallGenie_Tag tag = new ListServicePoolForTmallGenieResponse.ListServicePoolForTmallGenie_Service.ListServicePoolForTmallGenie_Tag();
+					tag.TagKey = context.StringValue("ListServicePoolForTmallGenie.Services["+ i +"].Tags["+ j +"].TagKey");
+					tag.TagValue = context.StringValue("ListServicePoolForTmallGenie.Services["+ i +"].Tags["+ j +"].TagValue");
+
+					service_tags.Add(tag);
+				}
+				service.Tags = service_tags;
+
 				listServicePoolForTmallGenieResponse_services.Add(service);
 			}
 			listServicePoolForTmallGenieResponse.Services = listServicePoolForTmallGenieResponse_services;

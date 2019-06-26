@@ -154,6 +154,8 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 			private List<ListServicePoolForTmallGenie_Argument1> outputParams;
 
+			private List<ListServicePoolForTmallGenie_Tag> tags;
+
 			public long? TmallFunctionId
 			{
 				get
@@ -235,6 +237,18 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 				set	
 				{
 					outputParams = value;
+				}
+			}
+
+			public List<ListServicePoolForTmallGenie_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
 				}
 			}
 
@@ -466,6 +480,38 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 					set	
 					{
 						dataSpecsList = value;
+					}
+				}
+			}
+
+			public class ListServicePoolForTmallGenie_Tag
+			{
+
+				private string tagKey;
+
+				private string tagValue;
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
+					}
+				}
+
+				public string TagValue
+				{
+					get
+					{
+						return tagValue;
+					}
+					set	
+					{
+						tagValue = value;
 					}
 				}
 			}

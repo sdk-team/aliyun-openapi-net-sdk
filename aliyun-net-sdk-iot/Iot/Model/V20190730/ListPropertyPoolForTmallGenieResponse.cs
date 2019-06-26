@@ -146,6 +146,10 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 			private string dataType;
 
+			private string identifier;
+
+			private string description;
+
 			private string rwType;
 
 			private string name;
@@ -189,6 +193,30 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 				set	
 				{
 					dataType = value;
+				}
+			}
+
+			public string Identifier
+			{
+				get
+				{
+					return identifier;
+				}
+				set	
+				{
+					identifier = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
 				}
 			}
 

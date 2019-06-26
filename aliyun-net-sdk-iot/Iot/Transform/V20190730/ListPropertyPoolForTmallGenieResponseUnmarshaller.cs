@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 				property.TmallFunctionId = context.LongValue("ListPropertyPoolForTmallGenie.Properties["+ i +"].TmallFunctionId");
 				property.ThingTemplateKey = context.StringValue("ListPropertyPoolForTmallGenie.Properties["+ i +"].ThingTemplateKey");
 				property.DataType = context.StringValue("ListPropertyPoolForTmallGenie.Properties["+ i +"].DataType");
+				property.Identifier = context.StringValue("ListPropertyPoolForTmallGenie.Properties["+ i +"].Identifier");
+				property.Description = context.StringValue("ListPropertyPoolForTmallGenie.Properties["+ i +"].Description");
 				property.RwType = context.StringValue("ListPropertyPoolForTmallGenie.Properties["+ i +"].RwType");
 				property.Name = context.StringValue("ListPropertyPoolForTmallGenie.Properties["+ i +"].Name");
 				property.DataSpecs = context.StringValue("ListPropertyPoolForTmallGenie.Properties["+ i +"].DataSpecs");

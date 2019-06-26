@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{14196880-2cbb-48c9-960c-232fd1b5b1c4}</ProjectGuid>
+    <ProjectGuid>{2c27b5a7-e78c-45b0-9b1b-bbd0152e7581}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -57,6 +57,7 @@
 	<Compile Include="Iot\Model\V20190730\UpdateProductUsedWirelessModuleForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\UpdateProductForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\AddThingTemplateForTmallGenieRequest.cs" />
+	<Compile Include="Iot\Model\V20190730\GetPoolFunctionsByIdListForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\QueryStandardUnitResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\DeleteThingTemplateForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\RemoveThingTemplateFunctionForTmallGenieRequest.cs" />
@@ -92,6 +93,7 @@
 	<Compile Include="Iot\Model\V20190730\AddThingTemplateServiceForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\QueryStandardUnitRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\QueryProductApplyListRequest.cs" />
+	<Compile Include="Iot\Model\V20190730\GetPoolFunctionsByIdListForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\AddThingTemplateEventForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\GetProductFunctionForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\CreateProductForTmallGenieRequest.cs" />
@@ -121,6 +123,7 @@
 	<Compile Include="Iot\Transform\V20190730\ListThingTemplateForTmallGenieResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\AddThingTemplateForTmallGenieResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\QueryProductProjectForTmallGenieResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20190730\GetPoolFunctionsByIdListForTmallGenieResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\QueryProductApplyListResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\SearchProductForTmallGenieResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\CreateTestDeviceForTmallGenieResponseUnmarshaller.cs" />
