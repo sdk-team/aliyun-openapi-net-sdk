@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{5da74633-e902-42a0-9365-a2031b59c80e}</ProjectGuid>
+    <ProjectGuid>{cf0f11e2-0555-4793-aa45-6535ab01f6ed}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -42,7 +42,6 @@
   <ItemGroup>
 	<Compile Include="Iot\Model\V20190730\UpdateThingTemplatePropertyForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\UpdateThingTemplateForTmallGenieRequest.cs" />
-	<Compile Include="Iot\Model\V20190730\GetThingTemplateFunctionForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\ToggleVirtualDeviceSwitchRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\CreateTestDeviceForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\UpdateProductUsedWirelessModuleForTmallGenieResponse.cs" />
@@ -74,7 +73,6 @@
 	<Compile Include="Iot\Model\V20190730\UpdateProductEventIdentifierForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\UpdateProductForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\QueryProductInfoForTmallGenieRequest.cs" />
-	<Compile Include="Iot\Model\V20190730\ListPropertyPoolForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\QueryProductProjectForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\GetProductFunctionForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\DeleteThingTemplateForTmallGenieRequest.cs" />
@@ -87,20 +85,17 @@
 	<Compile Include="Iot\Model\V20190730\AddThingTemplateEventForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\ListThingTemplateFuncsForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\CreateProductForTmallGenieResponse.cs" />
-	<Compile Include="Iot\Model\V20190730\GetThingTemplateFunctionForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\UpdateProductServiceIdentifierForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\UpdateThingTemplateEventForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\AddThingTemplateServiceForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\QueryStandardUnitRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\QueryProductApplyListRequest.cs" />
-	<Compile Include="Iot\Model\V20190730\GetPoolFunctionsByIdListForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\AddThingTemplateEventForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\GetProductFunctionForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\CreateProductForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\AddThingTemplateServiceForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\AddThingTemplatePropertyForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\CreateTestDeviceForTmallGenieResponse.cs" />
-	<Compile Include="Iot\Model\V20190730\ListPropertyPoolForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\ListServicePoolForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\ListEventPoolForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\RemoveProductIdentifierForTmallGenieResponse.cs" />
