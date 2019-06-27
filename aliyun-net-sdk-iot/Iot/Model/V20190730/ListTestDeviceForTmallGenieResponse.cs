@@ -33,6 +33,12 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private string errorMessage;
 
+		private int? pageNo;
+
+		private int? total;
+
+		private int? pageSize;
+
 		private List<ListTestDeviceForTmallGenie_DeviceInfo> data;
 
 		public string RequestId
@@ -80,6 +86,42 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			set	
 			{
 				errorMessage = value;
+			}
+		}
+
+		public int? PageNo
+		{
+			get
+			{
+				return pageNo;
+			}
+			set	
+			{
+				pageNo = value;
+			}
+		}
+
+		public int? Total
+		{
+			get
+			{
+				return total;
+			}
+			set	
+			{
+				total = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
 			}
 		}
 

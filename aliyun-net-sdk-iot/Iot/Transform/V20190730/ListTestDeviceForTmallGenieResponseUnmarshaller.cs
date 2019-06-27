@@ -35,6 +35,9 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 			listTestDeviceForTmallGenieResponse.Success = context.BooleanValue("ListTestDeviceForTmallGenie.Success");
 			listTestDeviceForTmallGenieResponse.Code = context.StringValue("ListTestDeviceForTmallGenie.Code");
 			listTestDeviceForTmallGenieResponse.ErrorMessage = context.StringValue("ListTestDeviceForTmallGenie.ErrorMessage");
+			listTestDeviceForTmallGenieResponse.PageNo = context.IntegerValue("ListTestDeviceForTmallGenie.PageNo");
+			listTestDeviceForTmallGenieResponse.Total = context.IntegerValue("ListTestDeviceForTmallGenie.Total");
+			listTestDeviceForTmallGenieResponse.PageSize = context.IntegerValue("ListTestDeviceForTmallGenie.PageSize");
 
 			List<ListTestDeviceForTmallGenieResponse.ListTestDeviceForTmallGenie_DeviceInfo> listTestDeviceForTmallGenieResponse_data = new List<ListTestDeviceForTmallGenieResponse.ListTestDeviceForTmallGenie_DeviceInfo>();
 			for (int i = 0; i < context.Length("ListTestDeviceForTmallGenie.Data.Length"); i++) {

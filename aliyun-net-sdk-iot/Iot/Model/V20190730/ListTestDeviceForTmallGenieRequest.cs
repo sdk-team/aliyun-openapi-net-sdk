@@ -34,11 +34,28 @@ namespace Aliyun.Acs.Iot.Model.V20190730
         {
         }
 
+		private long? pageNo;
+
 		private string iotInstanceId;
+
+		private long? pageSize;
 
 		private string thingType;
 
 		private string productKey;
+
+		public long? PageNo
+		{
+			get
+			{
+				return pageNo;
+			}
+			set	
+			{
+				pageNo = value;
+				DictionaryUtil.Add(QueryParameters, "PageNo", value.ToString());
+			}
+		}
 
 		public string IotInstanceId
 		{
@@ -50,6 +67,19 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
+
+		public long? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
