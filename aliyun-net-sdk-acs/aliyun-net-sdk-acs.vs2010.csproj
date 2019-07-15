@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1e36693c-4bbb-448c-bac2-005159f90792}</ProjectGuid>
+    <ProjectGuid>{c66c7f0e-ee64-470d-af28-8ad153425cdc}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,29 +40,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-	<Compile Include="Acs\Model\V20150101\StopPurchasedApiRequest.cs" />
-	<Compile Include="Acs\Model\V20150101\ResumePurchasedApiRequest.cs" />
-	<Compile Include="Acs\Model\V20150101\ModifyApiNameInDailyRequest.cs" />
-	<Compile Include="Acs\Model\V20150101\ModifyApiNameResponse.cs" />
-	<Compile Include="Acs\Model\V20150101\PutFlowControlRequest.cs" />
-	<Compile Include="Acs\Model\V20150101\ModifyApiNameRequest.cs" />
-	<Compile Include="Acs\Model\V20150101\StopPurchasedApiResponse.cs" />
 	<Compile Include="Acs\Model\V20150101\DeleteApiInDailyRequest.cs" />
 	<Compile Include="Acs\Model\V20150101\PurchaseApiResponse.cs" />
-	<Compile Include="Acs\Model\V20150101\ResumePurchasedApiResponse.cs" />
+	<Compile Include="Acs\Model\V20150101\StopPurchasedApiRequest.cs" />
+	<Compile Include="Acs\Model\V20150101\PutFlowControlRequest.cs" />
 	<Compile Include="Acs\Model\V20150101\ModifyApiNameInDailyResponse.cs" />
-	<Compile Include="Acs\Model\V20150101\DeleteApiInDailyResponse.cs" />
-	<Compile Include="Acs\Model\V20150101\DeleteApiOnlineResponse.cs" />
 	<Compile Include="Acs\Model\V20150101\PurchaseApiRequest.cs" />
-	<Compile Include="Acs\Model\V20150101\PutFlowControlResponse.cs" />
+	<Compile Include="Acs\Model\V20150101\StopPurchasedApiResponse.cs" />
+	<Compile Include="Acs\Model\V20150101\ModifyApiNameInDailyRequest.cs" />
+	<Compile Include="Acs\Model\V20150101\ResumePurchasedApiResponse.cs" />
 	<Compile Include="Acs\Model\V20150101\DeleteApiOnlineRequest.cs" />
+	<Compile Include="Acs\Model\V20150101\PutFlowControlResponse.cs" />
+	<Compile Include="Acs\Model\V20150101\ModifyApiNameResponse.cs" />
+	<Compile Include="Acs\Model\V20150101\ResumePurchasedApiRequest.cs" />
+	<Compile Include="Acs\Model\V20150101\DeleteApiInDailyResponse.cs" />
+	<Compile Include="Acs\Model\V20150101\ModifyApiNameRequest.cs" />
+	<Compile Include="Acs\Model\V20150101\DeleteApiOnlineResponse.cs" />
 	<Compile Include="Acs\Transform\V20150101\StopPurchasedApiResponseUnmarshaller.cs" />
+	<Compile Include="Acs\Transform\V20150101\ModifyApiNameInDailyResponseUnmarshaller.cs" />
+	<Compile Include="Acs\Transform\V20150101\PutFlowControlResponseUnmarshaller.cs" />
+	<Compile Include="Acs\Transform\V20150101\DeleteApiInDailyResponseUnmarshaller.cs" />
 	<Compile Include="Acs\Transform\V20150101\ModifyApiNameResponseUnmarshaller.cs" />
 	<Compile Include="Acs\Transform\V20150101\ResumePurchasedApiResponseUnmarshaller.cs" />
-	<Compile Include="Acs\Transform\V20150101\PutFlowControlResponseUnmarshaller.cs" />
 	<Compile Include="Acs\Transform\V20150101\PurchaseApiResponseUnmarshaller.cs" />
-	<Compile Include="Acs\Transform\V20150101\ModifyApiNameInDailyResponseUnmarshaller.cs" />
-	<Compile Include="Acs\Transform\V20150101\DeleteApiInDailyResponseUnmarshaller.cs" />
 	<Compile Include="Acs\Transform\V20150101\DeleteApiOnlineResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
