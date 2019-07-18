@@ -17,7 +17,6 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -31,26 +30,30 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class RemoveProductIdentifierForTmallGenieRequest : RpcAcsRequest<RemoveProductIdentifierForTmallGenieResponse>
     {
         public RemoveProductIdentifierForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "RemoveProductIdentifierForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "RemoveProductIdentifierForTmallGenie", "Iot", "openAPI")
         {
         }
 
-		private List<object> identifier;
+		private List<string> identifiers;
 
 		private string iotInstanceId;
 
 		private string productKey;
 
-		public List<object> Identifier
+		public List<string> Identifiers
 		{
 			get
 			{
-				return identifier;
+				return identifiers;
 			}
-			set	
+
+			set
 			{
-				identifier = value;
-				DictionaryUtil.Add(QueryParameters, "Identifier", JsonConvert.SerializeObject(value));
+				identifiers = value;
+				for (int i = 0; i < identifiers.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Identifier." + (i + 1) , identifiers[i]);
+				}
 			}
 		}
 

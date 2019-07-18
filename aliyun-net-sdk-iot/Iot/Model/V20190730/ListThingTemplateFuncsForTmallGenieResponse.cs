@@ -33,7 +33,11 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private string errorMessage;
 
-		private ListThingTemplateFuncsForTmallGenie_Data data;
+		private List<ListThingTemplateFuncsForTmallGenie_PropertyInfo> propertyInfos;
+
+		private List<ListThingTemplateFuncsForTmallGenie_ServiceInfo> serviceInfos;
+
+		private List<ListThingTemplateFuncsForTmallGenie_EventInfo> eventInfos;
 
 		public string RequestId
 		{
@@ -83,103 +87,363 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public ListThingTemplateFuncsForTmallGenie_Data Data
+		public List<ListThingTemplateFuncsForTmallGenie_PropertyInfo> PropertyInfos
 		{
 			get
 			{
-				return data;
+				return propertyInfos;
 			}
 			set	
 			{
-				data = value;
+				propertyInfos = value;
 			}
 		}
 
-		public class ListThingTemplateFuncsForTmallGenie_Data
+		public List<ListThingTemplateFuncsForTmallGenie_ServiceInfo> ServiceInfos
+		{
+			get
+			{
+				return serviceInfos;
+			}
+			set	
+			{
+				serviceInfos = value;
+			}
+		}
+
+		public List<ListThingTemplateFuncsForTmallGenie_EventInfo> EventInfos
+		{
+			get
+			{
+				return eventInfos;
+			}
+			set	
+			{
+				eventInfos = value;
+			}
+		}
+
+		public class ListThingTemplateFuncsForTmallGenie_PropertyInfo
 		{
 
-			private List<ListThingTemplateFuncsForTmallGenie_PropertyInfo> propertyInfos;
+			private long? tmallFunctionId;
 
-			private List<ListThingTemplateFuncsForTmallGenie_ServiceInfo> serviceInfos;
+			private string thingTemplateKey;
 
-			private List<ListThingTemplateFuncsForTmallGenie_EventInfo> eventInfos;
+			private string identifier;
 
-			public List<ListThingTemplateFuncsForTmallGenie_PropertyInfo> PropertyInfos
+			private string dataType;
+
+			private string rwType;
+
+			private string name;
+
+			private string dataSpecs;
+
+			private string dataSpecsList;
+
+			private string description;
+
+			private List<ListThingTemplateFuncsForTmallGenie_Tag> tags;
+
+			public long? TmallFunctionId
 			{
 				get
 				{
-					return propertyInfos;
+					return tmallFunctionId;
 				}
 				set	
 				{
-					propertyInfos = value;
+					tmallFunctionId = value;
 				}
 			}
 
-			public List<ListThingTemplateFuncsForTmallGenie_ServiceInfo> ServiceInfos
+			public string ThingTemplateKey
 			{
 				get
 				{
-					return serviceInfos;
+					return thingTemplateKey;
 				}
 				set	
 				{
-					serviceInfos = value;
+					thingTemplateKey = value;
 				}
 			}
 
-			public List<ListThingTemplateFuncsForTmallGenie_EventInfo> EventInfos
+			public string Identifier
 			{
 				get
 				{
-					return eventInfos;
+					return identifier;
 				}
 				set	
 				{
-					eventInfos = value;
+					identifier = value;
 				}
 			}
 
-			public class ListThingTemplateFuncsForTmallGenie_PropertyInfo
+			public string DataType
+			{
+				get
+				{
+					return dataType;
+				}
+				set	
+				{
+					dataType = value;
+				}
+			}
+
+			public string RwType
+			{
+				get
+				{
+					return rwType;
+				}
+				set	
+				{
+					rwType = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string DataSpecs
+			{
+				get
+				{
+					return dataSpecs;
+				}
+				set	
+				{
+					dataSpecs = value;
+				}
+			}
+
+			public string DataSpecsList
+			{
+				get
+				{
+					return dataSpecsList;
+				}
+				set	
+				{
+					dataSpecsList = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public List<ListThingTemplateFuncsForTmallGenie_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public class ListThingTemplateFuncsForTmallGenie_Tag
 			{
 
-				private long? tmallFunctionId;
+				private string tagKey;
 
-				private string thingTemplateKey;
+				private string tagValue;
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
+					}
+				}
+
+				public string TagValue
+				{
+					get
+					{
+						return tagValue;
+					}
+					set	
+					{
+						tagValue = value;
+					}
+				}
+			}
+		}
+
+		public class ListThingTemplateFuncsForTmallGenie_ServiceInfo
+		{
+
+			private long? tmallFunctionId;
+
+			private string thingTemplateKey;
+
+			private string callType;
+
+			private string name;
+
+			private string identifier;
+
+			private string description;
+
+			private List<ListThingTemplateFuncsForTmallGenie_Argument> inputParams;
+
+			private List<ListThingTemplateFuncsForTmallGenie_Argument2> outputParams;
+
+			private List<ListThingTemplateFuncsForTmallGenie_Tag3> tags1;
+
+			public long? TmallFunctionId
+			{
+				get
+				{
+					return tmallFunctionId;
+				}
+				set	
+				{
+					tmallFunctionId = value;
+				}
+			}
+
+			public string ThingTemplateKey
+			{
+				get
+				{
+					return thingTemplateKey;
+				}
+				set	
+				{
+					thingTemplateKey = value;
+				}
+			}
+
+			public string CallType
+			{
+				get
+				{
+					return callType;
+				}
+				set	
+				{
+					callType = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string Identifier
+			{
+				get
+				{
+					return identifier;
+				}
+				set	
+				{
+					identifier = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public List<ListThingTemplateFuncsForTmallGenie_Argument> InputParams
+			{
+				get
+				{
+					return inputParams;
+				}
+				set	
+				{
+					inputParams = value;
+				}
+			}
+
+			public List<ListThingTemplateFuncsForTmallGenie_Argument2> OutputParams
+			{
+				get
+				{
+					return outputParams;
+				}
+				set	
+				{
+					outputParams = value;
+				}
+			}
+
+			public List<ListThingTemplateFuncsForTmallGenie_Tag3> Tags1
+			{
+				get
+				{
+					return tags1;
+				}
+				set	
+				{
+					tags1 = value;
+				}
+			}
+
+			public class ListThingTemplateFuncsForTmallGenie_Argument
+			{
 
 				private string dataType;
 
+				private string identifier;
+
 				private string name;
+
+				private int? paraOrder;
+
+				private string direction;
 
 				private string dataSpecs;
 
 				private string dataSpecsList;
-
-				private List<ListThingTemplateFuncsForTmallGenie_Tag> tags;
-
-				public long? TmallFunctionId
-				{
-					get
-					{
-						return tmallFunctionId;
-					}
-					set	
-					{
-						tmallFunctionId = value;
-					}
-				}
-
-				public string ThingTemplateKey
-				{
-					get
-					{
-						return thingTemplateKey;
-					}
-					set	
-					{
-						thingTemplateKey = value;
-					}
-				}
 
 				public string DataType
 				{
@@ -190,6 +454,144 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 					set	
 					{
 						dataType = value;
+					}
+				}
+
+				public string Identifier
+				{
+					get
+					{
+						return identifier;
+					}
+					set	
+					{
+						identifier = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public int? ParaOrder
+				{
+					get
+					{
+						return paraOrder;
+					}
+					set	
+					{
+						paraOrder = value;
+					}
+				}
+
+				public string Direction
+				{
+					get
+					{
+						return direction;
+					}
+					set	
+					{
+						direction = value;
+					}
+				}
+
+				public string DataSpecs
+				{
+					get
+					{
+						return dataSpecs;
+					}
+					set	
+					{
+						dataSpecs = value;
+					}
+				}
+
+				public string DataSpecsList
+				{
+					get
+					{
+						return dataSpecsList;
+					}
+					set	
+					{
+						dataSpecsList = value;
+					}
+				}
+			}
+
+			public class ListThingTemplateFuncsForTmallGenie_Argument2
+			{
+
+				private string dataType;
+
+				private string identifier;
+
+				private int? paraOrder;
+
+				private string direction;
+
+				private string name;
+
+				private string dataSpecs;
+
+				private string dataSpecsList;
+
+				public string DataType
+				{
+					get
+					{
+						return dataType;
+					}
+					set	
+					{
+						dataType = value;
+					}
+				}
+
+				public string Identifier
+				{
+					get
+					{
+						return identifier;
+					}
+					set	
+					{
+						identifier = value;
+					}
+				}
+
+				public int? ParaOrder
+				{
+					get
+					{
+						return paraOrder;
+					}
+					set	
+					{
+						paraOrder = value;
+					}
+				}
+
+				public string Direction
+				{
+					get
+					{
+						return direction;
+					}
+					set	
+					{
+						direction = value;
 					}
 				}
 
@@ -228,114 +630,180 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 						dataSpecsList = value;
 					}
 				}
+			}
 
-				public List<ListThingTemplateFuncsForTmallGenie_Tag> Tags
+			public class ListThingTemplateFuncsForTmallGenie_Tag3
+			{
+
+				private string tagKey;
+
+				private string tagValue;
+
+				public string TagKey
 				{
 					get
 					{
-						return tags;
+						return tagKey;
 					}
 					set	
 					{
-						tags = value;
+						tagKey = value;
 					}
 				}
 
-				public class ListThingTemplateFuncsForTmallGenie_Tag
+				public string TagValue
 				{
-
-					private string tagKey;
-
-					private string tagValue;
-
-					public string TagKey
+					get
 					{
-						get
-						{
-							return tagKey;
-						}
-						set	
-						{
-							tagKey = value;
-						}
+						return tagValue;
 					}
-
-					public string TagValue
+					set	
 					{
-						get
-						{
-							return tagValue;
-						}
-						set	
-						{
-							tagValue = value;
-						}
+						tagValue = value;
 					}
 				}
 			}
+		}
 
-			public class ListThingTemplateFuncsForTmallGenie_ServiceInfo
+		public class ListThingTemplateFuncsForTmallGenie_EventInfo
+		{
+
+			private long? tmallFunctionId;
+
+			private string thingTemplateKey;
+
+			private string eventType;
+
+			private string name;
+
+			private string description;
+
+			private string identifier;
+
+			private List<ListThingTemplateFuncsForTmallGenie_Argument5> outputData;
+
+			private List<ListThingTemplateFuncsForTmallGenie_Tag6> tags4;
+
+			public long? TmallFunctionId
+			{
+				get
+				{
+					return tmallFunctionId;
+				}
+				set	
+				{
+					tmallFunctionId = value;
+				}
+			}
+
+			public string ThingTemplateKey
+			{
+				get
+				{
+					return thingTemplateKey;
+				}
+				set	
+				{
+					thingTemplateKey = value;
+				}
+			}
+
+			public string EventType
+			{
+				get
+				{
+					return eventType;
+				}
+				set	
+				{
+					eventType = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string Identifier
+			{
+				get
+				{
+					return identifier;
+				}
+				set	
+				{
+					identifier = value;
+				}
+			}
+
+			public List<ListThingTemplateFuncsForTmallGenie_Argument5> OutputData
+			{
+				get
+				{
+					return outputData;
+				}
+				set	
+				{
+					outputData = value;
+				}
+			}
+
+			public List<ListThingTemplateFuncsForTmallGenie_Tag6> Tags4
+			{
+				get
+				{
+					return tags4;
+				}
+				set	
+				{
+					tags4 = value;
+				}
+			}
+
+			public class ListThingTemplateFuncsForTmallGenie_Argument5
 			{
 
-				private long? tmallFunctionId;
-
-				private string thingTemplateKey;
-
-				private string callType;
-
-				private string name;
+				private string dataType;
 
 				private string identifier;
 
-				private List<ListThingTemplateFuncsForTmallGenie_Argument> inputParams;
+				private string name;
 
-				private List<ListThingTemplateFuncsForTmallGenie_Argument1> outputParams;
+				private int? paraOrder;
 
-				public long? TmallFunctionId
+				private string dataSpecs;
+
+				private string dataSpecsList;
+
+				public string DataType
 				{
 					get
 					{
-						return tmallFunctionId;
+						return dataType;
 					}
 					set	
 					{
-						tmallFunctionId = value;
-					}
-				}
-
-				public string ThingTemplateKey
-				{
-					get
-					{
-						return thingTemplateKey;
-					}
-					set	
-					{
-						thingTemplateKey = value;
-					}
-				}
-
-				public string CallType
-				{
-					get
-					{
-						return callType;
-					}
-					set	
-					{
-						callType = value;
-					}
-				}
-
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
+						dataType = value;
 					}
 				}
 
@@ -351,288 +819,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 					}
 				}
 
-				public List<ListThingTemplateFuncsForTmallGenie_Argument> InputParams
-				{
-					get
-					{
-						return inputParams;
-					}
-					set	
-					{
-						inputParams = value;
-					}
-				}
-
-				public List<ListThingTemplateFuncsForTmallGenie_Argument1> OutputParams
-				{
-					get
-					{
-						return outputParams;
-					}
-					set	
-					{
-						outputParams = value;
-					}
-				}
-
-				public class ListThingTemplateFuncsForTmallGenie_Argument
-				{
-
-					private string dataType;
-
-					private string identifier;
-
-					private string name;
-
-					private long? paraOrder;
-
-					private string direction;
-
-					private string dataSpecs;
-
-					private string dataSpecsList;
-
-					public string DataType
-					{
-						get
-						{
-							return dataType;
-						}
-						set	
-						{
-							dataType = value;
-						}
-					}
-
-					public string Identifier
-					{
-						get
-						{
-							return identifier;
-						}
-						set	
-						{
-							identifier = value;
-						}
-					}
-
-					public string Name
-					{
-						get
-						{
-							return name;
-						}
-						set	
-						{
-							name = value;
-						}
-					}
-
-					public long? ParaOrder
-					{
-						get
-						{
-							return paraOrder;
-						}
-						set	
-						{
-							paraOrder = value;
-						}
-					}
-
-					public string Direction
-					{
-						get
-						{
-							return direction;
-						}
-						set	
-						{
-							direction = value;
-						}
-					}
-
-					public string DataSpecs
-					{
-						get
-						{
-							return dataSpecs;
-						}
-						set	
-						{
-							dataSpecs = value;
-						}
-					}
-
-					public string DataSpecsList
-					{
-						get
-						{
-							return dataSpecsList;
-						}
-						set	
-						{
-							dataSpecsList = value;
-						}
-					}
-				}
-
-				public class ListThingTemplateFuncsForTmallGenie_Argument1
-				{
-
-					private string dataType;
-
-					private string identifier;
-
-					private long? paraOrder;
-
-					private string direction;
-
-					private string name;
-
-					private string dataSpecs;
-
-					private string dataSpecsList;
-
-					public string DataType
-					{
-						get
-						{
-							return dataType;
-						}
-						set	
-						{
-							dataType = value;
-						}
-					}
-
-					public string Identifier
-					{
-						get
-						{
-							return identifier;
-						}
-						set	
-						{
-							identifier = value;
-						}
-					}
-
-					public long? ParaOrder
-					{
-						get
-						{
-							return paraOrder;
-						}
-						set	
-						{
-							paraOrder = value;
-						}
-					}
-
-					public string Direction
-					{
-						get
-						{
-							return direction;
-						}
-						set	
-						{
-							direction = value;
-						}
-					}
-
-					public string Name
-					{
-						get
-						{
-							return name;
-						}
-						set	
-						{
-							name = value;
-						}
-					}
-
-					public string DataSpecs
-					{
-						get
-						{
-							return dataSpecs;
-						}
-						set	
-						{
-							dataSpecs = value;
-						}
-					}
-
-					public string DataSpecsList
-					{
-						get
-						{
-							return dataSpecsList;
-						}
-						set	
-						{
-							dataSpecsList = value;
-						}
-					}
-				}
-			}
-
-			public class ListThingTemplateFuncsForTmallGenie_EventInfo
-			{
-
-				private long? tmallFunctionId;
-
-				private string thingTemplateKey;
-
-				private string eventType;
-
-				private string name;
-
-				private string identifier;
-
-				private List<ListThingTemplateFuncsForTmallGenie_Argument3> outputData;
-
-				private List<ListThingTemplateFuncsForTmallGenie_Tag4> tags2;
-
-				public long? TmallFunctionId
-				{
-					get
-					{
-						return tmallFunctionId;
-					}
-					set	
-					{
-						tmallFunctionId = value;
-					}
-				}
-
-				public string ThingTemplateKey
-				{
-					get
-					{
-						return thingTemplateKey;
-					}
-					set	
-					{
-						thingTemplateKey = value;
-					}
-				}
-
-				public string EventType
-				{
-					get
-					{
-						return eventType;
-					}
-					set	
-					{
-						eventType = value;
-					}
-				}
-
 				public string Name
 				{
 					get
@@ -645,159 +831,71 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 					}
 				}
 
-				public string Identifier
+				public int? ParaOrder
 				{
 					get
 					{
-						return identifier;
+						return paraOrder;
 					}
 					set	
 					{
-						identifier = value;
+						paraOrder = value;
 					}
 				}
 
-				public List<ListThingTemplateFuncsForTmallGenie_Argument3> OutputData
+				public string DataSpecs
 				{
 					get
 					{
-						return outputData;
+						return dataSpecs;
 					}
 					set	
 					{
-						outputData = value;
+						dataSpecs = value;
 					}
 				}
 
-				public List<ListThingTemplateFuncsForTmallGenie_Tag4> Tags2
+				public string DataSpecsList
 				{
 					get
 					{
-						return tags2;
+						return dataSpecsList;
 					}
 					set	
 					{
-						tags2 = value;
+						dataSpecsList = value;
+					}
+				}
+			}
+
+			public class ListThingTemplateFuncsForTmallGenie_Tag6
+			{
+
+				private string tagKey;
+
+				private string tagValue;
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
 					}
 				}
 
-				public class ListThingTemplateFuncsForTmallGenie_Argument3
+				public string TagValue
 				{
-
-					private string dataType;
-
-					private string identifier;
-
-					private string name;
-
-					private long? paraOrder;
-
-					private string dataSpecs;
-
-					private string dataSpecsList;
-
-					public string DataType
+					get
 					{
-						get
-						{
-							return dataType;
-						}
-						set	
-						{
-							dataType = value;
-						}
+						return tagValue;
 					}
-
-					public string Identifier
+					set	
 					{
-						get
-						{
-							return identifier;
-						}
-						set	
-						{
-							identifier = value;
-						}
-					}
-
-					public string Name
-					{
-						get
-						{
-							return name;
-						}
-						set	
-						{
-							name = value;
-						}
-					}
-
-					public long? ParaOrder
-					{
-						get
-						{
-							return paraOrder;
-						}
-						set	
-						{
-							paraOrder = value;
-						}
-					}
-
-					public string DataSpecs
-					{
-						get
-						{
-							return dataSpecs;
-						}
-						set	
-						{
-							dataSpecs = value;
-						}
-					}
-
-					public string DataSpecsList
-					{
-						get
-						{
-							return dataSpecsList;
-						}
-						set	
-						{
-							dataSpecsList = value;
-						}
-					}
-				}
-
-				public class ListThingTemplateFuncsForTmallGenie_Tag4
-				{
-
-					private string tagKey;
-
-					private string tagValue;
-
-					public string TagKey
-					{
-						get
-						{
-							return tagKey;
-						}
-						set	
-						{
-							tagKey = value;
-						}
-					}
-
-					public string TagValue
-					{
-						get
-						{
-							return tagValue;
-						}
-						set	
-						{
-							tagValue = value;
-						}
+						tagValue = value;
 					}
 				}
 			}

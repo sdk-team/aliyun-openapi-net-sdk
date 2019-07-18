@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private string errorMessage;
 
-		private BulkQueryProductInfoForTmallGenie_Data data;
+		private List<BulkQueryProductInfoForTmallGenie_ProductInfo> list;
 
 		public string RequestId
 		{
@@ -69,218 +69,200 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public BulkQueryProductInfoForTmallGenie_Data Data
+		public List<BulkQueryProductInfoForTmallGenie_ProductInfo> List
 		{
 			get
 			{
-				return data;
+				return list;
 			}
 			set	
 			{
-				data = value;
+				list = value;
 			}
 		}
 
-		public class BulkQueryProductInfoForTmallGenie_Data
+		public class BulkQueryProductInfoForTmallGenie_ProductInfo
 		{
 
-			private int? page;
+			private string gmtCreate;
 
-			private int? pageCount;
+			private int? dataFormat;
 
-			private int? pageSize;
+			private string description;
 
-			private int? total;
+			private int? deviceCount;
 
-			private List<BulkQueryProductInfoForTmallGenie_ProductInfo> list;
+			private int? netType;
 
-			public int? Page
+			private int? nodeType;
+
+			private string productKey;
+
+			private string productName;
+
+			private string productModel;
+
+			private string productSecret;
+
+			private string productStatus;
+
+			private long? scriptId;
+
+			private string scriptDraftCode;
+
+			public string GmtCreate
 			{
 				get
 				{
-					return page;
+					return gmtCreate;
 				}
 				set	
 				{
-					page = value;
+					gmtCreate = value;
 				}
 			}
 
-			public int? PageCount
+			public int? DataFormat
 			{
 				get
 				{
-					return pageCount;
+					return dataFormat;
 				}
 				set	
 				{
-					pageCount = value;
+					dataFormat = value;
 				}
 			}
 
-			public int? PageSize
+			public string Description
 			{
 				get
 				{
-					return pageSize;
+					return description;
 				}
 				set	
 				{
-					pageSize = value;
+					description = value;
 				}
 			}
 
-			public int? Total
+			public int? DeviceCount
 			{
 				get
 				{
-					return total;
+					return deviceCount;
 				}
 				set	
 				{
-					total = value;
+					deviceCount = value;
 				}
 			}
 
-			public List<BulkQueryProductInfoForTmallGenie_ProductInfo> List
+			public int? NetType
 			{
 				get
 				{
-					return list;
+					return netType;
 				}
 				set	
 				{
-					list = value;
+					netType = value;
 				}
 			}
 
-			public class BulkQueryProductInfoForTmallGenie_ProductInfo
+			public int? NodeType
 			{
-
-				private string gmtCreate;
-
-				private int? dataFormat;
-
-				private string description;
-
-				private int? deviceCount;
-
-				private int? nodeType;
-
-				private string productKey;
-
-				private string productName;
-
-				private long? scriptId;
-
-				private string scriptDraftCode;
-
-				public string GmtCreate
+				get
 				{
-					get
-					{
-						return gmtCreate;
-					}
-					set	
-					{
-						gmtCreate = value;
-					}
+					return nodeType;
 				}
-
-				public int? DataFormat
+				set	
 				{
-					get
-					{
-						return dataFormat;
-					}
-					set	
-					{
-						dataFormat = value;
-					}
+					nodeType = value;
 				}
+			}
 
-				public string Description
+			public string ProductKey
+			{
+				get
 				{
-					get
-					{
-						return description;
-					}
-					set	
-					{
-						description = value;
-					}
+					return productKey;
 				}
-
-				public int? DeviceCount
+				set	
 				{
-					get
-					{
-						return deviceCount;
-					}
-					set	
-					{
-						deviceCount = value;
-					}
+					productKey = value;
 				}
+			}
 
-				public int? NodeType
+			public string ProductName
+			{
+				get
 				{
-					get
-					{
-						return nodeType;
-					}
-					set	
-					{
-						nodeType = value;
-					}
+					return productName;
 				}
-
-				public string ProductKey
+				set	
 				{
-					get
-					{
-						return productKey;
-					}
-					set	
-					{
-						productKey = value;
-					}
+					productName = value;
 				}
+			}
 
-				public string ProductName
+			public string ProductModel
+			{
+				get
 				{
-					get
-					{
-						return productName;
-					}
-					set	
-					{
-						productName = value;
-					}
+					return productModel;
 				}
-
-				public long? ScriptId
+				set	
 				{
-					get
-					{
-						return scriptId;
-					}
-					set	
-					{
-						scriptId = value;
-					}
+					productModel = value;
 				}
+			}
 
-				public string ScriptDraftCode
+			public string ProductSecret
+			{
+				get
 				{
-					get
-					{
-						return scriptDraftCode;
-					}
-					set	
-					{
-						scriptDraftCode = value;
-					}
+					return productSecret;
+				}
+				set	
+				{
+					productSecret = value;
+				}
+			}
+
+			public string ProductStatus
+			{
+				get
+				{
+					return productStatus;
+				}
+				set	
+				{
+					productStatus = value;
+				}
+			}
+
+			public long? ScriptId
+			{
+				get
+				{
+					return scriptId;
+				}
+				set	
+				{
+					scriptId = value;
+				}
+			}
+
+			public string ScriptDraftCode
+			{
+				get
+				{
+					return scriptDraftCode;
+				}
+				set	
+				{
+					scriptDraftCode = value;
 				}
 			}
 		}

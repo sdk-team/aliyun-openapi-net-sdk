@@ -31,26 +31,13 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class BulkQueryProductInfoForTmallGenieRequest : RpcAcsRequest<BulkQueryProductInfoForTmallGenieResponse>
     {
         public BulkQueryProductInfoForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "BulkQueryProductInfoForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "BulkQueryProductInfoForTmallGenie", "Iot", "openAPI")
         {
         }
 
-		private List<object> productKeys;
-
 		private string iotInstanceId;
 
-		public List<object> ProductKeys
-		{
-			get
-			{
-				return productKeys;
-			}
-			set	
-			{
-				productKeys = value;
-				DictionaryUtil.Add(BodyParameters, "ProductKeys", JsonConvert.SerializeObject(value));
-			}
-		}
+		private List<string> productKeys;
 
 		public string IotInstanceId
 		{
@@ -62,6 +49,23 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
+
+		public List<string> ProductKeys
+		{
+			get
+			{
+				return productKeys;
+			}
+
+			set
+			{
+				productKeys = value;
+				for (int i = 0; i < productKeys.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ProductKey." + (i + 1) , productKeys[i]);
+				}
 			}
 		}
 

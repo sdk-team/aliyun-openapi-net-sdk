@@ -31,13 +31,17 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class UpdateThingTemplateForTmallGenieRequest : RpcAcsRequest<UpdateThingTemplateForTmallGenieResponse>
     {
         public UpdateThingTemplateForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "UpdateThingTemplateForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "UpdateThingTemplateForTmallGenie", "Iot", "openAPI")
         {
         }
 
 		private string thingTemplateKey;
 
 		private string iotInstanceId;
+
+		private string thingTemplateName;
+
+		private List<Tags> tagss;
 
 		public string ThingTemplateKey
 		{
@@ -62,6 +66,69 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
+
+		public string ThingTemplateName
+		{
+			get
+			{
+				return thingTemplateName;
+			}
+			set	
+			{
+				thingTemplateName = value;
+				DictionaryUtil.Add(QueryParameters, "ThingTemplateName", value);
+			}
+		}
+
+		public List<Tags> Tagss
+		{
+			get
+			{
+				return tagss;
+			}
+
+			set
+			{
+				tagss = value;
+				for (int i = 0; i < tagss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tags." + (i + 1) + ".TagValue", tagss[i].TagValue);
+					DictionaryUtil.Add(QueryParameters,"Tags." + (i + 1) + ".TagKey", tagss[i].TagKey);
+				}
+			}
+		}
+
+		public class Tags
+		{
+
+			private string tagValue;
+
+			private string tagKey;
+
+			public string TagValue
+			{
+				get
+				{
+					return tagValue;
+				}
+				set	
+				{
+					tagValue = value;
+				}
+			}
+
+			public string TagKey
+			{
+				get
+				{
+					return tagKey;
+				}
+				set	
+				{
+					tagKey = value;
+				}
 			}
 		}
 

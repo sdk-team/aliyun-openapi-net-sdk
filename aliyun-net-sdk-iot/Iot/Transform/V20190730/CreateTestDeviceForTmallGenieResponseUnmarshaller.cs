@@ -35,6 +35,10 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 			createTestDeviceForTmallGenieResponse.Success = context.BooleanValue("CreateTestDeviceForTmallGenie.Success");
 			createTestDeviceForTmallGenieResponse.ErrorMessage = context.StringValue("CreateTestDeviceForTmallGenie.ErrorMessage");
 			createTestDeviceForTmallGenieResponse.Code = context.StringValue("CreateTestDeviceForTmallGenie.Code");
+			createTestDeviceForTmallGenieResponse.ApplyId = context.StringValue("CreateTestDeviceForTmallGenie.ApplyId");
+			createTestDeviceForTmallGenieResponse.IotId = context.StringValue("CreateTestDeviceForTmallGenie.IotId");
+			createTestDeviceForTmallGenieResponse.ProductKey = context.StringValue("CreateTestDeviceForTmallGenie.ProductKey");
+			createTestDeviceForTmallGenieResponse.DeviceName = context.StringValue("CreateTestDeviceForTmallGenie.DeviceName");
         
 			return createTestDeviceForTmallGenieResponse;
         }

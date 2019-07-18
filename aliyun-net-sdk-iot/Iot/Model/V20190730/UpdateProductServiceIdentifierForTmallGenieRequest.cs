@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class UpdateProductServiceIdentifierForTmallGenieRequest : RpcAcsRequest<UpdateProductServiceIdentifierForTmallGenieResponse>
     {
         public UpdateProductServiceIdentifierForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "UpdateProductServiceIdentifierForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "UpdateProductServiceIdentifierForTmallGenie", "Iot", "openAPI")
         {
         }
 
@@ -47,7 +47,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private string productKey;
 
-		private int? callType;
+		private string callType;
 
 		private List<OutputParams> outputParamss;
 
@@ -141,7 +141,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public int? CallType
+		public string CallType
 		{
 			get
 			{
@@ -150,7 +150,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			set	
 			{
 				callType = value;
-				DictionaryUtil.Add(BodyParameters, "CallType", value.ToString());
+				DictionaryUtil.Add(BodyParameters, "CallType", value);
 			}
 		}
 

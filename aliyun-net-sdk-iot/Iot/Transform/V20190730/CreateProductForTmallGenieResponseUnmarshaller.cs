@@ -36,6 +36,7 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 			createProductForTmallGenieResponse.Code = context.StringValue("CreateProductForTmallGenie.Code");
 			createProductForTmallGenieResponse.ErrorMessage = context.StringValue("CreateProductForTmallGenie.ErrorMessage");
 			createProductForTmallGenieResponse.ProductKey = context.StringValue("CreateProductForTmallGenie.ProductKey");
+			createProductForTmallGenieResponse.ProductSecret = context.StringValue("CreateProductForTmallGenie.ProductSecret");
         
 			return createProductForTmallGenieResponse;
         }

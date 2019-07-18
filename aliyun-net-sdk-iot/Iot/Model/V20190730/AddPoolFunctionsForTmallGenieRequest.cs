@@ -31,30 +31,34 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class AddPoolFunctionsForTmallGenieRequest : RpcAcsRequest<AddPoolFunctionsForTmallGenieResponse>
     {
         public AddPoolFunctionsForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "AddPoolFunctionsForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "AddPoolFunctionsForTmallGenie", "Iot", "openAPI")
         {
         }
 
-		private List<object> tmallServiceIdList;
+		private List<long?> tmallServiceIdLists;
 
 		private string thingTemplateKey;
 
-		private List<object> tmallEventIdList;
+		private List<long?> tmallEventIdLists;
 
 		private string iotInstanceId;
 
-		private List<object> tmallPropertyIdList;
+		private List<long?> tmallPropertyIdLists;
 
-		public List<object> TmallServiceIdList
+		public List<long?> TmallServiceIdLists
 		{
 			get
 			{
-				return tmallServiceIdList;
+				return tmallServiceIdLists;
 			}
-			set	
+
+			set
 			{
-				tmallServiceIdList = value;
-				DictionaryUtil.Add(QueryParameters, "TmallServiceIdList", JsonConvert.SerializeObject(value));
+				tmallServiceIdLists = value;
+				for (int i = 0; i < tmallServiceIdLists.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"TmallServiceIdList." + (i + 1) , tmallServiceIdLists[i]);
+				}
 			}
 		}
 
@@ -71,16 +75,20 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public List<object> TmallEventIdList
+		public List<long?> TmallEventIdLists
 		{
 			get
 			{
-				return tmallEventIdList;
+				return tmallEventIdLists;
 			}
-			set	
+
+			set
 			{
-				tmallEventIdList = value;
-				DictionaryUtil.Add(QueryParameters, "TmallEventIdList", JsonConvert.SerializeObject(value));
+				tmallEventIdLists = value;
+				for (int i = 0; i < tmallEventIdLists.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"TmallEventIdList." + (i + 1) , tmallEventIdLists[i]);
+				}
 			}
 		}
 
@@ -97,16 +105,20 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public List<object> TmallPropertyIdList
+		public List<long?> TmallPropertyIdLists
 		{
 			get
 			{
-				return tmallPropertyIdList;
+				return tmallPropertyIdLists;
 			}
-			set	
+
+			set
 			{
-				tmallPropertyIdList = value;
-				DictionaryUtil.Add(QueryParameters, "TmallPropertyIdList", JsonConvert.SerializeObject(value));
+				tmallPropertyIdLists = value;
+				for (int i = 0; i < tmallPropertyIdLists.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"TmallPropertyIdList." + (i + 1) , tmallPropertyIdLists[i]);
+				}
 			}
 		}
 

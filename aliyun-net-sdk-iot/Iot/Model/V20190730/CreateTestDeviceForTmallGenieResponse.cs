@@ -33,6 +33,14 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private string code;
 
+		private string applyId;
+
+		private string iotId;
+
+		private string productKey;
+
+		private string deviceName;
+
 		public string RequestId
 		{
 			get
@@ -78,6 +86,54 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			set	
 			{
 				code = value;
+			}
+		}
+
+		public string ApplyId
+		{
+			get
+			{
+				return applyId;
+			}
+			set	
+			{
+				applyId = value;
+			}
+		}
+
+		public string IotId
+		{
+			get
+			{
+				return iotId;
+			}
+			set	
+			{
+				iotId = value;
+			}
+		}
+
+		public string ProductKey
+		{
+			get
+			{
+				return productKey;
+			}
+			set	
+			{
+				productKey = value;
+			}
+		}
+
+		public string DeviceName
+		{
+			get
+			{
+				return deviceName;
+			}
+			set	
+			{
+				deviceName = value;
 			}
 		}
 	}

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class CategoryMigrateRequest : RpcAcsRequest<CategoryMigrateResponse>
     {
         public CategoryMigrateRequest()
-            : base("Iot", "2019-07-30", "CategoryMigrate", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "CategoryMigrate", "Iot", "openAPI")
         {
         }
 
@@ -44,9 +44,9 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private string categoryName;
 
-		private string bizTenantId;
+		private List<Tag> tags;
 
-		private List<Tags> tagss;
+		private string bizTenantId;
 
 		public string IotInstanceId
 		{
@@ -113,6 +113,26 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
+		public List<Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".TagName", tags[i].TagName);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".TagValue", tags[i].TagValue);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Namespace", tags[i].Namespace);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".TagKey", tags[i].TagKey);
+				}
+			}
+		}
+
 		public string BizTenantId
 		{
 			get
@@ -126,30 +146,28 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public List<Tags> Tagss
+		public class Tag
 		{
-			get
-			{
-				return tagss;
-			}
 
-			set
-			{
-				tagss = value;
-				for (int i = 0; i < tagss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Tags." + (i + 1) + ".TagValue", tagss[i].TagValue);
-					DictionaryUtil.Add(QueryParameters,"Tags." + (i + 1) + ".TagKey", tagss[i].TagKey);
-				}
-			}
-		}
-
-		public class Tags
-		{
+			private string tagName;
 
 			private string tagValue;
 
+			private string namespace_;
+
 			private string tagKey;
+
+			public string TagName
+			{
+				get
+				{
+					return tagName;
+				}
+				set	
+				{
+					tagName = value;
+				}
+			}
 
 			public string TagValue
 			{
@@ -160,6 +178,18 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 				set	
 				{
 					tagValue = value;
+				}
+			}
+
+			public string Namespace
+			{
+				get
+				{
+					return namespace_;
+				}
+				set	
+				{
+					namespace_ = value;
 				}
 			}
 

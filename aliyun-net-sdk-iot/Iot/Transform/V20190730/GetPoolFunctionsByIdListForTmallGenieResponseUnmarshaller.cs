@@ -78,7 +78,7 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 					argument.DataType = context.StringValue("GetPoolFunctionsByIdListForTmallGenie.ServiceInfos["+ i +"].InputParams["+ j +"].DataType");
 					argument.Identifier = context.StringValue("GetPoolFunctionsByIdListForTmallGenie.ServiceInfos["+ i +"].InputParams["+ j +"].Identifier");
 					argument.Name = context.StringValue("GetPoolFunctionsByIdListForTmallGenie.ServiceInfos["+ i +"].InputParams["+ j +"].Name");
-					argument.ParaOrder = context.LongValue("GetPoolFunctionsByIdListForTmallGenie.ServiceInfos["+ i +"].InputParams["+ j +"].ParaOrder");
+					argument.ParaOrder = context.IntegerValue("GetPoolFunctionsByIdListForTmallGenie.ServiceInfos["+ i +"].InputParams["+ j +"].ParaOrder");
 					argument.Direction = context.StringValue("GetPoolFunctionsByIdListForTmallGenie.ServiceInfos["+ i +"].InputParams["+ j +"].Direction");
 					argument.DataSpecs = context.StringValue("GetPoolFunctionsByIdListForTmallGenie.ServiceInfos["+ i +"].InputParams["+ j +"].DataSpecs");
 					argument.DataSpecsList = context.StringValue("GetPoolFunctionsByIdListForTmallGenie.ServiceInfos["+ i +"].InputParams["+ j +"].DataSpecsList");
@@ -92,7 +92,7 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 					GetPoolFunctionsByIdListForTmallGenieResponse.GetPoolFunctionsByIdListForTmallGenie_ServiceInfo.GetPoolFunctionsByIdListForTmallGenie_Argument2 argument2 = new GetPoolFunctionsByIdListForTmallGenieResponse.GetPoolFunctionsByIdListForTmallGenie_ServiceInfo.GetPoolFunctionsByIdListForTmallGenie_Argument2();
 					argument2.DataType = context.StringValue("GetPoolFunctionsByIdListForTmallGenie.ServiceInfos["+ i +"].OutputParams["+ j +"].DataType");
 					argument2.Identifier = context.StringValue("GetPoolFunctionsByIdListForTmallGenie.ServiceInfos["+ i +"].OutputParams["+ j +"].Identifier");
-					argument2.ParaOrder = context.LongValue("GetPoolFunctionsByIdListForTmallGenie.ServiceInfos["+ i +"].OutputParams["+ j +"].ParaOrder");
+					argument2.ParaOrder = context.IntegerValue("GetPoolFunctionsByIdListForTmallGenie.ServiceInfos["+ i +"].OutputParams["+ j +"].ParaOrder");
 					argument2.Direction = context.StringValue("GetPoolFunctionsByIdListForTmallGenie.ServiceInfos["+ i +"].OutputParams["+ j +"].Direction");
 					argument2.Name = context.StringValue("GetPoolFunctionsByIdListForTmallGenie.ServiceInfos["+ i +"].OutputParams["+ j +"].Name");
 					argument2.DataSpecs = context.StringValue("GetPoolFunctionsByIdListForTmallGenie.ServiceInfos["+ i +"].OutputParams["+ j +"].DataSpecs");
@@ -131,7 +131,7 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 					argument5.DataType = context.StringValue("GetPoolFunctionsByIdListForTmallGenie.EventInfos["+ i +"].OutputData["+ j +"].DataType");
 					argument5.Identifier = context.StringValue("GetPoolFunctionsByIdListForTmallGenie.EventInfos["+ i +"].OutputData["+ j +"].Identifier");
 					argument5.Name = context.StringValue("GetPoolFunctionsByIdListForTmallGenie.EventInfos["+ i +"].OutputData["+ j +"].Name");
-					argument5.ParaOrder = context.LongValue("GetPoolFunctionsByIdListForTmallGenie.EventInfos["+ i +"].OutputData["+ j +"].ParaOrder");
+					argument5.ParaOrder = context.IntegerValue("GetPoolFunctionsByIdListForTmallGenie.EventInfos["+ i +"].OutputData["+ j +"].ParaOrder");
 					argument5.DataSpecs = context.StringValue("GetPoolFunctionsByIdListForTmallGenie.EventInfos["+ i +"].OutputData["+ j +"].DataSpecs");
 					argument5.DataSpecsList = context.StringValue("GetPoolFunctionsByIdListForTmallGenie.EventInfos["+ i +"].OutputData["+ j +"].DataSpecsList");
 

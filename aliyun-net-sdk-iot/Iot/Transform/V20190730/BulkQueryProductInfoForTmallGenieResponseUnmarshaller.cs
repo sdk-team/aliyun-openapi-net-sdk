@@ -35,29 +35,26 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 			bulkQueryProductInfoForTmallGenieResponse.Success = context.BooleanValue("BulkQueryProductInfoForTmallGenie.Success");
 			bulkQueryProductInfoForTmallGenieResponse.ErrorMessage = context.StringValue("BulkQueryProductInfoForTmallGenie.ErrorMessage");
 
-			BulkQueryProductInfoForTmallGenieResponse.BulkQueryProductInfoForTmallGenie_Data data = new BulkQueryProductInfoForTmallGenieResponse.BulkQueryProductInfoForTmallGenie_Data();
-			data.Page = context.IntegerValue("BulkQueryProductInfoForTmallGenie.Data.Page");
-			data.PageCount = context.IntegerValue("BulkQueryProductInfoForTmallGenie.Data.PageCount");
-			data.PageSize = context.IntegerValue("BulkQueryProductInfoForTmallGenie.Data.PageSize");
-			data.Total = context.IntegerValue("BulkQueryProductInfoForTmallGenie.Data.Total");
+			List<BulkQueryProductInfoForTmallGenieResponse.BulkQueryProductInfoForTmallGenie_ProductInfo> bulkQueryProductInfoForTmallGenieResponse_list = new List<BulkQueryProductInfoForTmallGenieResponse.BulkQueryProductInfoForTmallGenie_ProductInfo>();
+			for (int i = 0; i < context.Length("BulkQueryProductInfoForTmallGenie.List.Length"); i++) {
+				BulkQueryProductInfoForTmallGenieResponse.BulkQueryProductInfoForTmallGenie_ProductInfo productInfo = new BulkQueryProductInfoForTmallGenieResponse.BulkQueryProductInfoForTmallGenie_ProductInfo();
+				productInfo.GmtCreate = context.StringValue("BulkQueryProductInfoForTmallGenie.List["+ i +"].GmtCreate");
+				productInfo.DataFormat = context.IntegerValue("BulkQueryProductInfoForTmallGenie.List["+ i +"].DataFormat");
+				productInfo.Description = context.StringValue("BulkQueryProductInfoForTmallGenie.List["+ i +"].Description");
+				productInfo.DeviceCount = context.IntegerValue("BulkQueryProductInfoForTmallGenie.List["+ i +"].DeviceCount");
+				productInfo.NetType = context.IntegerValue("BulkQueryProductInfoForTmallGenie.List["+ i +"].NetType");
+				productInfo.NodeType = context.IntegerValue("BulkQueryProductInfoForTmallGenie.List["+ i +"].NodeType");
+				productInfo.ProductKey = context.StringValue("BulkQueryProductInfoForTmallGenie.List["+ i +"].ProductKey");
+				productInfo.ProductName = context.StringValue("BulkQueryProductInfoForTmallGenie.List["+ i +"].ProductName");
+				productInfo.ProductModel = context.StringValue("BulkQueryProductInfoForTmallGenie.List["+ i +"].ProductModel");
+				productInfo.ProductSecret = context.StringValue("BulkQueryProductInfoForTmallGenie.List["+ i +"].ProductSecret");
+				productInfo.ProductStatus = context.StringValue("BulkQueryProductInfoForTmallGenie.List["+ i +"].ProductStatus");
+				productInfo.ScriptId = context.LongValue("BulkQueryProductInfoForTmallGenie.List["+ i +"].ScriptId");
+				productInfo.ScriptDraftCode = context.StringValue("BulkQueryProductInfoForTmallGenie.List["+ i +"].ScriptDraftCode");
 
-			List<BulkQueryProductInfoForTmallGenieResponse.BulkQueryProductInfoForTmallGenie_Data.BulkQueryProductInfoForTmallGenie_ProductInfo> data_list = new List<BulkQueryProductInfoForTmallGenieResponse.BulkQueryProductInfoForTmallGenie_Data.BulkQueryProductInfoForTmallGenie_ProductInfo>();
-			for (int i = 0; i < context.Length("BulkQueryProductInfoForTmallGenie.Data.List.Length"); i++) {
-				BulkQueryProductInfoForTmallGenieResponse.BulkQueryProductInfoForTmallGenie_Data.BulkQueryProductInfoForTmallGenie_ProductInfo productInfo = new BulkQueryProductInfoForTmallGenieResponse.BulkQueryProductInfoForTmallGenie_Data.BulkQueryProductInfoForTmallGenie_ProductInfo();
-				productInfo.GmtCreate = context.StringValue("BulkQueryProductInfoForTmallGenie.Data.List["+ i +"].GmtCreate");
-				productInfo.DataFormat = context.IntegerValue("BulkQueryProductInfoForTmallGenie.Data.List["+ i +"].DataFormat");
-				productInfo.Description = context.StringValue("BulkQueryProductInfoForTmallGenie.Data.List["+ i +"].Description");
-				productInfo.DeviceCount = context.IntegerValue("BulkQueryProductInfoForTmallGenie.Data.List["+ i +"].DeviceCount");
-				productInfo.NodeType = context.IntegerValue("BulkQueryProductInfoForTmallGenie.Data.List["+ i +"].NodeType");
-				productInfo.ProductKey = context.StringValue("BulkQueryProductInfoForTmallGenie.Data.List["+ i +"].ProductKey");
-				productInfo.ProductName = context.StringValue("BulkQueryProductInfoForTmallGenie.Data.List["+ i +"].ProductName");
-				productInfo.ScriptId = context.LongValue("BulkQueryProductInfoForTmallGenie.Data.List["+ i +"].ScriptId");
-				productInfo.ScriptDraftCode = context.StringValue("BulkQueryProductInfoForTmallGenie.Data.List["+ i +"].ScriptDraftCode");
-
-				data_list.Add(productInfo);
+				bulkQueryProductInfoForTmallGenieResponse_list.Add(productInfo);
 			}
-			data.List = data_list;
-			bulkQueryProductInfoForTmallGenieResponse.Data = data;
+			bulkQueryProductInfoForTmallGenieResponse.List = bulkQueryProductInfoForTmallGenieResponse_list;
         
 			return bulkQueryProductInfoForTmallGenieResponse;
         }

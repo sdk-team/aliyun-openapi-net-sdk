@@ -35,6 +35,8 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private string productKey;
 
+		private string productSecret;
+
 		public string RequestId
 		{
 			get
@@ -92,6 +94,18 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			set	
 			{
 				productKey = value;
+			}
+		}
+
+		public string ProductSecret
+		{
+			get
+			{
+				return productSecret;
+			}
+			set	
+			{
+				productSecret = value;
 			}
 		}
 	}

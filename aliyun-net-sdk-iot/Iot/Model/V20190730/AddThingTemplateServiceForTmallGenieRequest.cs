@@ -31,13 +31,11 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class AddThingTemplateServiceForTmallGenieRequest : RpcAcsRequest<AddThingTemplateServiceForTmallGenieResponse>
     {
         public AddThingTemplateServiceForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "AddThingTemplateServiceForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "AddThingTemplateServiceForTmallGenie", "Iot", "openAPI")
         {
         }
 
 		private string identifier;
-
-		private string thingTemplateKey;
 
 		private List<InputParams> inputParamss;
 
@@ -63,19 +61,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				identifier = value;
 				DictionaryUtil.Add(QueryParameters, "Identifier", value);
-			}
-		}
-
-		public string ThingTemplateKey
-		{
-			get
-			{
-				return thingTemplateKey;
-			}
-			set	
-			{
-				thingTemplateKey = value;
-				DictionaryUtil.Add(QueryParameters, "ThingTemplateKey", value);
 			}
 		}
 

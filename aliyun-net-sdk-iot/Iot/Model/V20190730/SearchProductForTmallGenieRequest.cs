@@ -17,7 +17,6 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class SearchProductForTmallGenieRequest : RpcAcsRequest<SearchProductForTmallGenieResponse>
     {
         public SearchProductForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "SearchProductForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "SearchProductForTmallGenie", "Iot", "openAPI")
         {
         }
 

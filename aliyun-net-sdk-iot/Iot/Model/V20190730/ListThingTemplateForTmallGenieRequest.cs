@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class ListThingTemplateForTmallGenieRequest : RpcAcsRequest<ListThingTemplateForTmallGenieResponse>
     {
         public ListThingTemplateForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "ListThingTemplateForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "ListThingTemplateForTmallGenie", "Iot", "openAPI")
         {
         }
 

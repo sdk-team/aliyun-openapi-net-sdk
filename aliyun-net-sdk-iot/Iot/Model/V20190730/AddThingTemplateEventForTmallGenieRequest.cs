@@ -31,15 +31,13 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class AddThingTemplateEventForTmallGenieRequest : RpcAcsRequest<AddThingTemplateEventForTmallGenieResponse>
     {
         public AddThingTemplateEventForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "AddThingTemplateEventForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "AddThingTemplateEventForTmallGenie", "Iot", "openAPI")
         {
         }
 
 		private string identifier;
 
-		private string outputData;
-
-		private string thingTemplateKey;
+		private List<OutputData> outputDatas;
 
 		private long? tmallFunctionId;
 
@@ -64,29 +62,26 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public string OutputData
+		public List<OutputData> OutputDatas
 		{
 			get
 			{
-				return outputData;
+				return outputDatas;
 			}
-			set	
-			{
-				outputData = value;
-				DictionaryUtil.Add(QueryParameters, "OutputData", value);
-			}
-		}
 
-		public string ThingTemplateKey
-		{
-			get
+			set
 			{
-				return thingTemplateKey;
-			}
-			set	
-			{
-				thingTemplateKey = value;
-				DictionaryUtil.Add(QueryParameters, "ThingTemplateKey", value);
+				outputDatas = value;
+				for (int i = 0; i < outputDatas.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"OutputData." + (i + 1) + ".Identifier", outputDatas[i].Identifier);
+					DictionaryUtil.Add(QueryParameters,"OutputData." + (i + 1) + ".DataSpecs", outputDatas[i].DataSpecs);
+					DictionaryUtil.Add(QueryParameters,"OutputData." + (i + 1) + ".DataType", outputDatas[i].DataType);
+					DictionaryUtil.Add(QueryParameters,"OutputData." + (i + 1) + ".Name", outputDatas[i].Name);
+					DictionaryUtil.Add(QueryParameters,"OutputData." + (i + 1) + ".DataSpecsList", outputDatas[i].DataSpecsList);
+					DictionaryUtil.Add(QueryParameters,"OutputData." + (i + 1) + ".ParaOrder", outputDatas[i].ParaOrder);
+					DictionaryUtil.Add(QueryParameters,"OutputData." + (i + 1) + ".Direction", outputDatas[i].Direction);
+				}
 			}
 		}
 
@@ -156,6 +151,108 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 				{
 					DictionaryUtil.Add(QueryParameters,"Tags." + (i + 1) + ".TagValue", tagss[i].TagValue);
 					DictionaryUtil.Add(QueryParameters,"Tags." + (i + 1) + ".TagKey", tagss[i].TagKey);
+				}
+			}
+		}
+
+		public class OutputData
+		{
+
+			private string identifier;
+
+			private string dataSpecs;
+
+			private string dataType;
+
+			private string name;
+
+			private string dataSpecsList;
+
+			private int? paraOrder;
+
+			private string direction;
+
+			public string Identifier
+			{
+				get
+				{
+					return identifier;
+				}
+				set	
+				{
+					identifier = value;
+				}
+			}
+
+			public string DataSpecs
+			{
+				get
+				{
+					return dataSpecs;
+				}
+				set	
+				{
+					dataSpecs = value;
+				}
+			}
+
+			public string DataType
+			{
+				get
+				{
+					return dataType;
+				}
+				set	
+				{
+					dataType = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string DataSpecsList
+			{
+				get
+				{
+					return dataSpecsList;
+				}
+				set	
+				{
+					dataSpecsList = value;
+				}
+			}
+
+			public int? ParaOrder
+			{
+				get
+				{
+					return paraOrder;
+				}
+				set	
+				{
+					paraOrder = value;
+				}
+			}
+
+			public string Direction
+			{
+				get
+				{
+					return direction;
+				}
+				set	
+				{
+					direction = value;
 				}
 			}
 		}

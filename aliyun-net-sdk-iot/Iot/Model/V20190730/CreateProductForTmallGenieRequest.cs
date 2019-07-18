@@ -17,7 +17,6 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class CreateProductForTmallGenieRequest : RpcAcsRequest<CreateProductForTmallGenieResponse>
     {
         public CreateProductForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "CreateProductForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "CreateProductForTmallGenie", "Iot", "openAPI")
         {
         }
 
@@ -43,7 +42,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private string iotInstanceId;
 
-		private string netType;
+		private int? netType;
 
 		private string taoBaoId;
 
@@ -53,7 +52,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private string productBrand;
 
-		private string categoryId;
+		private long? categoryId;
 
 		public string ProductModel
 		{
@@ -107,7 +106,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public string NetType
+		public int? NetType
 		{
 			get
 			{
@@ -116,7 +115,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			set	
 			{
 				netType = value;
-				DictionaryUtil.Add(BodyParameters, "NetType", value);
+				DictionaryUtil.Add(BodyParameters, "NetType", value.ToString());
 			}
 		}
 
@@ -172,7 +171,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public string CategoryId
+		public long? CategoryId
 		{
 			get
 			{
@@ -181,7 +180,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			set	
 			{
 				categoryId = value;
-				DictionaryUtil.Add(BodyParameters, "CategoryId", value);
+				DictionaryUtil.Add(BodyParameters, "CategoryId", value.ToString());
 			}
 		}
 

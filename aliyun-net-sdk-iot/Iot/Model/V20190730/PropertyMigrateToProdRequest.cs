@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class PropertyMigrateToProdRequest : RpcAcsRequest<PropertyMigrateToProdResponse>
     {
         public PropertyMigrateToProdRequest()
-            : base("Iot", "2019-07-30", "PropertyMigrateToProd", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "PropertyMigrateToProd", "Iot", "openAPI")
         {
         }
 
@@ -40,11 +40,11 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private string productKey;
 
+		private string deviceType;
+
 		private bool? required;
 
 		private string dataSpecsId;
-
-		private List<Tags> tagss;
 
 		private string dataType;
 
@@ -54,7 +54,11 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private string _namespace;
 
+		private string categoryName;
+
 		private string definition;
+
+		private List<Tag> tags;
 
 		private string bizTenantId;
 
@@ -99,6 +103,19 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
+		public string DeviceType
+		{
+			get
+			{
+				return deviceType;
+			}
+			set	
+			{
+				deviceType = value;
+				DictionaryUtil.Add(QueryParameters, "DeviceType", value);
+			}
+		}
+
 		public bool? Required
 		{
 			get
@@ -122,24 +139,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				dataSpecsId = value;
 				DictionaryUtil.Add(QueryParameters, "DataSpecsId", value);
-			}
-		}
-
-		public List<Tags> Tagss
-		{
-			get
-			{
-				return tagss;
-			}
-
-			set
-			{
-				tagss = value;
-				for (int i = 0; i < tagss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Tags." + (i + 1) + ".TagValue", tagss[i].TagValue);
-					DictionaryUtil.Add(QueryParameters,"Tags." + (i + 1) + ".TagKey", tagss[i].TagKey);
-				}
 			}
 		}
 
@@ -195,6 +194,19 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
+		public string CategoryName
+		{
+			get
+			{
+				return categoryName;
+			}
+			set	
+			{
+				categoryName = value;
+				DictionaryUtil.Add(QueryParameters, "CategoryName", value);
+			}
+		}
+
 		public string Definition
 		{
 			get
@@ -205,6 +217,24 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				definition = value;
 				DictionaryUtil.Add(QueryParameters, "Definition", value);
+			}
+		}
+
+		public List<Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".TagValue", tags[i].TagValue);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".TagKey", tags[i].TagKey);
+				}
 			}
 		}
 
@@ -234,7 +264,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public class Tags
+		public class Tag
 		{
 
 			private string tagValue;

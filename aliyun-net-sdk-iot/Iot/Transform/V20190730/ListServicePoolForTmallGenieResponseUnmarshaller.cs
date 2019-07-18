@@ -55,7 +55,7 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 					argument.DataType = context.StringValue("ListServicePoolForTmallGenie.Services["+ i +"].InputParams["+ j +"].DataType");
 					argument.Identifier = context.StringValue("ListServicePoolForTmallGenie.Services["+ i +"].InputParams["+ j +"].Identifier");
 					argument.Name = context.StringValue("ListServicePoolForTmallGenie.Services["+ i +"].InputParams["+ j +"].Name");
-					argument.ParaOrder = context.LongValue("ListServicePoolForTmallGenie.Services["+ i +"].InputParams["+ j +"].ParaOrder");
+					argument.ParaOrder = context.IntegerValue("ListServicePoolForTmallGenie.Services["+ i +"].InputParams["+ j +"].ParaOrder");
 					argument.Direction = context.StringValue("ListServicePoolForTmallGenie.Services["+ i +"].InputParams["+ j +"].Direction");
 					argument.DataSpecs = context.StringValue("ListServicePoolForTmallGenie.Services["+ i +"].InputParams["+ j +"].DataSpecs");
 					argument.DataSpecsList = context.StringValue("ListServicePoolForTmallGenie.Services["+ i +"].InputParams["+ j +"].DataSpecsList");
@@ -70,7 +70,7 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 					argument1.Id = context.LongValue("ListServicePoolForTmallGenie.Services["+ i +"].OutputParams["+ j +"].Id");
 					argument1.DataType = context.StringValue("ListServicePoolForTmallGenie.Services["+ i +"].OutputParams["+ j +"].DataType");
 					argument1.Identifier = context.StringValue("ListServicePoolForTmallGenie.Services["+ i +"].OutputParams["+ j +"].Identifier");
-					argument1.ParaOrder = context.LongValue("ListServicePoolForTmallGenie.Services["+ i +"].OutputParams["+ j +"].ParaOrder");
+					argument1.ParaOrder = context.IntegerValue("ListServicePoolForTmallGenie.Services["+ i +"].OutputParams["+ j +"].ParaOrder");
 					argument1.Direction = context.StringValue("ListServicePoolForTmallGenie.Services["+ i +"].OutputParams["+ j +"].Direction");
 					argument1.Name = context.StringValue("ListServicePoolForTmallGenie.Services["+ i +"].OutputParams["+ j +"].Name");
 					argument1.DataSpecs = context.StringValue("ListServicePoolForTmallGenie.Services["+ i +"].OutputParams["+ j +"].DataSpecs");

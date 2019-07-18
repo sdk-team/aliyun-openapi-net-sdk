@@ -249,7 +249,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 				private string name;
 
-				private long? paraOrder;
+				private int? paraOrder;
 
 				private string dataSpecs;
 
@@ -303,7 +303,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 					}
 				}
 
-				public long? ParaOrder
+				public int? ParaOrder
 				{
 					get
 					{

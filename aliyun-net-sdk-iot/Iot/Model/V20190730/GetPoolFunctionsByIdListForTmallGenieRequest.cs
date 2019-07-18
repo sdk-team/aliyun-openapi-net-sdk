@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class GetPoolFunctionsByIdListForTmallGenieRequest : RpcAcsRequest<GetPoolFunctionsByIdListForTmallGenieResponse>
     {
         public GetPoolFunctionsByIdListForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "GetPoolFunctionsByIdListForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "GetPoolFunctionsByIdListForTmallGenie", "Iot", "openAPI")
         {
         }
 

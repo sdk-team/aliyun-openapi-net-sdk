@@ -31,19 +31,32 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class RemoveThingTemplateFunctionForTmallGenieRequest : RpcAcsRequest<RemoveThingTemplateFunctionForTmallGenieResponse>
     {
         public RemoveThingTemplateFunctionForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "RemoveThingTemplateFunctionForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "RemoveThingTemplateFunctionForTmallGenie", "Iot", "openAPI")
         {
         }
 
+		private string identifier;
+
 		private string thingTemplateKey;
 
-		private List<long?> tmallServiceFunctionIdss;
+		private long? tmallFunctionId;
 
 		private string iotInstanceId;
 
-		private List<long?> tmallEventFunctionIdss;
+		private string tmallFunctionType;
 
-		private List<long?> tmallPropertyFunctionIdss;
+		public string Identifier
+		{
+			get
+			{
+				return identifier;
+			}
+			set	
+			{
+				identifier = value;
+				DictionaryUtil.Add(QueryParameters, "Identifier", value);
+			}
+		}
 
 		public string ThingTemplateKey
 		{
@@ -58,20 +71,16 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public List<long?> TmallServiceFunctionIdss
+		public long? TmallFunctionId
 		{
 			get
 			{
-				return tmallServiceFunctionIdss;
+				return tmallFunctionId;
 			}
-
-			set
+			set	
 			{
-				tmallServiceFunctionIdss = value;
-				for (int i = 0; i < tmallServiceFunctionIdss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"TmallServiceFunctionIds." + (i + 1) , tmallServiceFunctionIdss[i]);
-				}
+				tmallFunctionId = value;
+				DictionaryUtil.Add(QueryParameters, "TmallFunctionId", value.ToString());
 			}
 		}
 
@@ -88,37 +97,16 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public List<long?> TmallEventFunctionIdss
+		public string TmallFunctionType
 		{
 			get
 			{
-				return tmallEventFunctionIdss;
+				return tmallFunctionType;
 			}
-
-			set
+			set	
 			{
-				tmallEventFunctionIdss = value;
-				for (int i = 0; i < tmallEventFunctionIdss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"TmallEventFunctionIds." + (i + 1) , tmallEventFunctionIdss[i]);
-				}
-			}
-		}
-
-		public List<long?> TmallPropertyFunctionIdss
-		{
-			get
-			{
-				return tmallPropertyFunctionIdss;
-			}
-
-			set
-			{
-				tmallPropertyFunctionIdss = value;
-				for (int i = 0; i < tmallPropertyFunctionIdss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"TmallPropertyFunctionIds." + (i + 1) , tmallPropertyFunctionIdss[i]);
-				}
+				tmallFunctionType = value;
+				DictionaryUtil.Add(QueryParameters, "TmallFunctionType", value);
 			}
 		}
 

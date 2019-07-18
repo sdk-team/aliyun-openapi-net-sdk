@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class UpdateThingTemplateEventForTmallGenieRequest : RpcAcsRequest<UpdateThingTemplateEventForTmallGenieResponse>
     {
         public UpdateThingTemplateEventForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "UpdateThingTemplateEventForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "UpdateThingTemplateEventForTmallGenie", "Iot", "openAPI")
         {
         }
 
@@ -40,6 +40,8 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 		private List<OutputData> outputDatas;
 
 		private string thingTemplateKey;
+
+		private long? tmallFunctionId;
 
 		private string iotInstanceId;
 
@@ -95,6 +97,19 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				thingTemplateKey = value;
 				DictionaryUtil.Add(QueryParameters, "ThingTemplateKey", value);
+			}
+		}
+
+		public long? TmallFunctionId
+		{
+			get
+			{
+				return tmallFunctionId;
+			}
+			set	
+			{
+				tmallFunctionId = value;
+				DictionaryUtil.Add(QueryParameters, "TmallFunctionId", value.ToString());
 			}
 		}
 

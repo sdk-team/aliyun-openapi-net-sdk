@@ -36,112 +36,124 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 			listThingTemplateFuncsForTmallGenieResponse.Code = context.StringValue("ListThingTemplateFuncsForTmallGenie.Code");
 			listThingTemplateFuncsForTmallGenieResponse.ErrorMessage = context.StringValue("ListThingTemplateFuncsForTmallGenie.ErrorMessage");
 
-			ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data data = new ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data();
+			List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_PropertyInfo> listThingTemplateFuncsForTmallGenieResponse_propertyInfos = new List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_PropertyInfo>();
+			for (int i = 0; i < context.Length("ListThingTemplateFuncsForTmallGenie.PropertyInfos.Length"); i++) {
+				ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_PropertyInfo propertyInfo = new ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_PropertyInfo();
+				propertyInfo.TmallFunctionId = context.LongValue("ListThingTemplateFuncsForTmallGenie.PropertyInfos["+ i +"].TmallFunctionId");
+				propertyInfo.ThingTemplateKey = context.StringValue("ListThingTemplateFuncsForTmallGenie.PropertyInfos["+ i +"].ThingTemplateKey");
+				propertyInfo.Identifier = context.StringValue("ListThingTemplateFuncsForTmallGenie.PropertyInfos["+ i +"].Identifier");
+				propertyInfo.DataType = context.StringValue("ListThingTemplateFuncsForTmallGenie.PropertyInfos["+ i +"].DataType");
+				propertyInfo.RwType = context.StringValue("ListThingTemplateFuncsForTmallGenie.PropertyInfos["+ i +"].RwType");
+				propertyInfo.Name = context.StringValue("ListThingTemplateFuncsForTmallGenie.PropertyInfos["+ i +"].Name");
+				propertyInfo.DataSpecs = context.StringValue("ListThingTemplateFuncsForTmallGenie.PropertyInfos["+ i +"].DataSpecs");
+				propertyInfo.DataSpecsList = context.StringValue("ListThingTemplateFuncsForTmallGenie.PropertyInfos["+ i +"].DataSpecsList");
+				propertyInfo.Description = context.StringValue("ListThingTemplateFuncsForTmallGenie.PropertyInfos["+ i +"].Description");
 
-			List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data.ListThingTemplateFuncsForTmallGenie_PropertyInfo> data_propertyInfos = new List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data.ListThingTemplateFuncsForTmallGenie_PropertyInfo>();
-			for (int i = 0; i < context.Length("ListThingTemplateFuncsForTmallGenie.Data.PropertyInfos.Length"); i++) {
-				ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data.ListThingTemplateFuncsForTmallGenie_PropertyInfo propertyInfo = new ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data.ListThingTemplateFuncsForTmallGenie_PropertyInfo();
-				propertyInfo.TmallFunctionId = context.LongValue("ListThingTemplateFuncsForTmallGenie.Data.PropertyInfos["+ i +"].TmallFunctionId");
-				propertyInfo.ThingTemplateKey = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.PropertyInfos["+ i +"].ThingTemplateKey");
-				propertyInfo.DataType = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.PropertyInfos["+ i +"].DataType");
-				propertyInfo.Name = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.PropertyInfos["+ i +"].Name");
-				propertyInfo.DataSpecs = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.PropertyInfos["+ i +"].DataSpecs");
-				propertyInfo.DataSpecsList = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.PropertyInfos["+ i +"].DataSpecsList");
-
-				List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data.ListThingTemplateFuncsForTmallGenie_PropertyInfo.ListThingTemplateFuncsForTmallGenie_Tag> propertyInfo_tags = new List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data.ListThingTemplateFuncsForTmallGenie_PropertyInfo.ListThingTemplateFuncsForTmallGenie_Tag>();
-				for (int j = 0; j < context.Length("ListThingTemplateFuncsForTmallGenie.Data.PropertyInfos["+ i +"].Tags.Length"); j++) {
-					ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data.ListThingTemplateFuncsForTmallGenie_PropertyInfo.ListThingTemplateFuncsForTmallGenie_Tag tag = new ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data.ListThingTemplateFuncsForTmallGenie_PropertyInfo.ListThingTemplateFuncsForTmallGenie_Tag();
-					tag.TagKey = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.PropertyInfos["+ i +"].Tags["+ j +"].TagKey");
-					tag.TagValue = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.PropertyInfos["+ i +"].Tags["+ j +"].TagValue");
+				List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_PropertyInfo.ListThingTemplateFuncsForTmallGenie_Tag> propertyInfo_tags = new List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_PropertyInfo.ListThingTemplateFuncsForTmallGenie_Tag>();
+				for (int j = 0; j < context.Length("ListThingTemplateFuncsForTmallGenie.PropertyInfos["+ i +"].Tags.Length"); j++) {
+					ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_PropertyInfo.ListThingTemplateFuncsForTmallGenie_Tag tag = new ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_PropertyInfo.ListThingTemplateFuncsForTmallGenie_Tag();
+					tag.TagKey = context.StringValue("ListThingTemplateFuncsForTmallGenie.PropertyInfos["+ i +"].Tags["+ j +"].TagKey");
+					tag.TagValue = context.StringValue("ListThingTemplateFuncsForTmallGenie.PropertyInfos["+ i +"].Tags["+ j +"].TagValue");
 
 					propertyInfo_tags.Add(tag);
 				}
 				propertyInfo.Tags = propertyInfo_tags;
 
-				data_propertyInfos.Add(propertyInfo);
+				listThingTemplateFuncsForTmallGenieResponse_propertyInfos.Add(propertyInfo);
 			}
-			data.PropertyInfos = data_propertyInfos;
+			listThingTemplateFuncsForTmallGenieResponse.PropertyInfos = listThingTemplateFuncsForTmallGenieResponse_propertyInfos;
 
-			List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data.ListThingTemplateFuncsForTmallGenie_ServiceInfo> data_serviceInfos = new List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data.ListThingTemplateFuncsForTmallGenie_ServiceInfo>();
-			for (int i = 0; i < context.Length("ListThingTemplateFuncsForTmallGenie.Data.ServiceInfos.Length"); i++) {
-				ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data.ListThingTemplateFuncsForTmallGenie_ServiceInfo serviceInfo = new ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data.ListThingTemplateFuncsForTmallGenie_ServiceInfo();
-				serviceInfo.TmallFunctionId = context.LongValue("ListThingTemplateFuncsForTmallGenie.Data.ServiceInfos["+ i +"].TmallFunctionId");
-				serviceInfo.ThingTemplateKey = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.ServiceInfos["+ i +"].ThingTemplateKey");
-				serviceInfo.CallType = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.ServiceInfos["+ i +"].CallType");
-				serviceInfo.Name = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.ServiceInfos["+ i +"].Name");
-				serviceInfo.Identifier = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.ServiceInfos["+ i +"].Identifier");
+			List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_ServiceInfo> listThingTemplateFuncsForTmallGenieResponse_serviceInfos = new List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_ServiceInfo>();
+			for (int i = 0; i < context.Length("ListThingTemplateFuncsForTmallGenie.ServiceInfos.Length"); i++) {
+				ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_ServiceInfo serviceInfo = new ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_ServiceInfo();
+				serviceInfo.TmallFunctionId = context.LongValue("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].TmallFunctionId");
+				serviceInfo.ThingTemplateKey = context.StringValue("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].ThingTemplateKey");
+				serviceInfo.CallType = context.StringValue("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].CallType");
+				serviceInfo.Name = context.StringValue("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].Name");
+				serviceInfo.Identifier = context.StringValue("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].Identifier");
+				serviceInfo.Description = context.StringValue("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].Description");
 
-				List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data.ListThingTemplateFuncsForTmallGenie_ServiceInfo.ListThingTemplateFuncsForTmallGenie_Argument> serviceInfo_inputParams = new List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data.ListThingTemplateFuncsForTmallGenie_ServiceInfo.ListThingTemplateFuncsForTmallGenie_Argument>();
-				for (int j = 0; j < context.Length("ListThingTemplateFuncsForTmallGenie.Data.ServiceInfos["+ i +"].InputParams.Length"); j++) {
-					ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data.ListThingTemplateFuncsForTmallGenie_ServiceInfo.ListThingTemplateFuncsForTmallGenie_Argument argument = new ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data.ListThingTemplateFuncsForTmallGenie_ServiceInfo.ListThingTemplateFuncsForTmallGenie_Argument();
-					argument.DataType = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.ServiceInfos["+ i +"].InputParams["+ j +"].DataType");
-					argument.Identifier = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.ServiceInfos["+ i +"].InputParams["+ j +"].Identifier");
-					argument.Name = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.ServiceInfos["+ i +"].InputParams["+ j +"].Name");
-					argument.ParaOrder = context.LongValue("ListThingTemplateFuncsForTmallGenie.Data.ServiceInfos["+ i +"].InputParams["+ j +"].ParaOrder");
-					argument.Direction = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.ServiceInfos["+ i +"].InputParams["+ j +"].Direction");
-					argument.DataSpecs = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.ServiceInfos["+ i +"].InputParams["+ j +"].DataSpecs");
-					argument.DataSpecsList = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.ServiceInfos["+ i +"].InputParams["+ j +"].DataSpecsList");
+				List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_ServiceInfo.ListThingTemplateFuncsForTmallGenie_Argument> serviceInfo_inputParams = new List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_ServiceInfo.ListThingTemplateFuncsForTmallGenie_Argument>();
+				for (int j = 0; j < context.Length("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].InputParams.Length"); j++) {
+					ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_ServiceInfo.ListThingTemplateFuncsForTmallGenie_Argument argument = new ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_ServiceInfo.ListThingTemplateFuncsForTmallGenie_Argument();
+					argument.DataType = context.StringValue("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].InputParams["+ j +"].DataType");
+					argument.Identifier = context.StringValue("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].InputParams["+ j +"].Identifier");
+					argument.Name = context.StringValue("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].InputParams["+ j +"].Name");
+					argument.ParaOrder = context.IntegerValue("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].InputParams["+ j +"].ParaOrder");
+					argument.Direction = context.StringValue("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].InputParams["+ j +"].Direction");
+					argument.DataSpecs = context.StringValue("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].InputParams["+ j +"].DataSpecs");
+					argument.DataSpecsList = context.StringValue("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].InputParams["+ j +"].DataSpecsList");
 
 					serviceInfo_inputParams.Add(argument);
 				}
 				serviceInfo.InputParams = serviceInfo_inputParams;
 
-				List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data.ListThingTemplateFuncsForTmallGenie_ServiceInfo.ListThingTemplateFuncsForTmallGenie_Argument1> serviceInfo_outputParams = new List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data.ListThingTemplateFuncsForTmallGenie_ServiceInfo.ListThingTemplateFuncsForTmallGenie_Argument1>();
-				for (int j = 0; j < context.Length("ListThingTemplateFuncsForTmallGenie.Data.ServiceInfos["+ i +"].OutputParams.Length"); j++) {
-					ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data.ListThingTemplateFuncsForTmallGenie_ServiceInfo.ListThingTemplateFuncsForTmallGenie_Argument1 argument1 = new ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data.ListThingTemplateFuncsForTmallGenie_ServiceInfo.ListThingTemplateFuncsForTmallGenie_Argument1();
-					argument1.DataType = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.ServiceInfos["+ i +"].OutputParams["+ j +"].DataType");
-					argument1.Identifier = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.ServiceInfos["+ i +"].OutputParams["+ j +"].Identifier");
-					argument1.ParaOrder = context.LongValue("ListThingTemplateFuncsForTmallGenie.Data.ServiceInfos["+ i +"].OutputParams["+ j +"].ParaOrder");
-					argument1.Direction = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.ServiceInfos["+ i +"].OutputParams["+ j +"].Direction");
-					argument1.Name = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.ServiceInfos["+ i +"].OutputParams["+ j +"].Name");
-					argument1.DataSpecs = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.ServiceInfos["+ i +"].OutputParams["+ j +"].DataSpecs");
-					argument1.DataSpecsList = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.ServiceInfos["+ i +"].OutputParams["+ j +"].DataSpecsList");
+				List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_ServiceInfo.ListThingTemplateFuncsForTmallGenie_Argument2> serviceInfo_outputParams = new List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_ServiceInfo.ListThingTemplateFuncsForTmallGenie_Argument2>();
+				for (int j = 0; j < context.Length("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].OutputParams.Length"); j++) {
+					ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_ServiceInfo.ListThingTemplateFuncsForTmallGenie_Argument2 argument2 = new ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_ServiceInfo.ListThingTemplateFuncsForTmallGenie_Argument2();
+					argument2.DataType = context.StringValue("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].OutputParams["+ j +"].DataType");
+					argument2.Identifier = context.StringValue("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].OutputParams["+ j +"].Identifier");
+					argument2.ParaOrder = context.IntegerValue("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].OutputParams["+ j +"].ParaOrder");
+					argument2.Direction = context.StringValue("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].OutputParams["+ j +"].Direction");
+					argument2.Name = context.StringValue("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].OutputParams["+ j +"].Name");
+					argument2.DataSpecs = context.StringValue("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].OutputParams["+ j +"].DataSpecs");
+					argument2.DataSpecsList = context.StringValue("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].OutputParams["+ j +"].DataSpecsList");
 
-					serviceInfo_outputParams.Add(argument1);
+					serviceInfo_outputParams.Add(argument2);
 				}
 				serviceInfo.OutputParams = serviceInfo_outputParams;
 
-				data_serviceInfos.Add(serviceInfo);
+				List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_ServiceInfo.ListThingTemplateFuncsForTmallGenie_Tag3> serviceInfo_tags1 = new List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_ServiceInfo.ListThingTemplateFuncsForTmallGenie_Tag3>();
+				for (int j = 0; j < context.Length("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].Tags.Length"); j++) {
+					ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_ServiceInfo.ListThingTemplateFuncsForTmallGenie_Tag3 tag3 = new ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_ServiceInfo.ListThingTemplateFuncsForTmallGenie_Tag3();
+					tag3.TagKey = context.StringValue("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].Tags["+ j +"].TagKey");
+					tag3.TagValue = context.StringValue("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].Tags["+ j +"].TagValue");
+
+					serviceInfo_tags1.Add(tag3);
+				}
+				serviceInfo.Tags1 = serviceInfo_tags1;
+
+				listThingTemplateFuncsForTmallGenieResponse_serviceInfos.Add(serviceInfo);
 			}
-			data.ServiceInfos = data_serviceInfos;
+			listThingTemplateFuncsForTmallGenieResponse.ServiceInfos = listThingTemplateFuncsForTmallGenieResponse_serviceInfos;
 
-			List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data.ListThingTemplateFuncsForTmallGenie_EventInfo> data_eventInfos = new List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data.ListThingTemplateFuncsForTmallGenie_EventInfo>();
-			for (int i = 0; i < context.Length("ListThingTemplateFuncsForTmallGenie.Data.EventInfos.Length"); i++) {
-				ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data.ListThingTemplateFuncsForTmallGenie_EventInfo eventInfo = new ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data.ListThingTemplateFuncsForTmallGenie_EventInfo();
-				eventInfo.TmallFunctionId = context.LongValue("ListThingTemplateFuncsForTmallGenie.Data.EventInfos["+ i +"].TmallFunctionId");
-				eventInfo.ThingTemplateKey = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.EventInfos["+ i +"].ThingTemplateKey");
-				eventInfo.EventType = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.EventInfos["+ i +"].EventType");
-				eventInfo.Name = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.EventInfos["+ i +"].Name");
-				eventInfo.Identifier = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.EventInfos["+ i +"].Identifier");
+			List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_EventInfo> listThingTemplateFuncsForTmallGenieResponse_eventInfos = new List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_EventInfo>();
+			for (int i = 0; i < context.Length("ListThingTemplateFuncsForTmallGenie.EventInfos.Length"); i++) {
+				ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_EventInfo eventInfo = new ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_EventInfo();
+				eventInfo.TmallFunctionId = context.LongValue("ListThingTemplateFuncsForTmallGenie.EventInfos["+ i +"].TmallFunctionId");
+				eventInfo.ThingTemplateKey = context.StringValue("ListThingTemplateFuncsForTmallGenie.EventInfos["+ i +"].ThingTemplateKey");
+				eventInfo.EventType = context.StringValue("ListThingTemplateFuncsForTmallGenie.EventInfos["+ i +"].EventType");
+				eventInfo.Name = context.StringValue("ListThingTemplateFuncsForTmallGenie.EventInfos["+ i +"].Name");
+				eventInfo.Description = context.StringValue("ListThingTemplateFuncsForTmallGenie.EventInfos["+ i +"].Description");
+				eventInfo.Identifier = context.StringValue("ListThingTemplateFuncsForTmallGenie.EventInfos["+ i +"].Identifier");
 
-				List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data.ListThingTemplateFuncsForTmallGenie_EventInfo.ListThingTemplateFuncsForTmallGenie_Argument3> eventInfo_outputData = new List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data.ListThingTemplateFuncsForTmallGenie_EventInfo.ListThingTemplateFuncsForTmallGenie_Argument3>();
-				for (int j = 0; j < context.Length("ListThingTemplateFuncsForTmallGenie.Data.EventInfos["+ i +"].OutputData.Length"); j++) {
-					ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data.ListThingTemplateFuncsForTmallGenie_EventInfo.ListThingTemplateFuncsForTmallGenie_Argument3 argument3 = new ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data.ListThingTemplateFuncsForTmallGenie_EventInfo.ListThingTemplateFuncsForTmallGenie_Argument3();
-					argument3.DataType = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.EventInfos["+ i +"].OutputData["+ j +"].DataType");
-					argument3.Identifier = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.EventInfos["+ i +"].OutputData["+ j +"].Identifier");
-					argument3.Name = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.EventInfos["+ i +"].OutputData["+ j +"].Name");
-					argument3.ParaOrder = context.LongValue("ListThingTemplateFuncsForTmallGenie.Data.EventInfos["+ i +"].OutputData["+ j +"].ParaOrder");
-					argument3.DataSpecs = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.EventInfos["+ i +"].OutputData["+ j +"].DataSpecs");
-					argument3.DataSpecsList = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.EventInfos["+ i +"].OutputData["+ j +"].DataSpecsList");
+				List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_EventInfo.ListThingTemplateFuncsForTmallGenie_Argument5> eventInfo_outputData = new List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_EventInfo.ListThingTemplateFuncsForTmallGenie_Argument5>();
+				for (int j = 0; j < context.Length("ListThingTemplateFuncsForTmallGenie.EventInfos["+ i +"].OutputData.Length"); j++) {
+					ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_EventInfo.ListThingTemplateFuncsForTmallGenie_Argument5 argument5 = new ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_EventInfo.ListThingTemplateFuncsForTmallGenie_Argument5();
+					argument5.DataType = context.StringValue("ListThingTemplateFuncsForTmallGenie.EventInfos["+ i +"].OutputData["+ j +"].DataType");
+					argument5.Identifier = context.StringValue("ListThingTemplateFuncsForTmallGenie.EventInfos["+ i +"].OutputData["+ j +"].Identifier");
+					argument5.Name = context.StringValue("ListThingTemplateFuncsForTmallGenie.EventInfos["+ i +"].OutputData["+ j +"].Name");
+					argument5.ParaOrder = context.IntegerValue("ListThingTemplateFuncsForTmallGenie.EventInfos["+ i +"].OutputData["+ j +"].ParaOrder");
+					argument5.DataSpecs = context.StringValue("ListThingTemplateFuncsForTmallGenie.EventInfos["+ i +"].OutputData["+ j +"].DataSpecs");
+					argument5.DataSpecsList = context.StringValue("ListThingTemplateFuncsForTmallGenie.EventInfos["+ i +"].OutputData["+ j +"].DataSpecsList");
 
-					eventInfo_outputData.Add(argument3);
+					eventInfo_outputData.Add(argument5);
 				}
 				eventInfo.OutputData = eventInfo_outputData;
 
-				List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data.ListThingTemplateFuncsForTmallGenie_EventInfo.ListThingTemplateFuncsForTmallGenie_Tag4> eventInfo_tags2 = new List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data.ListThingTemplateFuncsForTmallGenie_EventInfo.ListThingTemplateFuncsForTmallGenie_Tag4>();
-				for (int j = 0; j < context.Length("ListThingTemplateFuncsForTmallGenie.Data.EventInfos["+ i +"].Tags.Length"); j++) {
-					ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data.ListThingTemplateFuncsForTmallGenie_EventInfo.ListThingTemplateFuncsForTmallGenie_Tag4 tag4 = new ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_Data.ListThingTemplateFuncsForTmallGenie_EventInfo.ListThingTemplateFuncsForTmallGenie_Tag4();
-					tag4.TagKey = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.EventInfos["+ i +"].Tags["+ j +"].TagKey");
-					tag4.TagValue = context.StringValue("ListThingTemplateFuncsForTmallGenie.Data.EventInfos["+ i +"].Tags["+ j +"].TagValue");
+				List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_EventInfo.ListThingTemplateFuncsForTmallGenie_Tag6> eventInfo_tags4 = new List<ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_EventInfo.ListThingTemplateFuncsForTmallGenie_Tag6>();
+				for (int j = 0; j < context.Length("ListThingTemplateFuncsForTmallGenie.EventInfos["+ i +"].Tags.Length"); j++) {
+					ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_EventInfo.ListThingTemplateFuncsForTmallGenie_Tag6 tag6 = new ListThingTemplateFuncsForTmallGenieResponse.ListThingTemplateFuncsForTmallGenie_EventInfo.ListThingTemplateFuncsForTmallGenie_Tag6();
+					tag6.TagKey = context.StringValue("ListThingTemplateFuncsForTmallGenie.EventInfos["+ i +"].Tags["+ j +"].TagKey");
+					tag6.TagValue = context.StringValue("ListThingTemplateFuncsForTmallGenie.EventInfos["+ i +"].Tags["+ j +"].TagValue");
 
-					eventInfo_tags2.Add(tag4);
+					eventInfo_tags4.Add(tag6);
 				}
-				eventInfo.Tags2 = eventInfo_tags2;
+				eventInfo.Tags4 = eventInfo_tags4;
 
-				data_eventInfos.Add(eventInfo);
+				listThingTemplateFuncsForTmallGenieResponse_eventInfos.Add(eventInfo);
 			}
-			data.EventInfos = data_eventInfos;
-			listThingTemplateFuncsForTmallGenieResponse.Data = data;
+			listThingTemplateFuncsForTmallGenieResponse.EventInfos = listThingTemplateFuncsForTmallGenieResponse_eventInfos;
         
 			return listThingTemplateFuncsForTmallGenieResponse;
         }

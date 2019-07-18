@@ -263,7 +263,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 				private string name;
 
-				private long? paraOrder;
+				private int? paraOrder;
 
 				private string direction;
 
@@ -319,7 +319,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 					}
 				}
 
-				public long? ParaOrder
+				public int? ParaOrder
 				{
 					get
 					{
@@ -377,7 +377,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 				private string identifier;
 
-				private long? paraOrder;
+				private int? paraOrder;
 
 				private string direction;
 
@@ -423,7 +423,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 					}
 				}
 
-				public long? ParaOrder
+				public int? ParaOrder
 				{
 					get
 					{

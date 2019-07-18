@@ -31,15 +31,47 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class QueryProductInfoForTmallGenieRequest : RpcAcsRequest<QueryProductInfoForTmallGenieResponse>
     {
         public QueryProductInfoForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "QueryProductInfoForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "QueryProductInfoForTmallGenie", "Iot", "openAPI")
         {
         }
+
+		private List<string> fields;
+
+		private string eagleEyeTraceId;
 
 		private string iotInstanceId;
 
 		private string productKey;
 
-		private List<object> fields;
+		public List<string> Fields
+		{
+			get
+			{
+				return fields;
+			}
+
+			set
+			{
+				fields = value;
+				for (int i = 0; i < fields.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Field." + (i + 1) , fields[i]);
+				}
+			}
+		}
+
+		public string EagleEyeTraceId
+		{
+			get
+			{
+				return eagleEyeTraceId;
+			}
+			set	
+			{
+				eagleEyeTraceId = value;
+				DictionaryUtil.Add(QueryParameters, "EagleEyeTraceId", value);
+			}
+		}
 
 		public string IotInstanceId
 		{
@@ -64,19 +96,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				productKey = value;
 				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
-			}
-		}
-
-		public List<object> Fields
-		{
-			get
-			{
-				return fields;
-			}
-			set	
-			{
-				fields = value;
-				DictionaryUtil.Add(QueryParameters, "Fields", JsonConvert.SerializeObject(value));
 			}
 		}
 

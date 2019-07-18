@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class ListEventPoolForTmallGenieRequest : RpcAcsRequest<ListEventPoolForTmallGenieResponse>
     {
         public ListEventPoolForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "ListEventPoolForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "ListEventPoolForTmallGenie", "Iot", "openAPI")
         {
         }
 
@@ -52,7 +52,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			set	
 			{
 				keywords = value;
-				DictionaryUtil.Add(QueryParameters, "keywords", value);
+				DictionaryUtil.Add(QueryParameters, "Keywords", value);
 			}
 		}
 

@@ -36,16 +36,16 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 			queryProductInfoForTmallGenieResponse.Code = context.StringValue("QueryProductInfoForTmallGenie.Code");
 			queryProductInfoForTmallGenieResponse.ErrorMessage = context.StringValue("QueryProductInfoForTmallGenie.ErrorMessage");
 			queryProductInfoForTmallGenieResponse.DslString = context.StringValue("QueryProductInfoForTmallGenie.DslString");
-			queryProductInfoForTmallGenieResponse.Mapping = context.StringValue("QueryProductInfoForTmallGenie.Mapping");
 
 			QueryProductInfoForTmallGenieResponse.QueryProductInfoForTmallGenie_ProductInfo productInfo = new QueryProductInfoForTmallGenieResponse.QueryProductInfoForTmallGenie_ProductInfo();
-			productInfo.GmtCreate = context.LongValue("QueryProductInfoForTmallGenie.ProductInfo.GmtCreate");
+			productInfo.GmtCreate = context.StringValue("QueryProductInfoForTmallGenie.ProductInfo.GmtCreate");
 			productInfo.DataFormat = context.IntegerValue("QueryProductInfoForTmallGenie.ProductInfo.DataFormat");
 			productInfo.Description = context.StringValue("QueryProductInfoForTmallGenie.ProductInfo.Description");
-			productInfo.DeviceCount = context.IntegerValue("QueryProductInfoForTmallGenie.ProductInfo.DeviceCount");
 			productInfo.NodeType = context.IntegerValue("QueryProductInfoForTmallGenie.ProductInfo.NodeType");
 			productInfo.ProductKey = context.StringValue("QueryProductInfoForTmallGenie.ProductInfo.ProductKey");
 			productInfo.ProductName = context.StringValue("QueryProductInfoForTmallGenie.ProductInfo.ProductName");
+			productInfo.Brand = context.StringValue("QueryProductInfoForTmallGenie.ProductInfo.Brand");
+			productInfo.ProductModel = context.StringValue("QueryProductInfoForTmallGenie.ProductInfo.ProductModel");
 			productInfo.ProductSecret = context.StringValue("QueryProductInfoForTmallGenie.ProductInfo.ProductSecret");
 			productInfo.CategoryName = context.StringValue("QueryProductInfoForTmallGenie.ProductInfo.CategoryName");
 			productInfo.CategoryKey = context.StringValue("QueryProductInfoForTmallGenie.ProductInfo.CategoryKey");
@@ -53,6 +53,7 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 			productInfo.Id2 = context.BooleanValue("QueryProductInfoForTmallGenie.ProductInfo.Id2");
 			productInfo.ProtocolType = context.StringValue("QueryProductInfoForTmallGenie.ProductInfo.ProtocolType");
 			productInfo.ProductStatus = context.StringValue("QueryProductInfoForTmallGenie.ProductInfo.ProductStatus");
+			productInfo.ScriptId = context.LongValue("QueryProductInfoForTmallGenie.ProductInfo.ScriptId");
 			productInfo.Owner = context.BooleanValue("QueryProductInfoForTmallGenie.ProductInfo.Owner");
 			productInfo.NetType = context.IntegerValue("QueryProductInfoForTmallGenie.ProductInfo.NetType");
 			queryProductInfoForTmallGenieResponse.ProductInfo = productInfo;
@@ -66,6 +67,8 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 				property.RwType = context.StringValue("QueryProductInfoForTmallGenie.Properties["+ i +"].RwType");
 				property.Name = context.StringValue("QueryProductInfoForTmallGenie.Properties["+ i +"].Name");
 				property.DataSpecs = context.StringValue("QueryProductInfoForTmallGenie.Properties["+ i +"].DataSpecs");
+				property.Identifier = context.StringValue("QueryProductInfoForTmallGenie.Properties["+ i +"].Identifier");
+				property.Description = context.StringValue("QueryProductInfoForTmallGenie.Properties["+ i +"].Description");
 				property.DataSpecsList = context.StringValue("QueryProductInfoForTmallGenie.Properties["+ i +"].DataSpecsList");
 
 				List<QueryProductInfoForTmallGenieResponse.QueryProductInfoForTmallGenie_Property.QueryProductInfoForTmallGenie_Tag> property_tags = new List<QueryProductInfoForTmallGenieResponse.QueryProductInfoForTmallGenie_Property.QueryProductInfoForTmallGenie_Tag>();
@@ -90,6 +93,7 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 				_event.EventType = context.StringValue("QueryProductInfoForTmallGenie.Events["+ i +"].EventType");
 				_event.Name = context.StringValue("QueryProductInfoForTmallGenie.Events["+ i +"].Name");
 				_event.Identifier = context.StringValue("QueryProductInfoForTmallGenie.Events["+ i +"].Identifier");
+				_event.Description = context.StringValue("QueryProductInfoForTmallGenie.Events["+ i +"].Description");
 
 				List<QueryProductInfoForTmallGenieResponse.QueryProductInfoForTmallGenie__Event.QueryProductInfoForTmallGenie_Argument> _event_outputData = new List<QueryProductInfoForTmallGenieResponse.QueryProductInfoForTmallGenie__Event.QueryProductInfoForTmallGenie_Argument>();
 				for (int j = 0; j < context.Length("QueryProductInfoForTmallGenie.Events["+ i +"].OutputData.Length"); j++) {
@@ -98,7 +102,7 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 					argument.DataType = context.StringValue("QueryProductInfoForTmallGenie.Events["+ i +"].OutputData["+ j +"].DataType");
 					argument.Identifier = context.StringValue("QueryProductInfoForTmallGenie.Events["+ i +"].OutputData["+ j +"].Identifier");
 					argument.Name = context.StringValue("QueryProductInfoForTmallGenie.Events["+ i +"].OutputData["+ j +"].Name");
-					argument.ParaOrder = context.LongValue("QueryProductInfoForTmallGenie.Events["+ i +"].OutputData["+ j +"].ParaOrder");
+					argument.ParaOrder = context.IntegerValue("QueryProductInfoForTmallGenie.Events["+ i +"].OutputData["+ j +"].ParaOrder");
 					argument.DataSpecs = context.StringValue("QueryProductInfoForTmallGenie.Events["+ i +"].OutputData["+ j +"].DataSpecs");
 					argument.DataSpecsList = context.StringValue("QueryProductInfoForTmallGenie.Events["+ i +"].OutputData["+ j +"].DataSpecsList");
 
@@ -128,38 +132,49 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 				service.CallType = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].CallType");
 				service.Name = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].Name");
 				service.Identifier = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].Identifier");
+				service.Description = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].Description");
 
-				List<QueryProductInfoForTmallGenieResponse.QueryProductInfoForTmallGenie_Service.QueryProductInfoForTmallGenie_Argument3> service_inputParams = new List<QueryProductInfoForTmallGenieResponse.QueryProductInfoForTmallGenie_Service.QueryProductInfoForTmallGenie_Argument3>();
+				List<QueryProductInfoForTmallGenieResponse.QueryProductInfoForTmallGenie_Service.QueryProductInfoForTmallGenie_Argument4> service_inputParams = new List<QueryProductInfoForTmallGenieResponse.QueryProductInfoForTmallGenie_Service.QueryProductInfoForTmallGenie_Argument4>();
 				for (int j = 0; j < context.Length("QueryProductInfoForTmallGenie.Services["+ i +"].InputParams.Length"); j++) {
-					QueryProductInfoForTmallGenieResponse.QueryProductInfoForTmallGenie_Service.QueryProductInfoForTmallGenie_Argument3 argument3 = new QueryProductInfoForTmallGenieResponse.QueryProductInfoForTmallGenie_Service.QueryProductInfoForTmallGenie_Argument3();
-					argument3.Id = context.LongValue("QueryProductInfoForTmallGenie.Services["+ i +"].InputParams["+ j +"].Id");
-					argument3.DataType = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].InputParams["+ j +"].DataType");
-					argument3.Identifier = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].InputParams["+ j +"].Identifier");
-					argument3.Name = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].InputParams["+ j +"].Name");
-					argument3.ParaOrder = context.LongValue("QueryProductInfoForTmallGenie.Services["+ i +"].InputParams["+ j +"].ParaOrder");
-					argument3.Direction = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].InputParams["+ j +"].Direction");
-					argument3.DataSpecs = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].InputParams["+ j +"].DataSpecs");
-					argument3.DataSpecsList = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].InputParams["+ j +"].DataSpecsList");
+					QueryProductInfoForTmallGenieResponse.QueryProductInfoForTmallGenie_Service.QueryProductInfoForTmallGenie_Argument4 argument4 = new QueryProductInfoForTmallGenieResponse.QueryProductInfoForTmallGenie_Service.QueryProductInfoForTmallGenie_Argument4();
+					argument4.Id = context.LongValue("QueryProductInfoForTmallGenie.Services["+ i +"].InputParams["+ j +"].Id");
+					argument4.DataType = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].InputParams["+ j +"].DataType");
+					argument4.Identifier = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].InputParams["+ j +"].Identifier");
+					argument4.Name = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].InputParams["+ j +"].Name");
+					argument4.ParaOrder = context.IntegerValue("QueryProductInfoForTmallGenie.Services["+ i +"].InputParams["+ j +"].ParaOrder");
+					argument4.Direction = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].InputParams["+ j +"].Direction");
+					argument4.DataSpecs = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].InputParams["+ j +"].DataSpecs");
+					argument4.DataSpecsList = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].InputParams["+ j +"].DataSpecsList");
 
-					service_inputParams.Add(argument3);
+					service_inputParams.Add(argument4);
 				}
 				service.InputParams = service_inputParams;
 
-				List<QueryProductInfoForTmallGenieResponse.QueryProductInfoForTmallGenie_Service.QueryProductInfoForTmallGenie_Argument4> service_outputParams = new List<QueryProductInfoForTmallGenieResponse.QueryProductInfoForTmallGenie_Service.QueryProductInfoForTmallGenie_Argument4>();
+				List<QueryProductInfoForTmallGenieResponse.QueryProductInfoForTmallGenie_Service.QueryProductInfoForTmallGenie_Argument5> service_outputParams = new List<QueryProductInfoForTmallGenieResponse.QueryProductInfoForTmallGenie_Service.QueryProductInfoForTmallGenie_Argument5>();
 				for (int j = 0; j < context.Length("QueryProductInfoForTmallGenie.Services["+ i +"].OutputParams.Length"); j++) {
-					QueryProductInfoForTmallGenieResponse.QueryProductInfoForTmallGenie_Service.QueryProductInfoForTmallGenie_Argument4 argument4 = new QueryProductInfoForTmallGenieResponse.QueryProductInfoForTmallGenie_Service.QueryProductInfoForTmallGenie_Argument4();
-					argument4.Id = context.LongValue("QueryProductInfoForTmallGenie.Services["+ i +"].OutputParams["+ j +"].Id");
-					argument4.DataType = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].OutputParams["+ j +"].DataType");
-					argument4.Identifier = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].OutputParams["+ j +"].Identifier");
-					argument4.ParaOrder = context.LongValue("QueryProductInfoForTmallGenie.Services["+ i +"].OutputParams["+ j +"].ParaOrder");
-					argument4.Direction = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].OutputParams["+ j +"].Direction");
-					argument4.Name = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].OutputParams["+ j +"].Name");
-					argument4.DataSpecs = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].OutputParams["+ j +"].DataSpecs");
-					argument4.DataSpecsList = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].OutputParams["+ j +"].DataSpecsList");
+					QueryProductInfoForTmallGenieResponse.QueryProductInfoForTmallGenie_Service.QueryProductInfoForTmallGenie_Argument5 argument5 = new QueryProductInfoForTmallGenieResponse.QueryProductInfoForTmallGenie_Service.QueryProductInfoForTmallGenie_Argument5();
+					argument5.Id = context.LongValue("QueryProductInfoForTmallGenie.Services["+ i +"].OutputParams["+ j +"].Id");
+					argument5.DataType = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].OutputParams["+ j +"].DataType");
+					argument5.Identifier = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].OutputParams["+ j +"].Identifier");
+					argument5.ParaOrder = context.IntegerValue("QueryProductInfoForTmallGenie.Services["+ i +"].OutputParams["+ j +"].ParaOrder");
+					argument5.Direction = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].OutputParams["+ j +"].Direction");
+					argument5.Name = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].OutputParams["+ j +"].Name");
+					argument5.DataSpecs = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].OutputParams["+ j +"].DataSpecs");
+					argument5.DataSpecsList = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].OutputParams["+ j +"].DataSpecsList");
 
-					service_outputParams.Add(argument4);
+					service_outputParams.Add(argument5);
 				}
 				service.OutputParams = service_outputParams;
+
+				List<QueryProductInfoForTmallGenieResponse.QueryProductInfoForTmallGenie_Service.QueryProductInfoForTmallGenie_Tag6> service_tags3 = new List<QueryProductInfoForTmallGenieResponse.QueryProductInfoForTmallGenie_Service.QueryProductInfoForTmallGenie_Tag6>();
+				for (int j = 0; j < context.Length("QueryProductInfoForTmallGenie.Services["+ i +"].Tags.Length"); j++) {
+					QueryProductInfoForTmallGenieResponse.QueryProductInfoForTmallGenie_Service.QueryProductInfoForTmallGenie_Tag6 tag6 = new QueryProductInfoForTmallGenieResponse.QueryProductInfoForTmallGenie_Service.QueryProductInfoForTmallGenie_Tag6();
+					tag6.TagKey = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].Tags["+ j +"].TagKey");
+					tag6.TagValue = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].Tags["+ j +"].TagValue");
+
+					service_tags3.Add(tag6);
+				}
+				service.Tags3 = service_tags3;
 
 				queryProductInfoForTmallGenieResponse_services.Add(service);
 			}

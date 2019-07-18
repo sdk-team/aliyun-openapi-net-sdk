@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class UpdateProductEventIdentifierForTmallGenieRequest : RpcAcsRequest<UpdateProductEventIdentifierForTmallGenieResponse>
     {
         public UpdateProductEventIdentifierForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "UpdateProductEventIdentifierForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "UpdateProductEventIdentifierForTmallGenie", "Iot", "openAPI")
         {
         }
 
@@ -43,7 +43,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private string description;
 
-		private int? eventType;
+		private string eventType;
 
 		private string productKey;
 
@@ -113,7 +113,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public int? EventType
+		public string EventType
 		{
 			get
 			{
@@ -122,7 +122,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			set	
 			{
 				eventType = value;
-				DictionaryUtil.Add(BodyParameters, "EventType", value.ToString());
+				DictionaryUtil.Add(BodyParameters, "EventType", value);
 			}
 		}
 

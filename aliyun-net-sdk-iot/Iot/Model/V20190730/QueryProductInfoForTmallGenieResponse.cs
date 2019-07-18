@@ -35,8 +35,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private string dslString;
 
-		private string mapping;
-
 		private List<QueryProductInfoForTmallGenie_Property> properties;
 
 		private List<QueryProductInfoForTmallGenie__Event> events;
@@ -105,18 +103,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public string Mapping
-		{
-			get
-			{
-				return mapping;
-			}
-			set	
-			{
-				mapping = value;
-			}
-		}
-
 		public List<QueryProductInfoForTmallGenie_Property> Properties
 		{
 			get
@@ -179,6 +165,10 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			private string name;
 
 			private string dataSpecs;
+
+			private string identifier;
+
+			private string description;
 
 			private string dataSpecsList;
 
@@ -256,6 +246,30 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 				}
 			}
 
+			public string Identifier
+			{
+				get
+				{
+					return identifier;
+				}
+				set	
+				{
+					identifier = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
 			public string DataSpecsList
 			{
 				get
@@ -326,6 +340,8 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 			private string identifier;
 
+			private string description;
+
 			private List<QueryProductInfoForTmallGenie_Argument> outputData;
 
 			private List<QueryProductInfoForTmallGenie_Tag2> tags1;
@@ -390,6 +406,18 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 				}
 			}
 
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
 			public List<QueryProductInfoForTmallGenie_Argument> OutputData
 			{
 				get
@@ -425,7 +453,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 				private string name;
 
-				private long? paraOrder;
+				private int? paraOrder;
 
 				private string dataSpecs;
 
@@ -479,7 +507,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 					}
 				}
 
-				public long? ParaOrder
+				public int? ParaOrder
 				{
 					get
 					{
@@ -562,9 +590,13 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 			private string identifier;
 
-			private List<QueryProductInfoForTmallGenie_Argument3> inputParams;
+			private string description;
 
-			private List<QueryProductInfoForTmallGenie_Argument4> outputParams;
+			private List<QueryProductInfoForTmallGenie_Argument4> inputParams;
+
+			private List<QueryProductInfoForTmallGenie_Argument5> outputParams;
+
+			private List<QueryProductInfoForTmallGenie_Tag6> tags3;
 
 			public long? TmallFunctionId
 			{
@@ -626,7 +658,19 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 				}
 			}
 
-			public List<QueryProductInfoForTmallGenie_Argument3> InputParams
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public List<QueryProductInfoForTmallGenie_Argument4> InputParams
 			{
 				get
 				{
@@ -638,7 +682,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 				}
 			}
 
-			public List<QueryProductInfoForTmallGenie_Argument4> OutputParams
+			public List<QueryProductInfoForTmallGenie_Argument5> OutputParams
 			{
 				get
 				{
@@ -650,119 +694,15 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 				}
 			}
 
-			public class QueryProductInfoForTmallGenie_Argument3
+			public List<QueryProductInfoForTmallGenie_Tag6> Tags3
 			{
-
-				private long? id;
-
-				private string dataType;
-
-				private string identifier;
-
-				private string name;
-
-				private long? paraOrder;
-
-				private string direction;
-
-				private string dataSpecs;
-
-				private string dataSpecsList;
-
-				public long? Id
+				get
 				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
-					}
+					return tags3;
 				}
-
-				public string DataType
+				set	
 				{
-					get
-					{
-						return dataType;
-					}
-					set	
-					{
-						dataType = value;
-					}
-				}
-
-				public string Identifier
-				{
-					get
-					{
-						return identifier;
-					}
-					set	
-					{
-						identifier = value;
-					}
-				}
-
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
-
-				public long? ParaOrder
-				{
-					get
-					{
-						return paraOrder;
-					}
-					set	
-					{
-						paraOrder = value;
-					}
-				}
-
-				public string Direction
-				{
-					get
-					{
-						return direction;
-					}
-					set	
-					{
-						direction = value;
-					}
-				}
-
-				public string DataSpecs
-				{
-					get
-					{
-						return dataSpecs;
-					}
-					set	
-					{
-						dataSpecs = value;
-					}
-				}
-
-				public string DataSpecsList
-				{
-					get
-					{
-						return dataSpecsList;
-					}
-					set	
-					{
-						dataSpecsList = value;
-					}
+					tags3 = value;
 				}
 			}
 
@@ -775,7 +715,123 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 				private string identifier;
 
-				private long? paraOrder;
+				private string name;
+
+				private int? paraOrder;
+
+				private string direction;
+
+				private string dataSpecs;
+
+				private string dataSpecsList;
+
+				public long? Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
+					}
+				}
+
+				public string DataType
+				{
+					get
+					{
+						return dataType;
+					}
+					set	
+					{
+						dataType = value;
+					}
+				}
+
+				public string Identifier
+				{
+					get
+					{
+						return identifier;
+					}
+					set	
+					{
+						identifier = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public int? ParaOrder
+				{
+					get
+					{
+						return paraOrder;
+					}
+					set	
+					{
+						paraOrder = value;
+					}
+				}
+
+				public string Direction
+				{
+					get
+					{
+						return direction;
+					}
+					set	
+					{
+						direction = value;
+					}
+				}
+
+				public string DataSpecs
+				{
+					get
+					{
+						return dataSpecs;
+					}
+					set	
+					{
+						dataSpecs = value;
+					}
+				}
+
+				public string DataSpecsList
+				{
+					get
+					{
+						return dataSpecsList;
+					}
+					set	
+					{
+						dataSpecsList = value;
+					}
+				}
+			}
+
+			public class QueryProductInfoForTmallGenie_Argument5
+			{
+
+				private long? id;
+
+				private string dataType;
+
+				private string identifier;
+
+				private int? paraOrder;
 
 				private string direction;
 
@@ -821,7 +877,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 					}
 				}
 
-				public long? ParaOrder
+				public int? ParaOrder
 				{
 					get
 					{
@@ -881,24 +937,58 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 					}
 				}
 			}
+
+			public class QueryProductInfoForTmallGenie_Tag6
+			{
+
+				private string tagKey;
+
+				private string tagValue;
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
+					}
+				}
+
+				public string TagValue
+				{
+					get
+					{
+						return tagValue;
+					}
+					set	
+					{
+						tagValue = value;
+					}
+				}
+			}
 		}
 
 		public class QueryProductInfoForTmallGenie_ProductInfo
 		{
 
-			private long? gmtCreate;
+			private string gmtCreate;
 
 			private int? dataFormat;
 
 			private string description;
-
-			private int? deviceCount;
 
 			private int? nodeType;
 
 			private string productKey;
 
 			private string productName;
+
+			private string brand;
+
+			private string productModel;
 
 			private string productSecret;
 
@@ -914,11 +1004,13 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 			private string productStatus;
 
+			private long? scriptId;
+
 			private bool? owner;
 
 			private int? netType;
 
-			public long? GmtCreate
+			public string GmtCreate
 			{
 				get
 				{
@@ -951,18 +1043,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 				set	
 				{
 					description = value;
-				}
-			}
-
-			public int? DeviceCount
-			{
-				get
-				{
-					return deviceCount;
-				}
-				set	
-				{
-					deviceCount = value;
 				}
 			}
 
@@ -999,6 +1079,30 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 				set	
 				{
 					productName = value;
+				}
+			}
+
+			public string Brand
+			{
+				get
+				{
+					return brand;
+				}
+				set	
+				{
+					brand = value;
+				}
+			}
+
+			public string ProductModel
+			{
+				get
+				{
+					return productModel;
+				}
+				set	
+				{
+					productModel = value;
 				}
 			}
 
@@ -1083,6 +1187,18 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 				set	
 				{
 					productStatus = value;
+				}
+			}
+
+			public long? ScriptId
+			{
+				get
+				{
+					return scriptId;
+				}
+				set	
+				{
+					scriptId = value;
 				}
 			}
 
