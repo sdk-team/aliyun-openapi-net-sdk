@@ -37,8 +37,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private List<string> fields;
 
-		private string eagleEyeTraceId;
-
 		private string iotInstanceId;
 
 		private string productKey;
@@ -57,19 +55,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 				{
 					DictionaryUtil.Add(QueryParameters,"Field." + (i + 1) , fields[i]);
 				}
-			}
-		}
-
-		public string EagleEyeTraceId
-		{
-			get
-			{
-				return eagleEyeTraceId;
-			}
-			set	
-			{
-				eagleEyeTraceId = value;
-				DictionaryUtil.Add(QueryParameters, "EagleEyeTraceId", value);
 			}
 		}
 

@@ -34,6 +34,7 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 			bulkQueryProductInfoForTmallGenieResponse.RequestId = context.StringValue("BulkQueryProductInfoForTmallGenie.RequestId");
 			bulkQueryProductInfoForTmallGenieResponse.Success = context.BooleanValue("BulkQueryProductInfoForTmallGenie.Success");
 			bulkQueryProductInfoForTmallGenieResponse.ErrorMessage = context.StringValue("BulkQueryProductInfoForTmallGenie.ErrorMessage");
+			bulkQueryProductInfoForTmallGenieResponse.Code = context.StringValue("BulkQueryProductInfoForTmallGenie.Code");
 
 			List<BulkQueryProductInfoForTmallGenieResponse.BulkQueryProductInfoForTmallGenie_ProductInfo> bulkQueryProductInfoForTmallGenieResponse_list = new List<BulkQueryProductInfoForTmallGenieResponse.BulkQueryProductInfoForTmallGenie_ProductInfo>();
 			for (int i = 0; i < context.Length("BulkQueryProductInfoForTmallGenie.List.Length"); i++) {

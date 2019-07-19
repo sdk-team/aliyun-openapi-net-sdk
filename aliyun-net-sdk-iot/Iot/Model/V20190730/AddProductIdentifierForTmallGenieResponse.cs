@@ -33,6 +33,8 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private string code;
 
+		private List<string> successList;
+
 		public string RequestId
 		{
 			get
@@ -78,6 +80,18 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			set	
 			{
 				code = value;
+			}
+		}
+
+		public List<string> SuccessList
+		{
+			get
+			{
+				return successList;
+			}
+			set	
+			{
+				successList = value;
 			}
 		}
 	}

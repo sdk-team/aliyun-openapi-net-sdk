@@ -31,6 +31,8 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private string errorMessage;
 
+		private string code;
+
 		private List<BulkQueryProductInfoForTmallGenie_ProductInfo> list;
 
 		public string RequestId
@@ -66,6 +68,18 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			set	
 			{
 				errorMessage = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
