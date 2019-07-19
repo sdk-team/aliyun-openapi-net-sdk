@@ -1,3 +1,5 @@
+2019-07-19 Version 1.0.2
+- Debugger.
 2019-07-18 Version 1.0.2
 - Debugger.
 2019-06-28 Version 1.0.2

@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20190730
 {
-	public class DeleteThingTemplateForTmallGenieResponse : AcsResponse
+	public class GetThingModelInfoResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -32,6 +32,8 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 		private string code;
 
 		private string errorMessage;
+
+		private string dslStr;
 
 		public string RequestId
 		{
@@ -78,6 +80,18 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			set	
 			{
 				errorMessage = value;
+			}
+		}
+
+		public string DslStr
+		{
+			get
+			{
+				return dslStr;
+			}
+			set	
+			{
+				dslStr = value;
 			}
 		}
 	}

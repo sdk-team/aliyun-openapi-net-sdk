@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1319a0bd-0333-4f5c-8d1e-f984897eae59}</ProjectGuid>
+    <ProjectGuid>{3e17579c-4bb5-4018-b79b-c2ff398f53b9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -57,6 +57,7 @@
 	<Compile Include="Iot\Model\V20190730\DataCleanSyncDeviceBindResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\UpdateProductPropertyIdentifierForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\CategoryMigrateResponse.cs" />
+	<Compile Include="Iot\Model\V20190730\GetThingModelInfoResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\BatchPropertyMigrateToUnifyResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\QueryStandardUnitResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\EventMigrateToUnifyRequest.cs" />
@@ -156,6 +157,7 @@
 	<Compile Include="Iot\Model\V20190730\CategoryServiceMigrateRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\DataCleanCreateApplyInfoRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\CategoryServiceMigrateResponse.cs" />
+	<Compile Include="Iot\Model\V20190730\GetThingModelInfoRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\ListPropertyPoolForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\GetThingTemplateFunctionForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\ListPropertyPoolForTmallGenieResponse.cs" />
@@ -245,6 +247,7 @@
 	<Compile Include="Iot\Transform\V20190730\ServiceMigrateToProdResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\CategoryMigrateResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\ServiceMigrateToUnifyResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20190730\GetThingModelInfoResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\QueryProductProjectForTmallGenieResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\UpdateProductForTmallGenieResponseUnmarshaller.cs" />
   </ItemGroup>

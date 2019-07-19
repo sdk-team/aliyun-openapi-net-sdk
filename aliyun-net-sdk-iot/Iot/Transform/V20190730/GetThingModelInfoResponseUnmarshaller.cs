@@ -24,19 +24,20 @@ using Aliyun.Acs.Iot.Model.V20190730;
 
 namespace Aliyun.Acs.Iot.Transform.V20190730
 {
-    public class DataCleanSyncDeviceUnbindResponseUnmarshaller
+    public class GetThingModelInfoResponseUnmarshaller
     {
-        public static DataCleanSyncDeviceUnbindResponse Unmarshall(UnmarshallerContext context)
+        public static GetThingModelInfoResponse Unmarshall(UnmarshallerContext context)
         {
-			DataCleanSyncDeviceUnbindResponse dataCleanSyncDeviceUnbindResponse = new DataCleanSyncDeviceUnbindResponse();
+			GetThingModelInfoResponse getThingModelInfoResponse = new GetThingModelInfoResponse();
 
-			dataCleanSyncDeviceUnbindResponse.HttpResponse = context.HttpResponse;
-			dataCleanSyncDeviceUnbindResponse.RequestId = context.StringValue("DataCleanSyncDeviceUnbind.RequestId");
-			dataCleanSyncDeviceUnbindResponse.Success = context.BooleanValue("DataCleanSyncDeviceUnbind.Success");
-			dataCleanSyncDeviceUnbindResponse.ErrorMessage = context.StringValue("DataCleanSyncDeviceUnbind.ErrorMessage");
-			dataCleanSyncDeviceUnbindResponse.Code = context.StringValue("DataCleanSyncDeviceUnbind.Code");
+			getThingModelInfoResponse.HttpResponse = context.HttpResponse;
+			getThingModelInfoResponse.RequestId = context.StringValue("GetThingModelInfo.RequestId");
+			getThingModelInfoResponse.Success = context.BooleanValue("GetThingModelInfo.Success");
+			getThingModelInfoResponse.Code = context.StringValue("GetThingModelInfo.Code");
+			getThingModelInfoResponse.ErrorMessage = context.StringValue("GetThingModelInfo.ErrorMessage");
+			getThingModelInfoResponse.DslStr = context.StringValue("GetThingModelInfo.DslStr");
         
-			return dataCleanSyncDeviceUnbindResponse;
+			return getThingModelInfoResponse;
         }
     }
 }

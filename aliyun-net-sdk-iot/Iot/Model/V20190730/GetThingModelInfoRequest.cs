@@ -27,43 +27,18 @@ using Aliyun.Acs.Iot.Transform.V20190730;
 
 namespace Aliyun.Acs.Iot.Model.V20190730
 {
-    public class QueryDeviceLocalLogContentRequest : RpcAcsRequest<QueryDeviceLocalLogContentResponse>
+    public class GetThingModelInfoRequest : RpcAcsRequest<GetThingModelInfoResponse>
     {
-        public QueryDeviceLocalLogContentRequest()
-            : base("Iot", "2019-07-30", "QueryDeviceLocalLogContent", "Iot", "openAPI")
+        public GetThingModelInfoRequest()
+            : base("Iot", "2019-07-30", "GetThingModelInfo", "Iot", "openAPI")
         {
         }
 
-		private string keywords;
-
 		private string iotInstanceId;
-
-		private int? pageSize;
-
-		private long? endTime;
-
-		private string deviceName;
-
-		private int? currentPage;
-
-		private long? startTime;
 
 		private string productKey;
 
 		private string bizTenantId;
-
-		public string Keywords
-		{
-			get
-			{
-				return keywords;
-			}
-			set	
-			{
-				keywords = value;
-				DictionaryUtil.Add(QueryParameters, "Keywords", value);
-			}
-		}
 
 		public string IotInstanceId
 		{
@@ -75,71 +50,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public long? EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
-			}
-		}
-
-		public string DeviceName
-		{
-			get
-			{
-				return deviceName;
-			}
-			set	
-			{
-				deviceName = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
-			}
-		}
-
-		public long? StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
 			}
 		}
 
@@ -169,9 +79,9 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-        public override QueryDeviceLocalLogContentResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetThingModelInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryDeviceLocalLogContentResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetThingModelInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
