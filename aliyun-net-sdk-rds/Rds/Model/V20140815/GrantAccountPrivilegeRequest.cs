@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Rds;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class GrantAccountPrivilegeRequest : RpcAcsRequest<GrantAccountPrivilegeResponse>
     {
         public GrantAccountPrivilegeRequest()
-            : base("Rds", "2014-08-15", "GrantAccountPrivilege", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "GrantAccountPrivilege")
         {
         }
 
@@ -41,6 +42,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string dBName;
 
 		private string dBInstanceId;
+
+		private string killConnection;
 
 		private string accountPrivilege;
 
@@ -93,6 +96,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public string KillConnection
+		{
+			get
+			{
+				return killConnection;
+			}
+			set	
+			{
+				killConnection = value;
+				DictionaryUtil.Add(QueryParameters, "KillConnection", value);
 			}
 		}
 

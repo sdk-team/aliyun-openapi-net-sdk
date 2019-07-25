@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Rds;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
 
@@ -30,19 +31,31 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class CloneDBInstanceRequest : RpcAcsRequest<CloneDBInstanceResponse>
     {
         public CloneDBInstanceRequest()
-            : base("Rds", "2014-08-15", "CloneDBInstance", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "CloneDBInstance")
         {
         }
 
 		private long? resourceOwnerId;
 
+		private int? dBInstanceStorage;
+
+		private string zoneIdSlave1;
+
+		private string zoneIdSlave2;
+
+		private string tableMeta;
+
+		private string dBInstanceId;
+
+		private string dBInstanceStorageType;
+
 		private string restoreTime;
 
 		private string period;
 
-		private int? dBInstanceStorage;
-
 		private string backupId;
+
+		private string restoreTable;
 
 		private string usedTime;
 
@@ -58,7 +71,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string zoneId;
 
-		private string dBInstanceId;
+		private string category;
 
 		private string payType;
 
@@ -74,6 +87,84 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public int? DBInstanceStorage
+		{
+			get
+			{
+				return dBInstanceStorage;
+			}
+			set	
+			{
+				dBInstanceStorage = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceStorage", value.ToString());
+			}
+		}
+
+		public string ZoneIdSlave1
+		{
+			get
+			{
+				return zoneIdSlave1;
+			}
+			set	
+			{
+				zoneIdSlave1 = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneIdSlave1", value);
+			}
+		}
+
+		public string ZoneIdSlave2
+		{
+			get
+			{
+				return zoneIdSlave2;
+			}
+			set	
+			{
+				zoneIdSlave2 = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneIdSlave2", value);
+			}
+		}
+
+		public string TableMeta
+		{
+			get
+			{
+				return tableMeta;
+			}
+			set	
+			{
+				tableMeta = value;
+				DictionaryUtil.Add(QueryParameters, "TableMeta", value);
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public string DBInstanceStorageType
+		{
+			get
+			{
+				return dBInstanceStorageType;
+			}
+			set	
+			{
+				dBInstanceStorageType = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceStorageType", value);
 			}
 		}
 
@@ -103,19 +194,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? DBInstanceStorage
-		{
-			get
-			{
-				return dBInstanceStorage;
-			}
-			set	
-			{
-				dBInstanceStorage = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceStorage", value.ToString());
-			}
-		}
-
 		public string BackupId
 		{
 			get
@@ -126,6 +204,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				backupId = value;
 				DictionaryUtil.Add(QueryParameters, "BackupId", value);
+			}
+		}
+
+		public string RestoreTable
+		{
+			get
+			{
+				return restoreTable;
+			}
+			set	
+			{
+				restoreTable = value;
+				DictionaryUtil.Add(QueryParameters, "RestoreTable", value);
 			}
 		}
 
@@ -220,16 +311,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceId
+		public string Category
 		{
 			get
 			{
-				return dBInstanceId;
+				return category;
 			}
 			set	
 			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+				category = value;
+				DictionaryUtil.Add(QueryParameters, "Category", value);
 			}
 		}
 

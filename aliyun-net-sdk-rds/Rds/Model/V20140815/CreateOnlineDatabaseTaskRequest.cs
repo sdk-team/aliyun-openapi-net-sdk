@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Rds;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class CreateOnlineDatabaseTaskRequest : RpcAcsRequest<CreateOnlineDatabaseTaskResponse>
     {
         public CreateOnlineDatabaseTaskRequest()
-            : base("Rds", "2014-08-15", "CreateOnlineDatabaseTask", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "CreateOnlineDatabaseTask")
         {
         }
 
@@ -47,8 +48,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string ownerAccount;
 
 		private string dBInstanceId;
-
-		private string checkDBMode;
 
 		private long? ownerId;
 
@@ -140,19 +139,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
-		public string CheckDBMode
-		{
-			get
-			{
-				return checkDBMode;
-			}
-			set	
-			{
-				checkDBMode = value;
-				DictionaryUtil.Add(QueryParameters, "CheckDBMode", value);
 			}
 		}
 

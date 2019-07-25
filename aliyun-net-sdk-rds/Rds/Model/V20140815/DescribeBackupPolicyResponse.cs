@@ -51,9 +51,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string highSpaceUsageProtection;
 
-		private string logBackupFrequency;
-
 		private string compressType;
+
+		private string logBackupFrequency;
 
 		private DescribeBackupPolicy_DuplicationLocation duplicationLocation;
 
@@ -213,18 +213,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string LogBackupFrequency
-		{
-			get
-			{
-				return logBackupFrequency;
-			}
-			set	
-			{
-				logBackupFrequency = value;
-			}
-		}
-
 		public string CompressType
 		{
 			get
@@ -234,6 +222,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				compressType = value;
+			}
+		}
+
+		public string LogBackupFrequency
+		{
+			get
+			{
+				return logBackupFrequency;
+			}
+			set	
+			{
+				logBackupFrequency = value;
 			}
 		}
 

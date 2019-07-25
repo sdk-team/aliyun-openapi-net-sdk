@@ -58,7 +58,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string timeZone;
 
-			private string standardTimeOffset;
+			private string collation;
 
 			private string description;
 
@@ -74,15 +74,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string StandardTimeOffset
+			public string Collation
 			{
 				get
 				{
-					return standardTimeOffset;
+					return collation;
 				}
 				set	
 				{
-					standardTimeOffset = value;
+					collation = value;
 				}
 			}
 

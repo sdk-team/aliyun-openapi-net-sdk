@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string dBInstanceName;
 
-		private string sqlDelay;
+		private string delayTime;
 
 		private string taskId;
 
@@ -57,15 +57,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string SqlDelay
+		public string DelayTime
 		{
 			get
 			{
-				return sqlDelay;
+				return delayTime;
 			}
 			set	
 			{
-				sqlDelay = value;
+				delayTime = value;
 			}
 		}
 

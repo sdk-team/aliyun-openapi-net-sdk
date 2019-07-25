@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Rds;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class CopyDatabaseBetweenInstancesRequest : RpcAcsRequest<CopyDatabaseBetweenInstancesResponse>
     {
         public CopyDatabaseBetweenInstancesRequest()
-            : base("Rds", "2014-08-15", "CopyDatabaseBetweenInstances", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "CopyDatabaseBetweenInstances")
         {
         }
 
@@ -39,8 +40,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string restoreTime;
 
 		private string backupId;
-
-		private string syncUserPrivilege;
 
 		private string dbNames;
 
@@ -84,19 +83,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				backupId = value;
 				DictionaryUtil.Add(QueryParameters, "BackupId", value);
-			}
-		}
-
-		public string SyncUserPrivilege
-		{
-			get
-			{
-				return syncUserPrivilege;
-			}
-			set	
-			{
-				syncUserPrivilege = value;
-				DictionaryUtil.Add(QueryParameters, "SyncUserPrivilege", value);
 			}
 		}
 

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Rds;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifyDBInstanceHAConfigRequest : RpcAcsRequest<ModifyDBInstanceHAConfigResponse>
     {
         public ModifyDBInstanceHAConfigRequest()
-            : base("Rds", "2014-08-15", "ModifyDBInstanceHAConfig", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifyDBInstanceHAConfig")
         {
         }
 
@@ -47,6 +48,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private long? ownerId;
 
 		private string hAMode;
+
+		private string switchMode;
 
 		public long? ResourceOwnerId
 		{
@@ -136,6 +139,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				hAMode = value;
 				DictionaryUtil.Add(QueryParameters, "HAMode", value);
+			}
+		}
+
+		public string SwitchMode
+		{
+			get
+			{
+				return switchMode;
+			}
+			set	
+			{
+				switchMode = value;
+				DictionaryUtil.Add(QueryParameters, "SwitchMode", value);
 			}
 		}
 

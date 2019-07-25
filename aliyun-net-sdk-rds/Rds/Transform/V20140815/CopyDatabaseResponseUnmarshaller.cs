@@ -31,6 +31,9 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			CopyDatabaseResponse copyDatabaseResponse = new CopyDatabaseResponse();
 
 			copyDatabaseResponse.HttpResponse = context.HttpResponse;
+			copyDatabaseResponse.RequestId = context.StringValue("CopyDatabase.RequestId");
+			copyDatabaseResponse.DBInstanceID = context.StringValue("CopyDatabase.DBInstanceID");
+			copyDatabaseResponse.DBID = context.StringValue("CopyDatabase.DBID");
 			copyDatabaseResponse.DBName = context.StringValue("CopyDatabase.DBName");
 			copyDatabaseResponse.DBStatus = context.StringValue("CopyDatabase.DBStatus");
 			copyDatabaseResponse.TaskId = context.StringValue("CopyDatabase.TaskId");

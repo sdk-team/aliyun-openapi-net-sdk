@@ -33,6 +33,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string hAMode;
 
+		private string switchMode;
+
 		private List<DescribeDBInstanceHAConfig_NodeInfo> hostInstanceInfos;
 
 		public string RequestId
@@ -80,6 +82,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				hAMode = value;
+			}
+		}
+
+		public string SwitchMode
+		{
+			get
+			{
+				return switchMode;
+			}
+			set	
+			{
+				switchMode = value;
 			}
 		}
 

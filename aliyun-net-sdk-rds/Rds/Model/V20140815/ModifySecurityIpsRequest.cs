@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Rds;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifySecurityIpsRequest : RpcAcsRequest<ModifySecurityIpsResponse>
     {
         public ModifySecurityIpsRequest()
-            : base("Rds", "2014-08-15", "ModifySecurityIps", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifySecurityIps")
         {
         }
 
@@ -43,8 +44,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string securityIps;
 
 		private string securityGroupId;
-
-		private string whitelistNetworkType;
 
 		private string dBInstanceIPArrayAttribute;
 
@@ -114,19 +113,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				securityGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
-			}
-		}
-
-		public string WhitelistNetworkType
-		{
-			get
-			{
-				return whitelistNetworkType;
-			}
-			set	
-			{
-				whitelistNetworkType = value;
-				DictionaryUtil.Add(QueryParameters, "WhitelistNetworkType", value);
 			}
 		}
 

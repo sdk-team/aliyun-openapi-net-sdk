@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Rds;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
 
@@ -30,33 +31,38 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class MigrateToOtherZoneRequest : RpcAcsRequest<MigrateToOtherZoneResponse>
     {
         public MigrateToOtherZoneRequest()
-            : base("Rds", "2014-08-15", "MigrateToOtherZone", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "MigrateToOtherZone")
         {
         }
+
+		private string vSwitchId;
 
 		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
-		private string ownerAccount;
-
-		private string zoneIdSlave1;
-
-		private string zoneIdSlave2;
-
-		private long? ownerId;
-
-		private string vSwitchId;
-
 		private string effectiveTime;
 
-		private string vPCId;
+		private string ownerAccount;
 
 		private string zoneId;
 
 		private string dBInstanceId;
 
-		private string category;
+		private long? ownerId;
+
+		public string VSwitchId
+		{
+			get
+			{
+				return vSwitchId;
+			}
+			set	
+			{
+				vSwitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -84,71 +90,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string ZoneIdSlave1
-		{
-			get
-			{
-				return zoneIdSlave1;
-			}
-			set	
-			{
-				zoneIdSlave1 = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneIdSlave1", value);
-			}
-		}
-
-		public string ZoneIdSlave2
-		{
-			get
-			{
-				return zoneIdSlave2;
-			}
-			set	
-			{
-				zoneIdSlave2 = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneIdSlave2", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string VSwitchId
-		{
-			get
-			{
-				return vSwitchId;
-			}
-			set	
-			{
-				vSwitchId = value;
-				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
-			}
-		}
-
 		public string EffectiveTime
 		{
 			get
@@ -162,16 +103,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string VPCId
+		public string OwnerAccount
 		{
 			get
 			{
-				return vPCId;
+				return ownerAccount;
 			}
 			set	
 			{
-				vPCId = value;
-				DictionaryUtil.Add(QueryParameters, "VPCId", value);
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -201,16 +142,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string Category
+		public long? OwnerId
 		{
 			get
 			{
-				return category;
+				return ownerId;
 			}
 			set	
 			{
-				category = value;
-				DictionaryUtil.Add(QueryParameters, "Category", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

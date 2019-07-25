@@ -34,7 +34,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			modifyCollationTimeZoneResponse.RequestId = context.StringValue("ModifyCollationTimeZone.RequestId");
 			modifyCollationTimeZoneResponse.DBInstanceId = context.StringValue("ModifyCollationTimeZone.DBInstanceId");
 			modifyCollationTimeZoneResponse.TaskId = context.StringValue("ModifyCollationTimeZone.TaskId");
-			modifyCollationTimeZoneResponse.Timezone = context.StringValue("ModifyCollationTimeZone.Timezone");
+			modifyCollationTimeZoneResponse.TimeZone = context.StringValue("ModifyCollationTimeZone.TimeZone");
 			modifyCollationTimeZoneResponse.Collation = context.StringValue("ModifyCollationTimeZone.Collation");
         
 			return modifyCollationTimeZoneResponse;

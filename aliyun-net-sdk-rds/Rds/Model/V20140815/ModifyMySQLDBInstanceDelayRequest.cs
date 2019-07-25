@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Rds;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifyMySQLDBInstanceDelayRequest : RpcAcsRequest<ModifyMySQLDBInstanceDelayResponse>
     {
         public ModifyMySQLDBInstanceDelayRequest()
-            : base("Rds", "2014-08-15", "ModifyMySQLDBInstanceDelay", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifyMySQLDBInstanceDelay")
         {
         }
 
@@ -38,7 +39,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string resourceOwnerAccount;
 
-		private string sqlDelay;
+		private string delayTime;
 
 		private string dBInstanceId;
 
@@ -70,16 +71,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string SqlDelay
+		public string DelayTime
 		{
 			get
 			{
-				return sqlDelay;
+				return delayTime;
 			}
 			set	
 			{
-				sqlDelay = value;
-				DictionaryUtil.Add(QueryParameters, "SqlDelay", value);
+				delayTime = value;
+				DictionaryUtil.Add(QueryParameters, "DelayTime", value);
 			}
 		}
 

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Rds;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class AllocateReadWriteSplittingConnectionRequest : RpcAcsRequest<AllocateReadWriteSplittingConnectionResponse>
     {
         public AllocateReadWriteSplittingConnectionRequest()
-            : base("Rds", "2014-08-15", "AllocateReadWriteSplittingConnection", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "AllocateReadWriteSplittingConnection")
         {
         }
 
@@ -46,11 +47,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? ownerId;
 
+		private string iPType;
+
 		private string port;
 
 		private string distributionType;
-
-		private string netType;
 
 		private string dBInstanceId;
 
@@ -134,6 +135,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string IPType
+		{
+			get
+			{
+				return iPType;
+			}
+			set	
+			{
+				iPType = value;
+				DictionaryUtil.Add(QueryParameters, "IPType", value);
+			}
+		}
+
 		public string Port
 		{
 			get
@@ -157,19 +171,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				distributionType = value;
 				DictionaryUtil.Add(QueryParameters, "DistributionType", value);
-			}
-		}
-
-		public string NetType
-		{
-			get
-			{
-				return netType;
-			}
-			set	
-			{
-				netType = value;
-				DictionaryUtil.Add(QueryParameters, "NetType", value);
 			}
 		}
 

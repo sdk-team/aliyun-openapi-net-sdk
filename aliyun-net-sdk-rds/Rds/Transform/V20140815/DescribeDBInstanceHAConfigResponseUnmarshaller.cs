@@ -35,6 +35,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeDBInstanceHAConfigResponse.DBInstanceId = context.StringValue("DescribeDBInstanceHAConfig.DBInstanceId");
 			describeDBInstanceHAConfigResponse.SyncMode = context.StringValue("DescribeDBInstanceHAConfig.SyncMode");
 			describeDBInstanceHAConfigResponse.HAMode = context.StringValue("DescribeDBInstanceHAConfig.HAMode");
+			describeDBInstanceHAConfigResponse.SwitchMode = context.StringValue("DescribeDBInstanceHAConfig.SwitchMode");
 
 			List<DescribeDBInstanceHAConfigResponse.DescribeDBInstanceHAConfig_NodeInfo> describeDBInstanceHAConfigResponse_hostInstanceInfos = new List<DescribeDBInstanceHAConfigResponse.DescribeDBInstanceHAConfig_NodeInfo>();
 			for (int i = 0; i < context.Length("DescribeDBInstanceHAConfig.HostInstanceInfos.Length"); i++) {

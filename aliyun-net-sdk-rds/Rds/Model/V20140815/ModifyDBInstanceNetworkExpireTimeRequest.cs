@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Rds;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifyDBInstanceNetworkExpireTimeRequest : RpcAcsRequest<ModifyDBInstanceNetworkExpireTimeResponse>
     {
         public ModifyDBInstanceNetworkExpireTimeRequest()
-            : base("Rds", "2014-08-15", "ModifyDBInstanceNetworkExpireTime", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifyDBInstanceNetworkExpireTime")
         {
         }
 
@@ -41,6 +42,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string connectionString;
 
 		private int? classicExpiredDays;
+
+		private string rdsClassicexpired;
 
 		private string ownerAccount;
 
@@ -97,6 +100,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				classicExpiredDays = value;
 				DictionaryUtil.Add(QueryParameters, "ClassicExpiredDays", value.ToString());
+			}
+		}
+
+		public string RdsClassicexpired
+		{
+			get
+			{
+				return rdsClassicexpired;
+			}
+			set	
+			{
+				rdsClassicexpired = value;
+				DictionaryUtil.Add(QueryParameters, "RdsClassicexpired", value);
 			}
 		}
 

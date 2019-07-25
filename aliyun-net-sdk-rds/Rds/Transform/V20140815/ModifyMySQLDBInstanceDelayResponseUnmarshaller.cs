@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			modifyMySQLDBInstanceDelayResponse.HttpResponse = context.HttpResponse;
 			modifyMySQLDBInstanceDelayResponse.RequestId = context.StringValue("ModifyMySQLDBInstanceDelay.RequestId");
 			modifyMySQLDBInstanceDelayResponse.DBInstanceName = context.StringValue("ModifyMySQLDBInstanceDelay.DBInstanceName");
-			modifyMySQLDBInstanceDelayResponse.SqlDelay = context.StringValue("ModifyMySQLDBInstanceDelay.SqlDelay");
+			modifyMySQLDBInstanceDelayResponse.DelayTime = context.StringValue("ModifyMySQLDBInstanceDelay.DelayTime");
 			modifyMySQLDBInstanceDelayResponse.TaskId = context.StringValue("ModifyMySQLDBInstanceDelay.TaskId");
         
 			return modifyMySQLDBInstanceDelayResponse;

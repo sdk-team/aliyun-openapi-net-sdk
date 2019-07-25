@@ -88,8 +88,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string createTime;
 
-			private string endTime;
-
 			private string backupMode;
 
 			private string fileSize;
@@ -121,18 +119,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					createTime = value;
-				}
-			}
-
-			public string EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
 				}
 			}
 

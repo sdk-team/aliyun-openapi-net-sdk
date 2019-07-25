@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string taskId;
 
-		private string timezone;
+		private string timeZone;
 
 		private string collation;
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string Timezone
+		public string TimeZone
 		{
 			get
 			{
-				return timezone;
+				return timeZone;
 			}
 			set	
 			{
-				timezone = value;
+				timeZone = value;
 			}
 		}
 

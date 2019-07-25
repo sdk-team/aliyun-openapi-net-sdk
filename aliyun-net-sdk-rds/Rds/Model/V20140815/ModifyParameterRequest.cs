@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Rds;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
 
@@ -30,11 +31,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifyParameterRequest : RpcAcsRequest<ModifyParameterResponse>
     {
         public ModifyParameterRequest()
-            : base("Rds", "2014-08-15", "ModifyParameter", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifyParameter")
         {
         }
 
 		private long? resourceOwnerId;
+
+		private string parameterGroupId;
 
 		private string resourceOwnerAccount;
 
@@ -60,6 +63,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ParameterGroupId
+		{
+			get
+			{
+				return parameterGroupId;
+			}
+			set	
+			{
+				parameterGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ParameterGroupId", value);
 			}
 		}
 

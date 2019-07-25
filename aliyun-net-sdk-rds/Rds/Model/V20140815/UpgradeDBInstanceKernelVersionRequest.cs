@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Rds;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
 
@@ -30,21 +31,34 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class UpgradeDBInstanceKernelVersionRequest : RpcAcsRequest<UpgradeDBInstanceKernelVersionResponse>
     {
         public UpgradeDBInstanceKernelVersionRequest()
-            : base("Rds", "2014-08-15", "UpgradeDBInstanceKernelVersion", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "UpgradeDBInstanceKernelVersion")
         {
         }
+
+		private string switchTimeMode;
 
 		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
-
-		private string upgradeTime;
 
 		private string dBInstanceId;
 
 		private string switchTime;
 
 		private long? ownerId;
+
+		public string SwitchTimeMode
+		{
+			get
+			{
+				return switchTimeMode;
+			}
+			set	
+			{
+				switchTimeMode = value;
+				DictionaryUtil.Add(QueryParameters, "SwitchTimeMode", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -69,19 +83,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string UpgradeTime
-		{
-			get
-			{
-				return upgradeTime;
-			}
-			set	
-			{
-				upgradeTime = value;
-				DictionaryUtil.Add(QueryParameters, "UpgradeTime", value);
 			}
 		}
 

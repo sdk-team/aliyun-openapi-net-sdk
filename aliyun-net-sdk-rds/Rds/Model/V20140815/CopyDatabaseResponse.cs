@@ -25,11 +25,53 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class CopyDatabaseResponse : AcsResponse
 	{
 
+		private string requestId;
+
+		private string dBInstanceID;
+
+		private string dBID;
+
 		private string dBName;
 
 		private string dBStatus;
 
 		private string taskId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string DBInstanceID
+		{
+			get
+			{
+				return dBInstanceID;
+			}
+			set	
+			{
+				dBInstanceID = value;
+			}
+		}
+
+		public string DBID
+		{
+			get
+			{
+				return dBID;
+			}
+			set	
+			{
+				dBID = value;
+			}
+		}
 
 		public string DBName
 		{

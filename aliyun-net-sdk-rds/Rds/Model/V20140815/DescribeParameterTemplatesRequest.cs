@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Rds;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeParameterTemplatesRequest : RpcAcsRequest<DescribeParameterTemplatesResponse>
     {
         public DescribeParameterTemplatesRequest()
-            : base("Rds", "2014-08-15", "DescribeParameterTemplates", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeParameterTemplates")
         {
         }
 
@@ -47,8 +48,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string engineVersion;
 
 		private long? ownerId;
-
-		private string category;
 
 		public long? ResourceOwnerId
 		{
@@ -138,19 +137,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string Category
-		{
-			get
-			{
-				return category;
-			}
-			set	
-			{
-				category = value;
-				DictionaryUtil.Add(QueryParameters, "Category", value);
 			}
 		}
 

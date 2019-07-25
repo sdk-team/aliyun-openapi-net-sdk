@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Rds;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
 
@@ -30,31 +31,29 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class CreateMigrateTaskRequest : RpcAcsRequest<CreateMigrateTaskResponse>
     {
         public CreateMigrateTaskRequest()
-            : base("Rds", "2014-08-15", "CreateMigrateTask", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "CreateMigrateTask")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string migrateTaskId;
+		private string dBName;
 
 		private string resourceOwnerAccount;
 
 		private string isOnlineDB;
-
-		private long? ownerId;
-
-		private string ossObjectPositions;
-
-		private string oSSUrls;
-
-		private string dBName;
 
 		private string dBInstanceId;
 
 		private string backupMode;
 
 		private string checkDBMode;
+
+		private long? ownerId;
+
+		private string ossObjectPositions;
+
+		private string oSSUrls;
 
 		public long? ResourceOwnerId
 		{
@@ -69,16 +68,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string MigrateTaskId
+		public string DBName
 		{
 			get
 			{
-				return migrateTaskId;
+				return dBName;
 			}
 			set	
 			{
-				migrateTaskId = value;
-				DictionaryUtil.Add(QueryParameters, "MigrateTaskId", value);
+				dBName = value;
+				DictionaryUtil.Add(QueryParameters, "DBName", value);
 			}
 		}
 
@@ -105,58 +104,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				isOnlineDB = value;
 				DictionaryUtil.Add(QueryParameters, "IsOnlineDB", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string OssObjectPositions
-		{
-			get
-			{
-				return ossObjectPositions;
-			}
-			set	
-			{
-				ossObjectPositions = value;
-				DictionaryUtil.Add(QueryParameters, "OssObjectPositions", value);
-			}
-		}
-
-		public string OSSUrls
-		{
-			get
-			{
-				return oSSUrls;
-			}
-			set	
-			{
-				oSSUrls = value;
-				DictionaryUtil.Add(QueryParameters, "OSSUrls", value);
-			}
-		}
-
-		public string DBName
-		{
-			get
-			{
-				return dBName;
-			}
-			set	
-			{
-				dBName = value;
-				DictionaryUtil.Add(QueryParameters, "DBName", value);
 			}
 		}
 
@@ -196,6 +143,45 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				checkDBMode = value;
 				DictionaryUtil.Add(QueryParameters, "CheckDBMode", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string OssObjectPositions
+		{
+			get
+			{
+				return ossObjectPositions;
+			}
+			set	
+			{
+				ossObjectPositions = value;
+				DictionaryUtil.Add(QueryParameters, "OssObjectPositions", value);
+			}
+		}
+
+		public string OSSUrls
+		{
+			get
+			{
+				return oSSUrls;
+			}
+			set	
+			{
+				oSSUrls = value;
+				DictionaryUtil.Add(QueryParameters, "OSSUrls", value);
 			}
 		}
 

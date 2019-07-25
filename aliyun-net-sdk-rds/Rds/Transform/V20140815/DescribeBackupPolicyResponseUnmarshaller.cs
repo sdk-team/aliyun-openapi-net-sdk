@@ -44,8 +44,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeBackupPolicyResponse.Duplication = context.StringValue("DescribeBackupPolicy.Duplication");
 			describeBackupPolicyResponse.DuplicationContent = context.StringValue("DescribeBackupPolicy.DuplicationContent");
 			describeBackupPolicyResponse.HighSpaceUsageProtection = context.StringValue("DescribeBackupPolicy.HighSpaceUsageProtection");
-			describeBackupPolicyResponse.LogBackupFrequency = context.StringValue("DescribeBackupPolicy.LogBackupFrequency");
 			describeBackupPolicyResponse.CompressType = context.StringValue("DescribeBackupPolicy.CompressType");
+			describeBackupPolicyResponse.LogBackupFrequency = context.StringValue("DescribeBackupPolicy.LogBackupFrequency");
 
 			DescribeBackupPolicyResponse.DescribeBackupPolicy_DuplicationLocation duplicationLocation = new DescribeBackupPolicyResponse.DescribeBackupPolicy_DuplicationLocation();
 			duplicationLocation.Sotrage = context.StringValue("DescribeBackupPolicy.DuplicationLocation.Sotrage");

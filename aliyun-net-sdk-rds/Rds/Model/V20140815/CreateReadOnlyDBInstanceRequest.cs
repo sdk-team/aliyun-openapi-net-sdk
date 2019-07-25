@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Rds;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class CreateReadOnlyDBInstanceRequest : RpcAcsRequest<CreateReadOnlyDBInstanceResponse>
     {
         public CreateReadOnlyDBInstanceRequest()
-            : base("Rds", "2014-08-15", "CreateReadOnlyDBInstance", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "CreateReadOnlyDBInstance")
         {
         }
 
@@ -63,10 +64,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string dBInstanceId;
 
 		private string dBInstanceDescription;
-
-		private string dBInstanceStorageType;
-
-		private string category;
 
 		private string payType;
 
@@ -264,32 +261,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceDescription = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceDescription", value);
-			}
-		}
-
-		public string DBInstanceStorageType
-		{
-			get
-			{
-				return dBInstanceStorageType;
-			}
-			set	
-			{
-				dBInstanceStorageType = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceStorageType", value);
-			}
-		}
-
-		public string Category
-		{
-			get
-			{
-				return category;
-			}
-			set	
-			{
-				category = value;
-				DictionaryUtil.Add(QueryParameters, "Category", value);
 			}
 		}
 

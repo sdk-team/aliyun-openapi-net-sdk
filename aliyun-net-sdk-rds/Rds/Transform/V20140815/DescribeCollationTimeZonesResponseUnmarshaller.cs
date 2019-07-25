@@ -37,7 +37,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			for (int i = 0; i < context.Length("DescribeCollationTimeZones.CollationTimeZones.Length"); i++) {
 				DescribeCollationTimeZonesResponse.DescribeCollationTimeZones_CollationTimeZone collationTimeZone = new DescribeCollationTimeZonesResponse.DescribeCollationTimeZones_CollationTimeZone();
 				collationTimeZone.TimeZone = context.StringValue("DescribeCollationTimeZones.CollationTimeZones["+ i +"].TimeZone");
-				collationTimeZone.StandardTimeOffset = context.StringValue("DescribeCollationTimeZones.CollationTimeZones["+ i +"].StandardTimeOffset");
+				collationTimeZone.Collation = context.StringValue("DescribeCollationTimeZones.CollationTimeZones["+ i +"].Collation");
 				collationTimeZone.Description = context.StringValue("DescribeCollationTimeZones.CollationTimeZones["+ i +"].Description");
 
 				describeCollationTimeZonesResponse_collationTimeZones.Add(collationTimeZone);

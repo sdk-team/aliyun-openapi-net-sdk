@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Rds;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeBackupPolicyRequest : RpcAcsRequest<DescribeBackupPolicyResponse>
     {
         public DescribeBackupPolicyRequest()
-            : base("Rds", "2014-08-15", "DescribeBackupPolicy", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeBackupPolicy")
         {
         }
 
@@ -39,8 +40,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
-
-		private string compressType;
 
 		private string dBInstanceId;
 
@@ -84,19 +83,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string CompressType
-		{
-			get
-			{
-				return compressType;
-			}
-			set	
-			{
-				compressType = value;
-				DictionaryUtil.Add(QueryParameters, "CompressType", value);
 			}
 		}
 
