@@ -40,6 +40,8 @@
 - Debugger.
 2019-08-07 Version 1.0.2
 - Debugger.
+2019-08-07 Version 1.0.2
+- Debugger.
 2019-07-19 Version 1.0.2
 - Debugger.
 2019-07-19 Version 1.0.2
