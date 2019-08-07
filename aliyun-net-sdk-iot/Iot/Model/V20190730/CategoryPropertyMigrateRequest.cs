@@ -98,7 +98,10 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 					DictionaryUtil.Add(QueryParameters,"Property." + (i + 1) + ".CategoryName", propertys[i].CategoryName);
 					DictionaryUtil.Add(QueryParameters,"Property." + (i + 1) + ".Definition", propertys[i].Definition);
 					DictionaryUtil.Add(QueryParameters,"Property." + (i + 1) + ".State", propertys[i].State);
-					DictionaryUtil.Add(QueryParameters,"Property." + (i + 1) + ".Tag", propertys[i].Tag);
+					for (int j = 0; j < propertys[i].Tags.Count; j++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Property." + (i + 1) + ".Tag." +(j + 1), propertys[i].Tags[j]);
+					}
 					DictionaryUtil.Add(QueryParameters,"Property." + (i + 1) + ".AccessMode", propertys[i].AccessMode);
 				}
 			}
@@ -165,7 +168,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 			private int? state;
 
-			private string tag;
+			private List<Tag> tags;
 
 			private string accessMode;
 
@@ -361,15 +364,15 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 				}
 			}
 
-			public string Tag
+			public List<Tag> Tags
 			{
 				get
 				{
-					return tag;
+					return tags;
 				}
 				set	
 				{
-					tag = value;
+					tags = value;
 				}
 			}
 
@@ -382,6 +385,38 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 				set	
 				{
 					accessMode = value;
+				}
+			}
+
+			public class Tag
+			{
+
+				private string tagValue;
+
+				private string tagKey;
+
+				public string TagValue
+				{
+					get
+					{
+						return tagValue;
+					}
+					set	
+					{
+						tagValue = value;
+					}
+				}
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
+					}
 				}
 			}
 		}

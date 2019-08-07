@@ -38,9 +38,9 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private string manufacture;
 
-		private string devices;
-
 		private string iotInstanceId;
+
+		private List<Device> devices;
 
 		public string ActionType
 		{
@@ -68,19 +68,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public string Devices
-		{
-			get
-			{
-				return devices;
-			}
-			set	
-			{
-				devices = value;
-				DictionaryUtil.Add(QueryParameters, "Devices", value);
-			}
-		}
-
 		public string IotInstanceId
 		{
 			get
@@ -91,6 +78,56 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
+
+		public List<Device> Devices
+		{
+			get
+			{
+				return devices;
+			}
+
+			set
+			{
+				devices = value;
+				for (int i = 0; i < devices.Count; i++)
+				{
+					DictionaryUtil.Add(BodyParameters,"Device." + (i + 1) + ".Secret", devices[i].Secret);
+					DictionaryUtil.Add(BodyParameters,"Device." + (i + 1) + ".Mac", devices[i].Mac);
+				}
+			}
+		}
+
+		public class Device
+		{
+
+			private string secret;
+
+			private string mac;
+
+			public string Secret
+			{
+				get
+				{
+					return secret;
+				}
+				set	
+				{
+					secret = value;
+				}
+			}
+
+			public string Mac
+			{
+				get
+				{
+					return mac;
+				}
+				set	
+				{
+					mac = value;
+				}
 			}
 		}
 

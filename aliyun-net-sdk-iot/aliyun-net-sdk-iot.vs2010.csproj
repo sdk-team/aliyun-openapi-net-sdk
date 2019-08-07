@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{d209f7a8-99b6-4bd0-9d72-ab94160f2a4e}</ProjectGuid>
+    <ProjectGuid>{e947dee3-6eb0-4817-8285-03c52b1185ef}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -41,7 +41,6 @@
   </ItemGroup>
   <ItemGroup>
 	<Compile Include="Iot\Model\V20190730\QueryDeviceLocalLogContentResponse.cs" />
-	<Compile Include="Iot\Model\V20190730\SearchProductForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\AddThingTemplateEventForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\QueryDeviceOnlineLogContentForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\UpdateProductForTmallGenieRequest.cs" />
@@ -49,7 +48,6 @@
 	<Compile Include="Iot\Model\V20190730\UpdateProductPropertyIdentifierForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\CategoryEventMigrateRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\DataCleanSyncProductResponse.cs" />
-	<Compile Include="Iot\Model\V20190730\GenerateEnrolleeSignForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\UpdateThingTemplateEventForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\DeleteProductForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\AddThingTemplateEventForTmallGenieRequest.cs" />
@@ -63,36 +61,28 @@
 	<Compile Include="Iot\Model\V20190730\EventMigrateToUnifyRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\AddThingTemplatePropertyForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\DataCleanSyncDeviceApplyInfoResponse.cs" />
-	<Compile Include="Iot\Model\V20190730\DeleteThingTemplateServiceForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\UpdateProductForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\DataCleanSyncProductRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\ServiceMigrateToProdRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\UpdateThingTemplateServiceForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\PropertyMigrateToProdRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\MigratePoolFunctionListResponse.cs" />
-	<Compile Include="Iot\Model\V20190730\ToggleVirtualDeviceSwitchRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\DataCleanSyncDeviceRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\MigrateProdFunctionListResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\QueryProductInfoForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\PropertyMigrateToProdResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\PropertyMigrateToUnifyResponse.cs" />
-	<Compile Include="Iot\Model\V20190730\DeleteThingTemplateServiceForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\CategoryPropertyMigrateRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\ProductWhiteListMaintainResponse.cs" />
-	<Compile Include="Iot\Model\V20190730\ToggleVirtualDeviceSwitchResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\MigratePoolFunctionListRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\DataCleanSyncDeviceApplyInfoRequest.cs" />
-	<Compile Include="Iot\Model\V20190730\UpdateProductEventIdentifierForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\ListEventPoolForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\CreateTestDeviceForTmallGenieResponse.cs" />
-	<Compile Include="Iot\Model\V20190730\DeleteThingTemplatePropertyForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\QueryStandardUnitRequest.cs" />
-	<Compile Include="Iot\Model\V20190730\UpdateProductEventIdentifierForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\EventMigrateToProdRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\UpdateThingTemplateServiceForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\GetProductFunctionForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\AddThingTemplatePropertyForTmallGenieResponse.cs" />
-	<Compile Include="Iot\Model\V20190730\DeleteThingTemplatePropertyForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\QueryDeviceOnlineLogContentForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\ProductWhiteListMaintainRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\QueryProductInfoForTmallGenieRequest.cs" />
@@ -124,27 +114,20 @@
 	<Compile Include="Iot\Model\V20190730\UpdateThingTemplateForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\AddProductIdentifierForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\GetProductFunctionForTmallGenieResponse.cs" />
-	<Compile Include="Iot\Model\V20190730\UpdateProductUsedWirelessModuleForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\UpdateThingTemplatePropertyForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\DeleteThingTemplateForTmallGenieRequest.cs" />
-	<Compile Include="Iot\Model\V20190730\BulkQueryProductInfoForTmallGenieResponse.cs" />
-	<Compile Include="Iot\Model\V20190730\DeleteThingTemplateEventForTmallGenieRequest.cs" />
-	<Compile Include="Iot\Model\V20190730\DeleteThingTemplateEventForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\BulkCreateDeviceForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\UpdateThingTemplateForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\ListServicePoolForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\BulkCreateDeviceForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\CreateProductForTmallGenieResponse.cs" />
-	<Compile Include="Iot\Model\V20190730\UpdateProductUsedWirelessModuleForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\GetPoolFunctionsByIdListForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\AddPoolFunctionsForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\DataCleanSyncDeviceResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\EventMigrateToUnifyResponse.cs" />
-	<Compile Include="Iot\Model\V20190730\UpdateProductServiceIdentifierForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\ListTestDeviceForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\ServiceMigrateToUnifyRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\GetPoolFunctionsByIdListForTmallGenieResponse.cs" />
-	<Compile Include="Iot\Model\V20190730\GenerateEnrolleeSignForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\MigrateTemplateFunctionListRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\BatchEventMigrateToUnifyRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\ListTestDeviceForTmallGenieRequest.cs" />
@@ -167,32 +150,24 @@
 	<Compile Include="Iot\Model\V20190730\UpdateThingTemplatePropertyForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\BatchPropertyMigrateToUnifyRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\AddPoolFunctionsForTmallGenieRequest.cs" />
-	<Compile Include="Iot\Model\V20190730\SearchProductForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\PropertyMigrateToUnifyRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\QueryProductApplyListRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\BatchServiceMigrateToUnifyResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\BatchServiceMigrateToUnifyRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\AddThingTemplateServiceForTmallGenieRequest.cs" />
-	<Compile Include="Iot\Model\V20190730\UpdateProductServiceIdentifierForTmallGenieResponse.cs" />
-	<Compile Include="Iot\Model\V20190730\BulkQueryProductInfoForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\CreateProductForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\AddThingTemplateForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\ListServicePoolForTmallGenieResponse.cs" />
 	<Compile Include="Iot\Model\V20190730\QueryDeviceLocalLogContentRequest.cs" />
 	<Compile Include="Iot\Model\V20190730\FlushProductFunctionForTmallGenieRequest.cs" />
 	<Compile Include="Iot\Transform\V20190730\CreateProductForTmallGenieResponseUnmarshaller.cs" />
-	<Compile Include="Iot\Transform\V20190730\UpdateProductEventIdentifierForTmallGenieResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\QueryDeviceLocalLogContentResponseUnmarshaller.cs" />
-	<Compile Include="Iot\Transform\V20190730\GenerateEnrolleeSignForTmallGenieResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\BatchEventMigrateToUnifyResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\DataCleanSyncDeviceResponseUnmarshaller.cs" />
-	<Compile Include="Iot\Transform\V20190730\BulkQueryProductInfoForTmallGenieResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\AddProductIdentifierForTmallGenieResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\MigrateProdFunctionListResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\PropertyMigrateToUnifyResponseUnmarshaller.cs" />
-	<Compile Include="Iot\Transform\V20190730\DeleteThingTemplateEventForTmallGenieResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\CategoryServiceMigrateResponseUnmarshaller.cs" />
-	<Compile Include="Iot\Transform\V20190730\DeleteThingTemplateServiceForTmallGenieResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\ListEventPoolForTmallGenieResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\BatchPropertyMigrateToUnifyResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\EventMigrateToProdResponseUnmarshaller.cs" />
@@ -204,22 +179,18 @@
 	<Compile Include="Iot\Transform\V20190730\UpdateThingTemplateServiceForTmallGenieResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\RemoveProductIdentifierForTmallGenieResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\DataCleanCreateApplyInfoResponseUnmarshaller.cs" />
-	<Compile Include="Iot\Transform\V20190730\DeleteThingTemplatePropertyForTmallGenieResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\DataCleanSyncDeviceUnbindResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\UpdateThingTemplateEventForTmallGenieResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\EventMigrateToUnifyResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\DeviceWhiteListMaintainResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\DeleteProductForTmallGenieResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\CategoryPropertyMigrateResponseUnmarshaller.cs" />
-	<Compile Include="Iot\Transform\V20190730\UpdateProductServiceIdentifierForTmallGenieResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\BulkCreateDeviceForTmallGenieResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\AddThingTemplatePropertyForTmallGenieResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\ListPropertyPoolForTmallGenieResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\GetThingTemplateFunctionForTmallGenieResponseUnmarshaller.cs" />
-	<Compile Include="Iot\Transform\V20190730\ToggleVirtualDeviceSwitchResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\FlushProductFunctionForTmallGenieResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\ListTestDeviceForTmallGenieResponseUnmarshaller.cs" />
-	<Compile Include="Iot\Transform\V20190730\UpdateProductUsedWirelessModuleForTmallGenieResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\AddThingTemplateServiceForTmallGenieResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\MigrateTemplateFunctionListResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\AddThingTemplateForTmallGenieResponseUnmarshaller.cs" />
@@ -237,7 +208,6 @@
 	<Compile Include="Iot\Transform\V20190730\PropertyMigrateToProdResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\GetProductFunctionForTmallGenieResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\ListServicePoolForTmallGenieResponseUnmarshaller.cs" />
-	<Compile Include="Iot\Transform\V20190730\SearchProductForTmallGenieResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\QueryStandardUnitResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\DataCleanSyncProductResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20190730\BatchServiceMigrateToUnifyResponseUnmarshaller.cs" />

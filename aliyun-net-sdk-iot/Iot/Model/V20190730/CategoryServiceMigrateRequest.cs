@@ -59,7 +59,10 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 					DictionaryUtil.Add(QueryParameters,"Service." + (i + 1) + ".Identifier", services[i].Identifier);
 					DictionaryUtil.Add(QueryParameters,"Service." + (i + 1) + ".Creator", services[i].Creator);
 					DictionaryUtil.Add(QueryParameters,"Service." + (i + 1) + ".ThingTemplateKey", services[i].ThingTemplateKey);
-					DictionaryUtil.Add(QueryParameters,"Service." + (i + 1) + ".ArgsDTO", services[i].ArgsDTO);
+					for (int j = 0; j < services[i].ArgsDTOs.Count; j++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Service." + (i + 1) + ".ArgsDTO." +(j + 1), services[i].ArgsDTOs[j]);
+					}
 					DictionaryUtil.Add(QueryParameters,"Service." + (i + 1) + ".Modifier", services[i].Modifier);
 					DictionaryUtil.Add(QueryParameters,"Service." + (i + 1) + ".Description", services[i].Description);
 					DictionaryUtil.Add(QueryParameters,"Service." + (i + 1) + ".DeviceType", services[i].DeviceType);
@@ -71,7 +74,10 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 					DictionaryUtil.Add(QueryParameters,"Service." + (i + 1) + ".Namespace", services[i].Namespace);
 					DictionaryUtil.Add(QueryParameters,"Service." + (i + 1) + ".CategoryName", services[i].CategoryName);
 					DictionaryUtil.Add(QueryParameters,"Service." + (i + 1) + ".State", services[i].State);
-					DictionaryUtil.Add(QueryParameters,"Service." + (i + 1) + ".Tag", services[i].Tag);
+					for (int j = 0; j < services[i].Tags.Count; j++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Service." + (i + 1) + ".Tag." +(j + 1), services[i].Tags[j]);
+					}
 					DictionaryUtil.Add(QueryParameters,"Service." + (i + 1) + ".CallType", services[i].CallType);
 					DictionaryUtil.Add(QueryParameters,"Service." + (i + 1) + ".AccessMode", services[i].AccessMode);
 				}
@@ -139,7 +145,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 			private string thingTemplateKey;
 
-			private string argsDTO;
+			private List<ArgsDTO> argsDTOs;
 
 			private string modifier;
 
@@ -163,7 +169,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 			private int? state;
 
-			private string tag;
+			private List<Tag> tags;
 
 			private string callType;
 
@@ -205,15 +211,15 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 				}
 			}
 
-			public string ArgsDTO
+			public List<ArgsDTO> ArgsDTOs
 			{
 				get
 				{
-					return argsDTO;
+					return argsDTOs;
 				}
 				set	
 				{
-					argsDTO = value;
+					argsDTOs = value;
 				}
 			}
 
@@ -349,15 +355,15 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 				}
 			}
 
-			public string Tag
+			public List<Tag> Tags
 			{
 				get
 				{
-					return tag;
+					return tags;
 				}
 				set	
 				{
-					tag = value;
+					tags = value;
 				}
 			}
 
@@ -382,6 +388,168 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 				set	
 				{
 					accessMode = value;
+				}
+			}
+
+			public class ArgsDTO
+			{
+
+				private string identifier;
+
+				private long? interactionId;
+
+				private string interactionType;
+
+				private string dataType;
+
+				private string name;
+
+				private string definition;
+
+				private int? paraOrder;
+
+				private string dataSpecsId;
+
+				private string direction;
+
+				public string Identifier
+				{
+					get
+					{
+						return identifier;
+					}
+					set	
+					{
+						identifier = value;
+					}
+				}
+
+				public long? InteractionId
+				{
+					get
+					{
+						return interactionId;
+					}
+					set	
+					{
+						interactionId = value;
+					}
+				}
+
+				public string InteractionType
+				{
+					get
+					{
+						return interactionType;
+					}
+					set	
+					{
+						interactionType = value;
+					}
+				}
+
+				public string DataType
+				{
+					get
+					{
+						return dataType;
+					}
+					set	
+					{
+						dataType = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public string Definition
+				{
+					get
+					{
+						return definition;
+					}
+					set	
+					{
+						definition = value;
+					}
+				}
+
+				public int? ParaOrder
+				{
+					get
+					{
+						return paraOrder;
+					}
+					set	
+					{
+						paraOrder = value;
+					}
+				}
+
+				public string DataSpecsId
+				{
+					get
+					{
+						return dataSpecsId;
+					}
+					set	
+					{
+						dataSpecsId = value;
+					}
+				}
+
+				public string Direction
+				{
+					get
+					{
+						return direction;
+					}
+					set	
+					{
+						direction = value;
+					}
+				}
+			}
+
+			public class Tag
+			{
+
+				private string tagValue;
+
+				private string tagKey;
+
+				public string TagValue
+				{
+					get
+					{
+						return tagValue;
+					}
+					set	
+					{
+						tagValue = value;
+					}
+				}
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
+					}
 				}
 			}
 		}
