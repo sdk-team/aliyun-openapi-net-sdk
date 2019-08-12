@@ -2,6 +2,8 @@
 - Debugger.
 2019-08-12 Version 1.0.2
 - Debugger.
+2019-08-12 Version 1.0.2
+- Debugger.
 2019-08-08 Version 1.0.2
 - Debugger.
 2019-08-08 Version 1.0.2
