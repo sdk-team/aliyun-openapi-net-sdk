@@ -35,6 +35,7 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 			deviceWhiteListMaintainResponse.Success = context.BooleanValue("DeviceWhiteListMaintain.Success");
 			deviceWhiteListMaintainResponse.ErrorMessage = context.StringValue("DeviceWhiteListMaintain.ErrorMessage");
 			deviceWhiteListMaintainResponse.Code = context.StringValue("DeviceWhiteListMaintain.Code");
+			deviceWhiteListMaintainResponse.Count = context.IntegerValue("DeviceWhiteListMaintain.Count");
         
 			return deviceWhiteListMaintainResponse;
         }
