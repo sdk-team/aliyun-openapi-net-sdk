@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class QueryProductInfoForTmallGenieRequest : RpcAcsRequest<QueryProductInfoForTmallGenieResponse>
     {
         public QueryProductInfoForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "QueryProductInfoForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "QueryProductInfoForTmallGenie", "Iot", "openAPI")
         {
         }
 
