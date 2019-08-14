@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class CategoryEventMigrateRequest : RpcAcsRequest<CategoryEventMigrateResponse>
     {
         public CategoryEventMigrateRequest()
-            : base("Iot", "2019-07-30", "CategoryEventMigrate", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "CategoryEventMigrate", "Iot", "openAPI")
         {
         }
 

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class AddThingTemplateEventForTmallGenieRequest : RpcAcsRequest<AddThingTemplateEventForTmallGenieResponse>
     {
         public AddThingTemplateEventForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "AddThingTemplateEventForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "AddThingTemplateEventForTmallGenie", "Iot", "openAPI")
         {
         }
 

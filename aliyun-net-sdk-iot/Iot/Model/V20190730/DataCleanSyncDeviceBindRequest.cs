@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class DataCleanSyncDeviceBindRequest : RpcAcsRequest<DataCleanSyncDeviceBindResponse>
     {
         public DataCleanSyncDeviceBindRequest()
-            : base("Iot", "2019-07-30", "DataCleanSyncDeviceBind", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "DataCleanSyncDeviceBind", "Iot", "openAPI")
         {
         }
 
