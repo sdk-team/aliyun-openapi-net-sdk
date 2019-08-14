@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class RemoveProductIdentifierForTmallGenieRequest : RpcAcsRequest<RemoveProductIdentifierForTmallGenieResponse>
     {
         public RemoveProductIdentifierForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "RemoveProductIdentifierForTmallGenie", "Iot", "openAPI")
+            : base("Iot", "2019-07-30", "RemoveProductIdentifierForTmallGenie", "iot", "openAPI")
         {
         }
 

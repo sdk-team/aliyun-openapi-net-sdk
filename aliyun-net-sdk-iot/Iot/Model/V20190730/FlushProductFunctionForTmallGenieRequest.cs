@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class FlushProductFunctionForTmallGenieRequest : RpcAcsRequest<FlushProductFunctionForTmallGenieResponse>
     {
         public FlushProductFunctionForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "FlushProductFunctionForTmallGenie", "Iot", "openAPI")
+            : base("Iot", "2019-07-30", "FlushProductFunctionForTmallGenie", "iot", "openAPI")
         {
         }
 

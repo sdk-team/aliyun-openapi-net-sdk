@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class QueryStandardUnitRequest : RpcAcsRequest<QueryStandardUnitResponse>
     {
         public QueryStandardUnitRequest()
-            : base("Iot", "2019-07-30", "QueryStandardUnit", "Iot", "openAPI")
+            : base("Iot", "2019-07-30", "QueryStandardUnit", "iot", "openAPI")
         {
         }
 
