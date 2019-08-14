@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class DataCleanCreateApplyInfoRequest : RpcAcsRequest<DataCleanCreateApplyInfoResponse>
     {
         public DataCleanCreateApplyInfoRequest()
-            : base("Iot", "2019-07-30", "DataCleanCreateApplyInfo", "Iot", "openAPI")
+            : base("Iot", "2019-07-30", "DataCleanCreateApplyInfo", "iot", "openAPI")
         {
         }
 

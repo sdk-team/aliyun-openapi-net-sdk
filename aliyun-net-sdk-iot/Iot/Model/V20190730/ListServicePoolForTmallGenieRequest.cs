@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class ListServicePoolForTmallGenieRequest : RpcAcsRequest<ListServicePoolForTmallGenieResponse>
     {
         public ListServicePoolForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "ListServicePoolForTmallGenie", "Iot", "openAPI")
+            : base("Iot", "2019-07-30", "ListServicePoolForTmallGenie", "iot", "openAPI")
         {
         }
 

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class BatchPropertyMigrateToUnifyRequest : RpcAcsRequest<BatchPropertyMigrateToUnifyResponse>
     {
         public BatchPropertyMigrateToUnifyRequest()
-            : base("Iot", "2019-07-30", "BatchPropertyMigrateToUnify", "Iot", "openAPI")
+            : base("Iot", "2019-07-30", "BatchPropertyMigrateToUnify", "iot", "openAPI")
         {
         }
 

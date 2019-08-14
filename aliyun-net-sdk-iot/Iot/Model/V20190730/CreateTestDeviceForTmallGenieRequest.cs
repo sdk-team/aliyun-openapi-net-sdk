@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class CreateTestDeviceForTmallGenieRequest : RpcAcsRequest<CreateTestDeviceForTmallGenieResponse>
     {
         public CreateTestDeviceForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "CreateTestDeviceForTmallGenie", "Iot", "openAPI")
+            : base("Iot", "2019-07-30", "CreateTestDeviceForTmallGenie", "iot", "openAPI")
         {
         }
 
