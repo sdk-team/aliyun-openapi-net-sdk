@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class CategoryServiceMigrateRequest : RpcAcsRequest<CategoryServiceMigrateResponse>
     {
         public CategoryServiceMigrateRequest()
-            : base("Iot", "2019-07-30", "CategoryServiceMigrate", "Iot", "openAPI")
+            : base("Iot", "2019-07-30", "CategoryServiceMigrate", "iot", "openAPI")
         {
         }
 

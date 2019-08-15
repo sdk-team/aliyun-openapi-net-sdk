@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class MigrateTemplateFunctionListRequest : RpcAcsRequest<MigrateTemplateFunctionListResponse>
     {
         public MigrateTemplateFunctionListRequest()
-            : base("Iot", "2019-07-30", "MigrateTemplateFunctionList", "Iot", "openAPI")
+            : base("Iot", "2019-07-30", "MigrateTemplateFunctionList", "iot", "openAPI")
         {
         }
 
