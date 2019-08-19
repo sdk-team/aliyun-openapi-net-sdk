@@ -33,15 +33,20 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         public DescribeSecurityGroupReferencesRequest()
             : base("Ecs", "2014-05-26", "DescribeSecurityGroupReferences", "ecs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
-		private List<string> securityGroupIds;
-
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
+
+		private List<string> securityGroupIds;
 
 		private long? ownerId;
 
@@ -55,23 +60,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public List<string> SecurityGroupIds
-		{
-			get
-			{
-				return securityGroupIds;
-			}
-
-			set
-			{
-				securityGroupIds = value;
-				for (int i = 0; i < securityGroupIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"SecurityGroupId." + (i + 1) , securityGroupIds[i]);
-				}
 			}
 		}
 
@@ -98,6 +86,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public List<string> SecurityGroupIds
+		{
+			get
+			{
+				return securityGroupIds;
+			}
+
+			set
+			{
+				securityGroupIds = value;
+				for (int i = 0; i < securityGroupIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"SecurityGroupId." + (i + 1) , securityGroupIds[i]);
+				}
 			}
 		}
 

@@ -33,11 +33,22 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         public DescribeSecurityGroupsRequest()
             : base("Ecs", "2014-05-26", "DescribeSecurityGroups", "ecs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
+		private bool? dryRun;
+
 		private bool? fuzzyQuery;
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
 
 		private string securityGroupId;
 
@@ -45,27 +56,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string networkType;
 
+		private long? ownerId;
+
+		private string securityGroupIds;
+
 		private string securityGroupName;
 
 		private int? pageNumber;
 
 		private string resourceGroupId;
 
+		private string vpcId;
+
 		private int? pageSize;
 
 		private List<Tag> tags;
-
-		private bool? dryRun;
-
-		private string resourceOwnerAccount;
-
-		private string ownerAccount;
-
-		private long? ownerId;
-
-		private string securityGroupIds;
-
-		private string vpcId;
 
 		public long? ResourceOwnerId
 		{
@@ -80,6 +85,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public bool? DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
+			}
+		}
+
 		public bool? FuzzyQuery
 		{
 			get
@@ -90,6 +108,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				fuzzyQuery = value;
 				DictionaryUtil.Add(QueryParameters, "FuzzyQuery", value.ToString());
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -132,6 +176,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string SecurityGroupIds
+		{
+			get
+			{
+				return securityGroupIds;
+			}
+			set	
+			{
+				securityGroupIds = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityGroupIds", value);
+			}
+		}
+
 		public string SecurityGroupName
 		{
 			get
@@ -171,6 +241,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string VpcId
+		{
+			get
+			{
+				return vpcId;
+			}
+			set	
+			{
+				vpcId = value;
+				DictionaryUtil.Add(QueryParameters, "VpcId", value);
+			}
+		}
+
 		public int? PageSize
 		{
 			get
@@ -199,84 +282,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
 				}
-			}
-		}
-
-		public bool? DryRun
-		{
-			get
-			{
-				return dryRun;
-			}
-			set	
-			{
-				dryRun = value;
-				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string SecurityGroupIds
-		{
-			get
-			{
-				return securityGroupIds;
-			}
-			set	
-			{
-				securityGroupIds = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityGroupIds", value);
-			}
-		}
-
-		public string VpcId
-		{
-			get
-			{
-				return vpcId;
-			}
-			set	
-			{
-				vpcId = value;
-				DictionaryUtil.Add(QueryParameters, "VpcId", value);
 			}
 		}
 

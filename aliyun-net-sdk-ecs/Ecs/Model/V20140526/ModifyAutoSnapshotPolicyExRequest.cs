@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -32,23 +33,28 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         public ModifyAutoSnapshotPolicyExRequest()
             : base("Ecs", "2014-05-26", "ModifyAutoSnapshotPolicyEx", "ecs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
+
+		private string resourceOwnerAccount;
 
 		private string autoSnapshotPolicyId;
 
 		private string timePoints;
 
-		private string repeatWeekdays;
-
-		private string resourceOwnerAccount;
+		private int? retentionDays;
 
 		private long? ownerId;
 
-		private string autoSnapshotPolicyName;
+		private string repeatWeekdays;
 
-		private int? retentionDays;
+		private string autoSnapshotPolicyName;
 
 		public long? ResourceOwnerId
 		{
@@ -60,6 +66,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -89,29 +108,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RepeatWeekdays
+		public int? RetentionDays
 		{
 			get
 			{
-				return repeatWeekdays;
+				return retentionDays;
 			}
 			set	
 			{
-				repeatWeekdays = value;
-				DictionaryUtil.Add(QueryParameters, "repeatWeekdays", value);
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				retentionDays = value;
+				DictionaryUtil.Add(QueryParameters, "retentionDays", value.ToString());
 			}
 		}
 
@@ -128,6 +134,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string RepeatWeekdays
+		{
+			get
+			{
+				return repeatWeekdays;
+			}
+			set	
+			{
+				repeatWeekdays = value;
+				DictionaryUtil.Add(QueryParameters, "repeatWeekdays", value);
+			}
+		}
+
 		public string AutoSnapshotPolicyName
 		{
 			get
@@ -138,19 +157,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				autoSnapshotPolicyName = value;
 				DictionaryUtil.Add(QueryParameters, "autoSnapshotPolicyName", value);
-			}
-		}
-
-		public int? RetentionDays
-		{
-			get
-			{
-				return retentionDays;
-			}
-			set	
-			{
-				retentionDays = value;
-				DictionaryUtil.Add(QueryParameters, "retentionDays", value.ToString());
 			}
 		}
 

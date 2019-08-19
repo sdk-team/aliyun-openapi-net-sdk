@@ -33,21 +33,26 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         public DeleteInstanceRequest()
             : base("Ecs", "2014-05-26", "DeleteInstance", "ecs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
-		private bool? terminateSubscription;
+		private string instanceId;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private long? ownerId;
-
-		private string instanceId;
+		private bool? terminateSubscription;
 
 		private bool? force;
+
+		private long? ownerId;
 
 		public long? ResourceOwnerId
 		{
@@ -62,16 +67,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public bool? TerminateSubscription
+		public string InstanceId
 		{
 			get
 			{
-				return terminateSubscription;
+				return instanceId;
 			}
 			set	
 			{
-				terminateSubscription = value;
-				DictionaryUtil.Add(QueryParameters, "TerminateSubscription", value.ToString());
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
@@ -101,29 +106,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public long? OwnerId
+		public bool? TerminateSubscription
 		{
 			get
 			{
-				return ownerId;
+				return terminateSubscription;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				terminateSubscription = value;
+				DictionaryUtil.Add(QueryParameters, "TerminateSubscription", value.ToString());
 			}
 		}
 
@@ -137,6 +129,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				force = value;
 				DictionaryUtil.Add(QueryParameters, "Force", value.ToString());
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

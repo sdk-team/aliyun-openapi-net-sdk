@@ -33,27 +33,34 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         public ImportImageRequest()
             : base("Ecs", "2014-05-26", "ImportImage", "ecs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private List<DiskDeviceMapping> diskDeviceMappings;
 
 		private long? resourceOwnerId;
 
+		private string licenseType;
+
+		private string resourceOwnerAccount;
+
+		private string roleName;
+
 		private string description;
+
+		private string oSType;
+
+		private long? ownerId;
 
 		private string platform;
 
 		private string imageName;
 
 		private string architecture;
-
-		private string resourceOwnerAccount;
-
-		private string roleName;
-
-		private string oSType;
-
-		private long? ownerId;
 
 		public List<DiskDeviceMapping> DiskDeviceMappings
 		{
@@ -90,6 +97,45 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string LicenseType
+		{
+			get
+			{
+				return licenseType;
+			}
+			set	
+			{
+				licenseType = value;
+				DictionaryUtil.Add(QueryParameters, "LicenseType", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string RoleName
+		{
+			get
+			{
+				return roleName;
+			}
+			set	
+			{
+				roleName = value;
+				DictionaryUtil.Add(QueryParameters, "RoleName", value);
+			}
+		}
+
 		public string Description
 		{
 			get
@@ -100,6 +146,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string OSType
+		{
+			get
+			{
+				return oSType;
+			}
+			set	
+			{
+				oSType = value;
+				DictionaryUtil.Add(QueryParameters, "OSType", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -139,58 +211,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				architecture = value;
 				DictionaryUtil.Add(QueryParameters, "Architecture", value);
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string RoleName
-		{
-			get
-			{
-				return roleName;
-			}
-			set	
-			{
-				roleName = value;
-				DictionaryUtil.Add(QueryParameters, "RoleName", value);
-			}
-		}
-
-		public string OSType
-		{
-			get
-			{
-				return oSType;
-			}
-			set	
-			{
-				oSType = value;
-				DictionaryUtil.Add(QueryParameters, "OSType", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

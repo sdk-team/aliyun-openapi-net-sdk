@@ -33,23 +33,28 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         public AttachDiskRequest()
             : base("Ecs", "2014-05-26", "AttachDisk", "ecs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
-		private string diskId;
-
-		private bool? deleteWithInstance;
+		private string instanceId;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
+		private string diskId;
+
 		private long? ownerId;
 
-		private string instanceId;
-
 		private string device;
+
+		private bool? deleteWithInstance;
 
 		public long? ResourceOwnerId
 		{
@@ -64,29 +69,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string DiskId
+		public string InstanceId
 		{
 			get
 			{
-				return diskId;
+				return instanceId;
 			}
 			set	
 			{
-				diskId = value;
-				DictionaryUtil.Add(QueryParameters, "DiskId", value);
-			}
-		}
-
-		public bool? DeleteWithInstance
-		{
-			get
-			{
-				return deleteWithInstance;
-			}
-			set	
-			{
-				deleteWithInstance = value;
-				DictionaryUtil.Add(QueryParameters, "DeleteWithInstance", value.ToString());
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
@@ -116,6 +108,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string DiskId
+		{
+			get
+			{
+				return diskId;
+			}
+			set	
+			{
+				diskId = value;
+				DictionaryUtil.Add(QueryParameters, "DiskId", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -129,19 +134,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
 		public string Device
 		{
 			get
@@ -152,6 +144,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				device = value;
 				DictionaryUtil.Add(QueryParameters, "Device", value);
+			}
+		}
+
+		public bool? DeleteWithInstance
+		{
+			get
+			{
+				return deleteWithInstance;
+			}
+			set	
+			{
+				deleteWithInstance = value;
+				DictionaryUtil.Add(QueryParameters, "DeleteWithInstance", value.ToString());
 			}
 		}
 

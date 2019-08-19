@@ -33,43 +33,54 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         public CreateDiskRequest()
             : base("Ecs", "2014-05-26", "CreateDisk", "ecs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
 		private string snapshotId;
 
+		private string resourceOwnerAccount;
+
 		private string clientToken;
 
+		private string performanceLevel;
+
+		private string ownerAccount;
+
 		private string description;
+
+		private long? ownerId;
 
 		private string diskName;
 
 		private string resourceGroupId;
 
-		private string diskCategory;
-
-		private List<Tag> tags;
-
-		private List<Arn> arns;
-
-		private string advancedFeatures;
-
-		private string resourceOwnerAccount;
-
-		private string ownerAccount;
-
-		private long? ownerId;
-
 		private string instanceId;
+
+		private string storageSetId;
 
 		private int? size;
 
 		private bool? encrypted;
 
+		private string diskCategory;
+
 		private string zoneId;
 
+		private int? storageSetPartitionNumber;
+
+		private List<Tag> tags;
+
+		private List<Arn> arns;
+
 		private string kMSKeyId;
+
+		private string advancedFeatures;
 
 		public long? ResourceOwnerId
 		{
@@ -97,6 +108,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
 		public string ClientToken
 		{
 			get
@@ -110,6 +134,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string PerformanceLevel
+		{
+			get
+			{
+				return performanceLevel;
+			}
+			set	
+			{
+				performanceLevel = value;
+				DictionaryUtil.Add(QueryParameters, "PerformanceLevel", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
 		public string Description
 		{
 			get
@@ -120,6 +170,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -149,6 +212,58 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string StorageSetId
+		{
+			get
+			{
+				return storageSetId;
+			}
+			set	
+			{
+				storageSetId = value;
+				DictionaryUtil.Add(QueryParameters, "StorageSetId", value);
+			}
+		}
+
+		public int? Size
+		{
+			get
+			{
+				return size;
+			}
+			set	
+			{
+				size = value;
+				DictionaryUtil.Add(QueryParameters, "Size", value.ToString());
+			}
+		}
+
+		public bool? Encrypted
+		{
+			get
+			{
+				return encrypted;
+			}
+			set	
+			{
+				encrypted = value;
+				DictionaryUtil.Add(QueryParameters, "Encrypted", value.ToString());
+			}
+		}
+
 		public string DiskCategory
 		{
 			get
@@ -159,6 +274,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				diskCategory = value;
 				DictionaryUtil.Add(QueryParameters, "DiskCategory", value);
+			}
+		}
+
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
+		public int? StorageSetPartitionNumber
+		{
+			get
+			{
+				return storageSetPartitionNumber;
+			}
+			set	
+			{
+				storageSetPartitionNumber = value;
+				DictionaryUtil.Add(QueryParameters, "StorageSetPartitionNumber", value.ToString());
 			}
 		}
 
@@ -199,110 +340,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string AdvancedFeatures
-		{
-			get
-			{
-				return advancedFeatures;
-			}
-			set	
-			{
-				advancedFeatures = value;
-				DictionaryUtil.Add(QueryParameters, "AdvancedFeatures", value);
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public int? Size
-		{
-			get
-			{
-				return size;
-			}
-			set	
-			{
-				size = value;
-				DictionaryUtil.Add(QueryParameters, "Size", value.ToString());
-			}
-		}
-
-		public bool? Encrypted
-		{
-			get
-			{
-				return encrypted;
-			}
-			set	
-			{
-				encrypted = value;
-				DictionaryUtil.Add(QueryParameters, "Encrypted", value.ToString());
-			}
-		}
-
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
 		public string KMSKeyId
 		{
 			get
@@ -313,6 +350,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				kMSKeyId = value;
 				DictionaryUtil.Add(QueryParameters, "KMSKeyId", value);
+			}
+		}
+
+		public string AdvancedFeatures
+		{
+			get
+			{
+				return advancedFeatures;
+			}
+			set	
+			{
+				advancedFeatures = value;
+				DictionaryUtil.Add(QueryParameters, "AdvancedFeatures", value);
 			}
 		}
 

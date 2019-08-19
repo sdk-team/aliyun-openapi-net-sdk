@@ -33,21 +33,26 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         public ModifySecurityGroupPolicyRequest()
             : base("Ecs", "2014-05-26", "ModifySecurityGroupPolicy", "ecs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
 		private string clientToken;
 
-		private string securityGroupId;
-
-		private string innerAccessPolicy;
-
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
+		private string securityGroupId;
+
 		private long? ownerId;
+
+		private string innerAccessPolicy;
 
 		public long? ResourceOwnerId
 		{
@@ -72,32 +77,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public string SecurityGroupId
-		{
-			get
-			{
-				return securityGroupId;
-			}
-			set	
-			{
-				securityGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
-			}
-		}
-
-		public string InnerAccessPolicy
-		{
-			get
-			{
-				return innerAccessPolicy;
-			}
-			set	
-			{
-				innerAccessPolicy = value;
-				DictionaryUtil.Add(QueryParameters, "InnerAccessPolicy", value);
 			}
 		}
 
@@ -127,6 +106,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string SecurityGroupId
+		{
+			get
+			{
+				return securityGroupId;
+			}
+			set	
+			{
+				securityGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -137,6 +129,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string InnerAccessPolicy
+		{
+			get
+			{
+				return innerAccessPolicy;
+			}
+			set	
+			{
+				innerAccessPolicy = value;
+				DictionaryUtil.Add(QueryParameters, "InnerAccessPolicy", value);
 			}
 		}
 

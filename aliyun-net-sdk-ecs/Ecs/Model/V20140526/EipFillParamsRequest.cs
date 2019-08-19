@@ -33,19 +33,24 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         public EipFillParamsRequest()
             : base("Ecs", "2014-05-26", "EipFillParams", "ecs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
 		private string data;
 
-		private string clientToken;
-
-		private string userCidr;
-
 		private string resourceOwnerAccount;
 
+		private string clientToken;
+
 		private string ownerAccount;
+
+		private string userCidr;
 
 		private long? ownerId;
 
@@ -75,32 +80,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public string UserCidr
-		{
-			get
-			{
-				return userCidr;
-			}
-			set	
-			{
-				userCidr = value;
-				DictionaryUtil.Add(QueryParameters, "UserCidr", value);
-			}
-		}
-
 		public string ResourceOwnerAccount
 		{
 			get
@@ -114,6 +93,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -124,6 +116,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string UserCidr
+		{
+			get
+			{
+				return userCidr;
+			}
+			set	
+			{
+				userCidr = value;
+				DictionaryUtil.Add(QueryParameters, "UserCidr", value);
 			}
 		}
 

@@ -17,7 +17,6 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -33,6 +32,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         public ModifyInstanceDeploymentRequest()
             : base("Ecs", "2014-05-26", "ModifyInstanceDeployment", "ecs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
@@ -52,6 +56,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string instanceId;
 
 		private bool? force;
+
+		private string migrationType;
 
 		private string affinity;
 
@@ -169,6 +175,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				force = value;
 				DictionaryUtil.Add(QueryParameters, "Force", value.ToString());
+			}
+		}
+
+		public string MigrationType
+		{
+			get
+			{
+				return migrationType;
+			}
+			set	
+			{
+				migrationType = value;
+				DictionaryUtil.Add(QueryParameters, "MigrationType", value);
 			}
 		}
 

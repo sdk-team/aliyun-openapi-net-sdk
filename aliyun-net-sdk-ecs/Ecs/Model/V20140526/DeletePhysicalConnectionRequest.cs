@@ -33,19 +33,24 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         public DeletePhysicalConnectionRequest()
             : base("Ecs", "2014-05-26", "DeletePhysicalConnection", "ecs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
+		private string resourceOwnerAccount;
+
 		private string clientToken;
 
-		private string resourceOwnerAccount;
+		private string physicalConnectionId;
 
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private string physicalConnectionId;
 
 		public long? ResourceOwnerId
 		{
@@ -57,6 +62,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -73,16 +91,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ResourceOwnerAccount
+		public string PhysicalConnectionId
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return physicalConnectionId;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				physicalConnectionId = value;
+				DictionaryUtil.Add(QueryParameters, "PhysicalConnectionId", value);
 			}
 		}
 
@@ -109,19 +127,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string PhysicalConnectionId
-		{
-			get
-			{
-				return physicalConnectionId;
-			}
-			set	
-			{
-				physicalConnectionId = value;
-				DictionaryUtil.Add(QueryParameters, "PhysicalConnectionId", value);
 			}
 		}
 

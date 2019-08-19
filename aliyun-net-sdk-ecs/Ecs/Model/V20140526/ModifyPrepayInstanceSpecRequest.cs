@@ -33,25 +33,20 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         public ModifyPrepayInstanceSpecRequest()
             : base("Ecs", "2014-05-26", "ModifyPrepayInstanceSpec", "ecs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
-		private string clientToken;
-
-		private string operatorType;
-
-		private string systemDiskCategory;
-
-		private string rebootTime;
-
-		private bool? migrateAcrossZone;
-
-		private string instanceType;
-
 		private bool? autoPay;
 
 		private string resourceOwnerAccount;
+
+		private string clientToken;
 
 		private string ownerAccount;
 
@@ -59,7 +54,17 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
+		private string operatorType;
+
+		private string systemDiskCategory;
+
+		private string rebootTime;
+
 		private string instanceId;
+
+		private bool? migrateAcrossZone;
+
+		private string instanceType;
 
 		public long? ResourceOwnerId
 		{
@@ -71,84 +76,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public string OperatorType
-		{
-			get
-			{
-				return operatorType;
-			}
-			set	
-			{
-				operatorType = value;
-				DictionaryUtil.Add(QueryParameters, "OperatorType", value);
-			}
-		}
-
-		public string SystemDiskCategory
-		{
-			get
-			{
-				return systemDiskCategory;
-			}
-			set	
-			{
-				systemDiskCategory = value;
-				DictionaryUtil.Add(QueryParameters, "SystemDisk.Category", value);
-			}
-		}
-
-		public string RebootTime
-		{
-			get
-			{
-				return rebootTime;
-			}
-			set	
-			{
-				rebootTime = value;
-				DictionaryUtil.Add(QueryParameters, "RebootTime", value);
-			}
-		}
-
-		public bool? MigrateAcrossZone
-		{
-			get
-			{
-				return migrateAcrossZone;
-			}
-			set	
-			{
-				migrateAcrossZone = value;
-				DictionaryUtil.Add(QueryParameters, "MigrateAcrossZone", value.ToString());
-			}
-		}
-
-		public string InstanceType
-		{
-			get
-			{
-				return instanceType;
-			}
-			set	
-			{
-				instanceType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
 			}
 		}
 
@@ -175,6 +102,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -217,6 +157,45 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string OperatorType
+		{
+			get
+			{
+				return operatorType;
+			}
+			set	
+			{
+				operatorType = value;
+				DictionaryUtil.Add(QueryParameters, "OperatorType", value);
+			}
+		}
+
+		public string SystemDiskCategory
+		{
+			get
+			{
+				return systemDiskCategory;
+			}
+			set	
+			{
+				systemDiskCategory = value;
+				DictionaryUtil.Add(QueryParameters, "SystemDisk.Category", value);
+			}
+		}
+
+		public string RebootTime
+		{
+			get
+			{
+				return rebootTime;
+			}
+			set	
+			{
+				rebootTime = value;
+				DictionaryUtil.Add(QueryParameters, "RebootTime", value);
+			}
+		}
+
 		public string InstanceId
 		{
 			get
@@ -227,6 +206,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public bool? MigrateAcrossZone
+		{
+			get
+			{
+				return migrateAcrossZone;
+			}
+			set	
+			{
+				migrateAcrossZone = value;
+				DictionaryUtil.Add(QueryParameters, "MigrateAcrossZone", value.ToString());
+			}
+		}
+
+		public string InstanceType
+		{
+			get
+			{
+				return instanceType;
+			}
+			set	
+			{
+				instanceType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
 			}
 		}
 

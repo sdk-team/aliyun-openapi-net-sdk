@@ -33,19 +33,22 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         public ModifyRouterInterfaceAttributeRequest()
             : base("Ecs", "2014-05-26", "ModifyRouterInterfaceAttribute", "ecs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string oppositeRouterId;
 
 		private long? resourceOwnerId;
 
+		private string resourceOwnerAccount;
+
 		private string description;
 
 		private string healthCheckTargetIp;
-
-		private string oppositeInterfaceId;
-
-		private string resourceOwnerAccount;
 
 		private long? ownerId;
 
@@ -58,6 +61,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string name;
 
 		private string oppositeRouterType;
+
+		private string oppositeInterfaceId;
 
 		public string OppositeRouterId
 		{
@@ -85,6 +90,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
 		public string Description
 		{
 			get
@@ -108,32 +126,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				healthCheckTargetIp = value;
 				DictionaryUtil.Add(QueryParameters, "HealthCheckTargetIp", value);
-			}
-		}
-
-		public string OppositeInterfaceId
-		{
-			get
-			{
-				return oppositeInterfaceId;
-			}
-			set	
-			{
-				oppositeInterfaceId = value;
-				DictionaryUtil.Add(QueryParameters, "OppositeInterfaceId", value);
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -212,6 +204,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				oppositeRouterType = value;
 				DictionaryUtil.Add(QueryParameters, "OppositeRouterType", value);
+			}
+		}
+
+		public string OppositeInterfaceId
+		{
+			get
+			{
+				return oppositeInterfaceId;
+			}
+			set	
+			{
+				oppositeInterfaceId = value;
+				DictionaryUtil.Add(QueryParameters, "OppositeInterfaceId", value);
 			}
 		}
 

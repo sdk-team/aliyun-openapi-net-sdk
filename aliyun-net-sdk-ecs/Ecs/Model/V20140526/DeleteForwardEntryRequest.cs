@@ -33,17 +33,22 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         public DeleteForwardEntryRequest()
             : base("Ecs", "2014-05-26", "DeleteForwardEntry", "ecs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
-		private string forwardTableId;
+		private string resourceOwnerAccount;
 
 		private string forwardEntryId;
 
-		private string resourceOwnerAccount;
-
 		private string ownerAccount;
+
+		private string forwardTableId;
 
 		private long? ownerId;
 
@@ -60,16 +65,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ForwardTableId
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return forwardTableId;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				forwardTableId = value;
-				DictionaryUtil.Add(QueryParameters, "ForwardTableId", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -86,19 +91,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -109,6 +101,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string ForwardTableId
+		{
+			get
+			{
+				return forwardTableId;
+			}
+			set	
+			{
+				forwardTableId = value;
+				DictionaryUtil.Add(QueryParameters, "ForwardTableId", value);
 			}
 		}
 

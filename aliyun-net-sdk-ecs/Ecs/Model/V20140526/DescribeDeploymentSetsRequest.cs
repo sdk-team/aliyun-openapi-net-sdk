@@ -33,29 +33,34 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         public DescribeDeploymentSetsRequest()
             : base("Ecs", "2014-05-26", "DescribeDeploymentSets", "ecs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
-
-		private string networkType;
-
-		private int? pageNumber;
-
-		private string deploymentSetIds;
-
-		private int? pageSize;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
+		private string networkType;
+
 		private string deploymentSetName;
 
 		private long? ownerId;
 
+		private int? pageNumber;
+
+		private string deploymentSetIds;
+
 		private string granularity;
 
 		private string domain;
+
+		private int? pageSize;
 
 		private string strategy;
 
@@ -69,58 +74,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string NetworkType
-		{
-			get
-			{
-				return networkType;
-			}
-			set	
-			{
-				networkType = value;
-				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string DeploymentSetIds
-		{
-			get
-			{
-				return deploymentSetIds;
-			}
-			set	
-			{
-				deploymentSetIds = value;
-				DictionaryUtil.Add(QueryParameters, "DeploymentSetIds", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -150,6 +103,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string NetworkType
+		{
+			get
+			{
+				return networkType;
+			}
+			set	
+			{
+				networkType = value;
+				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
+			}
+		}
+
 		public string DeploymentSetName
 		{
 			get
@@ -176,6 +142,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string DeploymentSetIds
+		{
+			get
+			{
+				return deploymentSetIds;
+			}
+			set	
+			{
+				deploymentSetIds = value;
+				DictionaryUtil.Add(QueryParameters, "DeploymentSetIds", value);
+			}
+		}
+
 		public string Granularity
 		{
 			get
@@ -199,6 +191,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				domain = value;
 				DictionaryUtil.Add(QueryParameters, "Domain", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

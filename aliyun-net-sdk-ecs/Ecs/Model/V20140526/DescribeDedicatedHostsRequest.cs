@@ -17,7 +17,6 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -33,23 +32,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         public DescribeDedicatedHostsRequest()
             : base("Ecs", "2014-05-26", "DescribeDedicatedHosts", "ecs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string dedicatedHostIds;
 
 		private long? resourceOwnerId;
-
-		private int? pageNumber;
-
-		private string resourceGroupId;
-
-		private string lockReason;
-
-		private int? pageSize;
-
-		private string dedicatedHostType;
-
-		private List<Tag> tags;
 
 		private string dedicatedHostName;
 
@@ -59,7 +51,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
+		private int? pageNumber;
+
+		private string resourceGroupId;
+
+		private string lockReason;
+
+		private int? pageSize;
+
 		private string zoneId;
+
+		private string dedicatedHostType;
+
+		private List<Tag> tags;
 
 		private string status;
 
@@ -86,89 +90,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
-		public string LockReason
-		{
-			get
-			{
-				return lockReason;
-			}
-			set	
-			{
-				lockReason = value;
-				DictionaryUtil.Add(QueryParameters, "LockReason", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string DedicatedHostType
-		{
-			get
-			{
-				return dedicatedHostType;
-			}
-			set	
-			{
-				dedicatedHostType = value;
-				DictionaryUtil.Add(QueryParameters, "DedicatedHostType", value);
-			}
-		}
-
-		public List<Tag> Tags
-		{
-			get
-			{
-				return tags;
-			}
-
-			set
-			{
-				tags = value;
-				for (int i = 0; i < tags.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
-				}
 			}
 		}
 
@@ -224,6 +145,58 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public string LockReason
+		{
+			get
+			{
+				return lockReason;
+			}
+			set	
+			{
+				lockReason = value;
+				DictionaryUtil.Add(QueryParameters, "LockReason", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
 		public string ZoneId
 		{
 			get
@@ -234,6 +207,37 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				zoneId = value;
 				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
+		public string DedicatedHostType
+		{
+			get
+			{
+				return dedicatedHostType;
+			}
+			set	
+			{
+				dedicatedHostType = value;
+				DictionaryUtil.Add(QueryParameters, "DedicatedHostType", value);
+			}
+		}
+
+		public List<Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
 			}
 		}
 

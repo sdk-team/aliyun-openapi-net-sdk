@@ -33,13 +33,14 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         public DescribeNewProjectEipMonitorDataRequest()
             : base("Ecs", "2014-05-26", "DescribeNewProjectEipMonitorData", "ecs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
-
-		private string allocationId;
-
-		private string startTime;
 
 		private int? period;
 
@@ -48,6 +49,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string ownerAccount;
 
 		private string endTime;
+
+		private string allocationId;
+
+		private string startTime;
 
 		private long? ownerId;
 
@@ -61,32 +66,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string AllocationId
-		{
-			get
-			{
-				return allocationId;
-			}
-			set	
-			{
-				allocationId = value;
-				DictionaryUtil.Add(QueryParameters, "AllocationId", value);
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
@@ -139,6 +118,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				endTime = value;
 				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
+		public string AllocationId
+		{
+			get
+			{
+				return allocationId;
+			}
+			set	
+			{
+				allocationId = value;
+				DictionaryUtil.Add(QueryParameters, "AllocationId", value);
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 

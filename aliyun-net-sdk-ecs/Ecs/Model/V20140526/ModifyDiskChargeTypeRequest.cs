@@ -33,25 +33,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         public ModifyDiskChargeTypeRequest()
             : base("Ecs", "2014-05-26", "ModifyDiskChargeType", "ecs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
-		private string clientToken;
-
 		private string diskChargeType;
 
-		private string diskIds;
+		private string instanceId;
 
 		private bool? autoPay;
 
 		private string resourceOwnerAccount;
 
+		private string clientToken;
+
 		private string ownerAccount;
 
-		private long? ownerId;
+		private string diskIds;
 
-		private string instanceId;
+		private long? ownerId;
 
 		public long? ResourceOwnerId
 		{
@@ -63,19 +68,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -92,16 +84,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string DiskIds
+		public string InstanceId
 		{
 			get
 			{
-				return diskIds;
+				return instanceId;
 			}
 			set	
 			{
-				diskIds = value;
-				DictionaryUtil.Add(QueryParameters, "DiskIds", value);
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
@@ -131,6 +123,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -144,6 +149,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string DiskIds
+		{
+			get
+			{
+				return diskIds;
+			}
+			set	
+			{
+				diskIds = value;
+				DictionaryUtil.Add(QueryParameters, "DiskIds", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -154,19 +172,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

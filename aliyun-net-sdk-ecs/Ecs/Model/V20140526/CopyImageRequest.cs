@@ -33,25 +33,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         public CopyImageRequest()
             : base("Ecs", "2014-05-26", "CopyImage", "ecs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
 		private string imageId;
 
-		private string destinationRegionId;
-
-		private List<Tag> tags;
-
 		private string resourceOwnerAccount;
 
 		private string destinationImageName;
+
+		private string destinationRegionId;
 
 		private string ownerAccount;
 
 		private long? ownerId;
 
 		private bool? encrypted;
+
+		private List<Tag> tags;
 
 		private string kMSKeyId;
 
@@ -83,37 +88,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string DestinationRegionId
-		{
-			get
-			{
-				return destinationRegionId;
-			}
-			set	
-			{
-				destinationRegionId = value;
-				DictionaryUtil.Add(QueryParameters, "DestinationRegionId", value);
-			}
-		}
-
-		public List<Tag> Tags
-		{
-			get
-			{
-				return tags;
-			}
-
-			set
-			{
-				tags = value;
-				for (int i = 0; i < tags.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
-				}
-			}
-		}
-
 		public string ResourceOwnerAccount
 		{
 			get
@@ -137,6 +111,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				destinationImageName = value;
 				DictionaryUtil.Add(QueryParameters, "DestinationImageName", value);
+			}
+		}
+
+		public string DestinationRegionId
+		{
+			get
+			{
+				return destinationRegionId;
+			}
+			set	
+			{
+				destinationRegionId = value;
+				DictionaryUtil.Add(QueryParameters, "DestinationRegionId", value);
 			}
 		}
 
@@ -176,6 +163,24 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				encrypted = value;
 				DictionaryUtil.Add(QueryParameters, "Encrypted", value.ToString());
+			}
+		}
+
+		public List<Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
 			}
 		}
 

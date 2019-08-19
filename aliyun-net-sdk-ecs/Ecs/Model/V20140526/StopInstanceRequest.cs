@@ -33,25 +33,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         public StopInstanceRequest()
             : base("Ecs", "2014-05-26", "StopInstance", "ecs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
-		private string stoppedMode;
-
-		private bool? forceStop;
-
-		private bool? confirmStop;
+		private string instanceId;
 
 		private bool? dryRun;
 
 		private string resourceOwnerAccount;
 
+		private bool? confirmStop;
+
 		private string ownerAccount;
+
+		private string stoppedMode;
 
 		private long? ownerId;
 
-		private string instanceId;
+		private bool? forceStop;
 
 		public long? ResourceOwnerId
 		{
@@ -66,42 +71,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string StoppedMode
+		public string InstanceId
 		{
 			get
 			{
-				return stoppedMode;
+				return instanceId;
 			}
 			set	
 			{
-				stoppedMode = value;
-				DictionaryUtil.Add(QueryParameters, "StoppedMode", value);
-			}
-		}
-
-		public bool? ForceStop
-		{
-			get
-			{
-				return forceStop;
-			}
-			set	
-			{
-				forceStop = value;
-				DictionaryUtil.Add(QueryParameters, "ForceStop", value.ToString());
-			}
-		}
-
-		public bool? ConfirmStop
-		{
-			get
-			{
-				return confirmStop;
-			}
-			set	
-			{
-				confirmStop = value;
-				DictionaryUtil.Add(QueryParameters, "ConfirmStop", value.ToString());
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
@@ -131,6 +110,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public bool? ConfirmStop
+		{
+			get
+			{
+				return confirmStop;
+			}
+			set	
+			{
+				confirmStop = value;
+				DictionaryUtil.Add(QueryParameters, "ConfirmStop", value.ToString());
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -141,6 +133,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string StoppedMode
+		{
+			get
+			{
+				return stoppedMode;
+			}
+			set	
+			{
+				stoppedMode = value;
+				DictionaryUtil.Add(QueryParameters, "StoppedMode", value);
 			}
 		}
 
@@ -157,16 +162,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string InstanceId
+		public bool? ForceStop
 		{
 			get
 			{
-				return instanceId;
+				return forceStop;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				forceStop = value;
+				DictionaryUtil.Add(QueryParameters, "ForceStop", value.ToString());
 			}
 		}
 

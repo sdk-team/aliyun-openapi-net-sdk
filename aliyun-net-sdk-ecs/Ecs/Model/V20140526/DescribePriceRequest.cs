@@ -33,7 +33,14 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         public DescribePriceRequest()
             : base("Ecs", "2014-05-26", "DescribePrice", "ecs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private string dataDisk3PerformanceLevel;
 
 		private int? dataDisk3Size;
 
@@ -49,7 +56,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string systemDiskCategory;
 
+		private string systemDiskPerformanceLevel;
+
 		private string dataDisk4Category;
+
+		private string dataDisk4PerformanceLevel;
 
 		private int? dataDisk4Size;
 
@@ -71,17 +82,34 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? dataDisk2Size;
 
+		private string dataDisk1PerformanceLevel;
+
 		private long? ownerId;
 
 		private string resourceType;
 
 		private string dataDisk1Category;
 
+		private string dataDisk2PerformanceLevel;
+
 		private int? systemDiskSize;
 
 		private string internetChargeType;
 
 		private string instanceNetworkType;
+
+		public string DataDisk3PerformanceLevel
+		{
+			get
+			{
+				return dataDisk3PerformanceLevel;
+			}
+			set	
+			{
+				dataDisk3PerformanceLevel = value;
+				DictionaryUtil.Add(QueryParameters, "DataDisk.3.PerformanceLevel", value);
+			}
+		}
 
 		public int? DataDisk3Size
 		{
@@ -174,6 +202,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string SystemDiskPerformanceLevel
+		{
+			get
+			{
+				return systemDiskPerformanceLevel;
+			}
+			set	
+			{
+				systemDiskPerformanceLevel = value;
+				DictionaryUtil.Add(QueryParameters, "SystemDisk.PerformanceLevel", value);
+			}
+		}
+
 		public string DataDisk4Category
 		{
 			get
@@ -184,6 +225,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				dataDisk4Category = value;
 				DictionaryUtil.Add(QueryParameters, "DataDisk.4.Category", value);
+			}
+		}
+
+		public string DataDisk4PerformanceLevel
+		{
+			get
+			{
+				return dataDisk4PerformanceLevel;
+			}
+			set	
+			{
+				dataDisk4PerformanceLevel = value;
+				DictionaryUtil.Add(QueryParameters, "DataDisk.4.PerformanceLevel", value);
 			}
 		}
 
@@ -317,6 +371,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string DataDisk1PerformanceLevel
+		{
+			get
+			{
+				return dataDisk1PerformanceLevel;
+			}
+			set	
+			{
+				dataDisk1PerformanceLevel = value;
+				DictionaryUtil.Add(QueryParameters, "DataDisk.1.PerformanceLevel", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -353,6 +420,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				dataDisk1Category = value;
 				DictionaryUtil.Add(QueryParameters, "DataDisk.1.Category", value);
+			}
+		}
+
+		public string DataDisk2PerformanceLevel
+		{
+			get
+			{
+				return dataDisk2PerformanceLevel;
+			}
+			set	
+			{
+				dataDisk2PerformanceLevel = value;
+				DictionaryUtil.Add(QueryParameters, "DataDisk.2.PerformanceLevel", value);
 			}
 		}
 
