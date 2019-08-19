@@ -83,6 +83,7 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 					argument.Direction = context.StringValue("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].InputParams["+ j +"].Direction");
 					argument.DataSpecs = context.StringValue("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].InputParams["+ j +"].DataSpecs");
 					argument.DataSpecsList = context.StringValue("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].InputParams["+ j +"].DataSpecsList");
+					argument.TmallFunctionId = context.LongValue("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].InputParams["+ j +"].TmallFunctionId");
 
 					serviceInfo_inputParams.Add(argument);
 				}
@@ -98,6 +99,7 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 					argument2.Name = context.StringValue("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].OutputParams["+ j +"].Name");
 					argument2.DataSpecs = context.StringValue("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].OutputParams["+ j +"].DataSpecs");
 					argument2.DataSpecsList = context.StringValue("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].OutputParams["+ j +"].DataSpecsList");
+					argument2.TmallFunctionId = context.LongValue("ListThingTemplateFuncsForTmallGenie.ServiceInfos["+ i +"].OutputParams["+ j +"].TmallFunctionId");
 
 					serviceInfo_outputParams.Add(argument2);
 				}
@@ -136,6 +138,7 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 					argument5.ParaOrder = context.IntegerValue("ListThingTemplateFuncsForTmallGenie.EventInfos["+ i +"].OutputData["+ j +"].ParaOrder");
 					argument5.DataSpecs = context.StringValue("ListThingTemplateFuncsForTmallGenie.EventInfos["+ i +"].OutputData["+ j +"].DataSpecs");
 					argument5.DataSpecsList = context.StringValue("ListThingTemplateFuncsForTmallGenie.EventInfos["+ i +"].OutputData["+ j +"].DataSpecsList");
+					argument5.TmallFunctionId = context.LongValue("ListThingTemplateFuncsForTmallGenie.EventInfos["+ i +"].OutputData["+ j +"].TmallFunctionId");
 
 					eventInfo_outputData.Add(argument5);
 				}

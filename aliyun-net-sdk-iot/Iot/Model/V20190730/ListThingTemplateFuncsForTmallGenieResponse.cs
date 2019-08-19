@@ -445,6 +445,8 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 				private string dataSpecsList;
 
+				private long? tmallFunctionId;
+
 				public string DataType
 				{
 					get
@@ -526,6 +528,18 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 					set	
 					{
 						dataSpecsList = value;
+					}
+				}
+
+				public long? TmallFunctionId
+				{
+					get
+					{
+						return tmallFunctionId;
+					}
+					set	
+					{
+						tmallFunctionId = value;
 					}
 				}
 			}
@@ -547,6 +561,8 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 				private string dataSpecsList;
 
+				private long? tmallFunctionId;
+
 				public string DataType
 				{
 					get
@@ -628,6 +644,18 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 					set	
 					{
 						dataSpecsList = value;
+					}
+				}
+
+				public long? TmallFunctionId
+				{
+					get
+					{
+						return tmallFunctionId;
+					}
+					set	
+					{
+						tmallFunctionId = value;
 					}
 				}
 			}
@@ -795,6 +823,8 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 				private string dataSpecsList;
 
+				private long? tmallFunctionId;
+
 				public string DataType
 				{
 					get
@@ -864,6 +894,18 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 					set	
 					{
 						dataSpecsList = value;
+					}
+				}
+
+				public long? TmallFunctionId
+				{
+					get
+					{
+						return tmallFunctionId;
+					}
+					set	
+					{
+						tmallFunctionId = value;
 					}
 				}
 			}

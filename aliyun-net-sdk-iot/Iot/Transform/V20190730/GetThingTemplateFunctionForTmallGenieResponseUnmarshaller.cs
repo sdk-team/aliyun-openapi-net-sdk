@@ -76,6 +76,7 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 				argument.Direction = context.StringValue("GetThingTemplateFunctionForTmallGenie.ServiceInfo.InputParams["+ i +"].Direction");
 				argument.DataSpecs = context.StringValue("GetThingTemplateFunctionForTmallGenie.ServiceInfo.InputParams["+ i +"].DataSpecs");
 				argument.DataSpecsList = context.StringValue("GetThingTemplateFunctionForTmallGenie.ServiceInfo.InputParams["+ i +"].DataSpecsList");
+				argument.TmallFunctionId = context.LongValue("GetThingTemplateFunctionForTmallGenie.ServiceInfo.InputParams["+ i +"].TmallFunctionId");
 
 				serviceInfo_inputParams.Add(argument);
 			}
@@ -92,6 +93,7 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 				argument2.Name = context.StringValue("GetThingTemplateFunctionForTmallGenie.ServiceInfo.OutputParams["+ i +"].Name");
 				argument2.DataSpecs = context.StringValue("GetThingTemplateFunctionForTmallGenie.ServiceInfo.OutputParams["+ i +"].DataSpecs");
 				argument2.DataSpecsList = context.StringValue("GetThingTemplateFunctionForTmallGenie.ServiceInfo.OutputParams["+ i +"].DataSpecsList");
+				argument2.TmallFunctionId = context.LongValue("GetThingTemplateFunctionForTmallGenie.ServiceInfo.OutputParams["+ i +"].TmallFunctionId");
 
 				serviceInfo_outputParams.Add(argument2);
 			}
@@ -125,6 +127,7 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 				argument5.ParaOrder = context.IntegerValue("GetThingTemplateFunctionForTmallGenie.EventInfo.OutputData["+ i +"].ParaOrder");
 				argument5.DataSpecs = context.StringValue("GetThingTemplateFunctionForTmallGenie.EventInfo.OutputData["+ i +"].DataSpecs");
 				argument5.DataSpecsList = context.StringValue("GetThingTemplateFunctionForTmallGenie.EventInfo.OutputData["+ i +"].DataSpecsList");
+				argument5.TmallFunctionId = context.LongValue("GetThingTemplateFunctionForTmallGenie.EventInfo.OutputData["+ i +"].TmallFunctionId");
 
 				eventInfo_outputData.Add(argument5);
 			}

@@ -82,6 +82,7 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 					argument.Direction = context.StringValue("GetPoolFunctionsByIdListForTmallGenie.ServiceInfos["+ i +"].InputParams["+ j +"].Direction");
 					argument.DataSpecs = context.StringValue("GetPoolFunctionsByIdListForTmallGenie.ServiceInfos["+ i +"].InputParams["+ j +"].DataSpecs");
 					argument.DataSpecsList = context.StringValue("GetPoolFunctionsByIdListForTmallGenie.ServiceInfos["+ i +"].InputParams["+ j +"].DataSpecsList");
+					argument.TmallFunctionId = context.LongValue("GetPoolFunctionsByIdListForTmallGenie.ServiceInfos["+ i +"].InputParams["+ j +"].TmallFunctionId");
 
 					serviceInfo_inputParams.Add(argument);
 				}
@@ -97,6 +98,7 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 					argument2.Name = context.StringValue("GetPoolFunctionsByIdListForTmallGenie.ServiceInfos["+ i +"].OutputParams["+ j +"].Name");
 					argument2.DataSpecs = context.StringValue("GetPoolFunctionsByIdListForTmallGenie.ServiceInfos["+ i +"].OutputParams["+ j +"].DataSpecs");
 					argument2.DataSpecsList = context.StringValue("GetPoolFunctionsByIdListForTmallGenie.ServiceInfos["+ i +"].OutputParams["+ j +"].DataSpecsList");
+					argument2.TmallFunctionId = context.LongValue("GetPoolFunctionsByIdListForTmallGenie.ServiceInfos["+ i +"].OutputParams["+ j +"].TmallFunctionId");
 
 					serviceInfo_outputParams.Add(argument2);
 				}
@@ -134,6 +136,7 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 					argument5.ParaOrder = context.IntegerValue("GetPoolFunctionsByIdListForTmallGenie.EventInfos["+ i +"].OutputData["+ j +"].ParaOrder");
 					argument5.DataSpecs = context.StringValue("GetPoolFunctionsByIdListForTmallGenie.EventInfos["+ i +"].OutputData["+ j +"].DataSpecs");
 					argument5.DataSpecsList = context.StringValue("GetPoolFunctionsByIdListForTmallGenie.EventInfos["+ i +"].OutputData["+ j +"].DataSpecsList");
+					argument5.TmallFunctionId = context.LongValue("GetPoolFunctionsByIdListForTmallGenie.EventInfos["+ i +"].OutputData["+ j +"].TmallFunctionId");
 
 					eventInfo_outputData.Add(argument5);
 				}

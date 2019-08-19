@@ -58,6 +58,7 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 					argument.ParaOrder = context.IntegerValue("ListEventPoolForTmallGenie.Events["+ i +"].OutputData["+ j +"].ParaOrder");
 					argument.DataSpecs = context.StringValue("ListEventPoolForTmallGenie.Events["+ i +"].OutputData["+ j +"].DataSpecs");
 					argument.DataSpecsList = context.StringValue("ListEventPoolForTmallGenie.Events["+ i +"].OutputData["+ j +"].DataSpecsList");
+					argument.TmallFunctionId = context.LongValue("ListEventPoolForTmallGenie.Events["+ i +"].OutputData["+ j +"].TmallFunctionId");
 
 					_event_outputData.Add(argument);
 				}

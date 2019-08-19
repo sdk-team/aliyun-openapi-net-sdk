@@ -59,6 +59,7 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 					argument.Direction = context.StringValue("ListServicePoolForTmallGenie.Services["+ i +"].InputParams["+ j +"].Direction");
 					argument.DataSpecs = context.StringValue("ListServicePoolForTmallGenie.Services["+ i +"].InputParams["+ j +"].DataSpecs");
 					argument.DataSpecsList = context.StringValue("ListServicePoolForTmallGenie.Services["+ i +"].InputParams["+ j +"].DataSpecsList");
+					argument.TmallFunctionId = context.LongValue("ListServicePoolForTmallGenie.Services["+ i +"].InputParams["+ j +"].TmallFunctionId");
 
 					service_inputParams.Add(argument);
 				}
@@ -75,6 +76,7 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 					argument1.Name = context.StringValue("ListServicePoolForTmallGenie.Services["+ i +"].OutputParams["+ j +"].Name");
 					argument1.DataSpecs = context.StringValue("ListServicePoolForTmallGenie.Services["+ i +"].OutputParams["+ j +"].DataSpecs");
 					argument1.DataSpecsList = context.StringValue("ListServicePoolForTmallGenie.Services["+ i +"].OutputParams["+ j +"].DataSpecsList");
+					argument1.TmallFunctionId = context.LongValue("ListServicePoolForTmallGenie.Services["+ i +"].OutputParams["+ j +"].TmallFunctionId");
 
 					service_outputParams.Add(argument1);
 				}
