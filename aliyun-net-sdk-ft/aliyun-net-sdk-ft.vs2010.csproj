@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{63f4e776-4c91-47c5-82bb-be8d77f36c09}</ProjectGuid>
+    <ProjectGuid>{3c8323a3-8104-406f-887f-7efdeb5f88c4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -41,11 +41,8 @@
   </ItemGroup>
   <ItemGroup>
 	<Compile Include="Ft\Model\V20190802\RoaHttpStringResponseTestResponse.cs" />
-	<Compile Include="Ft\Model\V20190802\TestPortalRequest.cs" />
-	<Compile Include="Ft\Model\V20190802\TestPortalResponse.cs" />
 	<Compile Include="Ft\Model\V20190802\RoaHttpStringResponseTestRequest.cs" />
 	<Compile Include="Ft\Transform\V20190802\RoaHttpStringResponseTestResponseUnmarshaller.cs" />
-	<Compile Include="Ft\Transform\V20190802\TestPortalResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
