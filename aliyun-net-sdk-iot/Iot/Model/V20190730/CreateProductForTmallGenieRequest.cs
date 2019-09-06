@@ -40,15 +40,19 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private int? nodeType;
 
-		private string iotInstanceId;
+		private string tmallGenieTraceId;
 
 		private int? netType;
+
+		private string apiProduct;
 
 		private string taoBaoId;
 
 		private string productName;
 
 		private string description;
+
+		private string apiRevision;
 
 		private string productBrand;
 
@@ -93,16 +97,16 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public string IotInstanceId
+		public string TmallGenieTraceId
 		{
 			get
 			{
-				return iotInstanceId;
+				return tmallGenieTraceId;
 			}
 			set	
 			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+				tmallGenieTraceId = value;
+				DictionaryUtil.Add(QueryParameters, "TmallGenieTraceId", value);
 			}
 		}
 
@@ -116,6 +120,19 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				netType = value;
 				DictionaryUtil.Add(BodyParameters, "NetType", value.ToString());
+			}
+		}
+
+		public string ApiProduct
+		{
+			get
+			{
+				return apiProduct;
+			}
+			set	
+			{
+				apiProduct = value;
+				DictionaryUtil.Add(BodyParameters, "ApiProduct", value);
 			}
 		}
 
@@ -155,6 +172,19 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				description = value;
 				DictionaryUtil.Add(BodyParameters, "Description", value);
+			}
+		}
+
+		public string ApiRevision
+		{
+			get
+			{
+				return apiRevision;
+			}
+			set	
+			{
+				apiRevision = value;
+				DictionaryUtil.Add(BodyParameters, "ApiRevision", value);
 			}
 		}
 

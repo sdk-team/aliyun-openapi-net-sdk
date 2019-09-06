@@ -105,6 +105,7 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 					argument.ParaOrder = context.IntegerValue("QueryProductInfoForTmallGenie.Events["+ i +"].OutputData["+ j +"].ParaOrder");
 					argument.DataSpecs = context.StringValue("QueryProductInfoForTmallGenie.Events["+ i +"].OutputData["+ j +"].DataSpecs");
 					argument.DataSpecsList = context.StringValue("QueryProductInfoForTmallGenie.Events["+ i +"].OutputData["+ j +"].DataSpecsList");
+					argument.TmallFunctionId = context.LongValue("QueryProductInfoForTmallGenie.Events["+ i +"].OutputData["+ j +"].TmallFunctionId");
 
 					_event_outputData.Add(argument);
 				}
@@ -145,6 +146,7 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 					argument4.Direction = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].InputParams["+ j +"].Direction");
 					argument4.DataSpecs = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].InputParams["+ j +"].DataSpecs");
 					argument4.DataSpecsList = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].InputParams["+ j +"].DataSpecsList");
+					argument4.TmallFunctionId = context.LongValue("QueryProductInfoForTmallGenie.Services["+ i +"].InputParams["+ j +"].TmallFunctionId");
 
 					service_inputParams.Add(argument4);
 				}
@@ -161,6 +163,7 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 					argument5.Name = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].OutputParams["+ j +"].Name");
 					argument5.DataSpecs = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].OutputParams["+ j +"].DataSpecs");
 					argument5.DataSpecsList = context.StringValue("QueryProductInfoForTmallGenie.Services["+ i +"].OutputParams["+ j +"].DataSpecsList");
+					argument5.TmallFunctionId = context.LongValue("QueryProductInfoForTmallGenie.Services["+ i +"].OutputParams["+ j +"].TmallFunctionId");
 
 					service_outputParams.Add(argument5);
 				}

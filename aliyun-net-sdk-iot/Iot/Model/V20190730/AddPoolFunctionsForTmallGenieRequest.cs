@@ -40,7 +40,9 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private List<long?> tmallEventIdLists;
 
-		private string iotInstanceId;
+		private string apiProduct;
+
+		private string apiRevision;
 
 		private List<long?> tmallPropertyIdLists;
 
@@ -91,16 +93,29 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public string IotInstanceId
+		public string ApiProduct
 		{
 			get
 			{
-				return iotInstanceId;
+				return apiProduct;
 			}
 			set	
 			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+				apiProduct = value;
+				DictionaryUtil.Add(BodyParameters, "ApiProduct", value);
+			}
+		}
+
+		public string ApiRevision
+		{
+			get
+			{
+				return apiRevision;
+			}
+			set	
+			{
+				apiRevision = value;
+				DictionaryUtil.Add(BodyParameters, "ApiRevision", value);
 			}
 		}
 

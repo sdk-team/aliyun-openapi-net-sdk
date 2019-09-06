@@ -27,16 +27,14 @@ using Aliyun.Acs.Iot.Transform.V20190730;
 
 namespace Aliyun.Acs.Iot.Model.V20190730
 {
-    public class AddProductIdentifierForTmallGenieRequest : RpcAcsRequest<AddProductIdentifierForTmallGenieResponse>
+    public class GetDeviceApplyStatusForTmallGenieRequest : RpcAcsRequest<GetDeviceApplyStatusForTmallGenieResponse>
     {
-        public AddProductIdentifierForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "AddProductIdentifierForTmallGenie", "iot", "openAPI")
+        public GetDeviceApplyStatusForTmallGenieRequest()
+            : base("Iot", "2019-07-30", "GetDeviceApplyStatusForTmallGenie", "iot", "openAPI")
         {
         }
 
-		private List<string> identifiers;
-
-		private string tmallGenieTraceId;
+		private List<string> applyIds;
 
 		private string apiProduct;
 
@@ -44,33 +42,20 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private string productKey;
 
-		public List<string> Identifiers
+		public List<string> ApplyIds
 		{
 			get
 			{
-				return identifiers;
+				return applyIds;
 			}
 
 			set
 			{
-				identifiers = value;
-				for (int i = 0; i < identifiers.Count; i++)
+				applyIds = value;
+				for (int i = 0; i < applyIds.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"Identifier." + (i + 1) , identifiers[i]);
+					DictionaryUtil.Add(QueryParameters,"ApplyId." + (i + 1) , applyIds[i]);
 				}
-			}
-		}
-
-		public string TmallGenieTraceId
-		{
-			get
-			{
-				return tmallGenieTraceId;
-			}
-			set	
-			{
-				tmallGenieTraceId = value;
-				DictionaryUtil.Add(QueryParameters, "TmallGenieTraceId", value);
 			}
 		}
 
@@ -113,9 +98,9 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-        public override AddProductIdentifierForTmallGenieResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetDeviceApplyStatusForTmallGenieResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return AddProductIdentifierForTmallGenieResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetDeviceApplyStatusForTmallGenieResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
