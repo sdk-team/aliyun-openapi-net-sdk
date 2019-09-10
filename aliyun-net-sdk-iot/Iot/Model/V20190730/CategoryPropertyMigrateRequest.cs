@@ -30,19 +30,32 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class CategoryPropertyMigrateRequest : RpcAcsRequest<CategoryPropertyMigrateResponse>
     {
         public CategoryPropertyMigrateRequest()
-            : base("Iot", "2019-07-30", "CategoryPropertyMigrate", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "CategoryPropertyMigrate", "Iot", "openAPI")
         {
         }
+
+		private string categoryKey;
 
 		private string iotInstanceId;
 
 		private string _namespace;
 
-		private List<Property> propertys;
-
-		private string categoryKey;
+		private List<Property> propertys = new List<Property>(){ };
 
 		private string bizTenantId;
+
+		public string CategoryKey
+		{
+			get
+			{
+				return categoryKey;
+			}
+			set	
+			{
+				categoryKey = value;
+				DictionaryUtil.Add(QueryParameters, "CategoryKey", value);
+			}
+		}
 
 		public string IotInstanceId
 		{
@@ -107,19 +120,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public string CategoryKey
-		{
-			get
-			{
-				return categoryKey;
-			}
-			set	
-			{
-				categoryKey = value;
-				DictionaryUtil.Add(QueryParameters, "CategoryKey", value);
-			}
-		}
-
 		public string BizTenantId
 		{
 			get
@@ -168,7 +168,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 			private int? state;
 
-			private List<Tag> tags;
+			private List<Tag> tags = new List<Tag>(){ };
 
 			private string accessMode;
 

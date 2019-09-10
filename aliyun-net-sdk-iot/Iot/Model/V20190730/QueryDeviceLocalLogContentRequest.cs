@@ -30,25 +30,25 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class QueryDeviceLocalLogContentRequest : RpcAcsRequest<QueryDeviceLocalLogContentResponse>
     {
         public QueryDeviceLocalLogContentRequest()
-            : base("Iot", "2019-07-30", "QueryDeviceLocalLogContent", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "QueryDeviceLocalLogContent", "Iot", "openAPI")
         {
         }
 
 		private string keywords;
 
-		private string iotInstanceId;
-
-		private int? pageSize;
-
 		private long? endTime;
-
-		private string deviceName;
 
 		private int? currentPage;
 
 		private long? startTime;
 
 		private string productKey;
+
+		private string iotInstanceId;
+
+		private int? pageSize;
+
+		private string deviceName;
 
 		private string bizTenantId;
 
@@ -65,32 +65,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public string IotInstanceId
-		{
-			get
-			{
-				return iotInstanceId;
-			}
-			set	
-			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
 		public long? EndTime
 		{
 			get
@@ -101,19 +75,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				endTime = value;
 				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
-			}
-		}
-
-		public string DeviceName
-		{
-			get
-			{
-				return deviceName;
-			}
-			set	
-			{
-				deviceName = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
 			}
 		}
 
@@ -153,6 +114,45 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				productKey = value;
 				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string DeviceName
+		{
+			get
+			{
+				return deviceName;
+			}
+			set	
+			{
+				deviceName = value;
+				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
 			}
 		}
 

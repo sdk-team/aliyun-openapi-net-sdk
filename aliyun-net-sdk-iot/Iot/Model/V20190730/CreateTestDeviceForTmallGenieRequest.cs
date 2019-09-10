@@ -30,43 +30,17 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class CreateTestDeviceForTmallGenieRequest : RpcAcsRequest<CreateTestDeviceForTmallGenieResponse>
     {
         public CreateTestDeviceForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "CreateTestDeviceForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "CreateTestDeviceForTmallGenie", "Iot", "openAPI")
         {
         }
-
-		private string iotInstanceId;
-
-		private int? quota;
 
 		private string thingType;
 
 		private string productKey;
 
-		public string IotInstanceId
-		{
-			get
-			{
-				return iotInstanceId;
-			}
-			set	
-			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
-			}
-		}
+		private string iotInstanceId;
 
-		public int? Quota
-		{
-			get
-			{
-				return quota;
-			}
-			set	
-			{
-				quota = value;
-				DictionaryUtil.Add(QueryParameters, "Quota", value.ToString());
-			}
-		}
+		private int? quota;
 
 		public string ThingType
 		{
@@ -91,6 +65,32 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				productKey = value;
 				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
+
+		public int? Quota
+		{
+			get
+			{
+				return quota;
+			}
+			set	
+			{
+				quota = value;
+				DictionaryUtil.Add(QueryParameters, "Quota", value.ToString());
 			}
 		}
 

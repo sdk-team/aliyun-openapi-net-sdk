@@ -30,15 +30,15 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class ProductWhiteListMaintainRequest : RpcAcsRequest<ProductWhiteListMaintainResponse>
     {
         public ProductWhiteListMaintainRequest()
-            : base("Iot", "2019-07-30", "ProductWhiteListMaintain", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "ProductWhiteListMaintain", "Iot", "openAPI")
         {
         }
 
 		private string actionType;
 
-		private string manufacture;
-
 		private string product;
+
+		private string manufacture;
 
 		private string iotInstanceId;
 
@@ -55,19 +55,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public string Manufacture
-		{
-			get
-			{
-				return manufacture;
-			}
-			set	
-			{
-				manufacture = value;
-				DictionaryUtil.Add(QueryParameters, "Manufacture", value);
-			}
-		}
-
 		public string Product
 		{
 			get
@@ -78,6 +65,19 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				product = value;
 				DictionaryUtil.Add(QueryParameters, "Product", value);
+			}
+		}
+
+		public string Manufacture
+		{
+			get
+			{
+				return manufacture;
+			}
+			set	
+			{
+				manufacture = value;
+				DictionaryUtil.Add(QueryParameters, "Manufacture", value);
 			}
 		}
 

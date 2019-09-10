@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class MigrateProdFunctionListRequest : RpcAcsRequest<MigrateProdFunctionListResponse>
     {
         public MigrateProdFunctionListRequest()
-            : base("Iot", "2019-07-30", "MigrateProdFunctionList", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "MigrateProdFunctionList", "Iot", "openAPI")
         {
         }
 
@@ -38,9 +38,9 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private string extension;
 
-		private string iotInstanceId;
-
 		private string productKey;
+
+		private string iotInstanceId;
 
 		private string bizTenantId;
 
@@ -70,19 +70,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public string IotInstanceId
-		{
-			get
-			{
-				return iotInstanceId;
-			}
-			set	
-			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
-			}
-		}
-
 		public string ProductKey
 		{
 			get
@@ -93,6 +80,19 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				productKey = value;
 				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class DeviceWhiteListMaintainRequest : RpcAcsRequest<DeviceWhiteListMaintainResponse>
     {
         public DeviceWhiteListMaintainRequest()
-            : base("Iot", "2019-07-30", "DeviceWhiteListMaintain", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "DeviceWhiteListMaintain", "Iot", "openAPI")
         {
         }
 
@@ -40,7 +40,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private string iotInstanceId;
 
-		private List<Device> devices;
+		private List<Device> devices = new List<Device>(){ };
 
 		public string ActionType
 		{

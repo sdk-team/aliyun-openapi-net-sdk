@@ -30,15 +30,28 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class BulkCreateDeviceForTmallGenieRequest : RpcAcsRequest<BulkCreateDeviceForTmallGenieResponse>
     {
         public BulkCreateDeviceForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "BulkCreateDeviceForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "BulkCreateDeviceForTmallGenie", "Iot", "openAPI")
         {
         }
+
+		private string productKey;
 
 		private string iotInstanceId;
 
 		private int? quota;
 
-		private string productKey;
+		public string ProductKey
+		{
+			get
+			{
+				return productKey;
+			}
+			set	
+			{
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+			}
+		}
 
 		public string IotInstanceId
 		{
@@ -63,19 +76,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				quota = value;
 				DictionaryUtil.Add(QueryParameters, "Quota", value.ToString());
-			}
-		}
-
-		public string ProductKey
-		{
-			get
-			{
-				return productKey;
-			}
-			set	
-			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 

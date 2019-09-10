@@ -30,38 +30,21 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class AddPoolFunctionsForTmallGenieRequest : RpcAcsRequest<AddPoolFunctionsForTmallGenieResponse>
     {
         public AddPoolFunctionsForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "AddPoolFunctionsForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "AddPoolFunctionsForTmallGenie", "Iot", "openAPI")
         {
         }
 
-		private List<long?> tmallServiceIdLists;
-
 		private string thingTemplateKey;
 
-		private List<long?> tmallEventIdLists;
+		private List<long?> tmallEventIdLists = new List<long?>(){ };
+
+		private List<long?> tmallServiceIdLists = new List<long?>(){ };
 
 		private string apiProduct;
 
 		private string apiRevision;
 
-		private List<long?> tmallPropertyIdLists;
-
-		public List<long?> TmallServiceIdLists
-		{
-			get
-			{
-				return tmallServiceIdLists;
-			}
-
-			set
-			{
-				tmallServiceIdLists = value;
-				for (int i = 0; i < tmallServiceIdLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"TmallServiceIdList." + (i + 1) , tmallServiceIdLists[i]);
-				}
-			}
-		}
+		private List<long?> tmallPropertyIdLists = new List<long?>(){ };
 
 		public string ThingTemplateKey
 		{
@@ -89,6 +72,23 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 				for (int i = 0; i < tmallEventIdLists.Count; i++)
 				{
 					DictionaryUtil.Add(QueryParameters,"TmallEventIdList." + (i + 1) , tmallEventIdLists[i]);
+				}
+			}
+		}
+
+		public List<long?> TmallServiceIdLists
+		{
+			get
+			{
+				return tmallServiceIdLists;
+			}
+
+			set
+			{
+				tmallServiceIdLists = value;
+				for (int i = 0; i < tmallServiceIdLists.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"TmallServiceIdList." + (i + 1) , tmallServiceIdLists[i]);
 				}
 			}
 		}

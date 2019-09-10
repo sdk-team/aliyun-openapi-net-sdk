@@ -30,13 +30,17 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class AddThingTemplateServiceForTmallGenieRequest : RpcAcsRequest<AddThingTemplateServiceForTmallGenieResponse>
     {
         public AddThingTemplateServiceForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "AddThingTemplateServiceForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "AddThingTemplateServiceForTmallGenie", "Iot", "openAPI")
         {
         }
 
 		private string identifier;
 
-		private List<InputParams> inputParamss;
+		private List<InputParams> inputParamss = new List<InputParams>(){ };
+
+		private List<OutputParams> outputParamss = new List<OutputParams>(){ };
+
+		private List<Tags> tagss = new List<Tags>(){ };
 
 		private long? tmallFunctionId;
 
@@ -45,10 +49,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 		private string name;
 
 		private string callType;
-
-		private List<OutputParams> outputParamss;
-
-		private List<Tags> tagss;
 
 		public string Identifier
 		{
@@ -82,6 +82,47 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 					DictionaryUtil.Add(QueryParameters,"InputParams." + (i + 1) + ".DataSpecsList", inputParamss[i].DataSpecsList);
 					DictionaryUtil.Add(QueryParameters,"InputParams." + (i + 1) + ".ParaOrder", inputParamss[i].ParaOrder);
 					DictionaryUtil.Add(QueryParameters,"InputParams." + (i + 1) + ".Direction", inputParamss[i].Direction);
+				}
+			}
+		}
+
+		public List<OutputParams> OutputParamss
+		{
+			get
+			{
+				return outputParamss;
+			}
+
+			set
+			{
+				outputParamss = value;
+				for (int i = 0; i < outputParamss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"OutputParams." + (i + 1) + ".Identifier", outputParamss[i].Identifier);
+					DictionaryUtil.Add(QueryParameters,"OutputParams." + (i + 1) + ".DataSpecs", outputParamss[i].DataSpecs);
+					DictionaryUtil.Add(QueryParameters,"OutputParams." + (i + 1) + ".DataType", outputParamss[i].DataType);
+					DictionaryUtil.Add(QueryParameters,"OutputParams." + (i + 1) + ".Name", outputParamss[i].Name);
+					DictionaryUtil.Add(QueryParameters,"OutputParams." + (i + 1) + ".DataSpecsList", outputParamss[i].DataSpecsList);
+					DictionaryUtil.Add(QueryParameters,"OutputParams." + (i + 1) + ".ParaOrder", outputParamss[i].ParaOrder);
+					DictionaryUtil.Add(QueryParameters,"OutputParams." + (i + 1) + ".Direction", outputParamss[i].Direction);
+				}
+			}
+		}
+
+		public List<Tags> Tagss
+		{
+			get
+			{
+				return tagss;
+			}
+
+			set
+			{
+				tagss = value;
+				for (int i = 0; i < tagss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tags." + (i + 1) + ".TagValue", tagss[i].TagValue);
+					DictionaryUtil.Add(QueryParameters,"Tags." + (i + 1) + ".TagKey", tagss[i].TagKey);
 				}
 			}
 		}
@@ -135,47 +176,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				callType = value;
 				DictionaryUtil.Add(QueryParameters, "CallType", value);
-			}
-		}
-
-		public List<OutputParams> OutputParamss
-		{
-			get
-			{
-				return outputParamss;
-			}
-
-			set
-			{
-				outputParamss = value;
-				for (int i = 0; i < outputParamss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"OutputParams." + (i + 1) + ".Identifier", outputParamss[i].Identifier);
-					DictionaryUtil.Add(QueryParameters,"OutputParams." + (i + 1) + ".DataSpecs", outputParamss[i].DataSpecs);
-					DictionaryUtil.Add(QueryParameters,"OutputParams." + (i + 1) + ".DataType", outputParamss[i].DataType);
-					DictionaryUtil.Add(QueryParameters,"OutputParams." + (i + 1) + ".Name", outputParamss[i].Name);
-					DictionaryUtil.Add(QueryParameters,"OutputParams." + (i + 1) + ".DataSpecsList", outputParamss[i].DataSpecsList);
-					DictionaryUtil.Add(QueryParameters,"OutputParams." + (i + 1) + ".ParaOrder", outputParamss[i].ParaOrder);
-					DictionaryUtil.Add(QueryParameters,"OutputParams." + (i + 1) + ".Direction", outputParamss[i].Direction);
-				}
-			}
-		}
-
-		public List<Tags> Tagss
-		{
-			get
-			{
-				return tagss;
-			}
-
-			set
-			{
-				tagss = value;
-				for (int i = 0; i < tagss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Tags." + (i + 1) + ".TagValue", tagss[i].TagValue);
-					DictionaryUtil.Add(QueryParameters,"Tags." + (i + 1) + ".TagKey", tagss[i].TagKey);
-				}
 			}
 		}
 

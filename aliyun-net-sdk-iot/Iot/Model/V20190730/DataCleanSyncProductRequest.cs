@@ -30,9 +30,19 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class DataCleanSyncProductRequest : RpcAcsRequest<DataCleanSyncProductResponse>
     {
         public DataCleanSyncProductRequest()
-            : base("Iot", "2019-07-30", "DataCleanSyncProduct", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "DataCleanSyncProduct", "Iot", "openAPI")
         {
         }
+
+		private int? deviceCount;
+
+		private string taobaoId;
+
+		private string resourceGroupId;
+
+		private string iotInstanceId;
+
+		private long? categoryId;
 
 		private string productModel;
 
@@ -40,23 +50,78 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private int? dataFormat;
 
-		private int? deviceCount;
-
-		private string taobaoId;
-
 		private string actionStr;
 
 		private string productKey;
-
-		private string resourceGroupId;
-
-		private string iotInstanceId;
 
 		private int? netType;
 
 		private string name;
 
-		private long? categoryId;
+		public int? DeviceCount
+		{
+			get
+			{
+				return deviceCount;
+			}
+			set	
+			{
+				deviceCount = value;
+				DictionaryUtil.Add(QueryParameters, "DeviceCount", value.ToString());
+			}
+		}
+
+		public string TaobaoId
+		{
+			get
+			{
+				return taobaoId;
+			}
+			set	
+			{
+				taobaoId = value;
+				DictionaryUtil.Add(QueryParameters, "TaobaoId", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
+
+		public long? CategoryId
+		{
+			get
+			{
+				return categoryId;
+			}
+			set	
+			{
+				categoryId = value;
+				DictionaryUtil.Add(QueryParameters, "CategoryId", value.ToString());
+			}
+		}
 
 		public string ProductModel
 		{
@@ -97,32 +162,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public int? DeviceCount
-		{
-			get
-			{
-				return deviceCount;
-			}
-			set	
-			{
-				deviceCount = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceCount", value.ToString());
-			}
-		}
-
-		public string TaobaoId
-		{
-			get
-			{
-				return taobaoId;
-			}
-			set	
-			{
-				taobaoId = value;
-				DictionaryUtil.Add(QueryParameters, "TaobaoId", value);
-			}
-		}
-
 		public string ActionStr
 		{
 			get
@@ -149,32 +188,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
-		public string IotInstanceId
-		{
-			get
-			{
-				return iotInstanceId;
-			}
-			set	
-			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
-			}
-		}
-
 		public int? NetType
 		{
 			get
@@ -198,19 +211,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public long? CategoryId
-		{
-			get
-			{
-				return categoryId;
-			}
-			set	
-			{
-				categoryId = value;
-				DictionaryUtil.Add(QueryParameters, "CategoryId", value.ToString());
 			}
 		}
 

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class RemoveThingTemplateFunctionForTmallGenieRequest : RpcAcsRequest<RemoveThingTemplateFunctionForTmallGenieResponse>
     {
         public RemoveThingTemplateFunctionForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "RemoveThingTemplateFunctionForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "RemoveThingTemplateFunctionForTmallGenie", "Iot", "openAPI")
         {
         }
 

@@ -30,19 +30,19 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class AddProductIdentifierForTmallGenieRequest : RpcAcsRequest<AddProductIdentifierForTmallGenieResponse>
     {
         public AddProductIdentifierForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "AddProductIdentifierForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "AddProductIdentifierForTmallGenie", "Iot", "openAPI")
         {
         }
 
-		private List<string> identifiers;
+		private List<string> identifiers = new List<string>(){ };
 
 		private string tmallGenieTraceId;
+
+		private string productKey;
 
 		private string apiProduct;
 
 		private string apiRevision;
-
-		private string productKey;
 
 		public List<string> Identifiers
 		{
@@ -74,6 +74,19 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
+		public string ProductKey
+		{
+			get
+			{
+				return productKey;
+			}
+			set	
+			{
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+			}
+		}
+
 		public string ApiProduct
 		{
 			get
@@ -97,19 +110,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				apiRevision = value;
 				DictionaryUtil.Add(BodyParameters, "ApiRevision", value);
-			}
-		}
-
-		public string ProductKey
-		{
-			get
-			{
-				return productKey;
-			}
-			set	
-			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 

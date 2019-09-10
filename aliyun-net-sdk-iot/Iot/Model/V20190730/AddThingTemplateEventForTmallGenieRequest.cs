@@ -30,13 +30,15 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class AddThingTemplateEventForTmallGenieRequest : RpcAcsRequest<AddThingTemplateEventForTmallGenieResponse>
     {
         public AddThingTemplateEventForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "AddThingTemplateEventForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "AddThingTemplateEventForTmallGenie", "Iot", "openAPI")
         {
         }
 
 		private string identifier;
 
-		private List<OutputData> outputDatas;
+		private List<Tags> tagss = new List<Tags>(){ };
+
+		private List<OutputData> outputDatas = new List<OutputData>(){ };
 
 		private long? tmallFunctionId;
 
@@ -45,8 +47,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 		private string name;
 
 		private string eventType;
-
-		private List<Tags> tagss;
 
 		public string Identifier
 		{
@@ -58,6 +58,24 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				identifier = value;
 				DictionaryUtil.Add(QueryParameters, "Identifier", value);
+			}
+		}
+
+		public List<Tags> Tagss
+		{
+			get
+			{
+				return tagss;
+			}
+
+			set
+			{
+				tagss = value;
+				for (int i = 0; i < tagss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tags." + (i + 1) + ".TagValue", tagss[i].TagValue);
+					DictionaryUtil.Add(QueryParameters,"Tags." + (i + 1) + ".TagKey", tagss[i].TagKey);
+				}
 			}
 		}
 
@@ -136,20 +154,34 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public List<Tags> Tagss
+		public class Tags
 		{
-			get
+
+			private string tagValue;
+
+			private string tagKey;
+
+			public string TagValue
 			{
-				return tagss;
+				get
+				{
+					return tagValue;
+				}
+				set	
+				{
+					tagValue = value;
+				}
 			}
 
-			set
+			public string TagKey
 			{
-				tagss = value;
-				for (int i = 0; i < tagss.Count; i++)
+				get
 				{
-					DictionaryUtil.Add(QueryParameters,"Tags." + (i + 1) + ".TagValue", tagss[i].TagValue);
-					DictionaryUtil.Add(QueryParameters,"Tags." + (i + 1) + ".TagKey", tagss[i].TagKey);
+					return tagKey;
+				}
+				set	
+				{
+					tagKey = value;
 				}
 			}
 		}
@@ -252,38 +284,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 				set	
 				{
 					direction = value;
-				}
-			}
-		}
-
-		public class Tags
-		{
-
-			private string tagValue;
-
-			private string tagKey;
-
-			public string TagValue
-			{
-				get
-				{
-					return tagValue;
-				}
-				set	
-				{
-					tagValue = value;
-				}
-			}
-
-			public string TagKey
-			{
-				get
-				{
-					return tagKey;
-				}
-				set	
-				{
-					tagKey = value;
 				}
 			}
 		}

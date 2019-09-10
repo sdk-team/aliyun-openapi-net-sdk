@@ -30,19 +30,32 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class BatchServiceMigrateToUnifyRequest : RpcAcsRequest<BatchServiceMigrateToUnifyResponse>
     {
         public BatchServiceMigrateToUnifyRequest()
-            : base("Iot", "2019-07-30", "BatchServiceMigrateToUnify", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "BatchServiceMigrateToUnify", "Iot", "openAPI")
         {
         }
 
-		private List<Service> services;
+		private string categoryKey;
+
+		private List<Service> services = new List<Service>(){ };
 
 		private string iotInstanceId;
 
 		private string _namespace;
 
-		private string categoryKey;
-
 		private string bizTenantId;
+
+		public string CategoryKey
+		{
+			get
+			{
+				return categoryKey;
+			}
+			set	
+			{
+				categoryKey = value;
+				DictionaryUtil.Add(QueryParameters, "CategoryKey", value);
+			}
+		}
 
 		public List<Service> Services
 		{
@@ -108,19 +121,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public string CategoryKey
-		{
-			get
-			{
-				return categoryKey;
-			}
-			set	
-			{
-				categoryKey = value;
-				DictionaryUtil.Add(QueryParameters, "CategoryKey", value);
-			}
-		}
-
 		public string BizTenantId
 		{
 			get
@@ -143,7 +143,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 			private string thingTemplateKey;
 
-			private List<ArgsDTO> argsDTOs;
+			private List<ArgsDTO> argsDTOs = new List<ArgsDTO>(){ };
 
 			private string modifier;
 
@@ -165,7 +165,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 			private int? state;
 
-			private List<Tag> tags;
+			private List<Tag> tags = new List<Tag>(){ };
 
 			private string callType;
 

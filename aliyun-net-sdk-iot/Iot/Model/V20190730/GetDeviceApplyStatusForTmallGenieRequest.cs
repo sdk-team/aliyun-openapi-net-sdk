@@ -30,17 +30,30 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class GetDeviceApplyStatusForTmallGenieRequest : RpcAcsRequest<GetDeviceApplyStatusForTmallGenieResponse>
     {
         public GetDeviceApplyStatusForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "GetDeviceApplyStatusForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "GetDeviceApplyStatusForTmallGenie", "Iot", "openAPI")
         {
         }
 
-		private List<string> applyIds;
+		private string productKey;
+
+		private List<string> applyIds = new List<string>(){ };
 
 		private string apiProduct;
 
 		private string apiRevision;
 
-		private string productKey;
+		public string ProductKey
+		{
+			get
+			{
+				return productKey;
+			}
+			set	
+			{
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+			}
+		}
 
 		public List<string> ApplyIds
 		{
@@ -82,19 +95,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				apiRevision = value;
 				DictionaryUtil.Add(BodyParameters, "ApiRevision", value);
-			}
-		}
-
-		public string ProductKey
-		{
-			get
-			{
-				return productKey;
-			}
-			set	
-			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 

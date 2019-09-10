@@ -30,9 +30,13 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class ListTestDeviceForTmallGenieRequest : RpcAcsRequest<ListTestDeviceForTmallGenieResponse>
     {
         public ListTestDeviceForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "ListTestDeviceForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "ListTestDeviceForTmallGenie", "Iot", "openAPI")
         {
         }
+
+		private string thingType;
+
+		private string productKey;
 
 		private long? pageNo;
 
@@ -40,9 +44,31 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private long? pageSize;
 
-		private string thingType;
+		public string ThingType
+		{
+			get
+			{
+				return thingType;
+			}
+			set	
+			{
+				thingType = value;
+				DictionaryUtil.Add(QueryParameters, "ThingType", value);
+			}
+		}
 
-		private string productKey;
+		public string ProductKey
+		{
+			get
+			{
+				return productKey;
+			}
+			set	
+			{
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+			}
+		}
 
 		public long? PageNo
 		{
@@ -80,32 +106,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string ThingType
-		{
-			get
-			{
-				return thingType;
-			}
-			set	
-			{
-				thingType = value;
-				DictionaryUtil.Add(QueryParameters, "ThingType", value);
-			}
-		}
-
-		public string ProductKey
-		{
-			get
-			{
-				return productKey;
-			}
-			set	
-			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 

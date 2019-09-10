@@ -30,9 +30,11 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class CategoryMigrateRequest : RpcAcsRequest<CategoryMigrateResponse>
     {
         public CategoryMigrateRequest()
-            : base("Iot", "2019-07-30", "CategoryMigrate", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "CategoryMigrate", "Iot", "openAPI")
         {
         }
+
+		private string categoryKey;
 
 		private string iotInstanceId;
 
@@ -40,13 +42,24 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private string _namespace;
 
-		private string categoryKey;
-
 		private string categoryName;
 
-		private List<Tag> tags;
+		private List<Tag> tags = new List<Tag>(){ };
 
 		private string bizTenantId;
+
+		public string CategoryKey
+		{
+			get
+			{
+				return categoryKey;
+			}
+			set	
+			{
+				categoryKey = value;
+				DictionaryUtil.Add(QueryParameters, "CategoryKey", value);
+			}
+		}
 
 		public string IotInstanceId
 		{
@@ -84,19 +97,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				_namespace = value;
 				DictionaryUtil.Add(QueryParameters, "Namespace", value);
-			}
-		}
-
-		public string CategoryKey
-		{
-			get
-			{
-				return categoryKey;
-			}
-			set	
-			{
-				categoryKey = value;
-				DictionaryUtil.Add(QueryParameters, "CategoryKey", value);
 			}
 		}
 

@@ -30,28 +30,15 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class GetThingModelInfoRequest : RpcAcsRequest<GetThingModelInfoResponse>
     {
         public GetThingModelInfoRequest()
-            : base("Iot", "2019-07-30", "GetThingModelInfo", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "GetThingModelInfo", "Iot", "openAPI")
         {
         }
 
-		private string iotInstanceId;
-
 		private string productKey;
 
-		private string bizTenantId;
+		private string iotInstanceId;
 
-		public string IotInstanceId
-		{
-			get
-			{
-				return iotInstanceId;
-			}
-			set	
-			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
-			}
-		}
+		private string bizTenantId;
 
 		public string ProductKey
 		{
@@ -63,6 +50,19 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				productKey = value;
 				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 

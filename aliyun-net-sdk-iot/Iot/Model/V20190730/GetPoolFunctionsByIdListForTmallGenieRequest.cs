@@ -30,15 +30,15 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class GetPoolFunctionsByIdListForTmallGenieRequest : RpcAcsRequest<GetPoolFunctionsByIdListForTmallGenieResponse>
     {
         public GetPoolFunctionsByIdListForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "GetPoolFunctionsByIdListForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "GetPoolFunctionsByIdListForTmallGenie", "Iot", "openAPI")
         {
         }
 
-		private List<long?> tmallFunctionIdLists;
+		private List<long?> tmallFunctionIdLists = new List<long?>(){ };
 
 		private string thingTemplateKey;
 
-		private List<string> identifierLists;
+		private List<string> identifierLists = new List<string>(){ };
 
 		private string iotInstanceId;
 

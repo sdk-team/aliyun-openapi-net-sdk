@@ -30,40 +30,27 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class UpdateProductPropertyIdentifierForTmallGenieRequest : RpcAcsRequest<UpdateProductPropertyIdentifierForTmallGenieResponse>
     {
         public UpdateProductPropertyIdentifierForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "UpdateProductPropertyIdentifierForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "UpdateProductPropertyIdentifierForTmallGenie", "Iot", "openAPI")
         {
         }
 
-		private string identifier;
-
 		private string dataSpecs;
 
-		private string rwType;
+		private string description;
+
+		private string dataSpecsList;
 
 		private string dataType;
 
 		private string iotInstanceId;
 
-		private string name;
-
-		private string description;
+		private string identifier;
 
 		private string productKey;
 
-		private string dataSpecsList;
+		private string rwType;
 
-		public string Identifier
-		{
-			get
-			{
-				return identifier;
-			}
-			set	
-			{
-				identifier = value;
-				DictionaryUtil.Add(QueryParameters, "Identifier", value);
-			}
-		}
+		private string name;
 
 		public string DataSpecs
 		{
@@ -78,16 +65,29 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public string RwType
+		public string Description
 		{
 			get
 			{
-				return rwType;
+				return description;
 			}
 			set	
 			{
-				rwType = value;
-				DictionaryUtil.Add(BodyParameters, "RwType", value);
+				description = value;
+				DictionaryUtil.Add(BodyParameters, "Description", value);
+			}
+		}
+
+		public string DataSpecsList
+		{
+			get
+			{
+				return dataSpecsList;
+			}
+			set	
+			{
+				dataSpecsList = value;
+				DictionaryUtil.Add(BodyParameters, "DataSpecsList", value);
 			}
 		}
 
@@ -117,29 +117,16 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public string Name
+		public string Identifier
 		{
 			get
 			{
-				return name;
+				return identifier;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(BodyParameters, "Name", value);
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(BodyParameters, "Description", value);
+				identifier = value;
+				DictionaryUtil.Add(QueryParameters, "Identifier", value);
 			}
 		}
 
@@ -156,16 +143,29 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public string DataSpecsList
+		public string RwType
 		{
 			get
 			{
-				return dataSpecsList;
+				return rwType;
 			}
 			set	
 			{
-				dataSpecsList = value;
-				DictionaryUtil.Add(BodyParameters, "DataSpecsList", value);
+				rwType = value;
+				DictionaryUtil.Add(BodyParameters, "RwType", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(BodyParameters, "Name", value);
 			}
 		}
 

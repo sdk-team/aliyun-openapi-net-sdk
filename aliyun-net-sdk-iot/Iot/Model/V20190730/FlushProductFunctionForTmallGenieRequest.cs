@@ -30,15 +30,28 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class FlushProductFunctionForTmallGenieRequest : RpcAcsRequest<FlushProductFunctionForTmallGenieResponse>
     {
         public FlushProductFunctionForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "FlushProductFunctionForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "FlushProductFunctionForTmallGenie", "Iot", "openAPI")
         {
         }
 
-		private List<string> fields;
+		private string productKey;
+
+		private List<string> fields = new List<string>(){ };
 
 		private string iotInstanceId;
 
-		private string productKey;
+		public string ProductKey
+		{
+			get
+			{
+				return productKey;
+			}
+			set	
+			{
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+			}
+		}
 
 		public List<string> Fields
 		{
@@ -67,19 +80,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
-			}
-		}
-
-		public string ProductKey
-		{
-			get
-			{
-				return productKey;
-			}
-			set	
-			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 

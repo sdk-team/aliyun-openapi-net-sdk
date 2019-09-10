@@ -30,13 +30,17 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class QueryDeviceOnlineLogContentForTmallGenieRequest : RpcAcsRequest<QueryDeviceOnlineLogContentForTmallGenieResponse>
     {
         public QueryDeviceOnlineLogContentForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "QueryDeviceOnlineLogContentForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "QueryDeviceOnlineLogContentForTmallGenie", "Iot", "openAPI")
         {
         }
 
-		private string iotId;
-
 		private string keywords;
+
+		private long? startTime;
+
+		private string type;
+
+		private string iotId;
 
 		private string iotInstanceId;
 
@@ -44,30 +48,13 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private long? endTime;
 
-		private string deviceName;
-
 		private int? currentPage;
-
-		private long? startTime;
 
 		private string productKey;
 
-		private string type;
+		private string deviceName;
 
 		private string bizTenantId;
-
-		public string IotId
-		{
-			get
-			{
-				return iotId;
-			}
-			set	
-			{
-				iotId = value;
-				DictionaryUtil.Add(QueryParameters, "IotId", value);
-			}
-		}
 
 		public string Keywords
 		{
@@ -79,6 +66,45 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				keywords = value;
 				DictionaryUtil.Add(QueryParameters, "Keywords", value);
+			}
+		}
+
+		public long? StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
+			}
+		}
+
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
+			}
+		}
+
+		public string IotId
+		{
+			get
+			{
+				return iotId;
+			}
+			set	
+			{
+				iotId = value;
+				DictionaryUtil.Add(QueryParameters, "IotId", value);
 			}
 		}
 
@@ -121,19 +147,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public string DeviceName
-		{
-			get
-			{
-				return deviceName;
-			}
-			set	
-			{
-				deviceName = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
-			}
-		}
-
 		public int? CurrentPage
 		{
 			get
@@ -144,19 +157,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				currentPage = value;
 				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
-			}
-		}
-
-		public long? StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
 			}
 		}
 
@@ -173,16 +173,16 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public string Type
+		public string DeviceName
 		{
 			get
 			{
-				return type;
+				return deviceName;
 			}
 			set	
 			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
+				deviceName = value;
+				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
 			}
 		}
 

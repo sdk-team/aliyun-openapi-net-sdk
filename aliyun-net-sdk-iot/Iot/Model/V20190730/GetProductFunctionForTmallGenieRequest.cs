@@ -30,17 +30,17 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class GetProductFunctionForTmallGenieRequest : RpcAcsRequest<GetProductFunctionForTmallGenieResponse>
     {
         public GetProductFunctionForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "GetProductFunctionForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "GetProductFunctionForTmallGenie", "Iot", "openAPI")
         {
         }
 
 		private string identifier;
 
+		private string productKey;
+
 		private long? tmallFunctionId;
 
 		private string iotInstanceId;
-
-		private string productKey;
 
 		private string tmallFunctionType;
 
@@ -54,6 +54,19 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				identifier = value;
 				DictionaryUtil.Add(QueryParameters, "Identifier", value);
+			}
+		}
+
+		public string ProductKey
+		{
+			get
+			{
+				return productKey;
+			}
+			set	
+			{
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 
@@ -80,19 +93,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
-			}
-		}
-
-		public string ProductKey
-		{
-			get
-			{
-				return productKey;
-			}
-			set	
-			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 

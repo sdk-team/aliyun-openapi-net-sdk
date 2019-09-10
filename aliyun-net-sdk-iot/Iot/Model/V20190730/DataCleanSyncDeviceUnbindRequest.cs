@@ -30,34 +30,21 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class DataCleanSyncDeviceUnbindRequest : RpcAcsRequest<DataCleanSyncDeviceUnbindResponse>
     {
         public DataCleanSyncDeviceUnbindRequest()
-            : base("Iot", "2019-07-30", "DataCleanSyncDeviceUnbind", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "DataCleanSyncDeviceUnbind", "Iot", "openAPI")
         {
         }
 
-		private string iotId;
-
 		private string taobaoId;
+
+		private string productKey;
+
+		private string iotId;
 
 		private string appkey;
 
 		private string deviceName;
 
 		private string from;
-
-		private string productKey;
-
-		public string IotId
-		{
-			get
-			{
-				return iotId;
-			}
-			set	
-			{
-				iotId = value;
-				DictionaryUtil.Add(QueryParameters, "IotId", value);
-			}
-		}
 
 		public string TaobaoId
 		{
@@ -69,6 +56,32 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				taobaoId = value;
 				DictionaryUtil.Add(QueryParameters, "TaobaoId", value);
+			}
+		}
+
+		public string ProductKey
+		{
+			get
+			{
+				return productKey;
+			}
+			set	
+			{
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+			}
+		}
+
+		public string IotId
+		{
+			get
+			{
+				return iotId;
+			}
+			set	
+			{
+				iotId = value;
+				DictionaryUtil.Add(QueryParameters, "IotId", value);
 			}
 		}
 
@@ -108,19 +121,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				from = value;
 				DictionaryUtil.Add(QueryParameters, "From", value);
-			}
-		}
-
-		public string ProductKey
-		{
-			get
-			{
-				return productKey;
-			}
-			set	
-			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 

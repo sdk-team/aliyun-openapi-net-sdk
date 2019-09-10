@@ -30,28 +30,15 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class DataCleanCreateApplyInfoRequest : RpcAcsRequest<DataCleanCreateApplyInfoResponse>
     {
         public DataCleanCreateApplyInfoRequest()
-            : base("Iot", "2019-07-30", "DataCleanCreateApplyInfo", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "DataCleanCreateApplyInfo", "Iot", "openAPI")
         {
         }
-
-		private string iotInstanceId;
 
 		private long? applyCount;
 
 		private string productKey;
 
-		public string IotInstanceId
-		{
-			get
-			{
-				return iotInstanceId;
-			}
-			set	
-			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
-			}
-		}
+		private string iotInstanceId;
 
 		public long? ApplyCount
 		{
@@ -76,6 +63,19 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				productKey = value;
 				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 

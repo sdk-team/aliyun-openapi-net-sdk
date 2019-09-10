@@ -30,15 +30,25 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class CreateProductForTmallGenieRequest : RpcAcsRequest<CreateProductForTmallGenieResponse>
     {
         public CreateProductForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "CreateProductForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "CreateProductForTmallGenie", "Iot", "openAPI")
         {
         }
+
+		private int? nodeType;
+
+		private string taoBaoId;
+
+		private string description;
+
+		private string productName;
+
+		private string productBrand;
+
+		private long? categoryId;
 
 		private string productModel;
 
 		private int? dataFormat;
-
-		private int? nodeType;
 
 		private string tmallGenieTraceId;
 
@@ -46,17 +56,85 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private string apiProduct;
 
-		private string taoBaoId;
-
-		private string productName;
-
-		private string description;
-
 		private string apiRevision;
 
-		private string productBrand;
+		public int? NodeType
+		{
+			get
+			{
+				return nodeType;
+			}
+			set	
+			{
+				nodeType = value;
+				DictionaryUtil.Add(BodyParameters, "NodeType", value.ToString());
+			}
+		}
 
-		private long? categoryId;
+		public string TaoBaoId
+		{
+			get
+			{
+				return taoBaoId;
+			}
+			set	
+			{
+				taoBaoId = value;
+				DictionaryUtil.Add(BodyParameters, "TaoBaoId", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(BodyParameters, "Description", value);
+			}
+		}
+
+		public string ProductName
+		{
+			get
+			{
+				return productName;
+			}
+			set	
+			{
+				productName = value;
+				DictionaryUtil.Add(BodyParameters, "ProductName", value);
+			}
+		}
+
+		public string ProductBrand
+		{
+			get
+			{
+				return productBrand;
+			}
+			set	
+			{
+				productBrand = value;
+				DictionaryUtil.Add(BodyParameters, "ProductBrand", value);
+			}
+		}
+
+		public long? CategoryId
+		{
+			get
+			{
+				return categoryId;
+			}
+			set	
+			{
+				categoryId = value;
+				DictionaryUtil.Add(BodyParameters, "CategoryId", value.ToString());
+			}
+		}
 
 		public string ProductModel
 		{
@@ -81,19 +159,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				dataFormat = value;
 				DictionaryUtil.Add(BodyParameters, "DataFormat", value.ToString());
-			}
-		}
-
-		public int? NodeType
-		{
-			get
-			{
-				return nodeType;
-			}
-			set	
-			{
-				nodeType = value;
-				DictionaryUtil.Add(BodyParameters, "NodeType", value.ToString());
 			}
 		}
 
@@ -136,45 +201,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public string TaoBaoId
-		{
-			get
-			{
-				return taoBaoId;
-			}
-			set	
-			{
-				taoBaoId = value;
-				DictionaryUtil.Add(BodyParameters, "TaoBaoId", value);
-			}
-		}
-
-		public string ProductName
-		{
-			get
-			{
-				return productName;
-			}
-			set	
-			{
-				productName = value;
-				DictionaryUtil.Add(BodyParameters, "ProductName", value);
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(BodyParameters, "Description", value);
-			}
-		}
-
 		public string ApiRevision
 		{
 			get
@@ -185,32 +211,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				apiRevision = value;
 				DictionaryUtil.Add(BodyParameters, "ApiRevision", value);
-			}
-		}
-
-		public string ProductBrand
-		{
-			get
-			{
-				return productBrand;
-			}
-			set	
-			{
-				productBrand = value;
-				DictionaryUtil.Add(BodyParameters, "ProductBrand", value);
-			}
-		}
-
-		public long? CategoryId
-		{
-			get
-			{
-				return categoryId;
-			}
-			set	
-			{
-				categoryId = value;
-				DictionaryUtil.Add(BodyParameters, "CategoryId", value.ToString());
 			}
 		}
 

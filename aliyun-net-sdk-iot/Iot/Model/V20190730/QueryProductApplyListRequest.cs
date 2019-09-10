@@ -30,9 +30,11 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class QueryProductApplyListRequest : RpcAcsRequest<QueryProductApplyListResponse>
     {
         public QueryProductApplyListRequest()
-            : base("Iot", "2019-07-30", "QueryProductApplyList", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "QueryProductApplyList", "Iot", "openAPI")
         {
         }
+
+		private string productKey;
 
 		private long? pageNo;
 
@@ -40,7 +42,18 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private long? pageSize;
 
-		private string productKey;
+		public string ProductKey
+		{
+			get
+			{
+				return productKey;
+			}
+			set	
+			{
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+			}
+		}
 
 		public long? PageNo
 		{
@@ -78,19 +91,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string ProductKey
-		{
-			get
-			{
-				return productKey;
-			}
-			set	
-			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 

@@ -30,26 +30,13 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class DeleteProductForTmallGenieRequest : RpcAcsRequest<DeleteProductForTmallGenieResponse>
     {
         public DeleteProductForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "DeleteProductForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "DeleteProductForTmallGenie", "Iot", "openAPI")
         {
         }
 
-		private string iotInstanceId;
-
 		private string productKey;
 
-		public string IotInstanceId
-		{
-			get
-			{
-				return iotInstanceId;
-			}
-			set	
-			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
-			}
-		}
+		private string iotInstanceId;
 
 		public string ProductKey
 		{
@@ -61,6 +48,19 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				productKey = value;
 				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 

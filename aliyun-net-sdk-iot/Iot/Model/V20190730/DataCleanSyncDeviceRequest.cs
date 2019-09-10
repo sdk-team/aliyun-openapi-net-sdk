@@ -30,15 +30,38 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class DataCleanSyncDeviceRequest : RpcAcsRequest<DataCleanSyncDeviceResponse>
     {
         public DataCleanSyncDeviceRequest()
-            : base("Iot", "2019-07-30", "DataCleanSyncDevice", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "DataCleanSyncDevice", "Iot", "openAPI")
         {
         }
+
+		private List<SyncDeviceInfos> syncDeviceInfoss = new List<SyncDeviceInfos>(){ };
 
 		private string resourceGroupId;
 
 		private string iotInstanceId;
 
-		private List<SyncDeviceInfos> syncDeviceInfoss;
+		public List<SyncDeviceInfos> SyncDeviceInfoss
+		{
+			get
+			{
+				return syncDeviceInfoss;
+			}
+
+			set
+			{
+				syncDeviceInfoss = value;
+				for (int i = 0; i < syncDeviceInfoss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"SyncDeviceInfos." + (i + 1) + ".ActiveTime", syncDeviceInfoss[i].ActiveTime);
+					DictionaryUtil.Add(QueryParameters,"SyncDeviceInfos." + (i + 1) + ".FirmVersion", syncDeviceInfoss[i].FirmVersion);
+					DictionaryUtil.Add(QueryParameters,"SyncDeviceInfos." + (i + 1) + ".Name", syncDeviceInfoss[i].Name);
+					DictionaryUtil.Add(QueryParameters,"SyncDeviceInfos." + (i + 1) + ".DeviceSecret", syncDeviceInfoss[i].DeviceSecret);
+					DictionaryUtil.Add(QueryParameters,"SyncDeviceInfos." + (i + 1) + ".ActionStr", syncDeviceInfoss[i].ActionStr);
+					DictionaryUtil.Add(QueryParameters,"SyncDeviceInfos." + (i + 1) + ".ProductKey", syncDeviceInfoss[i].ProductKey);
+					DictionaryUtil.Add(QueryParameters,"SyncDeviceInfos." + (i + 1) + ".DeviceType", syncDeviceInfoss[i].DeviceType);
+				}
+			}
+		}
 
 		public string ResourceGroupId
 		{
@@ -63,29 +86,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
-			}
-		}
-
-		public List<SyncDeviceInfos> SyncDeviceInfoss
-		{
-			get
-			{
-				return syncDeviceInfoss;
-			}
-
-			set
-			{
-				syncDeviceInfoss = value;
-				for (int i = 0; i < syncDeviceInfoss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"SyncDeviceInfos." + (i + 1) + ".ActiveTime", syncDeviceInfoss[i].ActiveTime);
-					DictionaryUtil.Add(QueryParameters,"SyncDeviceInfos." + (i + 1) + ".FirmVersion", syncDeviceInfoss[i].FirmVersion);
-					DictionaryUtil.Add(QueryParameters,"SyncDeviceInfos." + (i + 1) + ".Name", syncDeviceInfoss[i].Name);
-					DictionaryUtil.Add(QueryParameters,"SyncDeviceInfos." + (i + 1) + ".DeviceSecret", syncDeviceInfoss[i].DeviceSecret);
-					DictionaryUtil.Add(QueryParameters,"SyncDeviceInfos." + (i + 1) + ".ActionStr", syncDeviceInfoss[i].ActionStr);
-					DictionaryUtil.Add(QueryParameters,"SyncDeviceInfos." + (i + 1) + ".ProductKey", syncDeviceInfoss[i].ProductKey);
-					DictionaryUtil.Add(QueryParameters,"SyncDeviceInfos." + (i + 1) + ".DeviceType", syncDeviceInfoss[i].DeviceType);
-				}
 			}
 		}
 

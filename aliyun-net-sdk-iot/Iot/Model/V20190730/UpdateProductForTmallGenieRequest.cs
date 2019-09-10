@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class UpdateProductForTmallGenieRequest : RpcAcsRequest<UpdateProductForTmallGenieResponse>
     {
         public UpdateProductForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "UpdateProductForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "UpdateProductForTmallGenie", "Iot", "openAPI")
         {
         }
 
@@ -40,17 +40,17 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private int? nodeType;
 
+		private string description;
+
+		private string productKey;
+
 		private string iotInstanceId;
 
 		private int? netType;
 
 		private string productName;
 
-		private string description;
-
 		private string productBrand;
-
-		private string productKey;
 
 		public string ProductModel
 		{
@@ -88,6 +88,32 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				nodeType = value;
 				DictionaryUtil.Add(BodyParameters, "NodeType", value.ToString());
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string ProductKey
+		{
+			get
+			{
+				return productKey;
+			}
+			set	
+			{
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 
@@ -130,19 +156,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
 		public string ProductBrand
 		{
 			get
@@ -153,19 +166,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				productBrand = value;
 				DictionaryUtil.Add(BodyParameters, "ProductBrand", value);
-			}
-		}
-
-		public string ProductKey
-		{
-			get
-			{
-				return productKey;
-			}
-			set	
-			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 

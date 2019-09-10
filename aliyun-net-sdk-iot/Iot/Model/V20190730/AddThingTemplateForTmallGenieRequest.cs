@@ -30,19 +30,19 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class AddThingTemplateForTmallGenieRequest : RpcAcsRequest<AddThingTemplateForTmallGenieResponse>
     {
         public AddThingTemplateForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "AddThingTemplateForTmallGenie", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "AddThingTemplateForTmallGenie", "Iot", "openAPI")
         {
         }
 
 		private string thingTemplateKey;
 
+		private string thingTemplateName;
+
+		private List<Tags> tagss = new List<Tags>(){ };
+
 		private long? thingTemplateId;
 
 		private string iotInstanceId;
-
-		private string thingTemplateName;
-
-		private List<Tags> tagss;
 
 		public string ThingTemplateKey
 		{
@@ -54,32 +54,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				thingTemplateKey = value;
 				DictionaryUtil.Add(QueryParameters, "ThingTemplateKey", value);
-			}
-		}
-
-		public long? ThingTemplateId
-		{
-			get
-			{
-				return thingTemplateId;
-			}
-			set	
-			{
-				thingTemplateId = value;
-				DictionaryUtil.Add(QueryParameters, "ThingTemplateId", value.ToString());
-			}
-		}
-
-		public string IotInstanceId
-		{
-			get
-			{
-				return iotInstanceId;
-			}
-			set	
-			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 
@@ -111,6 +85,32 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 					DictionaryUtil.Add(QueryParameters,"Tags." + (i + 1) + ".TagValue", tagss[i].TagValue);
 					DictionaryUtil.Add(QueryParameters,"Tags." + (i + 1) + ".TagKey", tagss[i].TagKey);
 				}
+			}
+		}
+
+		public long? ThingTemplateId
+		{
+			get
+			{
+				return thingTemplateId;
+			}
+			set	
+			{
+				thingTemplateId = value;
+				DictionaryUtil.Add(QueryParameters, "ThingTemplateId", value.ToString());
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 

@@ -30,28 +30,15 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class DataCleanSyncDeviceApplyInfoRequest : RpcAcsRequest<DataCleanSyncDeviceApplyInfoResponse>
     {
         public DataCleanSyncDeviceApplyInfoRequest()
-            : base("Iot", "2019-07-30", "DataCleanSyncDeviceApplyInfo", "iot", "openAPI")
+            : base("Iot", "2019-07-30", "DataCleanSyncDeviceApplyInfo", "Iot", "openAPI")
         {
         }
 
+		private List<Devices> devicess = new List<Devices>(){ };
+
 		private string applyId;
 
-		private List<Devices> devicess;
-
 		private string iotInstanceId;
-
-		public string ApplyId
-		{
-			get
-			{
-				return applyId;
-			}
-			set	
-			{
-				applyId = value;
-				DictionaryUtil.Add(QueryParameters, "ApplyId", value);
-			}
-		}
 
 		public List<Devices> Devicess
 		{
@@ -68,6 +55,19 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 					DictionaryUtil.Add(QueryParameters,"Devices." + (i + 1) + ".DeviceName", devicess[i].DeviceName);
 					DictionaryUtil.Add(QueryParameters,"Devices." + (i + 1) + ".ProductKey", devicess[i].ProductKey);
 				}
+			}
+		}
+
+		public string ApplyId
+		{
+			get
+			{
+				return applyId;
+			}
+			set	
+			{
+				applyId = value;
+				DictionaryUtil.Add(QueryParameters, "ApplyId", value);
 			}
 		}
 
