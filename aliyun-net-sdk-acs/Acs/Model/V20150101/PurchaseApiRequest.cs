@@ -36,47 +36,21 @@ namespace Aliyun.Acs.Acs.Model.V20150101
 			Method = MethodType.POST;
         }
 
-		private string serviceDate;
-
-		private long? quota;
-
 		private string orgCode;
 
 		private string purchaseProduct;
 
 		private string channel;
 
-		private string purchaseVersion;
-
 		private string purchaseApiName;
 
+		private string serviceDate;
+
+		private long? quota;
+
+		private string purchaseVersion;
+
 		private string billingType;
-
-		public string ServiceDate
-		{
-			get
-			{
-				return serviceDate;
-			}
-			set	
-			{
-				serviceDate = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceDate", value);
-			}
-		}
-
-		public long? Quota
-		{
-			get
-			{
-				return quota;
-			}
-			set	
-			{
-				quota = value;
-				DictionaryUtil.Add(QueryParameters, "Quota", value.ToString());
-			}
-		}
 
 		public string OrgCode
 		{
@@ -117,19 +91,6 @@ namespace Aliyun.Acs.Acs.Model.V20150101
 			}
 		}
 
-		public string PurchaseVersion
-		{
-			get
-			{
-				return purchaseVersion;
-			}
-			set	
-			{
-				purchaseVersion = value;
-				DictionaryUtil.Add(QueryParameters, "PurchaseVersion", value);
-			}
-		}
-
 		public string PurchaseApiName
 		{
 			get
@@ -140,6 +101,45 @@ namespace Aliyun.Acs.Acs.Model.V20150101
 			{
 				purchaseApiName = value;
 				DictionaryUtil.Add(QueryParameters, "PurchaseApiName", value);
+			}
+		}
+
+		public string ServiceDate
+		{
+			get
+			{
+				return serviceDate;
+			}
+			set	
+			{
+				serviceDate = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceDate", value);
+			}
+		}
+
+		public long? Quota
+		{
+			get
+			{
+				return quota;
+			}
+			set	
+			{
+				quota = value;
+				DictionaryUtil.Add(QueryParameters, "Quota", value.ToString());
+			}
+		}
+
+		public string PurchaseVersion
+		{
+			get
+			{
+				return purchaseVersion;
+			}
+			set	
+			{
+				purchaseVersion = value;
+				DictionaryUtil.Add(QueryParameters, "PurchaseVersion", value);
 			}
 		}
 
