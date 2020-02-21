@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Iot;
 using Aliyun.Acs.Iot.Transform;
 using Aliyun.Acs.Iot.Transform.V20190730;
 
@@ -30,11 +31,9 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class RemoveThingTemplateFunctionForTmallGenieRequest : RpcAcsRequest<RemoveThingTemplateFunctionForTmallGenieResponse>
     {
         public RemoveThingTemplateFunctionForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "RemoveThingTemplateFunctionForTmallGenie", "Iot", "openAPI")
+            : base("Iot", "2019-07-30", "RemoveThingTemplateFunctionForTmallGenie")
         {
         }
-
-		private string identifier;
 
 		private string thingTemplateKey;
 
@@ -44,18 +43,11 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private string tmallFunctionType;
 
-		public string Identifier
-		{
-			get
-			{
-				return identifier;
-			}
-			set	
-			{
-				identifier = value;
-				DictionaryUtil.Add(QueryParameters, "Identifier", value);
-			}
-		}
+		private string identifier;
+
+		private string apiProduct;
+
+		private string apiRevision;
 
 		public string ThingTemplateKey
 		{
@@ -106,6 +98,45 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				tmallFunctionType = value;
 				DictionaryUtil.Add(QueryParameters, "TmallFunctionType", value);
+			}
+		}
+
+		public string Identifier
+		{
+			get
+			{
+				return identifier;
+			}
+			set	
+			{
+				identifier = value;
+				DictionaryUtil.Add(QueryParameters, "Identifier", value);
+			}
+		}
+
+		public string ApiProduct
+		{
+			get
+			{
+				return apiProduct;
+			}
+			set	
+			{
+				apiProduct = value;
+				DictionaryUtil.Add(BodyParameters, "ApiProduct", value);
+			}
+		}
+
+		public string ApiRevision
+		{
+			get
+			{
+				return apiRevision;
+			}
+			set	
+			{
+				apiRevision = value;
+				DictionaryUtil.Add(BodyParameters, "ApiRevision", value);
 			}
 		}
 

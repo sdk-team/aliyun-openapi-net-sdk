@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Iot;
 using Aliyun.Acs.Iot.Transform;
 using Aliyun.Acs.Iot.Transform.V20190730;
 
@@ -30,19 +31,23 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class AddThingTemplateForTmallGenieRequest : RpcAcsRequest<AddThingTemplateForTmallGenieResponse>
     {
         public AddThingTemplateForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "AddThingTemplateForTmallGenie", "Iot", "openAPI")
+            : base("Iot", "2019-07-30", "AddThingTemplateForTmallGenie")
         {
         }
 
 		private string thingTemplateKey;
 
+		private long? thingTemplateId;
+
+		private string iotInstanceId;
+
 		private string thingTemplateName;
 
 		private List<Tags> tagss = new List<Tags>(){ };
 
-		private long? thingTemplateId;
+		private string apiProduct;
 
-		private string iotInstanceId;
+		private string apiRevision;
 
 		public string ThingTemplateKey
 		{
@@ -54,6 +59,32 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				thingTemplateKey = value;
 				DictionaryUtil.Add(QueryParameters, "ThingTemplateKey", value);
+			}
+		}
+
+		public long? ThingTemplateId
+		{
+			get
+			{
+				return thingTemplateId;
+			}
+			set	
+			{
+				thingTemplateId = value;
+				DictionaryUtil.Add(QueryParameters, "ThingTemplateId", value.ToString());
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 
@@ -88,29 +119,29 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public long? ThingTemplateId
+		public string ApiProduct
 		{
 			get
 			{
-				return thingTemplateId;
+				return apiProduct;
 			}
 			set	
 			{
-				thingTemplateId = value;
-				DictionaryUtil.Add(QueryParameters, "ThingTemplateId", value.ToString());
+				apiProduct = value;
+				DictionaryUtil.Add(BodyParameters, "ApiProduct", value);
 			}
 		}
 
-		public string IotInstanceId
+		public string ApiRevision
 		{
 			get
 			{
-				return iotInstanceId;
+				return apiRevision;
 			}
 			set	
 			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+				apiRevision = value;
+				DictionaryUtil.Add(BodyParameters, "ApiRevision", value);
 			}
 		}
 

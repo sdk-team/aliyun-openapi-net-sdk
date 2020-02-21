@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20190730
 {
-	public class GetDeviceApplyStatusForTmallGenieResponse : AcsResponse
+	public class ExportProductForTmallGenieResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private string errorMessage;
 
-		private List<GetDeviceApplyStatusForTmallGenie_ApplyStatus> data;
+		private string productDefinition;
 
 		public string RequestId
 		{
@@ -83,103 +83,15 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public List<GetDeviceApplyStatusForTmallGenie_ApplyStatus> Data
+		public string ProductDefinition
 		{
 			get
 			{
-				return data;
+				return productDefinition;
 			}
 			set	
 			{
-				data = value;
-			}
-		}
-
-		public class GetDeviceApplyStatusForTmallGenie_ApplyStatus
-		{
-
-			private string status;
-
-			private int? successCount;
-
-			private int? totalCount;
-
-			private string downloadHref;
-
-			private string applyId;
-
-			private bool? exist;
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public int? SuccessCount
-			{
-				get
-				{
-					return successCount;
-				}
-				set	
-				{
-					successCount = value;
-				}
-			}
-
-			public int? TotalCount
-			{
-				get
-				{
-					return totalCount;
-				}
-				set	
-				{
-					totalCount = value;
-				}
-			}
-
-			public string DownloadHref
-			{
-				get
-				{
-					return downloadHref;
-				}
-				set	
-				{
-					downloadHref = value;
-				}
-			}
-
-			public string ApplyId
-			{
-				get
-				{
-					return applyId;
-				}
-				set	
-				{
-					applyId = value;
-				}
-			}
-
-			public bool? Exist
-			{
-				get
-				{
-					return exist;
-				}
-				set	
-				{
-					exist = value;
-				}
+				productDefinition = value;
 			}
 		}
 	}

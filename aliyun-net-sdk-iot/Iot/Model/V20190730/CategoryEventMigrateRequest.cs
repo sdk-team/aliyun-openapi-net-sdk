@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Iot;
 using Aliyun.Acs.Iot.Transform;
 using Aliyun.Acs.Iot.Transform.V20190730;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class CategoryEventMigrateRequest : RpcAcsRequest<CategoryEventMigrateResponse>
     {
         public CategoryEventMigrateRequest()
-            : base("Iot", "2019-07-30", "CategoryEventMigrate", "Iot", "openAPI")
+            : base("Iot", "2019-07-30", "CategoryEventMigrate")
         {
         }
 

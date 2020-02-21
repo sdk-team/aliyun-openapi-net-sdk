@@ -35,12 +35,7 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 			addProductIdentifierForTmallGenieResponse.Success = context.BooleanValue("AddProductIdentifierForTmallGenie.Success");
 			addProductIdentifierForTmallGenieResponse.ErrorMessage = context.StringValue("AddProductIdentifierForTmallGenie.ErrorMessage");
 			addProductIdentifierForTmallGenieResponse.Code = context.StringValue("AddProductIdentifierForTmallGenie.Code");
-
-			List<string> addProductIdentifierForTmallGenieResponse_successList = new List<string>();
-			for (int i = 0; i < context.Length("AddProductIdentifierForTmallGenie.SuccessList.Length"); i++) {
-				addProductIdentifierForTmallGenieResponse_successList.Add(context.StringValue("AddProductIdentifierForTmallGenie.SuccessList["+ i +"]"));
-			}
-			addProductIdentifierForTmallGenieResponse.SuccessList = addProductIdentifierForTmallGenieResponse_successList;
+			addProductIdentifierForTmallGenieResponse.SuccessList = context.StringValue("AddProductIdentifierForTmallGenie.SuccessList");
         
 			return addProductIdentifierForTmallGenieResponse;
         }

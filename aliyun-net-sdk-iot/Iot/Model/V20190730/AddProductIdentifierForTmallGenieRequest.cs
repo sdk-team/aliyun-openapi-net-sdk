@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Iot;
 using Aliyun.Acs.Iot.Transform;
 using Aliyun.Acs.Iot.Transform.V20190730;
 
@@ -30,19 +31,32 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class AddProductIdentifierForTmallGenieRequest : RpcAcsRequest<AddProductIdentifierForTmallGenieResponse>
     {
         public AddProductIdentifierForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "AddProductIdentifierForTmallGenie", "Iot", "openAPI")
+            : base("Iot", "2019-07-30", "AddProductIdentifierForTmallGenie")
         {
         }
 
-		private List<string> identifiers = new List<string>(){ };
+		private string iotInstanceId;
 
-		private string tmallGenieTraceId;
+		private List<string> identifiers = new List<string>(){ };
 
 		private string productKey;
 
 		private string apiProduct;
 
 		private string apiRevision;
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
 
 		public List<string> Identifiers
 		{
@@ -58,19 +72,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 				{
 					DictionaryUtil.Add(QueryParameters,"Identifier." + (i + 1) , identifiers[i]);
 				}
-			}
-		}
-
-		public string TmallGenieTraceId
-		{
-			get
-			{
-				return tmallGenieTraceId;
-			}
-			set	
-			{
-				tmallGenieTraceId = value;
-				DictionaryUtil.Add(QueryParameters, "TmallGenieTraceId", value);
 			}
 		}
 

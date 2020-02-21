@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Iot;
 using Aliyun.Acs.Iot.Transform;
 using Aliyun.Acs.Iot.Transform.V20190730;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class GetDeviceApplyStatusForTmallGenieRequest : RpcAcsRequest<GetDeviceApplyStatusForTmallGenieResponse>
     {
         public GetDeviceApplyStatusForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "GetDeviceApplyStatusForTmallGenie", "Iot", "openAPI")
+            : base("Iot", "2019-07-30", "GetDeviceApplyStatusForTmallGenie")
         {
         }
 
@@ -41,6 +42,8 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 		private string apiProduct;
 
 		private string apiRevision;
+
+		private string fileFormat;
 
 		public string ProductKey
 		{
@@ -95,6 +98,19 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				apiRevision = value;
 				DictionaryUtil.Add(BodyParameters, "ApiRevision", value);
+			}
+		}
+
+		public string FileFormat
+		{
+			get
+			{
+				return fileFormat;
+			}
+			set	
+			{
+				fileFormat = value;
+				DictionaryUtil.Add(QueryParameters, "FileFormat", value);
 			}
 		}
 

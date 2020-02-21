@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private string code;
 
-		private List<string> successList;
+		private string successList;
 
 		public string RequestId
 		{
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public List<string> SuccessList
+		public string SuccessList
 		{
 			get
 			{

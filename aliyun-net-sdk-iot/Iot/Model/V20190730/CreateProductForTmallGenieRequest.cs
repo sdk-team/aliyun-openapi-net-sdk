@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Iot;
 using Aliyun.Acs.Iot.Transform;
 using Aliyun.Acs.Iot.Transform.V20190730;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class CreateProductForTmallGenieRequest : RpcAcsRequest<CreateProductForTmallGenieResponse>
     {
         public CreateProductForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "CreateProductForTmallGenie", "Iot", "openAPI")
+            : base("Iot", "2019-07-30", "CreateProductForTmallGenie")
         {
         }
 
@@ -39,6 +40,8 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 		private string taoBaoId;
 
 		private string description;
+
+		private string iotInstanceId;
 
 		private string productName;
 
@@ -49,8 +52,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 		private string productModel;
 
 		private int? dataFormat;
-
-		private string tmallGenieTraceId;
 
 		private int? netType;
 
@@ -94,6 +95,19 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				description = value;
 				DictionaryUtil.Add(BodyParameters, "Description", value);
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 
@@ -159,19 +173,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				dataFormat = value;
 				DictionaryUtil.Add(BodyParameters, "DataFormat", value.ToString());
-			}
-		}
-
-		public string TmallGenieTraceId
-		{
-			get
-			{
-				return tmallGenieTraceId;
-			}
-			set	
-			{
-				tmallGenieTraceId = value;
-				DictionaryUtil.Add(QueryParameters, "TmallGenieTraceId", value);
 			}
 		}
 

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Iot;
 using Aliyun.Acs.Iot.Transform;
 using Aliyun.Acs.Iot.Transform.V20190730;
 
@@ -30,13 +31,30 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class DeleteProductForTmallGenieRequest : RpcAcsRequest<DeleteProductForTmallGenieResponse>
     {
         public DeleteProductForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "DeleteProductForTmallGenie", "Iot", "openAPI")
+            : base("Iot", "2019-07-30", "DeleteProductForTmallGenie")
         {
         }
 
+		private string iotInstanceId;
+
 		private string productKey;
 
-		private string iotInstanceId;
+		private string apiProduct;
+
+		private string apiRevision;
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
 
 		public string ProductKey
 		{
@@ -51,16 +69,29 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public string IotInstanceId
+		public string ApiProduct
 		{
 			get
 			{
-				return iotInstanceId;
+				return apiProduct;
 			}
 			set	
 			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+				apiProduct = value;
+				DictionaryUtil.Add(BodyParameters, "ApiProduct", value);
+			}
+		}
+
+		public string ApiRevision
+		{
+			get
+			{
+				return apiRevision;
+			}
+			set	
+			{
+				apiRevision = value;
+				DictionaryUtil.Add(BodyParameters, "ApiRevision", value);
 			}
 		}
 

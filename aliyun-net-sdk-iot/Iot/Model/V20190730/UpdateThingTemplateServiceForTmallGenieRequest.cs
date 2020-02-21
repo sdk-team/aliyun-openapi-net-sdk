@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Iot;
 using Aliyun.Acs.Iot.Transform;
 using Aliyun.Acs.Iot.Transform.V20190730;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class UpdateThingTemplateServiceForTmallGenieRequest : RpcAcsRequest<UpdateThingTemplateServiceForTmallGenieResponse>
     {
         public UpdateThingTemplateServiceForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "UpdateThingTemplateServiceForTmallGenie", "Iot", "openAPI")
+            : base("Iot", "2019-07-30", "UpdateThingTemplateServiceForTmallGenie")
         {
         }
 
@@ -50,7 +51,11 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private List<Tags> tagss = new List<Tags>(){ };
 
+		private string apiProduct;
+
 		private string name;
+
+		private string apiRevision;
 
 		public string ThingTemplateKey
 		{
@@ -181,6 +186,19 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
+		public string ApiProduct
+		{
+			get
+			{
+				return apiProduct;
+			}
+			set	
+			{
+				apiProduct = value;
+				DictionaryUtil.Add(BodyParameters, "ApiProduct", value);
+			}
+		}
+
 		public string Name
 		{
 			get
@@ -191,6 +209,19 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public string ApiRevision
+		{
+			get
+			{
+				return apiRevision;
+			}
+			set	
+			{
+				apiRevision = value;
+				DictionaryUtil.Add(BodyParameters, "ApiRevision", value);
 			}
 		}
 

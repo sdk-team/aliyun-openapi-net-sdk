@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Iot;
 using Aliyun.Acs.Iot.Transform;
 using Aliyun.Acs.Iot.Transform.V20190730;
 
@@ -30,9 +31,13 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class ListTestDeviceForTmallGenieRequest : RpcAcsRequest<ListTestDeviceForTmallGenieResponse>
     {
         public ListTestDeviceForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "ListTestDeviceForTmallGenie", "Iot", "openAPI")
+            : base("Iot", "2019-07-30", "ListTestDeviceForTmallGenie")
         {
         }
+
+		private string iotInstanceId;
+
+		private long? pageSize;
 
 		private string thingType;
 
@@ -40,9 +45,35 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 
 		private long? pageNo;
 
-		private string iotInstanceId;
+		private string apiProduct;
 
-		private long? pageSize;
+		private string apiRevision;
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
+
+		public long? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
 
 		public string ThingType
 		{
@@ -83,29 +114,29 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public string IotInstanceId
+		public string ApiProduct
 		{
 			get
 			{
-				return iotInstanceId;
+				return apiProduct;
 			}
 			set	
 			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+				apiProduct = value;
+				DictionaryUtil.Add(BodyParameters, "ApiProduct", value);
 			}
 		}
 
-		public long? PageSize
+		public string ApiRevision
 		{
 			get
 			{
-				return pageSize;
+				return apiRevision;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				apiRevision = value;
+				DictionaryUtil.Add(BodyParameters, "ApiRevision", value);
 			}
 		}
 

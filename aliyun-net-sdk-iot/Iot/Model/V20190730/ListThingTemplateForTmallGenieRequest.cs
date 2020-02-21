@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Iot;
 using Aliyun.Acs.Iot.Transform;
 using Aliyun.Acs.Iot.Transform.V20190730;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class ListThingTemplateForTmallGenieRequest : RpcAcsRequest<ListThingTemplateForTmallGenieResponse>
     {
         public ListThingTemplateForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "ListThingTemplateForTmallGenie", "Iot", "openAPI")
+            : base("Iot", "2019-07-30", "ListThingTemplateForTmallGenie")
         {
         }
 
@@ -39,6 +40,10 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 		private string iotInstanceId;
 
 		private int? pageSize;
+
+		private string apiProduct;
+
+		private string apiRevision;
 
 		private int? page;
 
@@ -78,6 +83,32 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string ApiProduct
+		{
+			get
+			{
+				return apiProduct;
+			}
+			set	
+			{
+				apiProduct = value;
+				DictionaryUtil.Add(BodyParameters, "ApiProduct", value);
+			}
+		}
+
+		public string ApiRevision
+		{
+			get
+			{
+				return apiRevision;
+			}
+			set	
+			{
+				apiRevision = value;
+				DictionaryUtil.Add(BodyParameters, "ApiRevision", value);
 			}
 		}
 

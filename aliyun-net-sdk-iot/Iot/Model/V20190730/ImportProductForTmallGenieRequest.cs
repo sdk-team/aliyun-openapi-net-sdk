@@ -28,33 +28,46 @@ using Aliyun.Acs.Iot.Transform.V20190730;
 
 namespace Aliyun.Acs.Iot.Model.V20190730
 {
-    public class FlushProductFunctionForTmallGenieRequest : RpcAcsRequest<FlushProductFunctionForTmallGenieResponse>
+    public class ImportProductForTmallGenieRequest : RpcAcsRequest<ImportProductForTmallGenieResponse>
     {
-        public FlushProductFunctionForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "FlushProductFunctionForTmallGenie")
+        public ImportProductForTmallGenieRequest()
+            : base("Iot", "2019-07-30", "ImportProductForTmallGenie")
         {
         }
 
-		private string iotInstanceId;
+		private string taobaoId;
+
+		private string productDefinition;
 
 		private string productKey;
-
-		private List<string> fields = new List<string>(){ };
 
 		private string apiProduct;
 
 		private string apiRevision;
 
-		public string IotInstanceId
+		public string TaobaoId
 		{
 			get
 			{
-				return iotInstanceId;
+				return taobaoId;
 			}
 			set	
 			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+				taobaoId = value;
+				DictionaryUtil.Add(BodyParameters, "TaobaoId", value);
+			}
+		}
+
+		public string ProductDefinition
+		{
+			get
+			{
+				return productDefinition;
+			}
+			set	
+			{
+				productDefinition = value;
+				DictionaryUtil.Add(BodyParameters, "ProductDefinition", value);
 			}
 		}
 
@@ -67,24 +80,7 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			set	
 			{
 				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
-			}
-		}
-
-		public List<string> Fields
-		{
-			get
-			{
-				return fields;
-			}
-
-			set
-			{
-				fields = value;
-				for (int i = 0; i < fields.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Field." + (i + 1) , fields[i]);
-				}
+				DictionaryUtil.Add(BodyParameters, "ProductKey", value);
 			}
 		}
 
@@ -114,9 +110,9 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-        public override FlushProductFunctionForTmallGenieResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ImportProductForTmallGenieResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return FlushProductFunctionForTmallGenieResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ImportProductForTmallGenieResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

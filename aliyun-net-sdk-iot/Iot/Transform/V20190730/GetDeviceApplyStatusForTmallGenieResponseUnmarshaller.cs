@@ -44,6 +44,7 @@ namespace Aliyun.Acs.Iot.Transform.V20190730
 				applyStatus.TotalCount = context.IntegerValue("GetDeviceApplyStatusForTmallGenie.Data["+ i +"].TotalCount");
 				applyStatus.DownloadHref = context.StringValue("GetDeviceApplyStatusForTmallGenie.Data["+ i +"].DownloadHref");
 				applyStatus.ApplyId = context.StringValue("GetDeviceApplyStatusForTmallGenie.Data["+ i +"].ApplyId");
+				applyStatus.Exist = context.BooleanValue("GetDeviceApplyStatusForTmallGenie.Data["+ i +"].Exist");
 
 				getDeviceApplyStatusForTmallGenieResponse_data.Add(applyStatus);
 			}

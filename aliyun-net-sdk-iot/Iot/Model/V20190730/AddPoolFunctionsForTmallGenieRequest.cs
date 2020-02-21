@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Iot;
 using Aliyun.Acs.Iot.Transform;
 using Aliyun.Acs.Iot.Transform.V20190730;
 
@@ -30,13 +31,15 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class AddPoolFunctionsForTmallGenieRequest : RpcAcsRequest<AddPoolFunctionsForTmallGenieResponse>
     {
         public AddPoolFunctionsForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "AddPoolFunctionsForTmallGenie", "Iot", "openAPI")
+            : base("Iot", "2019-07-30", "AddPoolFunctionsForTmallGenie")
         {
         }
 
 		private string thingTemplateKey;
 
 		private List<long?> tmallEventIdLists = new List<long?>(){ };
+
+		private string iotInstanceId;
 
 		private List<long?> tmallServiceIdLists = new List<long?>(){ };
 
@@ -73,6 +76,19 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 				{
 					DictionaryUtil.Add(QueryParameters,"TmallEventIdList." + (i + 1) , tmallEventIdLists[i]);
 				}
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Iot;
 using Aliyun.Acs.Iot.Transform;
 using Aliyun.Acs.Iot.Transform.V20190730;
 
@@ -30,17 +31,47 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class CreateTestDeviceForTmallGenieRequest : RpcAcsRequest<CreateTestDeviceForTmallGenieResponse>
     {
         public CreateTestDeviceForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "CreateTestDeviceForTmallGenie", "Iot", "openAPI")
+            : base("Iot", "2019-07-30", "CreateTestDeviceForTmallGenie")
         {
         }
+
+		private string iotInstanceId;
+
+		private int? quota;
 
 		private string thingType;
 
 		private string productKey;
 
-		private string iotInstanceId;
+		private string apiProduct;
 
-		private int? quota;
+		private string apiRevision;
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
+
+		public int? Quota
+		{
+			get
+			{
+				return quota;
+			}
+			set	
+			{
+				quota = value;
+				DictionaryUtil.Add(QueryParameters, "Quota", value.ToString());
+			}
+		}
 
 		public string ThingType
 		{
@@ -68,29 +99,29 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public string IotInstanceId
+		public string ApiProduct
 		{
 			get
 			{
-				return iotInstanceId;
+				return apiProduct;
 			}
 			set	
 			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+				apiProduct = value;
+				DictionaryUtil.Add(BodyParameters, "ApiProduct", value);
 			}
 		}
 
-		public int? Quota
+		public string ApiRevision
 		{
 			get
 			{
-				return quota;
+				return apiRevision;
 			}
 			set	
 			{
-				quota = value;
-				DictionaryUtil.Add(QueryParameters, "Quota", value.ToString());
+				apiRevision = value;
+				DictionaryUtil.Add(BodyParameters, "ApiRevision", value);
 			}
 		}
 

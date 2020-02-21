@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Iot;
 using Aliyun.Acs.Iot.Transform;
 using Aliyun.Acs.Iot.Transform.V20190730;
 
@@ -30,38 +31,29 @@ namespace Aliyun.Acs.Iot.Model.V20190730
     public class UpdateThingTemplateEventForTmallGenieRequest : RpcAcsRequest<UpdateThingTemplateEventForTmallGenieResponse>
     {
         public UpdateThingTemplateEventForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "UpdateThingTemplateEventForTmallGenie", "Iot", "openAPI")
+            : base("Iot", "2019-07-30", "UpdateThingTemplateEventForTmallGenie")
         {
         }
 
-		private string identifier;
-
 		private string thingTemplateKey;
-
-		private List<Tags> tagss = new List<Tags>(){ };
-
-		private List<OutputData> outputDatas = new List<OutputData>(){ };
 
 		private long? tmallFunctionId;
 
 		private string iotInstanceId;
 
+		private string identifier;
+
+		private List<Tags> tagss = new List<Tags>(){ };
+
+		private List<OutputData> outputDatas = new List<OutputData>(){ };
+
+		private string apiProduct;
+
 		private string name;
 
-		private string eventType;
+		private string apiRevision;
 
-		public string Identifier
-		{
-			get
-			{
-				return identifier;
-			}
-			set	
-			{
-				identifier = value;
-				DictionaryUtil.Add(QueryParameters, "Identifier", value);
-			}
-		}
+		private string eventType;
 
 		public string ThingTemplateKey
 		{
@@ -73,6 +65,45 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				thingTemplateKey = value;
 				DictionaryUtil.Add(QueryParameters, "ThingTemplateKey", value);
+			}
+		}
+
+		public long? TmallFunctionId
+		{
+			get
+			{
+				return tmallFunctionId;
+			}
+			set	
+			{
+				tmallFunctionId = value;
+				DictionaryUtil.Add(QueryParameters, "TmallFunctionId", value.ToString());
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
+
+		public string Identifier
+		{
+			get
+			{
+				return identifier;
+			}
+			set	
+			{
+				identifier = value;
+				DictionaryUtil.Add(QueryParameters, "Identifier", value);
 			}
 		}
 
@@ -117,29 +148,16 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-		public long? TmallFunctionId
+		public string ApiProduct
 		{
 			get
 			{
-				return tmallFunctionId;
+				return apiProduct;
 			}
 			set	
 			{
-				tmallFunctionId = value;
-				DictionaryUtil.Add(QueryParameters, "TmallFunctionId", value.ToString());
-			}
-		}
-
-		public string IotInstanceId
-		{
-			get
-			{
-				return iotInstanceId;
-			}
-			set	
-			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+				apiProduct = value;
+				DictionaryUtil.Add(BodyParameters, "ApiProduct", value);
 			}
 		}
 
@@ -153,6 +171,19 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public string ApiRevision
+		{
+			get
+			{
+				return apiRevision;
+			}
+			set	
+			{
+				apiRevision = value;
+				DictionaryUtil.Add(BodyParameters, "ApiRevision", value);
 			}
 		}
 

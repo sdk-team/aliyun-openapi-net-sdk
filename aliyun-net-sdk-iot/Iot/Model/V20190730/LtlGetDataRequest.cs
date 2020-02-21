@@ -28,33 +28,46 @@ using Aliyun.Acs.Iot.Transform.V20190730;
 
 namespace Aliyun.Acs.Iot.Model.V20190730
 {
-    public class FlushProductFunctionForTmallGenieRequest : RpcAcsRequest<FlushProductFunctionForTmallGenieResponse>
+    public class LtlGetDataRequest : RpcAcsRequest<LtlGetDataResponse>
     {
-        public FlushProductFunctionForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "FlushProductFunctionForTmallGenie")
+        public LtlGetDataRequest()
+            : base("Iot", "2019-07-30", "LtlGetData")
         {
         }
 
-		private string iotInstanceId;
+		private string key;
+
+		private string apiVersion;
 
 		private string productKey;
-
-		private List<string> fields = new List<string>(){ };
 
 		private string apiProduct;
 
 		private string apiRevision;
 
-		public string IotInstanceId
+		public string Key
 		{
 			get
 			{
-				return iotInstanceId;
+				return key;
 			}
 			set	
 			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+				key = value;
+				DictionaryUtil.Add(QueryParameters, "Key", value);
+			}
+		}
+
+		public string ApiVersion
+		{
+			get
+			{
+				return apiVersion;
+			}
+			set	
+			{
+				apiVersion = value;
+				DictionaryUtil.Add(QueryParameters, "ApiVersion", value);
 			}
 		}
 
@@ -68,23 +81,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				productKey = value;
 				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
-			}
-		}
-
-		public List<string> Fields
-		{
-			get
-			{
-				return fields;
-			}
-
-			set
-			{
-				fields = value;
-				for (int i = 0; i < fields.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Field." + (i + 1) , fields[i]);
-				}
 			}
 		}
 
@@ -114,9 +110,9 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-        public override FlushProductFunctionForTmallGenieResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override LtlGetDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return FlushProductFunctionForTmallGenieResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return LtlGetDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

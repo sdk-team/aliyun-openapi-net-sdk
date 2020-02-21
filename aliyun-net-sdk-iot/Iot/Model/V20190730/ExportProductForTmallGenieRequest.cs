@@ -28,35 +28,18 @@ using Aliyun.Acs.Iot.Transform.V20190730;
 
 namespace Aliyun.Acs.Iot.Model.V20190730
 {
-    public class FlushProductFunctionForTmallGenieRequest : RpcAcsRequest<FlushProductFunctionForTmallGenieResponse>
+    public class ExportProductForTmallGenieRequest : RpcAcsRequest<ExportProductForTmallGenieResponse>
     {
-        public FlushProductFunctionForTmallGenieRequest()
-            : base("Iot", "2019-07-30", "FlushProductFunctionForTmallGenie")
+        public ExportProductForTmallGenieRequest()
+            : base("Iot", "2019-07-30", "ExportProductForTmallGenie")
         {
         }
 
-		private string iotInstanceId;
-
 		private string productKey;
-
-		private List<string> fields = new List<string>(){ };
 
 		private string apiProduct;
 
 		private string apiRevision;
-
-		public string IotInstanceId
-		{
-			get
-			{
-				return iotInstanceId;
-			}
-			set	
-			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
-			}
-		}
 
 		public string ProductKey
 		{
@@ -68,23 +51,6 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			{
 				productKey = value;
 				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
-			}
-		}
-
-		public List<string> Fields
-		{
-			get
-			{
-				return fields;
-			}
-
-			set
-			{
-				fields = value;
-				for (int i = 0; i < fields.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Field." + (i + 1) , fields[i]);
-				}
 			}
 		}
 
@@ -114,9 +80,9 @@ namespace Aliyun.Acs.Iot.Model.V20190730
 			}
 		}
 
-        public override FlushProductFunctionForTmallGenieResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ExportProductForTmallGenieResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return FlushProductFunctionForTmallGenieResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ExportProductForTmallGenieResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
