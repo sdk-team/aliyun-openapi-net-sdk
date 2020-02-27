@@ -19,56 +19,40 @@
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Http;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Ft;
+using Aliyun.Acs.Ft.Transform;
+using Aliyun.Acs.Ft.Transform.V20180713;
 
-namespace Aliyun.Acs.Ft.Model.V20190802
+namespace Aliyun.Acs.Ft.Model.V20180713
 {
-	public class RoaHttpStringResponseTestResponse : AcsResponse
-	{
+    public class FTApiAliasApiRequest : RpcAcsRequest<FTApiAliasApiResponse>
+    {
+        public FTApiAliasApiRequest()
+            : base("Ft", "2018-07-13", "FTApiAliasApi")
+        {
+        }
 
-		private string requestId;
+		private string name;
 
-		private RoaHttpStringResponseTest__Params _params;
-
-		public string RequestId
+		public string Name
 		{
 			get
 			{
-				return requestId;
+				return name;
 			}
 			set	
 			{
-				requestId = value;
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 
-		public RoaHttpStringResponseTest__Params _Params
-		{
-			get
-			{
-				return _params;
-			}
-			set	
-			{
-				_params = value;
-			}
-		}
-
-		public class RoaHttpStringResponseTest__Params
-		{
-
-			private string queryParam;
-
-			public string QueryParam
-			{
-				get
-				{
-					return queryParam;
-				}
-				set	
-				{
-					queryParam = value;
-				}
-			}
-		}
-	}
+        public override FTApiAliasApiResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        {
+            return FTApiAliasApiResponseUnmarshaller.Unmarshall(unmarshallerContext);
+        }
+    }
 }

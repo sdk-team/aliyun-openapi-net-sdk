@@ -20,24 +20,21 @@ using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Ft.Model.V20190802;
+using Aliyun.Acs.Ft.Model.V20180713;
 
-namespace Aliyun.Acs.Ft.Transform.V20190802
+namespace Aliyun.Acs.Ft.Transform.V20180713
 {
-    public class RoaHttpStringResponseTestResponseUnmarshaller
+    public class BatchAuditTest02ResponseUnmarshaller
     {
-        public static RoaHttpStringResponseTestResponse Unmarshall(UnmarshallerContext context)
+        public static BatchAuditTest02Response Unmarshall(UnmarshallerContext context)
         {
-			RoaHttpStringResponseTestResponse roaHttpStringResponseTestResponse = new RoaHttpStringResponseTestResponse();
+			BatchAuditTest02Response batchAuditTest02Response = new BatchAuditTest02Response();
 
-			roaHttpStringResponseTestResponse.HttpResponse = context.HttpResponse;
-			roaHttpStringResponseTestResponse.RequestId = context.StringValue("RoaHttpStringResponseTest.RequestId");
-
-			RoaHttpStringResponseTestResponse.RoaHttpStringResponseTest__Params _params = new RoaHttpStringResponseTestResponse.RoaHttpStringResponseTest__Params();
-			_params.QueryParam = context.StringValue("RoaHttpStringResponseTest.Params.QueryParam");
-			roaHttpStringResponseTestResponse._Params = _params;
+			batchAuditTest02Response.HttpResponse = context.HttpResponse;
+			batchAuditTest02Response.RequestId = context.StringValue("BatchAuditTest02.RequestId");
+			batchAuditTest02Response.Name = context.StringValue("BatchAuditTest02.Name");
         
-			return roaHttpStringResponseTestResponse;
+			return batchAuditTest02Response;
         }
     }
 }

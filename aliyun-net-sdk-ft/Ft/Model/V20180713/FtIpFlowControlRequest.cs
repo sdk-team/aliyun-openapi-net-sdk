@@ -22,38 +22,37 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Ft;
 using Aliyun.Acs.Ft.Transform;
-using Aliyun.Acs.Ft.Transform.V20190802;
+using Aliyun.Acs.Ft.Transform.V20180713;
 
-namespace Aliyun.Acs.Ft.Model.V20190802
+namespace Aliyun.Acs.Ft.Model.V20180713
 {
-    public class RoaHttpStringResponseTestRequest : RoaAcsRequest<RoaHttpStringResponseTestResponse>
+    public class FtIpFlowControlRequest : RpcAcsRequest<FtIpFlowControlResponse>
     {
-        public RoaHttpStringResponseTestRequest()
-            : base("Ft", "2019-08-02", "RoaHttpStringResponseTest", "ft", "openAPI")
+        public FtIpFlowControlRequest()
+            : base("Ft", "2018-07-13", "FtIpFlowControl")
         {
-			UriPattern = "/web/getData";
-			Method = MethodType.POST;
         }
 
-		private string queryParam;
+		private string name;
 
-		public string QueryParam
+		public string Name
 		{
 			get
 			{
-				return queryParam;
+				return name;
 			}
 			set	
 			{
-				queryParam = value;
-				DictionaryUtil.Add(QueryParameters, "QueryParam", value);
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 
-        public override RoaHttpStringResponseTestResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override FtIpFlowControlResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RoaHttpStringResponseTestResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return FtIpFlowControlResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
