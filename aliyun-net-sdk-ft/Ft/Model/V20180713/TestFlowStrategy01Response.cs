@@ -22,18 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
 {
-	public class FtIpFlowControlResponse : AcsResponse
+	public class TestFlowStrategy01Response : AcsResponse
 	{
 
 		private string requestId;
 
+		private List<string> list;
+
 		private List<string> names;
-
-		private List<string> names01;
-
-		private List<string> integerList;
-
-		private List<string> integerList1;
 
 		public string RequestId
 		{
@@ -47,6 +43,18 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			}
 		}
 
+		public List<string> List
+		{
+			get
+			{
+				return list;
+			}
+			set	
+			{
+				list = value;
+			}
+		}
+
 		public List<string> Names
 		{
 			get
@@ -56,42 +64,6 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			set	
 			{
 				names = value;
-			}
-		}
-
-		public List<string> Names01
-		{
-			get
-			{
-				return names01;
-			}
-			set	
-			{
-				names01 = value;
-			}
-		}
-
-		public List<string> IntegerList
-		{
-			get
-			{
-				return integerList;
-			}
-			set	
-			{
-				integerList = value;
-			}
-		}
-
-		public List<string> IntegerList1
-		{
-			get
-			{
-				return integerList1;
-			}
-			set	
-			{
-				integerList1 = value;
 			}
 		}
 	}

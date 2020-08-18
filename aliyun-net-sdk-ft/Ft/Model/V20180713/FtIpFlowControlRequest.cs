@@ -33,20 +33,26 @@ namespace Aliyun.Acs.Ft.Model.V20180713
         public FtIpFlowControlRequest()
             : base("Ft", "2018-07-13", "FtIpFlowControl")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
-		private string name;
+		private string stringList;
 
-		public string Name
+		public string StringList
 		{
 			get
 			{
-				return name;
+				return stringList;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				stringList = value;
+				DictionaryUtil.Add(QueryParameters, "StringList", value);
 			}
 		}
 

@@ -22,76 +22,34 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
 {
-	public class FtIpFlowControlResponse : AcsResponse
+	public class TestIspHttpValidatorResponse : AcsResponse
 	{
 
-		private string requestId;
+		private bool? success;
 
-		private List<string> names;
+		private string message;
 
-		private List<string> names01;
-
-		private List<string> integerList;
-
-		private List<string> integerList1;
-
-		public string RequestId
+		public bool? Success
 		{
 			get
 			{
-				return requestId;
+				return success;
 			}
 			set	
 			{
-				requestId = value;
+				success = value;
 			}
 		}
 
-		public List<string> Names
+		public string Message
 		{
 			get
 			{
-				return names;
+				return message;
 			}
 			set	
 			{
-				names = value;
-			}
-		}
-
-		public List<string> Names01
-		{
-			get
-			{
-				return names01;
-			}
-			set	
-			{
-				names01 = value;
-			}
-		}
-
-		public List<string> IntegerList
-		{
-			get
-			{
-				return integerList;
-			}
-			set	
-			{
-				integerList = value;
-			}
-		}
-
-		public List<string> IntegerList1
-		{
-			get
-			{
-				return integerList1;
-			}
-			set	
-			{
-				integerList1 = value;
+				message = value;
 			}
 		}
 	}

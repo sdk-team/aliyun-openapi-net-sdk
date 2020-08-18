@@ -28,10 +28,10 @@ using Aliyun.Acs.Ft.Transform.V20180713;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
 {
-    public class FtEagleEyeRequest : RpcAcsRequest<FtEagleEyeResponse>
+    public class FtFlowSpecial1586868138332Request : RpcAcsRequest<FtFlowSpecial1586868138332Response>
     {
-        public FtEagleEyeRequest()
-            : base("Ft", "2018-07-13", "FtEagleEye")
+        public FtFlowSpecial1586868138332Request()
+            : base("Ft", "2018-07-13", "FtFlowSpecial1586868138332")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -56,9 +56,9 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			}
 		}
 
-        public override FtEagleEyeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override FtFlowSpecial1586868138332Response GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return FtEagleEyeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return FtFlowSpecial1586868138332ResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

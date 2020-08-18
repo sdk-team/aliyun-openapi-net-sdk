@@ -22,18 +22,22 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
 {
-	public class FtIpFlowControlResponse : AcsResponse
+	public class GetTairDataResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<string> names;
+		private string data;
 
-		private List<string> names01;
+		private bool? success;
 
-		private List<string> integerList;
+		private string code;
 
-		private List<string> integerList1;
+		private string message;
+
+		private string chineseMessage;
+
+		private int? httpStatusCode;
 
 		public string RequestId
 		{
@@ -47,51 +51,75 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			}
 		}
 
-		public List<string> Names
+		public string Data
 		{
 			get
 			{
-				return names;
+				return data;
 			}
 			set	
 			{
-				names = value;
+				data = value;
 			}
 		}
 
-		public List<string> Names01
+		public bool? Success
 		{
 			get
 			{
-				return names01;
+				return success;
 			}
 			set	
 			{
-				names01 = value;
+				success = value;
 			}
 		}
 
-		public List<string> IntegerList
+		public string Code
 		{
 			get
 			{
-				return integerList;
+				return code;
 			}
 			set	
 			{
-				integerList = value;
+				code = value;
 			}
 		}
 
-		public List<string> IntegerList1
+		public string Message
 		{
 			get
 			{
-				return integerList1;
+				return message;
 			}
 			set	
 			{
-				integerList1 = value;
+				message = value;
+			}
+		}
+
+		public string ChineseMessage
+		{
+			get
+			{
+				return chineseMessage;
+			}
+			set	
+			{
+				chineseMessage = value;
+			}
+		}
+
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
 			}
 		}
 	}

@@ -28,25 +28,30 @@ using Aliyun.Acs.Ft.Transform.V20180713;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
 {
-    public class DescribeResourceTypeRequest : RpcAcsRequest<DescribeResourceTypeResponse>
+    public class QueryDomainChangeRecordsRequest : RpcAcsRequest<QueryDomainChangeRecordsResponse>
     {
-        public DescribeResourceTypeRequest()
-            : base("Ft", "2018-07-13", "DescribeResourceType")
+        public QueryDomainChangeRecordsRequest()
+            : base("Ft", "2018-07-13", "QueryDomainChangeRecords")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string product;
 
-		private string acceptLanguage;
+		private int? pageSize;
 
-		private string env;
+		private long? bucUid;
 
-		private string resourceType;
+		private int? currentPage;
+
+		private string bucName;
+
+		private string bucEmpId;
 
 		public string Product
 		{
@@ -61,42 +66,68 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			}
 		}
 
-		public string AcceptLanguage
+		public int? PageSize
 		{
 			get
 			{
-				return acceptLanguage;
+				return pageSize;
 			}
 			set	
 			{
-				acceptLanguage = value;
-				DictionaryUtil.Add(QueryParameters, "AcceptLanguage", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
-		public string Env
+		public long? BucUid
 		{
 			get
 			{
-				return env;
+				return bucUid;
 			}
 			set	
 			{
-				env = value;
-				DictionaryUtil.Add(QueryParameters, "Env", value);
+				bucUid = value;
+				DictionaryUtil.Add(QueryParameters, "BucUid", value.ToString());
 			}
 		}
 
-		public string ResourceType
+		public int? CurrentPage
 		{
 			get
 			{
-				return resourceType;
+				return currentPage;
 			}
 			set	
 			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public string BucName
+		{
+			get
+			{
+				return bucName;
+			}
+			set	
+			{
+				bucName = value;
+				DictionaryUtil.Add(QueryParameters, "BucName", value);
+			}
+		}
+
+		public string BucEmpId
+		{
+			get
+			{
+				return bucEmpId;
+			}
+			set	
+			{
+				bucEmpId = value;
+				DictionaryUtil.Add(QueryParameters, "BucEmpId", value);
 			}
 		}
 
@@ -105,9 +136,9 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			return false;
 		}
 
-        public override DescribeResourceTypeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryDomainChangeRecordsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeResourceTypeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryDomainChangeRecordsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

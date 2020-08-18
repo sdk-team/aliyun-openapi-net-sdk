@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -28,10 +29,10 @@ using Aliyun.Acs.Ft.Transform.V20180713;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
 {
-    public class FtEagleEyeRequest : RpcAcsRequest<FtEagleEyeResponse>
+    public class TestIspHttpValidatorRequest : RpcAcsRequest<TestIspHttpValidatorResponse>
     {
-        public FtEagleEyeRequest()
-            : base("Ft", "2018-07-13", "FtEagleEye")
+        public TestIspHttpValidatorRequest()
+            : base("Ft", "2018-07-13", "TestIspHttpValidator")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,24 +42,14 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			Method = MethodType.POST;
         }
 
-		private string name;
-
-		public string Name
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
+			return false;
 		}
 
-        public override FtEagleEyeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override TestIspHttpValidatorResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return FtEagleEyeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return TestIspHttpValidatorResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

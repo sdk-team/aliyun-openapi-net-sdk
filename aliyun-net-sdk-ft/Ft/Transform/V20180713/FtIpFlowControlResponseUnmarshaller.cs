@@ -32,7 +32,30 @@ namespace Aliyun.Acs.Ft.Transform.V20180713
 
 			ftIpFlowControlResponse.HttpResponse = context.HttpResponse;
 			ftIpFlowControlResponse.RequestId = context.StringValue("FtIpFlowControl.RequestId");
-			ftIpFlowControlResponse.Name = context.StringValue("FtIpFlowControl.Name");
+
+			List<string> ftIpFlowControlResponse_names = new List<string>();
+			for (int i = 0; i < context.Length("FtIpFlowControl.Names.Length"); i++) {
+				ftIpFlowControlResponse_names.Add(context.StringValue("FtIpFlowControl.Names["+ i +"]"));
+			}
+			ftIpFlowControlResponse.Names = ftIpFlowControlResponse_names;
+
+			List<string> ftIpFlowControlResponse_names01 = new List<string>();
+			for (int i = 0; i < context.Length("FtIpFlowControl.Names01.Length"); i++) {
+				ftIpFlowControlResponse_names01.Add(context.StringValue("FtIpFlowControl.Names01["+ i +"]"));
+			}
+			ftIpFlowControlResponse.Names01 = ftIpFlowControlResponse_names01;
+
+			List<string> ftIpFlowControlResponse_integerList = new List<string>();
+			for (int i = 0; i < context.Length("FtIpFlowControl.IntegerList.Length"); i++) {
+				ftIpFlowControlResponse_integerList.Add(context.StringValue("FtIpFlowControl.IntegerList["+ i +"]"));
+			}
+			ftIpFlowControlResponse.IntegerList = ftIpFlowControlResponse_integerList;
+
+			List<string> ftIpFlowControlResponse_integerList1 = new List<string>();
+			for (int i = 0; i < context.Length("FtIpFlowControl.IntegerList1.Length"); i++) {
+				ftIpFlowControlResponse_integerList1.Add(context.StringValue("FtIpFlowControl.IntegerList1["+ i +"]"));
+			}
+			ftIpFlowControlResponse.IntegerList1 = ftIpFlowControlResponse_integerList1;
         
 			return ftIpFlowControlResponse;
         }

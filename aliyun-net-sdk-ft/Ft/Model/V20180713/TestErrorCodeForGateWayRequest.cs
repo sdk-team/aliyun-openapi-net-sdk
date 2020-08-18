@@ -33,6 +33,11 @@ namespace Aliyun.Acs.Ft.Model.V20180713
         public TestErrorCodeForGateWayRequest()
             : base("Ft", "2018-07-13", "TestErrorCodeForGateWay")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string httpStatusCode;
