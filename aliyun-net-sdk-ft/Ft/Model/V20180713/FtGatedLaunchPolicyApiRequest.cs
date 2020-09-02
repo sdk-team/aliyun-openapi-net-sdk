@@ -28,10 +28,10 @@ using Aliyun.Acs.Ft.Transform.V20180713;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
 {
-    public class FtIpFlowControlRequest : RpcAcsRequest<FtIpFlowControlResponse>
+    public class FtGatedLaunchPolicyApiRequest : RpcAcsRequest<FtGatedLaunchPolicyApiResponse>
     {
-        public FtIpFlowControlRequest()
-            : base("Ft", "2018-07-13", "FtIpFlowControl")
+        public FtGatedLaunchPolicyApiRequest()
+            : base("Ft", "2018-07-13", "FtGatedLaunchPolicyApi")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,24 +41,24 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			Method = MethodType.POST;
         }
 
-		private string stringList;
+		private string unGatedLaunchPolicy;
 
-		public string StringList
+		public string UnGatedLaunchPolicy
 		{
 			get
 			{
-				return stringList;
+				return unGatedLaunchPolicy;
 			}
 			set	
 			{
-				stringList = value;
-				DictionaryUtil.Add(QueryParameters, "StringList", value);
+				unGatedLaunchPolicy = value;
+				DictionaryUtil.Add(QueryParameters, "UnGatedLaunchPolicy", value);
 			}
 		}
 
-        public override FtIpFlowControlResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override FtGatedLaunchPolicyApiResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return FtIpFlowControlResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return FtGatedLaunchPolicyApiResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -28,10 +29,10 @@ using Aliyun.Acs.Ft.Transform.V20180713;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
 {
-    public class FtIpFlowControlRequest : RpcAcsRequest<FtIpFlowControlResponse>
+    public class TestXmlServiceRoutePolicyRequest : RpcAcsRequest<TestXmlServiceRoutePolicyResponse>
     {
-        public FtIpFlowControlRequest()
-            : base("Ft", "2018-07-13", "FtIpFlowControl")
+        public TestXmlServiceRoutePolicyRequest()
+            : base("Ft", "2018-07-13", "TestXmlServiceRoutePolicy")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,24 +42,29 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			Method = MethodType.POST;
         }
 
-		private string stringList;
+		private string api;
 
-		public string StringList
+		public string Api
 		{
 			get
 			{
-				return stringList;
+				return api;
 			}
 			set	
 			{
-				stringList = value;
-				DictionaryUtil.Add(QueryParameters, "StringList", value);
+				api = value;
+				DictionaryUtil.Add(QueryParameters, "Api", value);
 			}
 		}
 
-        public override FtIpFlowControlResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override TestXmlServiceRoutePolicyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return FtIpFlowControlResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return TestXmlServiceRoutePolicyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -28,10 +29,10 @@ using Aliyun.Acs.Ft.Transform.V20180713;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
 {
-    public class FtIpFlowControlRequest : RpcAcsRequest<FtIpFlowControlResponse>
+    public class UpdateDomainRecordsRegionIdRequest : RpcAcsRequest<UpdateDomainRecordsRegionIdResponse>
     {
-        public FtIpFlowControlRequest()
-            : base("Ft", "2018-07-13", "FtIpFlowControl")
+        public UpdateDomainRecordsRegionIdRequest()
+            : base("Ft", "2018-07-13", "UpdateDomainRecordsRegionId")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,24 +42,74 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			Method = MethodType.POST;
         }
 
-		private string stringList;
+		private string domain;
 
-		public string StringList
+		private long? bucUid;
+
+		private string bucName;
+
+		private string bucEmpId;
+
+		public string Domain
 		{
 			get
 			{
-				return stringList;
+				return domain;
 			}
 			set	
 			{
-				stringList = value;
-				DictionaryUtil.Add(QueryParameters, "StringList", value);
+				domain = value;
+				DictionaryUtil.Add(QueryParameters, "Domain", value);
 			}
 		}
 
-        public override FtIpFlowControlResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public long? BucUid
+		{
+			get
+			{
+				return bucUid;
+			}
+			set	
+			{
+				bucUid = value;
+				DictionaryUtil.Add(QueryParameters, "BucUid", value.ToString());
+			}
+		}
+
+		public string BucName
+		{
+			get
+			{
+				return bucName;
+			}
+			set	
+			{
+				bucName = value;
+				DictionaryUtil.Add(QueryParameters, "BucName", value);
+			}
+		}
+
+		public string BucEmpId
+		{
+			get
+			{
+				return bucEmpId;
+			}
+			set	
+			{
+				bucEmpId = value;
+				DictionaryUtil.Add(QueryParameters, "BucEmpId", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override UpdateDomainRecordsRegionIdResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return FtIpFlowControlResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateDomainRecordsRegionIdResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

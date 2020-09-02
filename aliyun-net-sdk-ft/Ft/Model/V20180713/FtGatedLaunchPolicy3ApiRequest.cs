@@ -28,10 +28,10 @@ using Aliyun.Acs.Ft.Transform.V20180713;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
 {
-    public class FtIpFlowControlRequest : RpcAcsRequest<FtIpFlowControlResponse>
+    public class FtGatedLaunchPolicy3ApiRequest : RpcAcsRequest<FtGatedLaunchPolicy3ApiResponse>
     {
-        public FtIpFlowControlRequest()
-            : base("Ft", "2018-07-13", "FtIpFlowControl")
+        public FtGatedLaunchPolicy3ApiRequest()
+            : base("Ft", "2018-07-13", "FtGatedLaunchPolicy3Api")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,24 +41,24 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			Method = MethodType.POST;
         }
 
-		private string stringList;
+		private string name;
 
-		public string StringList
+		public string Name
 		{
 			get
 			{
-				return stringList;
+				return name;
 			}
 			set	
 			{
-				stringList = value;
-				DictionaryUtil.Add(QueryParameters, "StringList", value);
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 
-        public override FtIpFlowControlResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override FtGatedLaunchPolicy3ApiResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return FtIpFlowControlResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return FtGatedLaunchPolicy3ApiResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

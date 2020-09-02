@@ -22,76 +22,84 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
 {
-	public class FtIpFlowControlResponse : AcsResponse
+	public class TestXmlServiceRoutePolicyResponse : AcsResponse
 	{
 
-		private string requestId;
+		private List<TestXmlServiceRoutePolicy_Sdw> db;
 
-		private List<string> names;
+		private List<string> ban;
 
-		private List<string> names01;
+		private TestXmlServiceRoutePolicy__Add _add;
 
-		private List<string> integerList;
-
-		private List<string> integerList1;
-
-		public string RequestId
+		public List<TestXmlServiceRoutePolicy_Sdw> Db
 		{
 			get
 			{
-				return requestId;
+				return db;
 			}
 			set	
 			{
-				requestId = value;
+				db = value;
 			}
 		}
 
-		public List<string> Names
+		public List<string> Ban
 		{
 			get
 			{
-				return names;
+				return ban;
 			}
 			set	
 			{
-				names = value;
+				ban = value;
 			}
 		}
 
-		public List<string> Names01
+		public TestXmlServiceRoutePolicy__Add _Add
 		{
 			get
 			{
-				return names01;
+				return _add;
 			}
 			set	
 			{
-				names01 = value;
+				_add = value;
 			}
 		}
 
-		public List<string> IntegerList
+		public class TestXmlServiceRoutePolicy_Sdw
 		{
-			get
+
+			private int? import;
+
+			public int? Import
 			{
-				return integerList;
-			}
-			set	
-			{
-				integerList = value;
+				get
+				{
+					return import;
+				}
+				set	
+				{
+					import = value;
+				}
 			}
 		}
 
-		public List<string> IntegerList1
+		public class TestXmlServiceRoutePolicy__Add
 		{
-			get
+
+			private string o;
+
+			public string O
 			{
-				return integerList1;
-			}
-			set	
-			{
-				integerList1 = value;
+				get
+				{
+					return o;
+				}
+				set	
+				{
+					o = value;
+				}
 			}
 		}
 	}

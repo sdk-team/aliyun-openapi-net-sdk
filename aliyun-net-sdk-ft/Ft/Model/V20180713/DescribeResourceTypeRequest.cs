@@ -28,37 +28,86 @@ using Aliyun.Acs.Ft.Transform.V20180713;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
 {
-    public class FtIpFlowControlRequest : RpcAcsRequest<FtIpFlowControlResponse>
+    public class DescribeResourceTypeRequest : RpcAcsRequest<DescribeResourceTypeResponse>
     {
-        public FtIpFlowControlRequest()
-            : base("Ft", "2018-07-13", "FtIpFlowControl")
+        public DescribeResourceTypeRequest()
+            : base("Ft", "2018-07-13", "DescribeResourceType")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
-			Method = MethodType.POST;
         }
 
-		private string stringList;
+		private string product;
 
-		public string StringList
+		private string acceptLanguage;
+
+		private string env;
+
+		private string resourceType;
+
+		public string Product
 		{
 			get
 			{
-				return stringList;
+				return product;
 			}
 			set	
 			{
-				stringList = value;
-				DictionaryUtil.Add(QueryParameters, "StringList", value);
+				product = value;
+				DictionaryUtil.Add(QueryParameters, "Product", value);
 			}
 		}
 
-        public override FtIpFlowControlResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string AcceptLanguage
+		{
+			get
+			{
+				return acceptLanguage;
+			}
+			set	
+			{
+				acceptLanguage = value;
+				DictionaryUtil.Add(QueryParameters, "AcceptLanguage", value);
+			}
+		}
+
+		public string Env
+		{
+			get
+			{
+				return env;
+			}
+			set	
+			{
+				env = value;
+				DictionaryUtil.Add(QueryParameters, "Env", value);
+			}
+		}
+
+		public string ResourceType
+		{
+			get
+			{
+				return resourceType;
+			}
+			set	
+			{
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeResourceTypeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return FtIpFlowControlResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeResourceTypeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

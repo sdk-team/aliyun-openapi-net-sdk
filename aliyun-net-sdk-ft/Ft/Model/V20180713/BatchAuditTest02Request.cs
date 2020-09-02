@@ -28,10 +28,10 @@ using Aliyun.Acs.Ft.Transform.V20180713;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
 {
-    public class FtIpFlowControlRequest : RpcAcsRequest<FtIpFlowControlResponse>
+    public class BatchAuditTest02Request : RpcAcsRequest<BatchAuditTest02Response>
     {
-        public FtIpFlowControlRequest()
-            : base("Ft", "2018-07-13", "FtIpFlowControl")
+        public BatchAuditTest02Request()
+            : base("Ft", "2018-07-13", "BatchAuditTest02")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,24 +41,39 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			Method = MethodType.POST;
         }
 
-		private string stringList;
+		private string name;
 
-		public string StringList
+		private string batchAuditTest01;
+
+		public string Name
 		{
 			get
 			{
-				return stringList;
+				return name;
 			}
 			set	
 			{
-				stringList = value;
-				DictionaryUtil.Add(QueryParameters, "StringList", value);
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 
-        public override FtIpFlowControlResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string BatchAuditTest01
+		{
+			get
+			{
+				return batchAuditTest01;
+			}
+			set	
+			{
+				batchAuditTest01 = value;
+				DictionaryUtil.Add(QueryParameters, "BatchAuditTest01", value);
+			}
+		}
+
+        public override BatchAuditTest02Response GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return FtIpFlowControlResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return BatchAuditTest02ResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

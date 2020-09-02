@@ -28,10 +28,10 @@ using Aliyun.Acs.Ft.Transform.V20180713;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
 {
-    public class BatchAuditTest01Request : RpcAcsRequest<BatchAuditTest01Response>
+    public class QueryDomainChangeRecordsRequest : RpcAcsRequest<QueryDomainChangeRecordsResponse>
     {
-        public BatchAuditTest01Request()
-            : base("Ft", "2018-07-13", "BatchAuditTest01")
+        public QueryDomainChangeRecordsRequest()
+            : base("Ft", "2018-07-13", "QueryDomainChangeRecords")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,63 +41,93 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			Method = MethodType.POST;
         }
 
-		private string demo01;
+		private string product;
 
-		private bool? test010101;
+		private int? pageSize;
 
-		private string name;
+		private long? bucUid;
 
-		private string batchAuditTest01;
+		private int? currentPage;
 
-		public string Demo01
+		private string bucName;
+
+		private string bucEmpId;
+
+		public string Product
 		{
 			get
 			{
-				return demo01;
+				return product;
 			}
 			set	
 			{
-				demo01 = value;
-				DictionaryUtil.Add(QueryParameters, "Demo01", value);
+				product = value;
+				DictionaryUtil.Add(QueryParameters, "Product", value);
 			}
 		}
 
-		public bool? Test010101
+		public int? PageSize
 		{
 			get
 			{
-				return test010101;
+				return pageSize;
 			}
 			set	
 			{
-				test010101 = value;
-				DictionaryUtil.Add(BodyParameters, "Test010101", value.ToString());
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
-		public string Name
+		public long? BucUid
 		{
 			get
 			{
-				return name;
+				return bucUid;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				bucUid = value;
+				DictionaryUtil.Add(QueryParameters, "BucUid", value.ToString());
 			}
 		}
 
-		public string BatchAuditTest01
+		public int? CurrentPage
 		{
 			get
 			{
-				return batchAuditTest01;
+				return currentPage;
 			}
 			set	
 			{
-				batchAuditTest01 = value;
-				DictionaryUtil.Add(QueryParameters, "BatchAuditTest01", value);
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public string BucName
+		{
+			get
+			{
+				return bucName;
+			}
+			set	
+			{
+				bucName = value;
+				DictionaryUtil.Add(QueryParameters, "BucName", value);
+			}
+		}
+
+		public string BucEmpId
+		{
+			get
+			{
+				return bucEmpId;
+			}
+			set	
+			{
+				bucEmpId = value;
+				DictionaryUtil.Add(QueryParameters, "BucEmpId", value);
 			}
 		}
 
@@ -106,9 +136,9 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			return false;
 		}
 
-        public override BatchAuditTest01Response GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryDomainChangeRecordsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return BatchAuditTest01ResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryDomainChangeRecordsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

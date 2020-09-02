@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			Method = MethodType.POST;
         }
 
+		private string ispSignatureSecretKey;
+
 		private string stringValue;
 
 		private string otherParam;
@@ -49,6 +51,21 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 		private bool? booleanParam;
 
 		private string defaultValue;
+
+		private string ispSignature;
+
+		public string IspSignatureSecretKey
+		{
+			get
+			{
+				return ispSignatureSecretKey;
+			}
+			set	
+			{
+				ispSignatureSecretKey = value;
+				DictionaryUtil.Add(QueryParameters, "IspSignatureSecretKey", value);
+			}
+		}
 
 		public string StringValue
 		{
@@ -59,7 +76,7 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			set	
 			{
 				stringValue = value;
-				DictionaryUtil.Add(QueryParameters, "StringValue", value);
+				DictionaryUtil.Add(BodyParameters, "StringValue", value);
 			}
 		}
 
@@ -72,7 +89,7 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			set	
 			{
 				otherParam = value;
-				DictionaryUtil.Add(QueryParameters, "OtherParam", value);
+				DictionaryUtil.Add(BodyParameters, "OtherParam", value);
 			}
 		}
 
@@ -98,7 +115,20 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			set	
 			{
 				defaultValue = value;
-				DictionaryUtil.Add(QueryParameters, "DefaultValue", value);
+				DictionaryUtil.Add(BodyParameters, "DefaultValue", value);
+			}
+		}
+
+		public string IspSignature
+		{
+			get
+			{
+				return ispSignature;
+			}
+			set	
+			{
+				ispSignature = value;
+				DictionaryUtil.Add(QueryParameters, "IspSignature", value);
 			}
 		}
 

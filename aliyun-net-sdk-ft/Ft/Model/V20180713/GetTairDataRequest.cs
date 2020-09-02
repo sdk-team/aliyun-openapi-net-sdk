@@ -28,10 +28,10 @@ using Aliyun.Acs.Ft.Transform.V20180713;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
 {
-    public class FtIpFlowControlRequest : RpcAcsRequest<FtIpFlowControlResponse>
+    public class GetTairDataRequest : RpcAcsRequest<GetTairDataResponse>
     {
-        public FtIpFlowControlRequest()
-            : base("Ft", "2018-07-13", "FtIpFlowControl")
+        public GetTairDataRequest()
+            : base("Ft", "2018-07-13", "GetTairData")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,24 +41,48 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			Method = MethodType.POST;
         }
 
-		private string stringList;
+		private List<string> keyss = new List<string>(){ };
 
-		public string StringList
+		private string cacheName;
+
+		public List<string> Keyss
 		{
 			get
 			{
-				return stringList;
+				return keyss;
 			}
-			set	
+
+			set
 			{
-				stringList = value;
-				DictionaryUtil.Add(QueryParameters, "StringList", value);
+				keyss = value;
+				for (int i = 0; i < keyss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Keys." + (i + 1) , keyss[i]);
+				}
 			}
 		}
 
-        public override FtIpFlowControlResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string CacheName
+		{
+			get
+			{
+				return cacheName;
+			}
+			set	
+			{
+				cacheName = value;
+				DictionaryUtil.Add(QueryParameters, "CacheName", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override GetTairDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return FtIpFlowControlResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetTairDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

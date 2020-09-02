@@ -28,37 +28,81 @@ using Aliyun.Acs.Ft.Transform.V20180713;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
 {
-    public class FtIpFlowControlRequest : RpcAcsRequest<FtIpFlowControlResponse>
+    public class TestErrorCodeForGateWayRequest : RpcAcsRequest<TestErrorCodeForGateWayResponse>
     {
-        public FtIpFlowControlRequest()
-            : base("Ft", "2018-07-13", "FtIpFlowControl")
+        public TestErrorCodeForGateWayRequest()
+            : base("Ft", "2018-07-13", "TestErrorCodeForGateWay")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
-			Method = MethodType.POST;
         }
 
-		private string stringList;
+		private string httpStatusCode;
 
-		public string StringList
+		private string code;
+
+		private string success;
+
+		private string message;
+
+		public string HttpStatusCode
 		{
 			get
 			{
-				return stringList;
+				return httpStatusCode;
 			}
 			set	
 			{
-				stringList = value;
-				DictionaryUtil.Add(QueryParameters, "StringList", value);
+				httpStatusCode = value;
+				DictionaryUtil.Add(QueryParameters, "HttpStatusCode", value);
 			}
 		}
 
-        public override FtIpFlowControlResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+				DictionaryUtil.Add(QueryParameters, "Code", value);
+			}
+		}
+
+		public string Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+				DictionaryUtil.Add(QueryParameters, "Success", value);
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+				DictionaryUtil.Add(QueryParameters, "Message", value);
+			}
+		}
+
+        public override TestErrorCodeForGateWayResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return FtIpFlowControlResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return TestErrorCodeForGateWayResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
