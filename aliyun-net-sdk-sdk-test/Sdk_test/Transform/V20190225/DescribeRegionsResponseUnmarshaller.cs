@@ -26,12 +26,12 @@ namespace Aliyun.Acs.sdk_test.Transform.V20190225
 {
     public class DescribeRegionsResponseUnmarshaller
     {
-        public static DescribeRegionsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRegionsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRegionsResponse describeRegionsResponse = new DescribeRegionsResponse();
 
-			describeRegionsResponse.HttpResponse = context.HttpResponse;
-			describeRegionsResponse.RequestId = context.StringValue("DescribeRegions.RequestId");
+			describeRegionsResponse.HttpResponse = _ctx.HttpResponse;
+			describeRegionsResponse.RequestId = _ctx.StringValue("DescribeRegions.RequestId");
         
 			return describeRegionsResponse;
         }
