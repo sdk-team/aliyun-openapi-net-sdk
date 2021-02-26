@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Ft.Transform.V20180713
 {
     public class TestDubboRetryApiResponseUnmarshaller
     {
-        public static TestDubboRetryApiResponse Unmarshall(UnmarshallerContext context)
+        public static TestDubboRetryApiResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			TestDubboRetryApiResponse testDubboRetryApiResponse = new TestDubboRetryApiResponse();
 
-			testDubboRetryApiResponse.HttpResponse = context.HttpResponse;
-			testDubboRetryApiResponse.RequestId = context.StringValue("TestDubboRetryApi.RequestId");
+			testDubboRetryApiResponse.HttpResponse = _ctx.HttpResponse;
+			testDubboRetryApiResponse.RequestId = _ctx.StringValue("TestDubboRetryApi.RequestId");
         
 			return testDubboRetryApiResponse;
         }

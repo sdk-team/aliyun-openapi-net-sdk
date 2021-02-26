@@ -24,21 +24,21 @@ using Aliyun.Acs.Ft.Model.V20180713;
 
 namespace Aliyun.Acs.Ft.Transform.V20180713
 {
-    public class MigrateStrategyResponseUnmarshaller
+    public class QueryErrorApisResponseUnmarshaller
     {
-        public static MigrateStrategyResponse Unmarshall(UnmarshallerContext _ctx)
+        public static QueryErrorApisResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			MigrateStrategyResponse migrateStrategyResponse = new MigrateStrategyResponse();
+			QueryErrorApisResponse queryErrorApisResponse = new QueryErrorApisResponse();
 
-			migrateStrategyResponse.HttpResponse = _ctx.HttpResponse;
-			migrateStrategyResponse.RequestId = _ctx.StringValue("MigrateStrategy.RequestId");
-			migrateStrategyResponse.Success = _ctx.BooleanValue("MigrateStrategy.Success");
-			migrateStrategyResponse.Code = _ctx.StringValue("MigrateStrategy.Code");
-			migrateStrategyResponse.Message = _ctx.StringValue("MigrateStrategy.Message");
-			migrateStrategyResponse.MessageCN = _ctx.StringValue("MigrateStrategy.MessageCN");
-			migrateStrategyResponse.Data = _ctx.BooleanValue("MigrateStrategy.Data");
+			queryErrorApisResponse.HttpResponse = _ctx.HttpResponse;
+			queryErrorApisResponse.Code = _ctx.StringValue("QueryErrorApis.Code");
+			queryErrorApisResponse.Data = _ctx.BooleanValue("QueryErrorApis.Data");
+			queryErrorApisResponse.Message = _ctx.StringValue("QueryErrorApis.Message");
+			queryErrorApisResponse.MessageCN = _ctx.StringValue("QueryErrorApis.MessageCN");
+			queryErrorApisResponse.RequestId = _ctx.StringValue("QueryErrorApis.RequestId");
+			queryErrorApisResponse.Success = _ctx.BooleanValue("QueryErrorApis.Success");
         
-			return migrateStrategyResponse;
+			return queryErrorApisResponse;
         }
     }
 }

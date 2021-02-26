@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Ft.Transform.V20180713
 {
     public class TestIspHttpValidatorResponseUnmarshaller
     {
-        public static TestIspHttpValidatorResponse Unmarshall(UnmarshallerContext context)
+        public static TestIspHttpValidatorResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			TestIspHttpValidatorResponse testIspHttpValidatorResponse = new TestIspHttpValidatorResponse();
 
-			testIspHttpValidatorResponse.HttpResponse = context.HttpResponse;
-			testIspHttpValidatorResponse.Success = context.BooleanValue("TestIspHttpValidator.Success");
-			testIspHttpValidatorResponse.Message = context.StringValue("TestIspHttpValidator.Message");
+			testIspHttpValidatorResponse.HttpResponse = _ctx.HttpResponse;
+			testIspHttpValidatorResponse.Success = _ctx.BooleanValue("TestIspHttpValidator.Success");
+			testIspHttpValidatorResponse.Message = _ctx.StringValue("TestIspHttpValidator.Message");
         
 			return testIspHttpValidatorResponse;
         }

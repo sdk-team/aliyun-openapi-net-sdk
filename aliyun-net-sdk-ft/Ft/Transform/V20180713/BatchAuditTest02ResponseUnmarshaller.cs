@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Ft.Transform.V20180713
 {
     public class BatchAuditTest02ResponseUnmarshaller
     {
-        public static BatchAuditTest02Response Unmarshall(UnmarshallerContext context)
+        public static BatchAuditTest02Response Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchAuditTest02Response batchAuditTest02Response = new BatchAuditTest02Response();
 
-			batchAuditTest02Response.HttpResponse = context.HttpResponse;
-			batchAuditTest02Response.RequestId = context.StringValue("BatchAuditTest02.RequestId");
-			batchAuditTest02Response.Name = context.StringValue("BatchAuditTest02.Name");
+			batchAuditTest02Response.HttpResponse = _ctx.HttpResponse;
+			batchAuditTest02Response.RequestId = _ctx.StringValue("BatchAuditTest02.RequestId");
+			batchAuditTest02Response.Name = _ctx.StringValue("BatchAuditTest02.Name");
         
 			return batchAuditTest02Response;
         }

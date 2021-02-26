@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Ft.Transform.V20180713
 {
     public class TestErrorCodeForGateWayResponseUnmarshaller
     {
-        public static TestErrorCodeForGateWayResponse Unmarshall(UnmarshallerContext context)
+        public static TestErrorCodeForGateWayResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			TestErrorCodeForGateWayResponse testErrorCodeForGateWayResponse = new TestErrorCodeForGateWayResponse();
 
-			testErrorCodeForGateWayResponse.HttpResponse = context.HttpResponse;
-			testErrorCodeForGateWayResponse.Success = context.StringValue("TestErrorCodeForGateWay.Success");
-			testErrorCodeForGateWayResponse.Code = context.StringValue("TestErrorCodeForGateWay.Code");
-			testErrorCodeForGateWayResponse.Message = context.StringValue("TestErrorCodeForGateWay.Message");
-			testErrorCodeForGateWayResponse.HttpStatusCode = context.StringValue("TestErrorCodeForGateWay.HttpStatusCode");
-			testErrorCodeForGateWayResponse.RequestId = context.StringValue("TestErrorCodeForGateWay.RequestId");
+			testErrorCodeForGateWayResponse.HttpResponse = _ctx.HttpResponse;
+			testErrorCodeForGateWayResponse.Success = _ctx.StringValue("TestErrorCodeForGateWay.Success");
+			testErrorCodeForGateWayResponse.Code = _ctx.StringValue("TestErrorCodeForGateWay.Code");
+			testErrorCodeForGateWayResponse.Message = _ctx.StringValue("TestErrorCodeForGateWay.Message");
+			testErrorCodeForGateWayResponse.HttpStatusCode = _ctx.StringValue("TestErrorCodeForGateWay.HttpStatusCode");
+			testErrorCodeForGateWayResponse.RequestId = _ctx.StringValue("TestErrorCodeForGateWay.RequestId");
         
 			return testErrorCodeForGateWayResponse;
         }

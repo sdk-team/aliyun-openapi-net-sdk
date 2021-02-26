@@ -35,6 +35,8 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 
 		private string requestId;
 
+		private string nullValue;
+
 		private GetMigrateStrategyResult_Data data;
 
 		public bool? Success
@@ -97,6 +99,18 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			}
 		}
 
+		public string NullValue
+		{
+			get
+			{
+				return nullValue;
+			}
+			set	
+			{
+				nullValue = value;
+			}
+		}
+
 		public GetMigrateStrategyResult_Data Data
 		{
 			get
@@ -117,6 +131,8 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			private int? currentPage;
 
 			private int? totalItem;
+
+			private string testNull;
 
 			private List<GetMigrateStrategyResult_DataListItem> dataList;
 
@@ -153,6 +169,18 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 				set	
 				{
 					totalItem = value;
+				}
+			}
+
+			public string TestNull
+			{
+				get
+				{
+					return testNull;
+				}
+				set	
+				{
+					testNull = value;
 				}
 			}
 

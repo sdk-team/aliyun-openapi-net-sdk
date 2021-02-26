@@ -26,44 +26,46 @@ namespace Aliyun.Acs.Ft.Transform.V20180713
 {
     public class GetMigrateStrategyResultResponseUnmarshaller
     {
-        public static GetMigrateStrategyResultResponse Unmarshall(UnmarshallerContext context)
+        public static GetMigrateStrategyResultResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetMigrateStrategyResultResponse getMigrateStrategyResultResponse = new GetMigrateStrategyResultResponse();
 
-			getMigrateStrategyResultResponse.HttpResponse = context.HttpResponse;
-			getMigrateStrategyResultResponse.Success = context.BooleanValue("GetMigrateStrategyResult.Success");
-			getMigrateStrategyResultResponse.Code = context.StringValue("GetMigrateStrategyResult.Code");
-			getMigrateStrategyResultResponse.Message = context.StringValue("GetMigrateStrategyResult.Message");
-			getMigrateStrategyResultResponse.MessageCN = context.StringValue("GetMigrateStrategyResult.MessageCN");
-			getMigrateStrategyResultResponse.RequestId = context.StringValue("GetMigrateStrategyResult.RequestId");
+			getMigrateStrategyResultResponse.HttpResponse = _ctx.HttpResponse;
+			getMigrateStrategyResultResponse.Success = _ctx.BooleanValue("GetMigrateStrategyResult.Success");
+			getMigrateStrategyResultResponse.Code = _ctx.StringValue("GetMigrateStrategyResult.Code");
+			getMigrateStrategyResultResponse.Message = _ctx.StringValue("GetMigrateStrategyResult.Message");
+			getMigrateStrategyResultResponse.MessageCN = _ctx.StringValue("GetMigrateStrategyResult.MessageCN");
+			getMigrateStrategyResultResponse.RequestId = _ctx.StringValue("GetMigrateStrategyResult.RequestId");
+			getMigrateStrategyResultResponse.NullValue = _ctx.StringValue("GetMigrateStrategyResult.NullValue");
 
 			GetMigrateStrategyResultResponse.GetMigrateStrategyResult_Data data = new GetMigrateStrategyResultResponse.GetMigrateStrategyResult_Data();
-			data.PageSize = context.IntegerValue("GetMigrateStrategyResult.Data.PageSize");
-			data.CurrentPage = context.IntegerValue("GetMigrateStrategyResult.Data.CurrentPage");
-			data.TotalItem = context.IntegerValue("GetMigrateStrategyResult.Data.TotalItem");
+			data.PageSize = _ctx.IntegerValue("GetMigrateStrategyResult.Data.PageSize");
+			data.CurrentPage = _ctx.IntegerValue("GetMigrateStrategyResult.Data.CurrentPage");
+			data.TotalItem = _ctx.IntegerValue("GetMigrateStrategyResult.Data.TotalItem");
+			data.TestNull = _ctx.StringValue("GetMigrateStrategyResult.Data.TestNull");
 
 			List<GetMigrateStrategyResultResponse.GetMigrateStrategyResult_Data.GetMigrateStrategyResult_DataListItem> data_dataList = new List<GetMigrateStrategyResultResponse.GetMigrateStrategyResult_Data.GetMigrateStrategyResult_DataListItem>();
-			for (int i = 0; i < context.Length("GetMigrateStrategyResult.Data.DataList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetMigrateStrategyResult.Data.DataList.Length"); i++) {
 				GetMigrateStrategyResultResponse.GetMigrateStrategyResult_Data.GetMigrateStrategyResult_DataListItem dataListItem = new GetMigrateStrategyResultResponse.GetMigrateStrategyResult_Data.GetMigrateStrategyResult_DataListItem();
-				dataListItem.Id = context.LongValue("GetMigrateStrategyResult.Data.DataList["+ i +"].Id");
-				dataListItem.CreateTime = context.StringValue("GetMigrateStrategyResult.Data.DataList["+ i +"].CreateTime");
-				dataListItem.ModifiedTime = context.StringValue("GetMigrateStrategyResult.Data.DataList["+ i +"].ModifiedTime");
-				dataListItem.RecordVersion = context.IntegerValue("GetMigrateStrategyResult.Data.DataList["+ i +"].RecordVersion");
-				dataListItem.Env = context.StringValue("GetMigrateStrategyResult.Data.DataList["+ i +"].Env");
-				dataListItem.Product = context.StringValue("GetMigrateStrategyResult.Data.DataList["+ i +"].Product");
-				dataListItem.Version = context.StringValue("GetMigrateStrategyResult.Data.DataList["+ i +"].Version");
-				dataListItem.Api = context.StringValue("GetMigrateStrategyResult.Data.DataList["+ i +"].Api");
-				dataListItem.StrategyName = context.StringValue("GetMigrateStrategyResult.Data.DataList["+ i +"].StrategyName");
-				dataListItem.ParentName = context.StringValue("GetMigrateStrategyResult.Data.DataList["+ i +"].ParentName");
-				dataListItem.Type = context.StringValue("GetMigrateStrategyResult.Data.DataList["+ i +"].Type");
-				dataListItem.FlowSpecial = context.StringValue("GetMigrateStrategyResult.Data.DataList["+ i +"].FlowSpecial");
-				dataListItem.DataItem = context.StringValue("GetMigrateStrategyResult.Data.DataList["+ i +"].DataItem");
-				dataListItem.Status = context.StringValue("GetMigrateStrategyResult.Data.DataList["+ i +"].Status");
+				dataListItem.Id = _ctx.LongValue("GetMigrateStrategyResult.Data.DataList["+ i +"].Id");
+				dataListItem.CreateTime = _ctx.StringValue("GetMigrateStrategyResult.Data.DataList["+ i +"].CreateTime");
+				dataListItem.ModifiedTime = _ctx.StringValue("GetMigrateStrategyResult.Data.DataList["+ i +"].ModifiedTime");
+				dataListItem.RecordVersion = _ctx.IntegerValue("GetMigrateStrategyResult.Data.DataList["+ i +"].RecordVersion");
+				dataListItem.Env = _ctx.StringValue("GetMigrateStrategyResult.Data.DataList["+ i +"].Env");
+				dataListItem.Product = _ctx.StringValue("GetMigrateStrategyResult.Data.DataList["+ i +"].Product");
+				dataListItem.Version = _ctx.StringValue("GetMigrateStrategyResult.Data.DataList["+ i +"].Version");
+				dataListItem.Api = _ctx.StringValue("GetMigrateStrategyResult.Data.DataList["+ i +"].Api");
+				dataListItem.StrategyName = _ctx.StringValue("GetMigrateStrategyResult.Data.DataList["+ i +"].StrategyName");
+				dataListItem.ParentName = _ctx.StringValue("GetMigrateStrategyResult.Data.DataList["+ i +"].ParentName");
+				dataListItem.Type = _ctx.StringValue("GetMigrateStrategyResult.Data.DataList["+ i +"].Type");
+				dataListItem.FlowSpecial = _ctx.StringValue("GetMigrateStrategyResult.Data.DataList["+ i +"].FlowSpecial");
+				dataListItem.DataItem = _ctx.StringValue("GetMigrateStrategyResult.Data.DataList["+ i +"].DataItem");
+				dataListItem.Status = _ctx.StringValue("GetMigrateStrategyResult.Data.DataList["+ i +"].Status");
 
 				GetMigrateStrategyResultResponse.GetMigrateStrategyResult_Data.GetMigrateStrategyResult_DataListItem.GetMigrateStrategyResult_Modifier modifier = new GetMigrateStrategyResultResponse.GetMigrateStrategyResult_Data.GetMigrateStrategyResult_DataListItem.GetMigrateStrategyResult_Modifier();
-				modifier.Id = context.StringValue("GetMigrateStrategyResult.Data.DataList["+ i +"].Modifier.Id");
-				modifier.Name = context.StringValue("GetMigrateStrategyResult.Data.DataList["+ i +"].Modifier.Name");
-				modifier.BucId = context.StringValue("GetMigrateStrategyResult.Data.DataList["+ i +"].Modifier.BucId");
+				modifier.Id = _ctx.StringValue("GetMigrateStrategyResult.Data.DataList["+ i +"].Modifier.Id");
+				modifier.Name = _ctx.StringValue("GetMigrateStrategyResult.Data.DataList["+ i +"].Modifier.Name");
+				modifier.BucId = _ctx.StringValue("GetMigrateStrategyResult.Data.DataList["+ i +"].Modifier.BucId");
 				dataListItem.Modifier = modifier;
 
 				data_dataList.Add(dataListItem);

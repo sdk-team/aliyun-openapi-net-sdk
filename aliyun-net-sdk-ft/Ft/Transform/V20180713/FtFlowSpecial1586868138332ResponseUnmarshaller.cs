@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Ft.Transform.V20180713
 {
     public class FtFlowSpecial1586868138332ResponseUnmarshaller
     {
-        public static FtFlowSpecial1586868138332Response Unmarshall(UnmarshallerContext context)
+        public static FtFlowSpecial1586868138332Response Unmarshall(UnmarshallerContext _ctx)
         {
 			FtFlowSpecial1586868138332Response ftFlowSpecial1586868138332Response = new FtFlowSpecial1586868138332Response();
 
-			ftFlowSpecial1586868138332Response.HttpResponse = context.HttpResponse;
-			ftFlowSpecial1586868138332Response.RequestId = context.StringValue("FtFlowSpecial1586868138332.RequestId");
-			ftFlowSpecial1586868138332Response.Name = context.StringValue("FtFlowSpecial1586868138332.Name");
+			ftFlowSpecial1586868138332Response.HttpResponse = _ctx.HttpResponse;
+			ftFlowSpecial1586868138332Response.RequestId = _ctx.StringValue("FtFlowSpecial1586868138332.RequestId");
+			ftFlowSpecial1586868138332Response.Name = _ctx.StringValue("FtFlowSpecial1586868138332.Name");
         
 			return ftFlowSpecial1586868138332Response;
         }

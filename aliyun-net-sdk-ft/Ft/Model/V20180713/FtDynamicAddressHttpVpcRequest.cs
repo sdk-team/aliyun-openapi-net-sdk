@@ -28,10 +28,10 @@ using Aliyun.Acs.Ft.Transform.V20180713;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
 {
-    public class GetTairDataRequest : RpcAcsRequest<GetTairDataResponse>
+    public class FtDynamicAddressHttpVpcRequest : RpcAcsRequest<FtDynamicAddressHttpVpcResponse>
     {
-        public GetTairDataRequest()
-            : base("Ft", "2018-07-13", "GetTairData")
+        public FtDynamicAddressHttpVpcRequest()
+            : base("Ft", "2018-07-13", "FtDynamicAddressHttpVpc")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,37 +41,63 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			Method = MethodType.POST;
         }
 
-		private List<string> keyss = new List<string>(){ };
+		private string stringValue;
 
-		private string cacheName;
+		private string otherParam;
 
-		public List<string> Keyss
+		private bool? booleanParam;
+
+		private string defaultValue;
+
+		public string StringValue
 		{
 			get
 			{
-				return keyss;
-			}
-
-			set
-			{
-				keyss = value;
-				for (int i = 0; i < keyss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Keys." + (i + 1) , keyss[i]);
-				}
-			}
-		}
-
-		public string CacheName
-		{
-			get
-			{
-				return cacheName;
+				return stringValue;
 			}
 			set	
 			{
-				cacheName = value;
-				DictionaryUtil.Add(QueryParameters, "CacheName", value);
+				stringValue = value;
+				DictionaryUtil.Add(QueryParameters, "StringValue", value);
+			}
+		}
+
+		public string OtherParam
+		{
+			get
+			{
+				return otherParam;
+			}
+			set	
+			{
+				otherParam = value;
+				DictionaryUtil.Add(QueryParameters, "OtherParam", value);
+			}
+		}
+
+		public bool? BooleanParam
+		{
+			get
+			{
+				return booleanParam;
+			}
+			set	
+			{
+				booleanParam = value;
+				DictionaryUtil.Add(QueryParameters, "BooleanParam", value.ToString());
+			}
+		}
+
+		public string DefaultValue
+		{
+			get
+			{
+				return defaultValue;
+			}
+			set	
+			{
+				defaultValue = value;
+				DictionaryUtil.Add(QueryParameters, "DefaultValue", value);
 			}
 		}
 
@@ -80,9 +106,9 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			return false;
 		}
 
-        public override GetTairDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override FtDynamicAddressHttpVpcResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetTairDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return FtDynamicAddressHttpVpcResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

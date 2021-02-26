@@ -28,10 +28,10 @@ using Aliyun.Acs.Ft.Transform.V20180713;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
 {
-    public class GetTairDataRequest : RpcAcsRequest<GetTairDataResponse>
+    public class DeleteAllStrategyRequest : RpcAcsRequest<DeleteAllStrategyResponse>
     {
-        public GetTairDataRequest()
-            : base("Ft", "2018-07-13", "GetTairData")
+        public DeleteAllStrategyRequest()
+            : base("Ft", "2018-07-13", "DeleteAllStrategy")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,37 +41,78 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			Method = MethodType.POST;
         }
 
-		private List<string> keyss = new List<string>(){ };
+		private long? bucUid;
 
-		private string cacheName;
+		private string bucName;
 
-		public List<string> Keyss
+		private string bucEmpId;
+
+		private string productName;
+
+		private string env;
+
+		public long? BucUid
 		{
 			get
 			{
-				return keyss;
-			}
-
-			set
-			{
-				keyss = value;
-				for (int i = 0; i < keyss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Keys." + (i + 1) , keyss[i]);
-				}
-			}
-		}
-
-		public string CacheName
-		{
-			get
-			{
-				return cacheName;
+				return bucUid;
 			}
 			set	
 			{
-				cacheName = value;
-				DictionaryUtil.Add(QueryParameters, "CacheName", value);
+				bucUid = value;
+				DictionaryUtil.Add(QueryParameters, "BucUid", value.ToString());
+			}
+		}
+
+		public string BucName
+		{
+			get
+			{
+				return bucName;
+			}
+			set	
+			{
+				bucName = value;
+				DictionaryUtil.Add(QueryParameters, "BucName", value);
+			}
+		}
+
+		public string BucEmpId
+		{
+			get
+			{
+				return bucEmpId;
+			}
+			set	
+			{
+				bucEmpId = value;
+				DictionaryUtil.Add(QueryParameters, "BucEmpId", value);
+			}
+		}
+
+		public string ProductName
+		{
+			get
+			{
+				return productName;
+			}
+			set	
+			{
+				productName = value;
+				DictionaryUtil.Add(QueryParameters, "ProductName", value);
+			}
+		}
+
+		public string Env
+		{
+			get
+			{
+				return env;
+			}
+			set	
+			{
+				env = value;
+				DictionaryUtil.Add(QueryParameters, "Env", value);
 			}
 		}
 
@@ -80,9 +121,9 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			return false;
 		}
 
-        public override GetTairDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteAllStrategyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetTairDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteAllStrategyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Ft.Transform.V20180713
 {
     public class GetTairDataResponseUnmarshaller
     {
-        public static GetTairDataResponse Unmarshall(UnmarshallerContext context)
+        public static GetTairDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetTairDataResponse getTairDataResponse = new GetTairDataResponse();
 
-			getTairDataResponse.HttpResponse = context.HttpResponse;
-			getTairDataResponse.RequestId = context.StringValue("GetTairData.RequestId");
-			getTairDataResponse.Data = context.StringValue("GetTairData.Data");
-			getTairDataResponse.Success = context.BooleanValue("GetTairData.Success");
-			getTairDataResponse.Code = context.StringValue("GetTairData.Code");
-			getTairDataResponse.Message = context.StringValue("GetTairData.Message");
-			getTairDataResponse.ChineseMessage = context.StringValue("GetTairData.ChineseMessage");
-			getTairDataResponse.HttpStatusCode = context.IntegerValue("GetTairData.HttpStatusCode");
+			getTairDataResponse.HttpResponse = _ctx.HttpResponse;
+			getTairDataResponse.RequestId = _ctx.StringValue("GetTairData.RequestId");
+			getTairDataResponse.Data = _ctx.StringValue("GetTairData.Data");
+			getTairDataResponse.Success = _ctx.BooleanValue("GetTairData.Success");
+			getTairDataResponse.Code = _ctx.StringValue("GetTairData.Code");
+			getTairDataResponse.Message = _ctx.StringValue("GetTairData.Message");
+			getTairDataResponse.ChineseMessage = _ctx.StringValue("GetTairData.ChineseMessage");
+			getTairDataResponse.HttpStatusCode = _ctx.IntegerValue("GetTairData.HttpStatusCode");
         
 			return getTairDataResponse;
         }

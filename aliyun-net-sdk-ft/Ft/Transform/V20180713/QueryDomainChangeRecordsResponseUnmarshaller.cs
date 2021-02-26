@@ -26,17 +26,17 @@ namespace Aliyun.Acs.Ft.Transform.V20180713
 {
     public class QueryDomainChangeRecordsResponseUnmarshaller
     {
-        public static QueryDomainChangeRecordsResponse Unmarshall(UnmarshallerContext context)
+        public static QueryDomainChangeRecordsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryDomainChangeRecordsResponse queryDomainChangeRecordsResponse = new QueryDomainChangeRecordsResponse();
 
-			queryDomainChangeRecordsResponse.HttpResponse = context.HttpResponse;
-			queryDomainChangeRecordsResponse.Code = context.StringValue("QueryDomainChangeRecords.Code");
-			queryDomainChangeRecordsResponse.Data = context.BooleanValue("QueryDomainChangeRecords.Data");
-			queryDomainChangeRecordsResponse.Message = context.StringValue("QueryDomainChangeRecords.Message");
-			queryDomainChangeRecordsResponse.MessageCN = context.StringValue("QueryDomainChangeRecords.MessageCN");
-			queryDomainChangeRecordsResponse.RequestId = context.StringValue("QueryDomainChangeRecords.RequestId");
-			queryDomainChangeRecordsResponse.Success = context.BooleanValue("QueryDomainChangeRecords.Success");
+			queryDomainChangeRecordsResponse.HttpResponse = _ctx.HttpResponse;
+			queryDomainChangeRecordsResponse.Code = _ctx.StringValue("QueryDomainChangeRecords.Code");
+			queryDomainChangeRecordsResponse.Data = _ctx.BooleanValue("QueryDomainChangeRecords.Data");
+			queryDomainChangeRecordsResponse.Message = _ctx.StringValue("QueryDomainChangeRecords.Message");
+			queryDomainChangeRecordsResponse.MessageCN = _ctx.StringValue("QueryDomainChangeRecords.MessageCN");
+			queryDomainChangeRecordsResponse.RequestId = _ctx.StringValue("QueryDomainChangeRecords.RequestId");
+			queryDomainChangeRecordsResponse.Success = _ctx.BooleanValue("QueryDomainChangeRecords.Success");
         
 			return queryDomainChangeRecordsResponse;
         }

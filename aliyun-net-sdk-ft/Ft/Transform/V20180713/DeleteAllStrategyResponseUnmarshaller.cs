@@ -24,21 +24,21 @@ using Aliyun.Acs.Ft.Model.V20180713;
 
 namespace Aliyun.Acs.Ft.Transform.V20180713
 {
-    public class MigrateStrategyResponseUnmarshaller
+    public class DeleteAllStrategyResponseUnmarshaller
     {
-        public static MigrateStrategyResponse Unmarshall(UnmarshallerContext _ctx)
+        public static DeleteAllStrategyResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			MigrateStrategyResponse migrateStrategyResponse = new MigrateStrategyResponse();
+			DeleteAllStrategyResponse deleteAllStrategyResponse = new DeleteAllStrategyResponse();
 
-			migrateStrategyResponse.HttpResponse = _ctx.HttpResponse;
-			migrateStrategyResponse.RequestId = _ctx.StringValue("MigrateStrategy.RequestId");
-			migrateStrategyResponse.Success = _ctx.BooleanValue("MigrateStrategy.Success");
-			migrateStrategyResponse.Code = _ctx.StringValue("MigrateStrategy.Code");
-			migrateStrategyResponse.Message = _ctx.StringValue("MigrateStrategy.Message");
-			migrateStrategyResponse.MessageCN = _ctx.StringValue("MigrateStrategy.MessageCN");
-			migrateStrategyResponse.Data = _ctx.BooleanValue("MigrateStrategy.Data");
+			deleteAllStrategyResponse.HttpResponse = _ctx.HttpResponse;
+			deleteAllStrategyResponse.Code = _ctx.StringValue("DeleteAllStrategy.Code");
+			deleteAllStrategyResponse.Data = _ctx.BooleanValue("DeleteAllStrategy.Data");
+			deleteAllStrategyResponse.Message = _ctx.StringValue("DeleteAllStrategy.Message");
+			deleteAllStrategyResponse.MessageCN = _ctx.StringValue("DeleteAllStrategy.MessageCN");
+			deleteAllStrategyResponse.RequestId = _ctx.StringValue("DeleteAllStrategy.RequestId");
+			deleteAllStrategyResponse.Success = _ctx.BooleanValue("DeleteAllStrategy.Success");
         
-			return migrateStrategyResponse;
+			return deleteAllStrategyResponse;
         }
     }
 }

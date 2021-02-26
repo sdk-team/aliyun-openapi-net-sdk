@@ -26,22 +26,22 @@ namespace Aliyun.Acs.Ft.Transform.V20180713
 {
     public class TestFlowStrategy01ResponseUnmarshaller
     {
-        public static TestFlowStrategy01Response Unmarshall(UnmarshallerContext context)
+        public static TestFlowStrategy01Response Unmarshall(UnmarshallerContext _ctx)
         {
 			TestFlowStrategy01Response testFlowStrategy01Response = new TestFlowStrategy01Response();
 
-			testFlowStrategy01Response.HttpResponse = context.HttpResponse;
-			testFlowStrategy01Response.RequestId = context.StringValue("TestFlowStrategy01.RequestId");
+			testFlowStrategy01Response.HttpResponse = _ctx.HttpResponse;
+			testFlowStrategy01Response.RequestId = _ctx.StringValue("TestFlowStrategy01.RequestId");
 
 			List<string> testFlowStrategy01Response_list = new List<string>();
-			for (int i = 0; i < context.Length("TestFlowStrategy01.List.Length"); i++) {
-				testFlowStrategy01Response_list.Add(context.StringValue("TestFlowStrategy01.List["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("TestFlowStrategy01.List.Length"); i++) {
+				testFlowStrategy01Response_list.Add(_ctx.StringValue("TestFlowStrategy01.List["+ i +"]"));
 			}
 			testFlowStrategy01Response.List = testFlowStrategy01Response_list;
 
 			List<string> testFlowStrategy01Response_names = new List<string>();
-			for (int i = 0; i < context.Length("TestFlowStrategy01.Names.Length"); i++) {
-				testFlowStrategy01Response_names.Add(context.StringValue("TestFlowStrategy01.Names["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("TestFlowStrategy01.Names.Length"); i++) {
+				testFlowStrategy01Response_names.Add(_ctx.StringValue("TestFlowStrategy01.Names["+ i +"]"));
 			}
 			testFlowStrategy01Response.Names = testFlowStrategy01Response_names;
         

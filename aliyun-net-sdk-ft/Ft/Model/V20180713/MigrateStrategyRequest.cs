@@ -35,8 +35,8 @@ namespace Aliyun.Acs.Ft.Model.V20180713
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Ft.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Ft.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -46,6 +46,8 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 		private string productName;
 
 		private long? bucUid;
+
+		private long? step;
 
 		private string bucName;
 
@@ -64,7 +66,7 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			set	
 			{
 				apiName = value;
-				DictionaryUtil.Add(QueryParameters, "apiName", value);
+				DictionaryUtil.Add(QueryParameters, "ApiName", value);
 			}
 		}
 
@@ -91,6 +93,19 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			{
 				bucUid = value;
 				DictionaryUtil.Add(QueryParameters, "BucUid", value.ToString());
+			}
+		}
+
+		public long? Step
+		{
+			get
+			{
+				return step;
+			}
+			set	
+			{
+				step = value;
+				DictionaryUtil.Add(QueryParameters, "Step", value.ToString());
 			}
 		}
 

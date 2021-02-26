@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Ft.Transform.V20180713
 {
     public class FtGatedLaunchPolicy3ApiResponseUnmarshaller
     {
-        public static FtGatedLaunchPolicy3ApiResponse Unmarshall(UnmarshallerContext context)
+        public static FtGatedLaunchPolicy3ApiResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			FtGatedLaunchPolicy3ApiResponse ftGatedLaunchPolicy3ApiResponse = new FtGatedLaunchPolicy3ApiResponse();
 
-			ftGatedLaunchPolicy3ApiResponse.HttpResponse = context.HttpResponse;
-			ftGatedLaunchPolicy3ApiResponse.RequestId = context.StringValue("FtGatedLaunchPolicy3Api.RequestId");
-			ftGatedLaunchPolicy3ApiResponse.Name = context.StringValue("FtGatedLaunchPolicy3Api.Name");
+			ftGatedLaunchPolicy3ApiResponse.HttpResponse = _ctx.HttpResponse;
+			ftGatedLaunchPolicy3ApiResponse.RequestId = _ctx.StringValue("FtGatedLaunchPolicy3Api.RequestId");
+			ftGatedLaunchPolicy3ApiResponse.Name = _ctx.StringValue("FtGatedLaunchPolicy3Api.Name");
         
 			return ftGatedLaunchPolicy3ApiResponse;
         }

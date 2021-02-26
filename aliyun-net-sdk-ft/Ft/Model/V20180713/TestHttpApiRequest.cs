@@ -36,13 +36,11 @@ namespace Aliyun.Acs.Ft.Model.V20180713
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Ft.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Ft.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
-
-		private string ispSignatureSecretKey;
 
 		private string stringValue;
 
@@ -51,21 +49,6 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 		private bool? booleanParam;
 
 		private string defaultValue;
-
-		private string ispSignature;
-
-		public string IspSignatureSecretKey
-		{
-			get
-			{
-				return ispSignatureSecretKey;
-			}
-			set	
-			{
-				ispSignatureSecretKey = value;
-				DictionaryUtil.Add(QueryParameters, "IspSignatureSecretKey", value);
-			}
-		}
 
 		public string StringValue
 		{
@@ -76,7 +59,7 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			set	
 			{
 				stringValue = value;
-				DictionaryUtil.Add(BodyParameters, "StringValue", value);
+				DictionaryUtil.Add(QueryParameters, "StringValue", value);
 			}
 		}
 
@@ -89,7 +72,7 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			set	
 			{
 				otherParam = value;
-				DictionaryUtil.Add(BodyParameters, "OtherParam", value);
+				DictionaryUtil.Add(QueryParameters, "OtherParam", value);
 			}
 		}
 
@@ -115,20 +98,7 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			set	
 			{
 				defaultValue = value;
-				DictionaryUtil.Add(BodyParameters, "DefaultValue", value);
-			}
-		}
-
-		public string IspSignature
-		{
-			get
-			{
-				return ispSignature;
-			}
-			set	
-			{
-				ispSignature = value;
-				DictionaryUtil.Add(QueryParameters, "IspSignature", value);
+				DictionaryUtil.Add(QueryParameters, "DefaultValue", value);
 			}
 		}
 
