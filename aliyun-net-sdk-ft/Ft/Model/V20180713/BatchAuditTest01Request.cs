@@ -101,11 +101,6 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
         public override BatchAuditTest01Response GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return BatchAuditTest01ResponseUnmarshaller.Unmarshall(unmarshallerContext);

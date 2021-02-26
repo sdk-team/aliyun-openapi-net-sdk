@@ -41,6 +41,8 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			Method = MethodType.POST;
         }
 
+		private string p1;
+
 		private string stringValue;
 
 		private string otherParam;
@@ -48,6 +50,19 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 		private bool? booleanParam;
 
 		private string defaultValue;
+
+		public string P1
+		{
+			get
+			{
+				return p1;
+			}
+			set	
+			{
+				p1 = value;
+				DictionaryUtil.Add(QueryParameters, "P1", value);
+			}
+		}
 
 		public string StringValue
 		{
