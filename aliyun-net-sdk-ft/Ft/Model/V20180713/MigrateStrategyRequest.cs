@@ -28,10 +28,10 @@ using Aliyun.Acs.Ft.Transform.V20180713;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
 {
-    public class BatchAuditTest01Request : RpcAcsRequest<BatchAuditTest01Response>
+    public class MigrateStrategyRequest : RpcAcsRequest<MigrateStrategyResponse>
     {
-        public BatchAuditTest01Request()
-            : base("Ft", "2018-07-13", "BatchAuditTest01")
+        public MigrateStrategyRequest()
+            : base("Ft", "2018-07-13", "MigrateStrategy")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,63 +41,123 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			Method = MethodType.POST;
         }
 
-		private string demo01;
+		private string apiName;
 
-		private bool? test010101;
+		private string productName;
 
-		private string name;
+		private long? bucUid;
 
-		private string batchAuditTest01;
+		private long? step;
 
-		public string Demo01
+		private string bucName;
+
+		private string env;
+
+		private string bucEmpId;
+
+		private string versionName;
+
+		public string ApiName
 		{
 			get
 			{
-				return demo01;
+				return apiName;
 			}
 			set	
 			{
-				demo01 = value;
-				DictionaryUtil.Add(QueryParameters, "Demo01", value);
+				apiName = value;
+				DictionaryUtil.Add(QueryParameters, "ApiName", value);
 			}
 		}
 
-		public bool? Test010101
+		public string ProductName
 		{
 			get
 			{
-				return test010101;
+				return productName;
 			}
 			set	
 			{
-				test010101 = value;
-				DictionaryUtil.Add(BodyParameters, "Test010101", value.ToString());
+				productName = value;
+				DictionaryUtil.Add(QueryParameters, "ProductName", value);
 			}
 		}
 
-		public string Name
+		public long? BucUid
 		{
 			get
 			{
-				return name;
+				return bucUid;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				bucUid = value;
+				DictionaryUtil.Add(QueryParameters, "BucUid", value.ToString());
 			}
 		}
 
-		public string BatchAuditTest01
+		public long? Step
 		{
 			get
 			{
-				return batchAuditTest01;
+				return step;
 			}
 			set	
 			{
-				batchAuditTest01 = value;
-				DictionaryUtil.Add(QueryParameters, "BatchAuditTest01", value);
+				step = value;
+				DictionaryUtil.Add(QueryParameters, "Step", value.ToString());
+			}
+		}
+
+		public string BucName
+		{
+			get
+			{
+				return bucName;
+			}
+			set	
+			{
+				bucName = value;
+				DictionaryUtil.Add(QueryParameters, "BucName", value);
+			}
+		}
+
+		public string Env
+		{
+			get
+			{
+				return env;
+			}
+			set	
+			{
+				env = value;
+				DictionaryUtil.Add(QueryParameters, "Env", value);
+			}
+		}
+
+		public string BucEmpId
+		{
+			get
+			{
+				return bucEmpId;
+			}
+			set	
+			{
+				bucEmpId = value;
+				DictionaryUtil.Add(QueryParameters, "BucEmpId", value);
+			}
+		}
+
+		public string VersionName
+		{
+			get
+			{
+				return versionName;
+			}
+			set	
+			{
+				versionName = value;
+				DictionaryUtil.Add(QueryParameters, "VersionName", value);
 			}
 		}
 
@@ -106,9 +166,9 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			return false;
 		}
 
-        public override BatchAuditTest01Response GetResponse(UnmarshallerContext unmarshallerContext)
+        public override MigrateStrategyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return BatchAuditTest01ResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return MigrateStrategyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

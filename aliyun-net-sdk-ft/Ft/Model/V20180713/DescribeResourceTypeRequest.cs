@@ -28,76 +28,75 @@ using Aliyun.Acs.Ft.Transform.V20180713;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
 {
-    public class BatchAuditTest01Request : RpcAcsRequest<BatchAuditTest01Response>
+    public class DescribeResourceTypeRequest : RpcAcsRequest<DescribeResourceTypeResponse>
     {
-        public BatchAuditTest01Request()
-            : base("Ft", "2018-07-13", "BatchAuditTest01")
+        public DescribeResourceTypeRequest()
+            : base("Ft", "2018-07-13", "DescribeResourceType")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Ft.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Ft.Endpoint.endpointRegionalType, null);
             }
-			Method = MethodType.POST;
         }
 
-		private string demo01;
+		private string product;
 
-		private bool? test010101;
+		private string acceptLanguage;
 
-		private string name;
+		private string env;
 
-		private string batchAuditTest01;
+		private string resourceType;
 
-		public string Demo01
+		public string Product
 		{
 			get
 			{
-				return demo01;
+				return product;
 			}
 			set	
 			{
-				demo01 = value;
-				DictionaryUtil.Add(QueryParameters, "Demo01", value);
+				product = value;
+				DictionaryUtil.Add(QueryParameters, "Product", value);
 			}
 		}
 
-		public bool? Test010101
+		public string AcceptLanguage
 		{
 			get
 			{
-				return test010101;
+				return acceptLanguage;
 			}
 			set	
 			{
-				test010101 = value;
-				DictionaryUtil.Add(BodyParameters, "Test010101", value.ToString());
+				acceptLanguage = value;
+				DictionaryUtil.Add(QueryParameters, "AcceptLanguage", value);
 			}
 		}
 
-		public string Name
+		public string Env
 		{
 			get
 			{
-				return name;
+				return env;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				env = value;
+				DictionaryUtil.Add(QueryParameters, "Env", value);
 			}
 		}
 
-		public string BatchAuditTest01
+		public string ResourceType
 		{
 			get
 			{
-				return batchAuditTest01;
+				return resourceType;
 			}
 			set	
 			{
-				batchAuditTest01 = value;
-				DictionaryUtil.Add(QueryParameters, "BatchAuditTest01", value);
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
@@ -106,9 +105,9 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			return false;
 		}
 
-        public override BatchAuditTest01Response GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeResourceTypeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return BatchAuditTest01ResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeResourceTypeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

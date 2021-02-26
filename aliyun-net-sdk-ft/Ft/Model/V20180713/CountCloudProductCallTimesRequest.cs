@@ -28,10 +28,10 @@ using Aliyun.Acs.Ft.Transform.V20180713;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
 {
-    public class BatchAuditTest01Request : RpcAcsRequest<BatchAuditTest01Response>
+    public class CountCloudProductCallTimesRequest : RpcAcsRequest<CountCloudProductCallTimesResponse>
     {
-        public BatchAuditTest01Request()
-            : base("Ft", "2018-07-13", "BatchAuditTest01")
+        public CountCloudProductCallTimesRequest()
+            : base("Ft", "2018-07-13", "CountCloudProductCallTimes")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,63 +41,93 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			Method = MethodType.POST;
         }
 
-		private string demo01;
+		private long? bucUid;
 
-		private bool? test010101;
+		private string bucName;
 
-		private string name;
+		private string bucEmpId;
 
-		private string batchAuditTest01;
+		private string cloudProductsJsonString;
 
-		public string Demo01
+		private bool? clearCloudCache;
+
+		private bool? clearProductCache;
+
+		public long? BucUid
 		{
 			get
 			{
-				return demo01;
+				return bucUid;
 			}
 			set	
 			{
-				demo01 = value;
-				DictionaryUtil.Add(QueryParameters, "Demo01", value);
+				bucUid = value;
+				DictionaryUtil.Add(QueryParameters, "BucUid", value.ToString());
 			}
 		}
 
-		public bool? Test010101
+		public string BucName
 		{
 			get
 			{
-				return test010101;
+				return bucName;
 			}
 			set	
 			{
-				test010101 = value;
-				DictionaryUtil.Add(BodyParameters, "Test010101", value.ToString());
+				bucName = value;
+				DictionaryUtil.Add(QueryParameters, "BucName", value);
 			}
 		}
 
-		public string Name
+		public string BucEmpId
 		{
 			get
 			{
-				return name;
+				return bucEmpId;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				bucEmpId = value;
+				DictionaryUtil.Add(QueryParameters, "BucEmpId", value);
 			}
 		}
 
-		public string BatchAuditTest01
+		public string CloudProductsJsonString
 		{
 			get
 			{
-				return batchAuditTest01;
+				return cloudProductsJsonString;
 			}
 			set	
 			{
-				batchAuditTest01 = value;
-				DictionaryUtil.Add(QueryParameters, "BatchAuditTest01", value);
+				cloudProductsJsonString = value;
+				DictionaryUtil.Add(BodyParameters, "CloudProductsJsonString", value);
+			}
+		}
+
+		public bool? ClearCloudCache
+		{
+			get
+			{
+				return clearCloudCache;
+			}
+			set	
+			{
+				clearCloudCache = value;
+				DictionaryUtil.Add(BodyParameters, "ClearCloudCache", value.ToString());
+			}
+		}
+
+		public bool? ClearProductCache
+		{
+			get
+			{
+				return clearProductCache;
+			}
+			set	
+			{
+				clearProductCache = value;
+				DictionaryUtil.Add(BodyParameters, "ClearProductCache", value.ToString());
 			}
 		}
 
@@ -106,9 +136,9 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			return false;
 		}
 
-        public override BatchAuditTest01Response GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CountCloudProductCallTimesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return BatchAuditTest01ResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CountCloudProductCallTimesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

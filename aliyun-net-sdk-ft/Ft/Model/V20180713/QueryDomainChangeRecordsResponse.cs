@@ -22,18 +22,68 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
 {
-	public class FtIpFlowControlResponse : AcsResponse
+	public class QueryDomainChangeRecordsResponse : AcsResponse
 	{
+
+		private string code;
+
+		private bool? data;
+
+		private string message;
+
+		private string messageCN;
 
 		private string requestId;
 
-		private List<string> names;
+		private bool? success;
 
-		private List<string> names01;
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
 
-		private List<string> integerList;
+		public bool? Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
 
-		private List<string> integerList1;
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		public string MessageCN
+		{
+			get
+			{
+				return messageCN;
+			}
+			set	
+			{
+				messageCN = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -47,51 +97,15 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			}
 		}
 
-		public List<string> Names
+		public bool? Success
 		{
 			get
 			{
-				return names;
+				return success;
 			}
 			set	
 			{
-				names = value;
-			}
-		}
-
-		public List<string> Names01
-		{
-			get
-			{
-				return names01;
-			}
-			set	
-			{
-				names01 = value;
-			}
-		}
-
-		public List<string> IntegerList
-		{
-			get
-			{
-				return integerList;
-			}
-			set	
-			{
-				integerList = value;
-			}
-		}
-
-		public List<string> IntegerList1
-		{
-			get
-			{
-				return integerList1;
-			}
-			set	
-			{
-				integerList1 = value;
+				success = value;
 			}
 		}
 	}

@@ -28,10 +28,10 @@ using Aliyun.Acs.Ft.Transform.V20180713;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
 {
-    public class BatchAuditTest01Request : RpcAcsRequest<BatchAuditTest01Response>
+    public class FtGatedLaunchPolicy3ApiRequest : RpcAcsRequest<FtGatedLaunchPolicy3ApiResponse>
     {
-        public BatchAuditTest01Request()
-            : base("Ft", "2018-07-13", "BatchAuditTest01")
+        public FtGatedLaunchPolicy3ApiRequest()
+            : base("Ft", "2018-07-13", "FtGatedLaunchPolicy3Api")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,39 +41,7 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			Method = MethodType.POST;
         }
 
-		private string demo01;
-
-		private bool? test010101;
-
 		private string name;
-
-		private string batchAuditTest01;
-
-		public string Demo01
-		{
-			get
-			{
-				return demo01;
-			}
-			set	
-			{
-				demo01 = value;
-				DictionaryUtil.Add(QueryParameters, "Demo01", value);
-			}
-		}
-
-		public bool? Test010101
-		{
-			get
-			{
-				return test010101;
-			}
-			set	
-			{
-				test010101 = value;
-				DictionaryUtil.Add(BodyParameters, "Test010101", value.ToString());
-			}
-		}
 
 		public string Name
 		{
@@ -88,27 +56,9 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			}
 		}
 
-		public string BatchAuditTest01
-		{
-			get
-			{
-				return batchAuditTest01;
-			}
-			set	
-			{
-				batchAuditTest01 = value;
-				DictionaryUtil.Add(QueryParameters, "BatchAuditTest01", value);
-			}
-		}
-
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override BatchAuditTest01Response GetResponse(UnmarshallerContext unmarshallerContext)
+        public override FtGatedLaunchPolicy3ApiResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return BatchAuditTest01ResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return FtGatedLaunchPolicy3ApiResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

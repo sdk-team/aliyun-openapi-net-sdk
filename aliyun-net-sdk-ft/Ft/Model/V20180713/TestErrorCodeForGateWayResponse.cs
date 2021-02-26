@@ -22,18 +22,66 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
 {
-	public class FtIpFlowControlResponse : AcsResponse
+	public class TestErrorCodeForGateWayResponse : AcsResponse
 	{
+
+		private string success;
+
+		private string code;
+
+		private string message;
+
+		private string httpStatusCode;
 
 		private string requestId;
 
-		private List<string> names;
+		public string Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
 
-		private List<string> names01;
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
 
-		private List<string> integerList;
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
 
-		private List<string> integerList1;
+		public string HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,54 +92,6 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public List<string> Names
-		{
-			get
-			{
-				return names;
-			}
-			set	
-			{
-				names = value;
-			}
-		}
-
-		public List<string> Names01
-		{
-			get
-			{
-				return names01;
-			}
-			set	
-			{
-				names01 = value;
-			}
-		}
-
-		public List<string> IntegerList
-		{
-			get
-			{
-				return integerList;
-			}
-			set	
-			{
-				integerList = value;
-			}
-		}
-
-		public List<string> IntegerList1
-		{
-			get
-			{
-				return integerList1;
-			}
-			set	
-			{
-				integerList1 = value;
 			}
 		}
 	}

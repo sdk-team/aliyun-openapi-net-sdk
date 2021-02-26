@@ -28,10 +28,10 @@ using Aliyun.Acs.Ft.Transform.V20180713;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
 {
-    public class BatchAuditTest01Request : RpcAcsRequest<BatchAuditTest01Response>
+    public class BatchAuditTest02Request : RpcAcsRequest<BatchAuditTest02Response>
     {
-        public BatchAuditTest01Request()
-            : base("Ft", "2018-07-13", "BatchAuditTest01")
+        public BatchAuditTest02Request()
+            : base("Ft", "2018-07-13", "BatchAuditTest02")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,39 +41,9 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			Method = MethodType.POST;
         }
 
-		private string demo01;
-
-		private bool? test010101;
-
 		private string name;
 
 		private string batchAuditTest01;
-
-		public string Demo01
-		{
-			get
-			{
-				return demo01;
-			}
-			set	
-			{
-				demo01 = value;
-				DictionaryUtil.Add(QueryParameters, "Demo01", value);
-			}
-		}
-
-		public bool? Test010101
-		{
-			get
-			{
-				return test010101;
-			}
-			set	
-			{
-				test010101 = value;
-				DictionaryUtil.Add(BodyParameters, "Test010101", value.ToString());
-			}
-		}
 
 		public string Name
 		{
@@ -101,14 +71,9 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override BatchAuditTest01Response GetResponse(UnmarshallerContext unmarshallerContext)
+        public override BatchAuditTest02Response GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return BatchAuditTest01ResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return BatchAuditTest02ResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

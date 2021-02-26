@@ -28,10 +28,10 @@ using Aliyun.Acs.Ft.Transform.V20180713;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
 {
-    public class BatchAuditTest01Request : RpcAcsRequest<BatchAuditTest01Response>
+    public class GetTairDataRequest : RpcAcsRequest<GetTairDataResponse>
     {
-        public BatchAuditTest01Request()
-            : base("Ft", "2018-07-13", "BatchAuditTest01")
+        public GetTairDataRequest()
+            : base("Ft", "2018-07-13", "GetTairData")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,63 +41,37 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			Method = MethodType.POST;
         }
 
-		private string demo01;
+		private List<string> keyss = new List<string>(){ };
 
-		private bool? test010101;
+		private string cacheName;
 
-		private string name;
-
-		private string batchAuditTest01;
-
-		public string Demo01
+		public List<string> Keyss
 		{
 			get
 			{
-				return demo01;
+				return keyss;
 			}
-			set	
+
+			set
 			{
-				demo01 = value;
-				DictionaryUtil.Add(QueryParameters, "Demo01", value);
+				keyss = value;
+				for (int i = 0; i < keyss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Keys." + (i + 1) , keyss[i]);
+				}
 			}
 		}
 
-		public bool? Test010101
+		public string CacheName
 		{
 			get
 			{
-				return test010101;
+				return cacheName;
 			}
 			set	
 			{
-				test010101 = value;
-				DictionaryUtil.Add(BodyParameters, "Test010101", value.ToString());
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string BatchAuditTest01
-		{
-			get
-			{
-				return batchAuditTest01;
-			}
-			set	
-			{
-				batchAuditTest01 = value;
-				DictionaryUtil.Add(QueryParameters, "BatchAuditTest01", value);
+				cacheName = value;
+				DictionaryUtil.Add(QueryParameters, "CacheName", value);
 			}
 		}
 
@@ -106,9 +80,9 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			return false;
 		}
 
-        public override BatchAuditTest01Response GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetTairDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return BatchAuditTest01ResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetTairDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

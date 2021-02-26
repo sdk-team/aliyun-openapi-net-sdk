@@ -22,18 +22,20 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
 {
-	public class FtIpFlowControlResponse : AcsResponse
+	public class CountCloudProductCallTimesResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<string> names;
+		private bool? success;
 
-		private List<string> names01;
+		private string data;
 
-		private List<string> integerList;
+		private string code;
 
-		private List<string> integerList1;
+		private string message;
+
+		private string messageCN;
 
 		public string RequestId
 		{
@@ -47,51 +49,63 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			}
 		}
 
-		public List<string> Names
+		public bool? Success
 		{
 			get
 			{
-				return names;
+				return success;
 			}
 			set	
 			{
-				names = value;
+				success = value;
 			}
 		}
 
-		public List<string> Names01
+		public string Data
 		{
 			get
 			{
-				return names01;
+				return data;
 			}
 			set	
 			{
-				names01 = value;
+				data = value;
 			}
 		}
 
-		public List<string> IntegerList
+		public string Code
 		{
 			get
 			{
-				return integerList;
+				return code;
 			}
 			set	
 			{
-				integerList = value;
+				code = value;
 			}
 		}
 
-		public List<string> IntegerList1
+		public string Message
 		{
 			get
 			{
-				return integerList1;
+				return message;
 			}
 			set	
 			{
-				integerList1 = value;
+				message = value;
+			}
+		}
+
+		public string MessageCN
+		{
+			get
+			{
+				return messageCN;
+			}
+			set	
+			{
+				messageCN = value;
 			}
 		}
 	}

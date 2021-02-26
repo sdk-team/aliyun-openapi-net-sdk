@@ -41,18 +41,18 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			Method = MethodType.POST;
         }
 
-		private string name;
+		private string stringList;
 
-		public string Name
+		public string StringList
 		{
 			get
 			{
-				return name;
+				return stringList;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				stringList = value;
+				DictionaryUtil.Add(QueryParameters, "StringList", value);
 			}
 		}
 

@@ -22,18 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
 {
-	public class FtIpFlowControlResponse : AcsResponse
+	public class FtGatedLaunchPolicyApiResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<string> names;
-
-		private List<string> names01;
-
-		private List<string> integerList;
-
-		private List<string> integerList1;
+		private string unGatedLaunchPolicy;
 
 		public string RequestId
 		{
@@ -47,51 +41,15 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			}
 		}
 
-		public List<string> Names
+		public string UnGatedLaunchPolicy
 		{
 			get
 			{
-				return names;
+				return unGatedLaunchPolicy;
 			}
 			set	
 			{
-				names = value;
-			}
-		}
-
-		public List<string> Names01
-		{
-			get
-			{
-				return names01;
-			}
-			set	
-			{
-				names01 = value;
-			}
-		}
-
-		public List<string> IntegerList
-		{
-			get
-			{
-				return integerList;
-			}
-			set	
-			{
-				integerList = value;
-			}
-		}
-
-		public List<string> IntegerList1
-		{
-			get
-			{
-				return integerList1;
-			}
-			set	
-			{
-				integerList1 = value;
+				unGatedLaunchPolicy = value;
 			}
 		}
 	}

@@ -28,87 +28,81 @@ using Aliyun.Acs.Ft.Transform.V20180713;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
 {
-    public class BatchAuditTest01Request : RpcAcsRequest<BatchAuditTest01Response>
+    public class TestErrorCodeForGateWayRequest : RpcAcsRequest<TestErrorCodeForGateWayResponse>
     {
-        public BatchAuditTest01Request()
-            : base("Ft", "2018-07-13", "BatchAuditTest01")
+        public TestErrorCodeForGateWayRequest()
+            : base("Ft", "2018-07-13", "TestErrorCodeForGateWay")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Ft.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Ft.Endpoint.endpointRegionalType, null);
             }
-			Method = MethodType.POST;
         }
 
-		private string demo01;
+		private string httpStatusCode;
 
-		private bool? test010101;
+		private string code;
 
-		private string name;
+		private string success;
 
-		private string batchAuditTest01;
+		private string message;
 
-		public string Demo01
+		public string HttpStatusCode
 		{
 			get
 			{
-				return demo01;
+				return httpStatusCode;
 			}
 			set	
 			{
-				demo01 = value;
-				DictionaryUtil.Add(QueryParameters, "Demo01", value);
+				httpStatusCode = value;
+				DictionaryUtil.Add(QueryParameters, "HttpStatusCode", value);
 			}
 		}
 
-		public bool? Test010101
+		public string Code
 		{
 			get
 			{
-				return test010101;
+				return code;
 			}
 			set	
 			{
-				test010101 = value;
-				DictionaryUtil.Add(BodyParameters, "Test010101", value.ToString());
+				code = value;
+				DictionaryUtil.Add(QueryParameters, "Code", value);
 			}
 		}
 
-		public string Name
+		public string Success
 		{
 			get
 			{
-				return name;
+				return success;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				success = value;
+				DictionaryUtil.Add(QueryParameters, "Success", value);
 			}
 		}
 
-		public string BatchAuditTest01
+		public string Message
 		{
 			get
 			{
-				return batchAuditTest01;
+				return message;
 			}
 			set	
 			{
-				batchAuditTest01 = value;
-				DictionaryUtil.Add(QueryParameters, "BatchAuditTest01", value);
+				message = value;
+				DictionaryUtil.Add(QueryParameters, "Message", value);
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override BatchAuditTest01Response GetResponse(UnmarshallerContext unmarshallerContext)
+        public override TestErrorCodeForGateWayResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return BatchAuditTest01ResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return TestErrorCodeForGateWayResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
